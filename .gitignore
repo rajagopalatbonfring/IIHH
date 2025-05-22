@@ -1,0 +1,18 @@
+# Node.js dependencies
+Server/node_modules/
+Frontend/node_modules/
+Server/package-lock.json
+Frontend/package-lock.json
+
+# Environment variables
+Server/.env
+Frontend/.env
+
+# Build artifacts
+Frontend/dist/
+Frontend/build/
+
+# server/uploads/
+
+# VS Code settings
+.vscode/
