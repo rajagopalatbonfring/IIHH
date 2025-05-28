@@ -5,10 +5,20 @@ import rectangle from '../assets/Group 82.png'
 import cloudOpen from '../assets/Group 33.png'
 import cloudClose from '../assets/closeCloud.png'
 import { ChevronRight } from "lucide-react";
-import { PhoneCall } from 'lucide-react';
+import { PhoneCall, Star, Heart, Users, Brain } from "lucide-react";
+import { CheckCircle, Sparkles } from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
 
 function Home() {
+
+  const features = [
+    { name: 'Empathy', icon: Heart },
+    { name: 'Leadership', icon: Star },
+    { name: 'Humanism', icon: Users },
+    { name: 'Broad Mind', icon: Brain }
+  ];
+
+
   return (
     <div className="h-full text-base-content font-comic">
       <main className="pt-20 min-h-screen"
@@ -18,7 +28,6 @@ function Home() {
         className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
         style={{ backgroundImage: `url(${rectangle})` }}
       >
-
           {/* Content Wrapper */}
           <div className="container mx-auto px-6 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-10">
             
@@ -83,31 +92,133 @@ function Home() {
           </svg>
         </section>
 
+        
         {/* About Us section - New addition */}
-        <section id="about-us" className="py-24 pb-36 px-8 bg-[#d2a763]/90">
-
-          <div className="container py-10 px-6 mx-auto bg-white border rounded-lg">
+        <section id="about-us" className="py-24 pb-36 px-8 bg-[#d2a763]">
+          <div className="container py-10 px-6 mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12 px-6">
               <div className="md:w-1/2">
                 <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR STORY</h4>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Top <span className="text-[#036e8d]">Choice</span> For Children</h2>
-                <p className="text-gray-600 mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Top <span className="text-[#036e8d]">Choice</span> For <span className="text-[#036e8d]">Children</span></h2>
+                <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
                   Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
                   We believe that learning should nurture not just the mind, but also the heart and spirit.
                 </p>
                 {/* Feature grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 mt-8">
                   {['Empathy', 'Leadership', 'Humanism', 'Board Mind'].map((item, index) => (
                     <div key={index} className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3">
-                        <div className="w-3 h-3 rounded-full bg-orange-400"></div>
+                      <div className="w-6 h-6 rounded-full bg-[white]/80 flex items-center justify-center mr-3">
+                        <div className="w-3 h-3 rounded-full bg-[#036e8d]"></div>
                       </div>
-                      <span className="text-slate-600 font-medium">{item}</span>
+                      <span className="text-white font-bold">{item}</span>
                     </div>
                   ))}
                 </div>
                 
                 {/* CTA buttons */}
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <a href="#" className="bg-[#ffffff] hover:bg-[#d2a763] text-[#036e8d] font-medium py-3 px-6 rounded-full flex items-center transition duration-300">
+                    See More
+                    <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                  
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-[#036e8d] rounded-full flex items-center justify-center mr-3">
+                      <PhoneCall className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-black text-sm">Call Us Now</div>
+                      <div className="text-black font-bold">+108-885-0212</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Image Section - Enhanced */}
+              <div className="lg:w-1/2 w-full">
+                <div className="relative max-w-lg mx-auto">
+                  {/* Animated decorative rings */}
+                  <div className="absolute inset-0 -m-8">
+                    <div className="absolute inset-0 border-2 border-dashed border-[#036e8d]/40 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+                    <div className="absolute inset-4 border border-dotted border-white/60 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
+                  </div>
+                  
+                  {/* Main image container with enhanced styling */}
+                  <div className="relative bg-gradient-to-br from-[#223668] via-[#2a4078] to-[#1e2d5f] rounded-full p-8 shadow-2xl">
+                    {/* Glowing effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#036e8d]/20 to-transparent rounded-full"></div>
+                    
+                    {/* Main image */}
+                    <div className="relative aspect-square rounded-full overflow-hidden shadow-xl">
+                      <img 
+                        src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                        alt="Teacher helping student" 
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    
+                    {/* Small overlay image - Enhanced */}
+                    <div className="absolute -bottom-4 -left-4 w-32 h-32 group">
+                      <div className="relative w-full h-full">
+                        <img 
+                          src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                          alt="Children doing activities" 
+                          className="w-full h-full object-cover rounded-full border-4 border-white shadow-xl group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#036e8d]/20 to-transparent"></div>
+                      </div>
+                    </div>
+
+                    {/* Achievement badge */}
+                    <div className="absolute -top-4 -right-4 bg-gradient-to-br from-[#d2a763] to-[#b8954e] text-white p-3 rounded-full shadow-xl transform rotate-12 hover:rotate-0 transition-transform duration-300">
+                      <CheckCircle className="w-6 h-6" />
+                    </div>
+                  </div>
+
+                  {/* Stats floating cards */}
+                  <div className="absolute top-8 -left-8 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="text-2xl font-bold text-[#036e8d]">2018</div>
+                    <div className="text-sm text-gray-600">Founded</div>
+                  </div>
+                  
+                  <div className="absolute bottom-16 -right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="text-2xl font-bold text-[#036e8d]">100+</div>
+                    <div className="text-sm text-gray-600">Happy Kids</div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+        </section>
+
+
+{/* COpy */}
+        {/* <section id="about-us" className="py-24 pb-36 px-8 bg-[#d2a763]">
+          <div className="container py-10 px-6 mx-auto bg-[#d2a763] border rounded-lg">
+            <div className="flex flex-col md:flex-row items-center gap-12 px-6">
+              <div className="md:w-1/2">
+                <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR STORY</h4>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Top <span className="text-[#036e8d]">Choice</span> For <span className="text-[#036e8d]">Children</span></h2>
+                <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
+                  Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
+                  We believe that learning should nurture not just the mind, but also the heart and spirit.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 mt-8">
+                  {['Empathy', 'Leadership', 'Humanism', 'Board Mind'].map((item, index) => (
+                    <div key={index} className="flex items-center">
+                      <div className="w-6 h-6 rounded-full bg-[white]/80 flex items-center justify-center mr-3">
+                        <div className="w-3 h-3 rounded-full bg-[#036e8d]"></div>
+                      </div>
+                      <span className="text-white font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <a href="#" className="bg-[#d2a763] hover:bg-orange-500 text-white font-medium py-3 px-6 rounded-full flex items-center transition duration-300">
                     See More
@@ -127,15 +238,11 @@ function Home() {
                   </div>
                 </div>
               </div>
-              {/* Left section with images */}
               <div className="relative w-full lg:w-1/2 mb-8 lg:mb-0">
                 <div className="relative">
-                  {/* Dotted border */}
                   <div className="absolute -top-4 -right-4 -left-4 -bottom-4 border-2 border-dashed border-[#036e8d] rounded-full"></div>
                   
-                  {/* Main image container */}
                   <div className="relative bg-[#223668] rounded-full p-6">
-                    {/* Main image */}
                     <div className="aspect-w-1 aspect-h-1 rounded-full overflow-hidden">
                       <img 
                         src="src/assets/front-view-smiley-teacher-explaining-kids.jpg" 
@@ -144,7 +251,6 @@ function Home() {
                       />
                     </div>
                     
-                    {/* Small image overlay */}
                     <div className="absolute bottom-0 left-0 w-1/3 h-1/3">
                       <img 
                         src="src/assets/mother-helping-daughters-with-drawings.jpg" 
@@ -157,8 +263,9 @@ function Home() {
               </div>
           </div>
         </div>
-      </section>
+        </section> */}
 
+      
 
 
 {/* //important this */}
@@ -345,7 +452,7 @@ function Home() {
             </div>
           </section>
 
-        <section id="whychooseus" className="relative py-16 md:py-24 bg-[#036e8d]/70 overflow-hidden">
+        <section id="whychooseus" className="relative py-16 md:py-24 bg-[#223668] overflow-hidden">
 
           <img src={cloudClose} className='w-100 absolute -top-12 p-0 m-0' />
 
@@ -460,144 +567,220 @@ function Home() {
     
 
         {/* FAQ Section - New addition */}
-        <section id="faq" className="py-20 bg-gray-50">
+        <section id="faq" className="py-20 bg-white">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
+            <div className="max-w-7xl mx-auto">
+              {/* Header Section */}
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Find answers to common questions about our humanistic education programs and how they can benefit you.
+                </p>
+              </div>
               
-              {[
-                {
-                  question: "Who can enroll in IIHH programs?",
-                  answer: "Our programs are designed for diverse audiences including students (K-12 and college), educators, professionals, and lifelong learners. We have specialized tracks for different age groups and experience levels."
-                },
-                {
-                  question: "How are courses delivered?",
-                  answer: "We offer flexible learning formats including in-person workshops, online courses, blended learning programs, and intensive retreats. All formats emphasize experiential learning and practical application."
-                },
-                {
-                  question: "Are there scholarships available?",
-                  answer: "Yes! We're committed to making humanistic education accessible. We offer need-based scholarships, community grants, and payment plans. Contact our admissions office to learn more."
-                },
-                {
-                  question: "How do I measure progress in these programs?",
-                  answer: "Our programs include comprehensive assessments including self-reflection tools, practical application projects, peer feedback, and mentorship opportunities. Progress is measured against personal growth goals."
-                }
-              ].map((item, index) => (
-                <div key={index} className="mb-6 bg-white rounded-xl shadow-md overflow-hidden">
-                  <details className="group">
-                    <summary className="flex justify-between items-center p-6 cursor-pointer">
-                      <h3 className="text-xl font-semibold text-gray-800">{item.question}</h3>
-                      <span className="transform group-open:rotate-180 transition-transform duration-200">
-                        <i className="fa-solid fa-chevron-down text-purple-600"></i>
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6 text-gray-600">
-                      <p>{item.answer}</p>
-                    </div>
-                  </details>
-                </div>
-              ))}
+              {/* Two Column FAQ Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {[
+                  {
+                    question: "Who can enroll in IIHH programs?",
+                    answer: "Our programs are designed for diverse audiences including students (K-12 and college), educators, professionals, and lifelong learners. We have specialized tracks for different age groups and experience levels.",
+                    category: "Enrollment"
+                  },
+                  {
+                    question: "How are courses delivered?",
+                    answer: "We offer flexible learning formats including in-person workshops, online courses, blended learning programs, and intensive retreats. All formats emphasize experiential learning and practical application.",
+                    category: "Learning Format"
+                  },
+                  {
+                    question: "What is the duration of IIHH programs?",
+                    answer: "Program duration varies based on the course type. Short workshops range from 2-5 days, certificate programs span 3-6 months, and comprehensive diploma courses take 12-18 months to complete.",
+                    category: "Duration"
+                  },
+                  {
+                    question: "Do you offer corporate training programs?",
+                    answer: "Yes, we provide customized corporate training programs focusing on emotional intelligence, leadership development, team building, and workplace wellness. Programs can be tailored to your organization's specific needs.",
+                    category: "Corporate"
+                  },
+                  {
+                    question: "What qualifications do instructors have?",
+                    answer: "Our instructors are certified professionals with advanced degrees in psychology, education, or related fields. They have extensive experience in humanistic approaches and undergo continuous professional development.",
+                    category: "Faculty"
+                  },
+                  {
+                    question: "Can I get continuing education credits?",
+                    answer: "Many of our programs offer continuing education units (CEUs) for professionals in education, healthcare, and counseling. Check with your professional board for specific accreditation requirements.",
+                    category: "Certification"
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group h-fit">
+                    <details className="group/details">
+                      <summary className="flex justify-between items-start p-6 cursor-pointer hover:bg-gray-50 rounded-t-2xl transition-colors duration-200">
+                        <div className="flex-1 pr-4">
+                          <h3 className="text-lg font-semibold text-gray-800 leading-tight mb-2">
+                            {item.question}
+                          </h3>
+                          <div className="flex items-center">
+                            <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-600 rounded-full">
+                              {item.category}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex-shrink-0 ml-4">
+                          <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-200">
+                            <span className="transform group-open/details:rotate-180 transition-transform duration-300">
+                              <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </summary>
+                      <div className="px-6 pb-6">
+                        <div className="pt-4 border-t border-gray-100">
+                          <p className="text-gray-600 leading-relaxed">{item.answer}</p>
+                        </div>
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
               
-              <div className="text-center mt-10">
+              {/* Call to Action */}
+              <div className="text-center mt-16">
+                <p className="text-gray-600 mb-6">
+                  Can't find what you're looking for? Our support team is here to help.
+                </p>
                 <Link to="/faq" className="text-purple-600 font-semibold flex items-center justify-center">
                   View all FAQs <i className="fa-solid fa-arrow-right ml-2"></i>
                 </Link>
               </div>
+              
             </div>
           </div>
         </section>
 
-
         
-        {/* Testimonials Section - Enhanced */}
+
+
+        {/* Testimonials Section - Redesigned to match image */}
         <section id="testimonials" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl text-center font-bold text-gray-900 mb-4">What Our Community Says</h2>
+            <h2 className="text-4xl text-center font-bold text-gray-900 mb-4">What Our Students Say</h2>
             <p className="text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Real stories from students, educators, and parents who experienced the IIHH difference.
+              Hear from our learners and families about how IIHH’s afterschool program has helped them grow beyond academics—building confidence, life skills, and a humanistic outlook for the real world.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
-              {[
-                {
-                  img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
-                  name: "Priya Sharma",
-                  desc: '"IIHH has transformed how I teach, making me more empathetic and effective in the classroom."',
-                  role: "Educator",
-                  stars: 5,
-                },
-                {
-                  img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
-                  name: "Aarav Patel",
-                  desc: '"The program helped me manage stress and discover my purpose—its been life-changing!"',
-                  role: "College Student",
-                  stars: 5,
-                },
-                {
-                  img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg",
-                  name: "Neha Gupta",
-                  desc: '"My daughters confidence and problem-solving skills have soared thanks to IIHH."',
-                  role: "Parent of Riya, Age 12",
-                  stars: 5,
-                },
-              ].map((testimonial, index) => (
-                <Tilt
-                  key={index}
-                  className="tilt-card"
-                  tiltMaxAngleX={15} // Max tilt angle for X
-                  tiltMaxAngleY={15} // Max tilt angle for Y
-                  transitionSpeed={400} // Speed of the tilt transition (ms)
-                  scale={1.05} // Slight scale-up on hover
-                  glareEnable={false} // Disable glare for a cleaner look
-                  perspective={1000} // Perspective for 3D effect
-                >
-                  <div
-                    className={` mt-6 p-6 rounded-xl shadow-lg text-center relative ${
-                      index % 2 === 0 ? "bg-[#036e8d] inset-0 backdrop-blur-lg border-[2px] border-white/30" : "bg-[#d2a763] inset-0 backdrop-blur-lg border-[2px] border-white/30"
-                    } text-white`}
+            {/* Navigation and Cards Container */}
+            <div className="relative max-w-6xl mx-auto">
+              {/* Left Arrow */}
+              <button className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              {/* Right Arrow */}
+              <button className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Testimonials Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-12">
+                {[
+                  {
+                    img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
+                    name: "PRIYA SHARMA",
+                    title: "A New Perspective on Learning",
+                    desc: "Joining IIHH was a turning point for me. The modules on self-awareness and emotional intelligence helped me understand myself and connect better with others. I feel more confident and ready for any challenge.",
+                    role: "Student, Grade 10",
+                    stars: 5,
+                  },
+                  {
+                    img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
+                    name: "AARAV PATEL",
+                    title: "Skills for Real Life",
+                    desc: "IIHH taught me practical skills I never learned in regular school—like managing my finances, solving problems, and leading with empathy. I now see the world differently and feel prepared for my future.",
+                    role: "Student, Grade 11",
+                    stars: 5,
+                  },
+                  {
+                    img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg",
+                    name: "NEHA GUPTA",
+                    title: "Holistic Growth for My Child",
+                    desc: "As a parent, I wanted my daughter to learn more than just academics. IIHH’s focus on values, culture, and inclusivity has made her more thoughtful and responsible. I highly recommend this program!",
+                    role: "Parent",
+                    stars: 5,
+                  },
+                ].map((testimonial, index) => (
+                  <Tilt
+                    key={index}
+                    className="tilt-card"
+                    tiltMaxAngleX={15}
+                    tiltMaxAngleY={15}
+                    transitionSpeed={400}
+                    scale={1.05}
+                    glareEnable={false}
+                    perspective={1000}
                   >
-                    {/* Avatar positioned above the card */}
-                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-                      <img
-                        src={testimonial.img}
-                        alt={testimonial.name}
-                        className="w-20 h-20 rounded-full border-4 border-yellow-400 bg-yellow-400"
-                      />
-                    </div>
-                    {/* Card content */}
-                    <div className="pt-12">
-                      <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                      <p className="text-sm opacity-80">{testimonial.role}</p>
-                      <p className="text-sm italic my-4">{testimonial.desc}</p>
-                      <div className="flex justify-center text-yellow-400 mb-3">
+                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center h-full flex flex-col">
+                      {/* Large Quote Mark */}
+                      <div className="text-6xl text-gray-300 font-serif mb-4">"</div>
+                      
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">{testimonial.title}</h3>
+                      
+                      {/* Description */}
+                      <p className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
+                        {testimonial.desc}
+                      </p>
+                      
+                      {/* Stars */}
+                      <div className="flex justify-center text-orange-400 mb-6">
                         {[...Array(testimonial.stars)].map((_, i) => (
-                          <i key={i} className="fa-solid fa-star"></i>
+                          <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                          </svg>
                         ))}
                       </div>
+                      
+                      {/* Author Info */}
+                      <div className="flex items-center justify-center">
+                        <img
+                          src={testimonial.img}
+                          alt={testimonial.name}
+                          className="w-12 h-12 rounded-full mr-3"
+                        />
+                        <div className="text-left">
+                          <h4 className="font-bold text-gray-900 text-sm">{testimonial.name}</h4>
+                          <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </Tilt>
-              ))}
+                  </Tilt>
+                ))}
+              </div>
             </div>
 
+            {/* Optional: Read More Button */}
             <div className="text-center mt-12">
               <Link
                 to="/testimonials"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-purple-100 text-purple-600 font-semibold hover:bg-purple-200 transition-all"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-600 font-semibold hover:bg-blue-200 transition-all"
               >
                 Read More Success Stories
-                <i className="fa-solid fa-arrow-right ml-2"></i>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </div>
         </section>
 
-
-
-        
-
         {/* Newsletter Section - New addition */}
         <section className="w-full overflow-hidden">
+        
           <div className="flex flex-col md:flex-row">
             {/* Left side - Yellow background with text and form */}
             <div className="bg-yellow-300 md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
@@ -622,7 +805,7 @@ function Home() {
             </div>
             
             {/* Right side - Green background with children image */}
-            <div className="bg-emerald-400 md:w-full flex items-center justify-center">
+            <div className="relative bg-emerald-400 md:w-full flex items-center justify-center">
                 <img  className="flex items-end" src="src/assets/freepik__adjust__81086.png" alt="" />
             </div>
           </div>
