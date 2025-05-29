@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "../App.css";
 import { Link } from "react-router-dom";
-import rectangle from '../assets/Group 82.png'
+import rectangle from '../assets/home-storySectionImg.jpg'
 import cloudOpen from '../assets/Group 33.png'
 import cloudClose from '../assets/closeCloud.png'
 import { ChevronRight } from "lucide-react";
 import { PhoneCall, Star, Heart, Users, Brain } from "lucide-react";
-import { CheckCircle, Sparkles } from 'lucide-react';
+import { CheckCircle, BookOpen} from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
 
 function Home() {
@@ -18,6 +18,39 @@ function Home() {
     { name: 'Broad Mind', icon: Brain }
   ];
 
+  const modules = [
+  { id: 1, title: "Holistic Personal Development", subtitle: "Mind, body, and soul", icon: "fa-spa", color: "purple" },
+  { id: 2, title: "Personal Development", subtitle: "Grow your character", icon: "fa-user", color: "yellow" },
+  { id: 3, title: "Traditional Values", subtitle: "Roots of culture", icon: "fa-home", color: "red" },
+];
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [pulseActive, setPulseActive] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Mouse tracking for image movement
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const x = (e.clientX - centerX) / rect.width * 30; // Adjust sensitivity
+    const y = (e.clientY - centerY) / rect.height * 20; // Adjust sensitivity
+    setMousePosition({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePosition({ x: 0, y: 0 });
+  };
+
+  // Pulse effect
+  useEffect(() => {
+    const pulseInterval = setInterval(() => {
+      setPulseActive(true);
+      setTimeout(() => setPulseActive(false), 600);
+    }, 3000);
+    return () => clearInterval(pulseInterval);
+  }, []);
+
 
   return (
     <div className="h-full text-base-content font-comic">
@@ -28,6 +61,7 @@ function Home() {
         className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
         style={{ backgroundImage: `url(${rectangle})` }}
       >
+          <div className="absolute inset-0 bg-black/40 z-0" />
           {/* Content Wrapper */}
           <div className="container mx-auto px-6 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-10">
             
@@ -95,11 +129,11 @@ function Home() {
         
         {/* About Us section - New addition */}
         <section id="about-us" className="py-24 pb-36 px-8 bg-[#d2a763]">
+          <h4 className="text-center text-[#ffffff] font-bold tracking-wider mb-3">OUR STORY</h4>
           <div className="container py-10 px-6 mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12 px-6">
               <div className="md:w-1/2">
-                <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR STORY</h4>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Top <span className="text-[#036e8d]">Choice</span> For <span className="text-[#036e8d]">Children</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Top <span className="text-[#036e8d]">Choice</span> For <span className="text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span></h2>
                 <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
                   Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
                   We believe that learning should nurture not just the mind, but also the heart and spirit.
@@ -118,12 +152,15 @@ function Home() {
                 
                 {/* CTA buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <a href="#" className="bg-[#ffffff] hover:bg-[#d2a763] text-[#036e8d] font-medium py-3 px-6 rounded-full flex items-center transition duration-300">
-                    See More
-                    <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
+                <Link
+                  to="/programs"
+                  className="inline-flex items-center justify-center bg-[#ffffff] text-[#036e8d] font-medium px-6 py-3 rounded-full hover:bg-[#025a75] hover:text-white hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
+                >
+                  See More
+                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
                   
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-[#036e8d] rounded-full flex items-center justify-center mr-3">
@@ -138,134 +175,286 @@ function Home() {
               </div>
 
               {/* Right Image Section - Enhanced */}
+
               <div className="lg:w-1/2 w-full">
-                <div className="relative max-w-lg mx-auto">
-                  {/* Animated decorative rings */}
-                  <div className="absolute inset-0 -m-8">
-                    <div className="absolute inset-0 border-2 border-dashed border-[#036e8d]/40 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-                    <div className="absolute inset-4 border border-dotted border-white/60 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
-                  </div>
+                <div 
+                  className="relative max-w-lg mx-auto"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
                   
-                  {/* Main image container with enhanced styling */}
-                  <div className="relative bg-gradient-to-br from-[#223668] via-[#2a4078] to-[#1e2d5f] rounded-full p-8 shadow-2xl">
-                    {/* Glowing effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#036e8d]/20 to-transparent rounded-full"></div>
+                  {/* Background Shapes */}
+                  <div className="absolute inset-0 -m-20 overflow-hidden">
+                    {/* Large decorative circles */}
+                    <div 
+                      className="absolute -top-10 -left-10 w-32 h-32 rounded-full blur-xl"
+                      style={{ animation: 'float1 8s ease-in-out infinite' }}
+                    ></div>
                     
-                    {/* Main image */}
-                    <div className="relative aspect-square rounded-full overflow-hidden shadow-xl">
+                    {/* Geometric shapes */}
+                    <div 
+                      className="absolute bottom-1/4 -left-12 w-12 h-12 bg-[#d2a763]/15 rounded-full"
+                      style={{ animation: 'pulse2 4s ease-in-out infinite 1s' }}
+                    ></div>
+                    
+                    {/* Wavy background element */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-5">
+                      <svg viewBox="0 0 100 100" className="w-full h-full">
+                        <path
+                          d="M20,50 Q40,30 60,50 T100,50 L100,100 L0,100 Z"
+                          fill="url(#gradient)"
+                          style={{ animation: 'wave 6s ease-in-out infinite' }}
+                        />
+                        <defs>
+                          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#036e8d" />
+                            <stop offset="100%" stopColor="#d2a763" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Elegant border rings - replacing dotted rotation */}
+                  <div className="absolute inset-0 -m-6">
+                    <div 
+                      className="absolute inset-0 border-[2px] border-[#ffffff]/50 rounded-full"
+                      style={{ animation: 'breathe 4s ease-in-out infinite' }}
+                    ></div>
+                    <div 
+                      className="absolute inset-2 border border-[#d2a763]/15 rounded-full"
+                      style={{ animation: 'breathe 4s ease-in-out infinite 1s' }}
+                    ></div>
+                  </div>
+
+                  {/* Main image container */}
+                  <div 
+                    className="relative bg-[#036e8d] rounded-full p-6 backdrop-blur-sm border border-white/50 shadow-2xl"
+                    style={{
+                      transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+                      transition: 'transform 0.3s ease-out'
+                    }}
+                  >
+                    
+                    {/* Main image with smooth hover effect */}
+                    <div className="relative bg-[#cde1dc] rounded-full overflow-hidden shadow-xl group cursor-pointer">
                       <img 
-                        src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                        src="..\src/assets/middle-strySecImg.jpg"
                         alt="Teacher helping student" 
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onLoad={() => setImageLoaded(true)}
+                        style={{ animation: 'gentleFloat 6s ease-in-out infinite' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      
+                      {/* Overlay with your brand colors */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#036e8d]/20 via-transparent to-transparent"></div>
+                      
+                      {/* Smooth hover overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#036e8d]/0 to-[#d2a763]/0 group-hover:from-[#036e8d]/10 group-hover:to-[#d2a763]/10 transition-all duration-500"></div>
                     </div>
                     
-                    {/* Small overlay image - Enhanced */}
-                    <div className="absolute -bottom-4 -left-4 w-32 h-32 group">
+                    {/* Secondary image - bottom left */}
+                    <div 
+                      className="absolute -bottom-4 -left-4 w-32 h-32 group cursor-pointer z-10"
+                      style={{
+                        transform: `translate(${mousePosition.x * -0.5}px, ${mousePosition.y * -0.3}px)`,
+                        transition: 'transform 0.3s ease-out'
+                      }}
+                    >
                       <div className="relative w-full h-full">
                         <img 
-                          src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                          alt="Children doing activities" 
-                          className="w-full h-full object-cover rounded-full border-4 border-white shadow-xl group-hover:scale-110 transition-transform duration-300"
+                          src="../src/assets/one-SubImg.png"
+                          alt="Children learning together" 
+                          className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
+                          style={{ animation: 'gentleFloat 4s ease-in-out infinite 1s' }}
                         />
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#036e8d]/20 to-transparent"></div>
+                        <div className="absolute inset-0 rounded-full ring-2 ring-[#d2a763]/0 group-hover:ring-[#d2a763]/50 transition-all duration-300"></div>
+                      </div>
+                    </div>
+
+                    {/* Third overlay image - top right */}
+                    <div 
+                      className="absolute -top-6 right-14 w-24 h-24 group cursor-pointer z-10"
+                      style={{
+                        transform: `translate(${mousePosition.x * 0.4}px, ${mousePosition.y * 0.6}px)`,
+                        transition: 'transform 0.3s ease-out'
+                      }}
+                    >
+                      <div className="relative w-full h-full">
+                        <img 
+                          src="../src/assets/second-SubImg.png"
+                          alt="Students in classroom" 
+                          className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
+                          style={{ animation: 'gentleFloat 5s ease-in-out infinite 2s' }}
+                        />
+                        <div className="absolute inset-0 rounded-full ring-2 ring-[#036e8d]/0 group-hover:ring-[#036e8d]/50 transition-all duration-300"></div>
+                      </div>
+                    </div>
+
+                    {/* Fourth overlay image - middle left */}
+                    <div 
+                      className="absolute top-1/2 -left-8 w-20 h-20 group cursor-pointer z-10 transform -translate-y-1/2"
+                      style={{
+                        transform: `translate(${mousePosition.x * -0.7}px, ${mousePosition.y * -0.4}px) translateY(-50%)`,
+                        transition: 'transform 0.3s ease-out'
+                      }}
+                    >
+                      <div className="relative w-full h-full">
+                        <img 
+                          src="../src/assets/third-SubImg.png"
+                          alt="Happy students" 
+                          className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
+                          style={{ animation: 'gentleFloat 4.5s ease-in-out infinite 3s' }}
+                        />
+                        <div className="absolute inset-0 rounded-full ring-2 ring-[#d2a763]/0 group-hover:ring-[#d2a763]/40 transition-all duration-300"></div>
                       </div>
                     </div>
 
                     {/* Achievement badge */}
-                    <div className="absolute -top-4 -right-4 bg-gradient-to-br from-[#d2a763] to-[#b8954e] text-white p-3 rounded-full shadow-xl transform rotate-12 hover:rotate-0 transition-transform duration-300">
-                      <CheckCircle className="w-6 h-6" />
+                    <div 
+                      className={`absolute top-28 left-12 bg-gradient-to-br from-[#d2a763] to-[#b8954e] text-white p-2 rounded-full shadow-lg transition-transform duration-300 z-20 ${
+                        pulseActive ? 'scale-110' : 'scale-100'
+                      }`}
+                      style={{
+                        transform: `translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px) ${pulseActive ? 'scale(1.1)' : 'scale(1)'}`,
+                        transition: 'transform 0.3s ease-out'
+                      }}
+                    >
+                      <CheckCircle className="w-3 h-3" />
                     </div>
-                  </div>
 
-                  {/* Stats floating cards */}
-                  <div className="absolute top-8 -left-8 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div className="text-2xl font-bold text-[#036e8d]">2018</div>
-                    <div className="text-sm text-gray-600">Founded</div>
-                  </div>
-                  
-                  <div className="absolute bottom-16 -right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div className="text-2xl font-bold text-[#036e8d]">100+</div>
-                    <div className="text-sm text-gray-600">Happy Kids</div>
-                  </div>
-                </div>
-              </div>
-
-          </div>
-        </div>
-        </section>
-
-
-{/* COpy */}
-        {/* <section id="about-us" className="py-24 pb-36 px-8 bg-[#d2a763]">
-          <div className="container py-10 px-6 mx-auto bg-[#d2a763] border rounded-lg">
-            <div className="flex flex-col md:flex-row items-center gap-12 px-6">
-              <div className="md:w-1/2">
-                <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR STORY</h4>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Top <span className="text-[#036e8d]">Choice</span> For <span className="text-[#036e8d]">Children</span></h2>
-                <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
-                  Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
-                  We believe that learning should nurture not just the mind, but also the heart and spirit.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 mt-8">
-                  {['Empathy', 'Leadership', 'Humanism', 'Board Mind'].map((item, index) => (
-                    <div key={index} className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[white]/80 flex items-center justify-center mr-3">
-                        <div className="w-3 h-3 rounded-full bg-[#036e8d]"></div>
-                      </div>
-                      <span className="text-white font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <a href="#" className="bg-[#d2a763] hover:bg-orange-500 text-white font-medium py-3 px-6 rounded-full flex items-center transition duration-300">
-                    See More
-                    <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </a>
-                  
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-[#d2a763] rounded-full flex items-center justify-center mr-3">
-                      <PhoneCall className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-slate-600 text-sm">Call Us Now</div>
-                      <div className="text-slate-600 font-bold">+108-885-0212</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative w-full lg:w-1/2 mb-8 lg:mb-0">
-                <div className="relative">
-                  <div className="absolute -top-4 -right-4 -left-4 -bottom-4 border-2 border-dashed border-[#036e8d] rounded-full"></div>
-                  
-                  <div className="relative bg-[#223668] rounded-full p-6">
-                    <div className="aspect-w-1 aspect-h-1 rounded-full overflow-hidden">
-                      <img 
-                        src="src/assets/front-view-smiley-teacher-explaining-kids.jpg" 
-                        alt="Teacher helping student" 
-                        className="object-cover"
-                      />
+                    {/* Small decorative badges */}
+                    <div 
+                      className="absolute top-8 left-28 bg-[#ffffff] text-white p-2 rounded-full shadow-md z-15"
+                      style={{
+                        transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.1}px)`,
+                        transition: 'transform 0.3s ease-out',
+                        animation: 'gentleBob 3s ease-in-out infinite 1s'
+                      }}
+                    >
+                      <Star className="w-3 h-3 text-[#036e8d]" />
                     </div>
                     
-                    <div className="absolute bottom-0 left-0 w-1/3 h-1/3">
-                      <img 
-                        src="src/assets/mother-helping-daughters-with-drawings.jpg" 
-                        alt="Children doing activities" 
-                        className="rounded-full border-4 border-white"
-                      />
+                    <div 
+                      className="absolute top-28 left-32 bg-gradient-to-br from-[#d2a763] to-[#b8954e] text-white p-2 rounded-full shadow-md z-15"
+                      style={{
+                        transform: `translate(${mousePosition.x * -0.2}px, ${mousePosition.y * 0.4}px)`,
+                        transition: 'transform 0.3s ease-out',
+                        animation: 'gentleBob 3.5s ease-in-out infinite 2s'
+                      }}
+                    >
+                      <Heart className="w-3 h-3" />
                     </div>
                   </div>
-                </div>
-              </div>
-          </div>
-        </div>
-        </section> */}
 
-      
+                  {/* Info cards with better positioning */}
+                  <div 
+                    className="absolute -top-8 -left-12 z-30"
+                    style={{
+                      transform: `translate(${mousePosition.x * -0.3}px, ${mousePosition.y * -0.2}px)`,
+                      transition: 'transform 0.3s ease-out'
+                    }}
+                  >
+                  </div>
+
+                  <div 
+                    className="absolute bottom-8 right-10 z-30"
+                    style={{
+                      transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.2}px)`,
+                      transition: 'transform 0.3s ease-out'
+                    }}
+                  >
+                    <div className="bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg border border-white/50">
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="w-4 h-4 text-[#036e8d]" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Subtle floating elements */}
+                  {imageLoaded && (
+                    <>
+                      <div 
+                        className="absolute top-1/4 right-8 w-2 h-2 bg-[#ffffff] rounded-full opacity-60"
+                        style={{ animation: 'floatParticle 4s ease-in-out infinite' }}
+                      ></div>
+                      <div 
+                        className="absolute bottom-1/3 -left-6 w-1.5 h-1.5 bg-[#036e8d] rounded-full opacity-40"
+                        style={{ animation: 'floatParticle 3s ease-in-out infinite 1s' }}
+                      ></div>
+                      <div 
+                        className="absolute top-2/3 right-4 w-1 h-1 bg-[#ffffff] rounded-full opacity-50"
+                        style={{ animation: 'floatParticle 5s ease-in-out infinite 2s' }}
+                      ></div>
+                    </>
+                  )}
+                </div>
+
+                <style jsx>{`
+                  @keyframes gentleFloat {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-8px); }
+                  }
+                  
+                  @keyframes gentleBob {
+                    0%, 100% { transform: translateY(0px) scale(1); }
+                    50% { transform: translateY(-4px) scale(1.05); }
+                  }
+                  
+                  @keyframes floatParticle {
+                    0%, 100% { 
+                      transform: translateY(0px);
+                      opacity: 0.4;
+                    }
+                    50% { 
+                      transform: translateY(-8px);
+                      opacity: 0.8;
+                    }
+                  }
+                  
+                  @keyframes breathe {
+                    0%, 100% { 
+                      transform: scale(1);
+                      opacity: 0.3;
+                    }
+                    50% { 
+                      transform: scale(1.02);
+                      opacity: 0.6;
+                    }
+                  }
+                  
+                  @keyframes float1 {
+                    0%, 100% { transform: translateY(0px) translateX(0px); }
+                    33% { transform: translateY(-10px) translateX(5px); }
+                    66% { transform: translateY(5px) translateX(-8px); }
+                  }
+                  
+                  @keyframes float2 {
+                    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+                    50% { transform: translateY(-15px) translateX(10px) rotate(5deg); }
+                  }
+                  
+                  @keyframes rotate {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                  }
+                  
+                  @keyframes pulse2 {
+                    0%, 100% { transform: scale(1); opacity: 0.3; }
+                    50% { transform: scale(1.1); opacity: 0.6; }
+                  }
+                  
+                  @keyframes wave {
+                    0%, 100% { transform: translateX(-5px); }
+                    50% { transform: translateX(5px); }
+                  }
+                `}</style>
+              </div>
+
+          </div>
+          </div>
+        </section>
+
 
 
 {/* //important this */}
@@ -294,163 +483,160 @@ function Home() {
           <div className="container mx-auto px-8 md:px-14 relative z-10 bg-transparent">
               {/* Section header with creative typography */}
               <div className="max-w-3xl mx-auto text-center mb-24">
-                <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR EXPERTISE</h4>
-                <h2 className="text-4xl md:text-6xl font-extrabold text-black-800 mb-6 leading-tight">Transform Your <span className="relative">
-                  <span className="relative z-10 text-[#036e8d]">Potential</span>
-                  <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-100 -rotate-1 -z-10"></span>
-                </span></h2>
-                <p className="text-lg text-gray-600 leading-relaxed">We offer comprehensive programs designed to develop the essential skills needed for success in today's complex world.</p>
+                <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR PROGRAMS</h4>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-8">
+                  Explore Our Transformative Modules
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Discover IIHH’s unique afterschool program—unlock skills, broaden perspectives, and ignite a lifelong love of learning beyond the classroom.                
+                </p>
               </div>
 
 
-    
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 bg-transparent  text-center">
-                
-              {/* Card 1: Emotional Intelligence */}
-                <Tilt
-                  tiltMaxAngleX={10}
-                  tiltMaxAngleY={10}
-                  transitionSpeed={400}
-                  scale={1.01}
-                  glareEnable={false}
-                  perspective={600}
-                >
-                  <div className="group relative">
-                    {/* bg-white/5 backdrop-blur-lg border border-white/30 rounded-lg shadow-2xl */}
-                    <div className="absolute inset-0 backdrop-blur-lg bg-gradient-to-br from-purple-400/70 to-indigo-600/80 rounded-xl transform transition-all duration-500 scale-105 rotate-2 shadow-2xl"></div>
-                    <div className="relative bg-white rounded-xl p-4 transform transition-all duration-300 h-full flex flex-col group-hover:translate-x-2 group-hover:-translate-y-2">
-                      <div className="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <i className="fa-solid fa-brain text-4xl text-purple-600"></i>
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4">Emotional Intelligence</h3>
-                      <p className="text-gray-600 flex-grow">Cultivate self-awareness and empathy through reflective practices.</p>
-                      <div className="mt-6 group-hover:opacity-100 transition-opacity duration-300">
-                        <Link to="/programs/emotional-intelligence" className="text-purple-600 font-medium flex items-center justify-center">
-                          Learn more <i className="fa-solid fa-arrow-right ml-2 text-sm"></i>
+              <div className="overflow-hidden bg-white border border-white/50 rounded-lg shadow-2xl px-0 py-0 sm:px-8 md:px-14 sm:py-8 md:py-12">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                  {/* Left Side - 4x4 Grid with 3 Cards + Button */}
+                  <div className="p-4 flex-1 flex items-center justify-center">
+                    <div className="w-full max-w-2xl">
+                      {/* 4x4 Grid Structure */}
+                      <div className="grid grid-cols-2 gap-6 md:gap-8">
+                        {/* First 3 cards */}
+                        {modules.map((module, index) => (
+                          <div
+                            key={module.id}
+                            id={`course-card-${module.id}`}
+                            className="relative flex flex-col items-center justify-center gap-3 text-center bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 aspect-square"
+                          >
+                            <span className="absolute top-4 right-4 text-gray-600 font-bold text-lg md:text-xl">
+                              {module.id}
+                            </span>
+                            <i className={`fa-solid ${module.icon} text-2xl md:text-3xl text-${module.color}-600`}></i>
+                            <h3 className="text-lg md:text-xl font-bold text-gray-800">{module.title}</h3>
+                            <p className="text-gray-600 text-xs md:text-sm">{module.subtitle}</p>
+                          </div>
+                        ))}
+                        
+                        <div 
+                          className="flex items-center justify-center aspect-square"
+                        >
+                        <Link
+                          to="/programs"
+                          style={{ backgroundImage: 'url("../src/assets/boyForModulesCta.png")' }}
+                          className="bg-[#036e8d]/90 flex flex-col items-end justify-end gap-3 text-white font-medium p-6 md:p-8 rounded-2xl hover:from-[#025a75] hover:to-[#044c63] hover:scale-105 transition-all duration-300 shadow-lg w-full h-full group bg-center bg-no-repeat bg-cover"
+                        >
+                          <svg className="w-8 h-8 md:w-10 md:h-10 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span className="text-sm md:text-base font-semibold text-center">View All<br />Modules</span>
                         </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </Tilt>
-
-                {/* Card 2: Social Responsibility */}
-                <Tilt
-                  tiltMaxAngleX={10}
-                  tiltMaxAngleY={10}
-                  transitionSpeed={400}
-                  scale={1.01}
-                  glareEnable={false}
-                  perspective={600}
-                >
-                  <div className="group relative mt-10 md:mt-0">
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-400/70 to-purple-600/80 rounded-xl transform transition-all duration-500 scale-105 rotate-2 shadow-2xl"></div>
-                    <div className="relative bg-white rounded-xl p-4 transform transition-all duration-300 h-full flex flex-col group-hover:translate-x-2 group-hover:-translate-y-2">
-                      <div className="bg-pink-100 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <i className="fa-solid fa-hands-helping text-4xl text-pink-600"></i>
+                  
+                  {/* Right Side - Integrated Section (No Card Design) */}
+                  <div className="px-6 pb-10 flex-1 lg:max-w-md flex flex-col justify-center">
+                    {/* Content Section */}
+                    <div className="space-y-6">
+                      <div>
+                      <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                      Transform Your<br /> 
+                        <span className='text-3xl md:text-4xl'><span className='text-[#036e8d]'>Future</span> with our Programs</span>
+                      </h2>
+                        <p className="text-gray-600 text-lg leading-relaxed">
+                          Discover how our afterschool program can empower you with essential life skills! 
+                          Join thousands of students who have transformed their futures through our comprehensive modules.
+                        </p>
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4">Social Responsibility</h3>
-                      <p className="text-gray-600 flex-grow">Develop leadership and community engagement skills.</p>
-                      <div className="mt-6 group-hover:opacity-100 transition-opacity duration-300">
-                        <Link to="/programs/social-responsibility" className="text-pink-600 font-medium flex items-center justify-center">
-                          Learn more <i className="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </Tilt>
-
-                {/* Card 3: Critical Thinking */}
-                <Tilt
-                  tiltMaxAngleX={10}
-                  tiltMaxAngleY={10}
-                  transitionSpeed={400}
-                  scale={1.01}
-                  glareEnable={false}
-                  perspective={600}
-                >
-                  <div className="group relative mt-10 md:mt-0">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/70 to-cyan-600/80 rounded-xl transform transition-all duration-500 scale-105 rotate-2 shadow-2xl"></div>
-                    <div className="relative bg-white rounded-xl p-4 transform transition-all duration-300 h-full flex flex-col group-hover:translate-x-2 group-hover:-translate-y-2">
-                      <div className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <i className="fa-solid fa-lightbulb text-4xl text-blue-600"></i>
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4">Critical Thinking</h3>
-                      <p className="text-gray-600 flex-grow">Enhance problem-solving and ethical reasoning abilities.</p>
-                      <div className="mt-6 group-hover:opacity-100 transition-opacity duration-300">
-                        <Link to="/programs/critical-thinking" className="text-blue-600 font-medium flex items-center justify-center">
-                          Learn more <i className="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                        </Link>
+                      
+                      {/* Features List */}
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-[#036e8d] rounded-full"></div>
+                          <span className="text-gray-700">Comprehensive skill development</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-[#036e8d] rounded-full"></div>
+                          <span className="text-gray-700">Expert-designed curriculum</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-[#036e8d] rounded-full"></div>
+                          <span className="text-gray-700">Real-world applications</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </Tilt>
+                </div>
               </div>
 
-              <div className="container py-14">
-                <div className="bg-white/40 backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
+              <div className="container mx-auto py-14 px-4">
+                <div className="bg-white backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
                   <div className="flex flex-col lg:flex-row gap-8 p-10">
                     {/* Left Section - Heading and Description */}
-                    <div className="lg:w-1/3 flex flex-col justify-center">
+                    <div className="lg:w-1/2 flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                        Our Featured <br /> <span className='text-[#036e8d]'>Modules!</span>
+                        What Makes <br /> 
+                        <span className='text-3xl md:text-4xl'>IIHH <span className='text-[#036e8d]'>Unique?</span></span>
                       </h2>
-                      <p className="text-gray-600 text-lg">
-                        Discover the tools and skills you need to excel, grow, and thrive.
+                      <p className="text-gray-600 text-lg mb-6">
+                        Our program includes three exclusive modules you won't find anywhere else—designed to spark personal growth and real-world leadership.
                       </p>
                     </div>
 
-                    {/* Right Section - Cards */}
-                    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Right Section - Small Square Cards */}
+                    <div className='flex flex-col gap-6 align-center justify-center'>
+                    <div className="lg:w-1/2 flex flex gap-4">
                       {/* Card 1 */}
-                      <div
-                        id="course-card-1"
-                        className="flex flex-col justify-center rounded-2xl p-6 bg-yellow-200 hover:shadow-lg transition-all"
-                      >
-                        <i className="fa-solid fa-seedling text-4xl text-green-500 mb-4"></i>
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">Foundations of Humanism</h3>
-                        <p className="text-gray-600 text-sm">
-                          Discover values of empathy, autonomy, and purpose.
-                        </p>
+                      <div className="w-32 h-32 aspect-square flex flex-col justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-lg transition-all text-center">
+                        <i className="fa-solid fa-seedling text-2xl text-green-500 mb-2"></i>
+                        <h3 className="text-sm font-bold text-[#223668] leading-tight">Foundations of Humanism</h3>
                       </div>
 
                       {/* Card 2 */}
-                      <div
-                        id="course-card-2"
-                        className="flex flex-col justify-center rounded-2xl p-6 bg-orange-300 hover:shadow-lg transition-all"
-                      >
-                        <i className="fa-solid fa-toolbox text-4xl text-blue-500 mb-4"></i>
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">Life Skills</h3>
-                        <p className="text-gray-600 text-sm">
-                          Master practical skills for personal and social success.
-                        </p>
+                      <div className="w-32 h-32 aspect-square flex flex-col justify-center items-center rounded-xl p-3 bg-orange-300 hover:shadow-lg transition-all text-center">
+                        <i className="fa-solid fa-toolbox text-2xl text-blue-500 mb-2"></i>
+                        <h3 className="text-sm font-bold text-[#223668] leading-tight">Life Skills</h3>
                       </div>
 
                       {/* Card 3 */}
-                      <div
-                        id="course-card-3"
-                        className="flex flex-col justify-center rounded-2xl p-6 bg-blue-200 hover:shadow-lg transition-all"
-                      >
-                        <i className="fa-solid fa-users text-4xl text-orange-500 mb-4"></i>
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">Humanistic Leadership</h3>
-                        <p className="text-gray-600 text-sm">
-                          Inspire with compassion and integrity.
-                        </p>
+                      <div className="w-32 h-32 aspect-square flex flex-col justify-center items-center rounded-xl p-3 bg-blue-200 hover:shadow-lg transition-all text-center">
+                        <i className="fa-solid fa-users text-2xl text-purple-500 mb-2"></i>
+                        <h3 className="text-sm font-bold text-[#223668] leading-tight">Humanistic Leadership</h3>
                       </div>
                     </div>
+                    <div className='flex w-full align-center justify-center'>
+                      <Link
+                        to="/programs"
+                        className="inline-flex items-center justify-center text-[#036e8d] font-bold hover: hover:translate-x-1 transition-all duration-300 group text-base"
+                      >
+                       See Why These Modules Are Unique
+                        <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </Link>
+                    </div>
+
+                    </div>
+
                   </div>
                 </div>
               </div>
     
               {/* Call to action */}
               <div className="mt-8 text-center">
-                <Link to="/programs" className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold transition-transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Explore Our Programs
-                  <i className="fa-solid fa-arrow-right ml-2"></i>
+                <Link
+                  to="/programs"
+                  className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
+                >
+                  Explore All Programs
+                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </Link>
               </div>
 
             </div>
-          </section>
+        </section>
 
         <section id="whychooseus" className="relative py-16 md:py-24 bg-[#223668] overflow-hidden">
 
@@ -650,8 +836,14 @@ function Home() {
                 <p className="text-gray-600 mb-6">
                   Can't find what you're looking for? Our support team is here to help.
                 </p>
-                <Link to="/faq" className="text-purple-600 font-semibold flex items-center justify-center">
-                  View all FAQs <i className="fa-solid fa-arrow-right ml-2"></i>
+                <Link
+                  to="/programs"
+                  className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
+                >
+                  View all FAQ
+                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </Link>
               </div>
               
@@ -765,15 +957,15 @@ function Home() {
 
             {/* Optional: Read More Button */}
             <div className="text-center mt-12">
-              <Link
-                to="/testimonials"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-600 font-semibold hover:bg-blue-200 transition-all"
-              >
-                Read More Success Stories
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
+                <Link
+                  to="/testimonials"
+                  className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
+                >
+                  Read More Success Stories
+                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
             </div>
           </div>
         </section>
