@@ -10,6 +10,8 @@ import Testimonial from "./Components/testimonials"
 import ContactUs from "./Components/contactUs"
 import ModuleDetail from "./Components/moduleDetail"
 
+import ModuleAccordionCard from "./accordion"
+
 import Dashboard from "./Components/CMSDashboard"
 import AdminLogin from "./Components/adminLogin"
 
@@ -44,6 +46,8 @@ function App() {
           >
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/acc" element={<ModuleAccordionCard />} />
+
             <Route path="/about" element={<AboutUs />} />
             <Route path="/programs" element={<Program />} />
             <Route path="/module/:id" element={<ModuleDetail />} />
