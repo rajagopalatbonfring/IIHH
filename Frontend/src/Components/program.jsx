@@ -307,6 +307,66 @@ function Program() {
     setAnimationTrigger(true);
   }, []);
 
+    // Duplicate faculty data to ensure enough cards for three-card view
+  const baseFacultyData = [
+      { name: "Dr. Elena Rodriguez", role: "Program Director", specialty: "Humanistic Philosophy", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" },
+      { name: "Prof. Michael Chen", role: "Lead Instructor", specialty: "Emotional Intelligence", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
+      { name: "Dr. Amara Okafor", role: "Curriculum Designer", specialty: "Critical Thinking", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" },
+      { name: "Prof. James Wilson", role: "Research Lead", specialty: "Social Ethics", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" }
+  ];
+
+  // Repeat data to create 8 entries
+  const originalFacultyData = [
+    ...baseFacultyData.map((item, index) => ({ ...item, id: `faculty-${index}` })),
+    ...baseFacultyData.map((item, index) => ({ ...item, id: `faculty-${index + 4}` }))
+  ];
+
+  // Clone data for infinite loop (3 sets: start, original, end)
+  const facultyData = [
+    ...originalFacultyData.map((item, index) => ({ ...item, id: `clone-start-${index}` })),
+    ...originalFacultyData.map((item, index) => ({ ...item, id: `original-${index}` })),
+    ...originalFacultyData.map((item, index) => ({ ...item, id: `clone-end-${index}` }))
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(originalFacultyData.length); // Start at original set
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const cardsPerView = window.innerWidth >= 768 ? 4 : 1;
+  const maxIndex = facultyData.length - cardsPerView;
+  const originalStartIndex = originalFacultyData.length; // Index where original data starts
+  const originalEndIndex = originalStartIndex + originalFacultyData.length - 1; // Last index of original data
+
+  const prevSlide = () => {
+    console.log('Previous slide clicked, currentIndex:', currentIndex);
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const nextSlide = () => {
+    console.log('Next slide clicked, currentIndex:', currentIndex);
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    // Handle infinite loop reset
+    if (currentIndex <= 0) {
+      // Reached start clones, jump to end of original
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(originalEndIndex - cardsPerView + 1);
+      }, 300); // Match transition duration
+    } else if (currentIndex >= maxIndex) {
+      // Reached end clones, jump to start of original
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(originalStartIndex);
+      }, 300);
+    }
+  }, [currentIndex, maxIndex, originalEndIndex, originalStartIndex, cardsPerView]);
+
+  console.log('Rendering Faculty component, facultyData:', facultyData, 'currentIndex:', currentIndex);
+
   return (
     <div className="h-full text-base-content font-comic">
       <main className="pt-20 min-h-screen">
@@ -798,43 +858,71 @@ function Program() {
 
 
         {/* Faculty Section */}
-        <section id="faculty" className="py-16">
+        <section id="faculty" className="py-16 bg-[#f9fcfd]">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-3">Meet Our  <span className='text-[#036e8d]'>Faculty</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-3">
+              Meet Our <span className="text-[#036e8d]">Faculty</span>
+            </h2>
             <p className="text-gray-600 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mb-16">
-                Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
+              Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { name: "Dr. Elena Rodriguez", role: "Program Director", specialty: "Humanistic Philosophy", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" },
-                { name: "Prof. Michael Chen", role: "Lead Instructor", specialty: "Emotional Intelligence", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
-                { name: "Dr. Amara Okafor", role: "Curriculum Designer", specialty: "Critical Thinking", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" },
-                { name: "Prof. James Wilson", role: "Research Lead", specialty: "Social Ethics", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" }
-              ].map((faculty, index) => (
-                <Tilt
-                  key={index}
-                  tiltMaxAngleX={15}
-                  tiltMaxAngleY={15}
-                  transitionSpeed={400}
-                  scale={1.05}
-                  glareEnable={false}
-                  perspective={1000}
-                >
-                  <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                    <img src={faculty.img} alt={faculty.name} className="w-full h-64 object-cover" />
-                    <div className="p-6">
-                      <h3 className="font-bold text-xl mb-1 text-gray-800">{faculty.name}</h3>
-                      <p className="text-[#036e8d] font-medium mb-2">{faculty.role}</p>
-                      <p className="text-gray-600 text-sm mb-4">Specializes in {faculty.specialty}</p>
-                      <Link to={`/faculty/${index}`} className="text-[#036e8d] hover:text-[#d2a763] font-medium text-sm">View Profile <i className="fa-solid fa-arrow-right ml-1"></i></Link>
-                    </div>
+            {facultyData.length === 0 ? (
+              <div className="text-center py-16 text-red-600">Error: No faculty data available</div>
+            ) : (
+              <div className="relative max-w-8xl mx-auto">
+                <div className="overflow-hidden py-20">
+                  <div
+                    className={`flex ${isTransitioning ? 'transition-transform duration-300 ease-in-out' : ''}`}
+                    style={{ transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)` }}
+                  >
+                    {facultyData.map((faculty, index) => (
+                      <div key={faculty.id} className={`w-full ${cardsPerView === 4 ? 'md:w-1/4' : ''} flex-shrink-0 px-4`}>
+                        <Tilt
+                          maxTilt={15}
+                          speed={400}
+                          scale={1.05}
+                          glareEnable={false}
+                        >
+                          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                            <img
+                              src={faculty.img}
+                              alt={faculty.name}
+                              className="w-full h-64 object-cover"
+                              onError={(e) => {
+                                e.target.src = '/assets/fallback.jpg';
+                                console.error(`Failed to load image: ${faculty.img}`);
+                              }}
+                            />
+                            <div className="p-6">
+                              <h3 className="font-bold text-xl mb-1 text-gray-800">{faculty.name}</h3>
+                              <p className="text-[#036e8d] font-medium mb-2">{faculty.role}</p>
+                              <p className="text-gray-600 text-sm mb-4">Specializes in {faculty.specialty}</p>
+                              <Link to={`/faculty/${index % originalFacultyData.length}`} className="text-[#036e8d] hover:text-[#d2a763] font-medium text-sm">
+                                View Profile <i className="fa-solid fa-arrow-right ml-1"></i>
+                              </Link>
+                            </div>
+                          </div>
+                        </Tilt>
+                      </div>
+                    ))}
                   </div>
-                </Tilt>
-              ))}
-            </div>
-            <div className="text-center mt-12">
-              <Link to="/faculty" className="inline-block text-white hover:text-[#ffd278] font-semibold">View All Faculty Members <i className="fa-solid fa-arrow-right ml-1"></i></Link>
-            </div>
+                </div>
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
+                  aria-label="Previous slide"
+                >
+                  <i className="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
+                  aria-label="Next slide"
+                >
+                  <i className="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
