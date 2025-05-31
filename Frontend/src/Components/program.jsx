@@ -435,18 +435,15 @@ function Program() {
             {/* Left: Image with floating badge */}
             <div className="relative w-full max-w-md mx-auto lg:mx-0">
               <img
-                src="/assets/programs-intro.jpg"
+                src="../src/assets/aboutusintroImg.jpg"
                 alt="Students collaborating on projects"
                 className="rounded-3xl shadow-2xl border-4 border-white/20 object-cover w-full h-64 lg:h-80"
               />
-              <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-gradient-to-br from-[#d2a763] to-[#036e8d] rounded-full flex items-center justify-center shadow-2xl">
-                <i className="fa-solid fa-lightbulb text-2xl text-white"></i>
-              </div>
             </div>
             {/* Right: Heading & description */}
             <div className="flex-1 text-center lg:text-left">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                A Year of <span className="text-[#036e8d]">Humanistic Growth</span> <br /> and <span className="text-[#d2a763]">Real-World Skills</span>
+                A Year of <span className="text-[#036e8d]">Humanistic Growth</span> <br /> and Real-World Skills
               </h1>
               <p className="text-lg text-gray-700 leading-relaxed bg-white/70 rounded-2xl p-6 shadow-lg border border-white/20 inline-block">
                 IIHH’s one-year program is built on ten transformative modules—each crafted to nurture self-awareness, resilience, and a global perspective. Discover an education that empowers you to thrive in every aspect of life.
@@ -858,12 +855,12 @@ function Program() {
 
 
         {/* Faculty Section */}
-        <section id="faculty" className="py-16 bg-[#f9fcfd]">
+        <section id="faculty" className="py-12 bg-gradient-to-r from-blue-50 to-purple-50">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-3">
               Meet Our <span className="text-[#036e8d]">Faculty</span>
             </h2>
-            <p className="text-gray-600 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mb-16">
+            <p className="text-gray-600 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
               Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
             </p>
             {facultyData.length === 0 ? (
@@ -893,7 +890,7 @@ function Program() {
                                 console.error(`Failed to load image: ${faculty.img}`);
                               }}
                             />
-                            <div className="p-6">
+                            <div className="p-4">
                               <h3 className="font-bold text-xl mb-1 text-gray-800">{faculty.name}</h3>
                               <p className="text-[#036e8d] font-medium mb-2">{faculty.role}</p>
                               <p className="text-gray-600 text-sm mb-4">Specializes in {faculty.specialty}</p>
@@ -909,14 +906,14 @@ function Program() {
                 </div>
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 p-4 py-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
                   aria-label="Previous slide"
                 >
                   <i className="fa-solid fa-chevron-left"></i>
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-4 py-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
                   aria-label="Next slide"
                 >
                   <i className="fa-solid fa-chevron-right"></i>

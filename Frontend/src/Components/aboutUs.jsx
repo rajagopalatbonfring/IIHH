@@ -537,7 +537,6 @@ function AboutUs() {
           </div>
         </section>
 
-
       </main>
     </div>
   );
