@@ -970,28 +970,17 @@ function Home() {
           </div>
         </section>
 
-        {/* Newsletter Section - New addition */}
+        {/* Enhanced CTA Section */}
         <section className="w-full overflow-hidden">
         
           <div className="flex flex-col md:flex-row">
             {/* Left side - Yellow background with text and form */}
             <div className="bg-yellow-300 md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Better Future for Your Kids</h2>
-              <p className="text-gray-800 mb-6">Get our free E-book</p>
-              
-              <div className="relative max-w-md">
-                <input
-                  type="email"
-                  placeholder="Your E-mail"
-                  className="w-full px-4 py-3 rounded-full bg-white border-0 shadow-md focus:outline-none"
-                />
-                <button 
-                  className="absolute right-1 top-1 bg-[#036e8d] text-white p-2 rounded-full w-10 h-10 flex items-center justify-center"
-                  aria-label="Subscribe"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+              <p className="text-gray-800 mb-6">Embark on a humanistic journey that empowers learners of all ages. Start your transformation today.</p>
+              <div className="flex flex-col sm:flex-row align-center gap-6">
+                <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold hover:shadow-xl transition-all">
+                  Enroll Now
                 </button>
               </div>
             </div>
@@ -1003,23 +992,21 @@ function Home() {
           </div>
         </section>
 
-        {/* Enhanced CTA Section */}
-        <section id="join-cta" className="py-10 bg-[#d2a763]">
-          <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Join IIHH – Shape the Future</h2>
-            <p className="text-xl text-white mb-12 max-w-2xl mx-auto">
-              Embark on a humanistic journey that empowers learners of all ages. Start your transformation today.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold hover:shadow-xl transition-all">
-                Enroll Now
-              </button>
-              <button className="bg-transparent border-2 border-white text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-white hover:bg-opacity-10 transition-all">
-                Request Information
-              </button>
-            </div>
-          </div>
-        </section>
+        {/* <div className="relative max-w-md">
+          <input
+            type="email"
+            placeholder="Your E-mail"
+            className="w-full px-4 py-3 rounded-full bg-white border-0 shadow-md focus:outline-none"
+          />
+          <button 
+            className="absolute right-1 top-1 bg-[#036e8d] text-white p-2 rounded-full w-10 h-10 flex items-center justify-center"
+            aria-label="Subscribe"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div> */}
       </main>
     </div>
   );

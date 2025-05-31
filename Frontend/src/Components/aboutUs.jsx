@@ -515,7 +515,7 @@ function AboutUs() {
         <section
           id="cta"
           className="relative py-16 bg-[#d2a763] bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(../src/assets/cta-aboutus.jpg)" }}
+          style={{ backgroundImage: "url(../src/assets/programs-pg-cta-last.jpg)" }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/40 z-0" />
@@ -528,7 +528,7 @@ function AboutUs() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold hover:shadow-xl transition-all">
-                Join Our Programs
+                Enroll now
               </button>
               <button className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-12 rounded-full transition-all duration-300 text-base sm:text-lg">
                 Newsletter Signup
