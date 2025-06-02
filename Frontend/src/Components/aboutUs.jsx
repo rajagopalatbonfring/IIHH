@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../App.css";
 import { Link } from "react-router-dom";
 import Tilt from 'react-parallax-tilt';
@@ -16,6 +16,8 @@ const modules = [
 ]; 
 
 function AboutUs() {
+const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="h-full text-base-content font-comic">
       <main className="pt-20 min-h-screen">
@@ -26,7 +28,7 @@ function AboutUs() {
           style={{ backgroundImage: 'url(../src/assets/hero-sec-aboutus.jpg)' }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-[#223668]/40 z-0" />
+          <div className="absolute inset-0 bg-[#223668]/20 z-0" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl text-center mx-auto">
               <h1 className="text-4xl md:text-6xl font-extrabold text-[#ffd278] mb-6 leading-tight tracking-tight drop-shadow-lg">
@@ -55,7 +57,7 @@ function AboutUs() {
               preserveAspectRatio="none"
               viewBox="0 0 1200 120"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ fill: '#223668', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+              style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
             >
               <path
               d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -71,6 +73,7 @@ function AboutUs() {
           </svg>
         </section>
 
+
         {/* Unveiling Our Identity, Vision and Values Section */}
         <section id="who-we-are" className="py-12 sm:py-16 md:py-24 bg-[#d2a763] relative overflow-hidden">
           {/* Background Pattern */}
@@ -83,9 +86,7 @@ function AboutUs() {
           <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10">
             {/* Enhanced Heading Section with Image */}
             <div className="text-center mb-32 sm:mb-16 md:mb-48">
-              <h4 className="text-[#ffffff] mb-14 font-bold tracking-wider text-sm md:text-base uppercase">
-                About Us
-              </h4>
+
               <div className="flex flex-col mb-48 lg:flex-row items-center justify-center gap-8 lg:gap-16 mb-8 sm:mb-48">
                 {/* Left side - Image */}
                 <div className="flex-shrink-0 order-2 lg:order-1">
@@ -118,6 +119,9 @@ function AboutUs() {
                   <div className="absolute -top-8 -right-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
                   <div className="absolute top-1/2 -left-12 w-2 h-24 bg-gradient-to-b from-[#036e8d] to-transparent rounded-full hidden lg:block"></div>              
                   <div className="relative z-10">
+                    <h4 className="text-[#ffffff] font-bold tracking-wider text-sm md:text-base uppercase">
+                      About Us
+                    </h4>
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 md:text-left mb-8 leading-tight">
                       Unveiling Our{' '}
                       <br />

@@ -1,322 +1,327 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
+import Tilt from 'react-parallax-tilt';
+import { ChevronRight } from 'lucide-react';
+import cloudOpen from './assets/Group 33.png';
+import cloudClose from './assets/closeCloud.png';
 
-// const steps = [
-//   {
-//     icon: "fa-user-plus",
-//     title: "Enroll",
-//     desc: "Sign up and join a community dedicated to humanistic growth.",
-//   },
-//   {
-//     icon: "fa-book-open-reader",
-//     title: "Explore Modules",
-//     desc: "Dive into transformative modules blending values, skills, and real-world learning.",
-//   },
-//   {
-//     icon: "fa-people-group",
-//     title: "Engage Actively",
-//     desc: "Participate in workshops, projects, and reflection sessions guided by mentors.",
-//   },
-//   {
-//     icon: "fa-seedling",
-//     title: "Thrive & Lead",
-//     desc: "Apply your learning to real life, build your portfolio, and become a compassionate leader.",
-//   },
-// ];
+const steps = [
+  {
+    icon: "fa-user-plus",
+    title: "Enroll",
+    desc: "Join our vibrant community dedicated to humanistic growth.",
+  },
+  {
+    icon: "fa-book-open-reader",
+    title: "Explore Modules",
+    desc: "Dive into transformative courses blending values, skills, and real-world application.",
+  },
+  {
+    icon: "fa-people-group",
+    title: "Engage Actively",
+    desc: "Participate in workshops, group projects, and mentor-guided sessions.",
+  },
+  {
+    icon: "fa-seedling",
+    title: "Thrive & Lead",
+    desc: "Apply learning to real life, build your portfolio, and lead with compassion.",
+  },
+];
 
-// const activities = [
-//   {
-//     title: "Mindfulness & Reflection",
-//     desc: "Daily practices to nurture self-awareness and emotional balance.",
-//   },
-//   {
-//     title: "Community Engagement",
-//     desc: "Service projects that foster empathy and social responsibility.",
-//   },
-//   {
-//     title: "Critical Thinking Labs",
-//     desc: "Interactive sessions to develop problem-solving and ethical reasoning.",
-//   },
-// ];
+const activities = [
+  {
+    title: "Mindfulness & Reflection",
+    desc: "Daily practices for self-awareness and balance.",
+    image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/00bfa688de-7bcf72179a6e6a2ac002.png",
+  },
+  {
+    title: "Community Engagement",
+    desc: "Service projects that foster empathy and responsibility.",
+    image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/82490b4b46-3069e169415faa93f34d.png",
+  },
+  {
+    title: "Critical Thinking Labs",
+    desc: "Interactive sessions to sharpen problem-solving and ethics.",
+    image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/94da3bce72-2c360a3e59e34be9feb3.png",
+  },
+];
 
-// const benefits = [
-//   {
-//     icon: "fa-heart-pulse",
-//     title: "Holistic Growth",
-//     desc: "Balanced development of mind, body, and character.",
-//   },
-//   {
-//     icon: "fa-lightbulb",
-//     title: "Ethical Leadership",
-//     desc: "Lead with compassion, purpose, and responsibility.",
-//   },
-//   {
-//     icon: "fa-globe",
-//     title: "Global Perspective",
-//     desc: "Embrace diversity and make a positive impact.",
-//   },
-// ];
+const benefits = [
+  {
+    icon: "fa-heart-pulse",
+    title: "Holistic Growth",
+    desc: "Nurture balanced development of mind, body, and character.",
+  },
+  {
+    icon: "fa-lightbulb",
+    title: "Ethical Leadership",
+    desc: "Lead with compassion, integrity, and positive change.",
+  },
+  {
+    icon: "fa-globe",
+    title: "Global Perspective",
+    desc: "Embrace diversity and contribute to an inclusive world.",
+  },
+];
 
-// export default function HowItWorks() {
-//   return (
-//     <main className="bg-[#f9fcfd]">
-//       {/* Hero Section */}
-//       <section className="relative py-20 bg-gradient-to-br from-[#036e8d]/80 to-[#d2a763]/80 flex flex-col items-center justify-center text-center overflow-hidden">
-//         <img
-//           src='url(https://i.pinimg.com/736x/34/bc/39/34bc390c998681aac71ee47d64589c22.jpg)'
-//           alt="How IIHH Works"
-//           className="w-full max-w-3xl mx-auto rounded-3xl shadow-2xl object-cover mb-10"
-//         />
-//         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
-//           How <span className="text-[#ffd278]">IIHH</span> Works
-//         </h1>
-//         <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">
-//           Discover our unique approach to afterschool humanistic learning—where values, skills, and real-world experiences come together for lasting growth.
-//         </p>
-//         <Link
-//           to="/apply"
-//           className="inline-block bg-[#ffd278] text-[#036e8d] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-white transition"
-//         >
-//           Start Your Journey
-//         </Link>
-//       </section>
-
-//       {/* Introduction */}
-//       <section className="py-16 bg-[#f9fcfd]">
-//         <div className="container mx-auto px-6 text-center max-w-3xl">
-//           <h2 className="text-3xl md:text-4xl font-bold text-[#036e8d] mb-4">
-//             Our Approach
-//           </h2>
-//           <p className="text-gray-700 text-lg">
-//             IIHH reimagines afterschool education by blending humanistic values, experiential learning, and mentorship. Our program empowers students, educators, and professionals to grow as compassionate, confident, and purpose-driven individuals.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* 4-Step Journey */}
-//       <section className="py-16 bg-gradient-to-r from-[#d2a763]/10 to-[#036e8d]/10">
-//         <div className="container mx-auto px-6">
-//           <h2 className="text-2xl md:text-3xl font-bold text-center text-[#036e8d] mb-12">
-//             Your IIHH Journey in 4 Steps
-//           </h2>
-//           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-//             {steps.map((step, idx) => (
-//               <div
-//                 key={idx}
-//                 className="flex flex-col items-center bg-white rounded-2xl shadow-xl p-8 hover:scale-105 transition-transform"
-//               >
-//                 <div className="w-16 h-16 bg-[#036e8d]/10 flex items-center justify-center rounded-full mb-4">
-//                   <i className={`fa-solid ${step.icon} text-3xl text-[#036e8d]`}></i>
-//                 </div>
-//                 <h3 className="font-bold text-lg text-[#036e8d] mb-2">{step.title}</h3>
-//                 <p className="text-gray-700 text-sm">{step.desc}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* What to Expect */}
-//       <section className="py-16 bg-white">
-//         <div className="container mx-auto px-6 text-center max-w-3xl">
-//           <h2 className="text-2xl md:text-3xl font-bold text-[#d2a763] mb-4">
-//             What to Expect
-//           </h2>
-//           <p className="text-gray-700 text-lg mb-6">
-//             Experience a dynamic week: workshops, collaborative projects, personal reflection, and community engagement—making every day meaningful and energizing.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Signature Activities */}
-//       <section className="py-16 bg-gradient-to-r from-[#036e8d]/10 to-[#d2a763]/10">
-//         <div className="container mx-auto px-6">
-//           <h2 className="text-2xl md:text-3xl font-bold text-center text-[#036e8d] mb-12">
-//             Signature Activities
-//           </h2>
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             {activities.map((act, idx) => (
-//               <div
-//                 key={idx}
-//                 className="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col hover:scale-105 transition-transform"
-//               >
-//                 <img
-//                   src="https://storage.googleapis.com/uxpilot-auth.appspot.com/00bfa688de-7bcf72179a6e6a2ac002.png" 
-//                   alt=""
-//                   className="w-full h-48 object-cover"
-//                 />
-//                 <div className="p-6">
-//                   <h3 className="text-lg font-bold text-[#036e8d] mb-2">{act.title}</h3>
-//                   <p className="text-gray-700 text-sm">{act.desc}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Mentorship & Support */}
-//       <section className="py-16 bg-white">
-//         <div className="container mx-auto px-6 text-center max-w-2xl">
-//           <h2 className="text-2xl md:text-3xl font-bold text-[#036e8d] mb-4">
-//             Mentorship & Support
-//           </h2>
-//           <p className="text-gray-700 text-lg">
-//             Every learner is paired with a dedicated mentor and supported by a caring community, ensuring guidance and encouragement at every step.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Program Benefits */}
-//       <section className="py-16 bg-gradient-to-r from-[#d2a763]/10 to-[#036e8d]/10">
-//         <div className="container mx-auto px-6">
-//           <h2 className="text-2xl md:text-3xl font-bold text-center text-[#d2a763] mb-12">
-//             Program Benefits
-//           </h2>
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             {benefits.map((benefit, idx) => (
-//               <div
-//                 key={idx}
-//                 className="flex flex-col items-center bg-white rounded-2xl shadow-xl p-8 hover:scale-105 transition-transform"
-//               >
-//                 <div className="w-16 h-16 bg-[#d2a763]/10 flex items-center justify-center rounded-full mb-4">
-//                   <i className={`fa-solid ${benefit.icon} text-3xl text-[#d2a763]`}></i>
-//                 </div>
-//                 <h3 className="font-bold text-lg text-[#d2a763] mb-2">{benefit.title}</h3>
-//                 <p className="text-gray-700 text-sm">{benefit.desc}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Growth & Assessment */}
-//       <section className="py-16 bg-white">
-//         <div className="container mx-auto px-6 text-center max-w-2xl">
-//           <h2 className="text-2xl md:text-3xl font-bold text-[#036e8d] mb-4">
-//             Growth & Assessment
-//           </h2>
-//           <p className="text-gray-700 text-lg">
-//             Progress is celebrated through personal portfolios, presentations, and real-world projects—valuing growth over grades.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Who Is It For */}
-//       <section className="py-16 bg-gradient-to-r from-[#d2a763]/10 to-[#036e8d]/10">
-//         <div className="container mx-auto px-6 text-center max-w-2xl">
-//           <h2 className="text-2xl md:text-3xl font-bold text-[#d2a763] mb-4">
-//             Who Is It For?
-//           </h2>
-//           <p className="text-gray-700 text-lg">
-//             Ideal for students, educators, and professionals seeking purpose-driven, humanistic learning beyond the classroom.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* FAQ / Still Curious? */}
-//       <section className="py-16 bg-white">
-//         <div className="container mx-auto px-6 text-center max-w-2xl">
-//           <h2 className="text-2xl md:text-3xl font-bold text-[#036e8d] mb-4">
-//             Still Curious?
-//           </h2>
-//           <p className="text-gray-700 text-lg mb-6">
-//             Visit our <Link to="/faq" className="text-[#d2a763] underline">FAQ</Link> or <Link to="/contact" className="text-[#d2a763] underline">contact us</Link> for more information.
-//           </p>
-//           <Link
-//             to="/apply"
-//             className="inline-block bg-[#036e8d] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-[#d2a763] hover:text-[#036e8d] transition"
-//           >
-//             Apply Now
-//           </Link>
-//         </div>
-//       </section>
-//     </main>
-//   );
-// }
-
-
-export default function ProgramSection() {
+export default function HowItWorks() {
   return (
-    <section className="py-20 pt-40 bg-[#036e8d] relative overflow-hidden">
-      {/* Simple Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-24 h-24 border border-white rounded-full"></div>
-        <div className="absolute bottom-32 right-16 w-32 h-32 border border-white rounded-full"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white rounded-full"></div>
-      </div>
+    <main className="min-h-screen pt-20 bg-[#f9fcfd] font-comic text-base-content">
+      {/* Hero Section */}
+      <section
+        id="hero"
+        className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center justify-center"
+        style={{ backgroundImage: 'url(./src/assets/Howitworks-heroimg.jpg)' }}
+      >
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="container mx-auto px-6 relative z-10 flex-col align-center justify-center ">
+          <h1 className="text-4xl text-center md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
+            How <span className="text-[#ffd278]">IIHH</span> Works
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+            Discover our unique, practical approach to humanistic learning—empowering the next generation through real-world experiences.
+          </p>
+          <p className='text-center'>
+            <Link
+              to="/apply"
+              className="inline-flex items-center justify-center bg-[#ffd278] text-[#036e8d] font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-[#d2a763] transition-all duration-300 group"
+            >
+              Start Your Journey
+              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </p>
+        </div>
+      </section>
 
-      <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10">
+      {/* Introduction */}
+      <section id="introduction" className="py-20 bg-[#f9fcfd] relative">
+        <img src={cloudOpen} className="w-full absolute -top-12 p-0 m-0" alt="Cloud decoration" />
+        <div className="container mx-auto px-6 text-center max-w-3xl relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#036e8d] mb-6">
+            Our Approach
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            IIHH redefines afterschool education by blending humanistic values, hands-on learning, and mentorship. We empower students to become compassionate, confident, and creative leaders.
+          </p>
+        </div>
+      </section>
 
-        {/* Main Content Section */}
-        <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
-          {/* Left: Content */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="relative">
-              <p className="text-white/90 text-lg md:text-xl leading-relaxed bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 mb-8">
-                <span className="text-[#d2a763] font-bold text-2xl">"</span>
-                IIHH's comprehensive one-year program is built on ten transformative modules—each crafted to nurture self-awareness, resilience, and a global perspective. Discover an education that empowers you to thrive in every aspect of life.
-                <span className="text-[#d2a763] font-bold text-2xl">"</span>
-              </p>
-              
-              {/* Accent Elements */}
-              <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#d2a763] rounded-full"></div>
-              <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-white rounded-full"></div>
-            </div>
-
-            {/* Feature Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-6 mb-8">
-              {['Self-Awareness', 'Global Mindset', 'Leadership Skills', 'Creative Thinking'].map((item, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                    <div className="w-3 h-3 rounded-full bg-[#d2a763]"></div>
+      {/* 4-Step Journey */}
+      <section id="steps" className="py-20 bg-gradient-to-r from-[#d2a763]/10 to-[#036e8d]/10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-12 left-12 w-32 h-32 border-2 border-[#036e8d] rounded-full"></div>
+          <div className="absolute bottom-16 right-24 w-24 h-24 border-2 border-[#d2a763] rounded-full"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#036e8d] mb-12">
+            Your IIHH Journey in 4 Steps
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((step, idx) => (
+              <Tilt key={idx} tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={400} scale={1.05}>
+                <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 animate-fadeInUp" style={{ animationDelay: `${idx * 100}ms` }}>
+                  <div className="w-16 h-16 bg-[#036e8d]/10 flex items-center justify-center rounded-full mb-4">
+                    <i className={`fa-solid ${step.icon} text-3xl text-[#036e8d]`}></i>
                   </div>
-                  <span className="text-white font-medium">{item}</span>
+                  <h3 className="font-bold text-lg text-[#036e8d] mb-2">{step.title}</h3>
+                  <p className="text-gray-700 text-sm text-center">{step.desc}</p>
                 </div>
-              ))}
-            </div>
-
-            {/* CTA Button */}
-            <button className="bg-[#d2a763] text-[#036e8d] font-bold px-8 py-4 rounded-full hover:bg-white hover:text-[#036e8d] transition-all duration-300 shadow-lg">
-              Explore Our Modules
-            </button>
-          </div>
-
-          {/* Right: Image Section */}
-          <div className="flex-shrink-0 relative">
-            <div className="relative group">
-              {/* Decorative Background Elements */}
-              <div className="absolute -inset-6 bg-white/5 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute -top-6 -left-6 w-24 h-24 border-2 border-white/30 rounded-full"></div>
-              <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-white/10 rounded-full backdrop-blur-sm"></div>
-              
-              {/* Main Image */}
-              <img 
-                src="../src/assets/aboutusintroImg.jpg" 
-                alt="Students collaborating and learning together"
-                className="relative w-80 h-60 lg:w-96 lg:h-72 object-cover rounded-3xl shadow-2xl border-4 border-white/20 group-hover:scale-105 transition-all duration-700"
-              />
-              
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#d2a763] rounded-full flex items-center justify-center shadow-2xl">
-                <div className="text-white font-bold text-lg">2025</div>
-              </div>
-              
-              {/* Stats Card */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#036e8d]">10</div>
-                  <div className="text-sm text-gray-600">Modules</div>
-                </div>
-              </div>
-              
-              {/* Accent Lines */}
-              <div className="absolute top-4 left-4 w-8 h-1 bg-white/60 rounded-full"></div>
-              <div className="absolute top-7 left-4 w-12 h-1 bg-white/40 rounded-full"></div>
-            </div>
+              </Tilt>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* What to Expect */}
+      <section id="expect" className="py-20 bg-white relative">
+        <div className="container mx-auto px-6 text-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#d2a763] mb-6">
+            What to Expect
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            Experience a week of interactive workshops, collaborative projects, reflection, and community engagement—making every day meaningful.
+          </p>
+        </div>
+      </section>
+
+      {/* Signature Modules */}
+      <section id="modules" className="py-16 bg-gradient-to-r from-[#036e8d]/10 to-[#d2a763]/10">
+        <div className="container mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-[#d2a763] mb-6">
+            Our Signature Modules: Uniquely IIHH
+          </h2>
+          <p className="text-center text-gray-700 text-lg max-w-2xl mx-auto mb-10">
+            Foundations of Humanism, Ethics for Tomorrow, and Visionary Citizenship are exclusive to IIHH—designed to ignite empathy, ethical reasoning, and a global mindset.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-[#036e8d]/10 flex items-center justify-center rounded-full mb-4">
+                <i className="fa-solid fa-brain text-3xl text-[#036e8d]"></i>
+              </div>
+              <h3 className="font-bold text-lg text-[#036e8d] mb-2">Foundations of Humanism</h3>
+              <p className="text-gray-700 text-sm">
+                Build empathy, autonomy, and purpose—skills rarely taught elsewhere.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-[#d2a763]/10 flex items-center justify-center rounded-full mb-4">
+                <i className="fa-solid fa-seedling text-3xl text-[#d2a763]"></i>
+              </div>
+              <h3 className="font-bold text-lg text-[#d2a763] mb-2">Ethics for Tomorrow</h3>
+              <p className="text-gray-700 text-sm">
+                Tackle real-world dilemmas and future challenges with ethical decision-making.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-[#036e8d]/10 flex items-center justify-center rounded-full mb-4">
+                <i className="fa-solid fa-globe text-3xl text-[#036e8d]"></i>
+              </div>
+              <h3 className="font-bold text-lg text-[#036e8d] mb-2">Visionary Citizenship</h3>
+              <p className="text-gray-700 text-sm">
+                Cultivate a global mindset and social innovation for a brighter future.
+              </p>
+            </div>
+          </div>
+          <p className="text-center text-[#036e8d] font-medium mt-10">
+            These modules are exclusive to IIHH and cannot be learned anywhere else.
+          </p>
+        </div>
+      </section>
+
+      {/* Practical Learning */}
+      <section id="practical" className="py-16 bg-gradient-to-r from-[#d2a763]/10 to-[#036e8d]/10">
+        <div className="container mx-auto px-6 text-center max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#d2a763] mb-4">
+            Learning by Doing, Not Just Reading
+          </h2>
+          <p className="text-gray-700 text-lg mb-6">
+            At IIHH, learning is hands-on and practical. Students engage in real-world projects, group challenges, and creative experiments—learning by doing, not just reading.
+          </p>
+        </div>
+      </section>
+
+      {/* Signature Activities */}
+      <section id="activities" className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-[#036e8d] mb-6">
+            Signature Activities
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {activities.map((activity, idx) => (
+              <Tilt key={idx} tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={400} scale={1.05}>
+                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 animate-fadeInUp" style={{ animationDelay: `${idx * 100}ms` }}>
+                  <img src={activity.image} alt={activity.title} className="w-full h-40 object-cover rounded-lg mb-4" />
+                  <h3 className="font-bold text-lg text-[#036e8d] mb-2">{activity.title}</h3>
+                  <p className="text-gray-700 text-sm text-center">{activity.desc}</p>
+                </div>
+              </Tilt>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mentorship & Support */}
+      <section id="mentorship" className="py-20 bg-[#f9fcfd] relative">
+        <img src={cloudClose} className="w-full absolute -top-12 p-0 m-0" alt="Cloud decoration" />
+        <div className="container mx-auto px-6 text-center max-w-2xl relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#036e8d] mb-6">
+            Mentorship & Support
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            Every learner is paired with a mentor and supported by a caring community, ensuring guidance and encouragement.
+          </p>
+        </div>
+      </section>
+
+      {/* Generational Impact */}
+      <section id="impact" className="py-16 bg-white">
+        <div className="container mx-auto px-6 text-center max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#036e8d] mb-4">
+            Shaping the Future Generation
+          </h2>
+          <p className="text-gray-700 text-lg mb-6">
+            Our approach transforms not just academics, but the thought process of young learners—preparing them to shape the future as empathetic, ethical leaders.
+          </p>
+          <p className="text-[#d2a763] font-semibold">
+            The impact of IIHH creates a ripple effect, nurturing minds that will shape communities and the world.
+          </p>
+        </div>
+      </section>
+
+      {/* Program Benefits */}
+      <section id="benefits" className="py-20 bg-gradient-to-r from-[#d2a763]/10 to-[#036e8d]/10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-12 left-12 w-32 h-32 border-2 border-[#036e8d] rounded-full"></div>
+          <div className="absolute bottom-16 right-24 w-24 h-24 border-2 border-[#d2a763] rounded-full"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#d2a763] mb-12">
+            Program Benefits
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, idx) => (
+              <Tilt key={idx} tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={400} scale={1.05}>
+                <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 animate-fadeInUp" style={{ animationDelay: `${idx * 100}ms` }}>
+                  <div className="w-16 h-16 bg-[#d2a763]/10 flex items-center justify-center rounded-full mb-4">
+                    <i className={`fa-solid ${benefit.icon} text-3xl text-[#d2a763]`}></i>
+                  </div>
+                  <h3 className="font-bold text-lg text-[#d2a763] mb-2">{benefit.title}</h3>
+                  <p className="text-gray-700 text-sm text-center">{benefit.desc}</p>
+                </div>
+              </Tilt>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who Is It For */}
+      <section id="audience" className="py-20 bg-gradient-to-r from-[#d2a763]/10 to-[#036e8d]/10 relative">
+        <div className="container mx-auto px-6 text-center max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#d2a763] mb-6">
+            Who Is It For?
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            IIHH’s program is currently for school students—the future of our country. Our priority is to nurture young minds with values and skills to lead tomorrow’s world.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ / Still Curious? */}
+      <section id="faq" className="py-20 bg-[#f9fcfd] relative">
+        <div className="container mx-auto px-6 text-center max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#036e8d] mb-6">
+            Still Curious?
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            Have questions? Visit our <Link to="/faq" className="text-[#d2a763] hover:underline">FAQ</Link> or <Link to="/contact" className="text-[#d2a763] hover:underline">contact us</Link> for more information.
+          </p>
+          <Link
+            to="/apply"
+            className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-[#d2a763] hover:text-[#036e8d] transition-all duration-300 group"
+          >
+            Apply Now
+            <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out forwards;
+        }
+      `}</style>
+    </main>
   );
 }

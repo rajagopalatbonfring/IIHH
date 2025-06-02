@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import Tilt from 'react-parallax-tilt';
 import { Link } from "react-router-dom";
 import "../App.css";
-import collabWorkImg from "../assets/Group work in the classroom.jpeg";
+import collabWorkImg from "../assets/Groupworkintheclassroom.jpeg";
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const modules = [
   {
@@ -285,6 +286,21 @@ const faqs = [
 function Program() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [floatingElements, setFloatingElements] = useState([]);
+
+  // Generate random floating elements on mount
+  useEffect(() => {
+    const elements = Array.from({ length: 8 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      delay: Math.random() * 2,
+      duration: 3 + Math.random() * 2,
+      size: 4 + Math.random() * 8,
+    }));
+    setFloatingElements(elements);
+  }, []);
 
   // Handle mouse movement
   const handleMouseMove = (e) => {
@@ -307,7 +323,10 @@ function Program() {
     setAnimationTrigger(true);
   }, []);
 
-    // Duplicate faculty data to ensure enough cards for three-card view
+
+
+  //faculty sections datas and functionalities starts here
+  // Duplicate faculty data to ensure enough cards for three-card view
   const baseFacultyData = [
       { name: "Dr. Elena Rodriguez", role: "Program Director", specialty: "Humanistic Philosophy", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" },
       { name: "Prof. Michael Chen", role: "Lead Instructor", specialty: "Emotional Intelligence", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
@@ -349,14 +368,7 @@ function Program() {
   };
 
   useEffect(() => {
-    // Handle infinite loop reset
-    if (currentIndex <= 0) {
-      // Reached start clones, jump to end of original
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(originalEndIndex - cardsPerView + 1);
-      }, 300); // Match transition duration
-    } else if (currentIndex >= maxIndex) {
+    if (currentIndex >= maxIndex) {
       // Reached end clones, jump to start of original
       setTimeout(() => {
         setIsTransitioning(false);
@@ -365,7 +377,34 @@ function Program() {
     }
   }, [currentIndex, maxIndex, originalEndIndex, originalStartIndex, cardsPerView]);
 
-  console.log('Rendering Faculty component, facultyData:', facultyData, 'currentIndex:', currentIndex);
+
+  // In action variables, functions and other starts here!!
+   
+  const learningItems = [
+    "Collaborative Learning",
+    "Outdoor Team Building",
+    "Project Presentations",
+    "Creative Problem Solving",
+    "Leadership Games",
+    "Fun Experiments",
+    "Mind Mapping",
+    "Design Thinking",
+  ];
+
+  const groupSize = 3; // 3 items per slide
+  const slideGroups = Array.from({ length: Math.ceil(learningItems.length / groupSize) }, (_, i) =>
+    learningItems.slice(i * groupSize, i * groupSize + groupSize)
+  );
+
+  const [currIndex, setCurrIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrIndex((prev) => (prev + 1) % slideGroups.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <div className="h-full text-base-content font-comic">
@@ -375,9 +414,9 @@ function Program() {
         <section
           id="hero"
           className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
-          style={{ backgroundImage: 'url("../src/assets/programs-pageHeroimg.jpg")' }}
+          style={{ backgroundImage: 'url("../src/assets/programspage_Intro-img.jpg")' }}
         >
-          <div className="absolute inset-0 bg-[#223668]/40 z-0"></div>
+          <div className="absolute inset-0 bg-[#223668]/20 z-0"></div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl text-center mx-auto">
               <h1 className="text-4xl md:text-6xl font-extrabold text-[#ffd278] mb-6 leading-tight tracking-tight drop-shadow-lg">
@@ -424,32 +463,385 @@ function Program() {
 
 
         {/* Our Programs Section */}
-        <section className="py-20 pb-40 bg-[#d2a763] relative overflow-hidden">
-          {/* Decorative Background */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#036e8d] rounded-full"></div>
-            <div className="absolute top-40 right-20 w-24 h-24 border-2 border-[#d2a763] rounded-full"></div>
-            <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-[#036e8d] rounded-full"></div>
-          </div>
-          <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10 flex flex-col lg:flex-row items-center gap-12">
-            {/* Left: Image with floating badge */}
-            <div className="relative w-full max-w-md mx-auto lg:mx-0">
-              <img
-                src="../src/assets/aboutusintroImg.jpg"
-                alt="Students collaborating on projects"
-                className="rounded-3xl shadow-2xl border-4 border-white/20 object-cover w-full h-64 lg:h-80"
+        <section className="pb-20 bg-[#223668] relative overflow-hidden">
+          
+          {/* Animated Floating Elements */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none">
+
+            {/* Dynamic floating particles */}
+            {floatingElements.map((element) => (
+              <div
+                key={element.id}
+                className="absolute bg-white/30 rounded-full animate-float"
+                style={{
+                  left: `${element.x}%`,
+                  top: `${element.y}%`,
+                  width: `${element.size}px`,
+                  height: `${element.size}px`,
+                  animationDelay: `${element.delay}s`,
+                  animationDuration: `${element.duration}s`,
+                }}
               />
-            </div>
-            {/* Right: Heading & description */}
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                A Year of <span className="text-[#036e8d]">Humanistic Growth</span> <br /> and Real-World Skills
-              </h1>
-              <p className="text-lg text-gray-700 leading-relaxed bg-white/70 rounded-2xl p-6 shadow-lg border border-white/20 inline-block">
-                IIHH’s one-year program is built on ten transformative modules—each crafted to nurture self-awareness, resilience, and a global perspective. Discover an education that empowers you to thrive in every aspect of life.
-              </p>
+            ))}
+          </div>
+
+          <div className="container mx-auto px-4 pb-10 sm:px-8 md:px-14 relative z-10">
+            
+            {/* Split Layout - Adjusted grid to 5/12 and 7/12 */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 min-h-[500px]">
+              {/* Left Side - Interactive Image - 5/12 width */}
+              <div className="lg:col-span-5 relative flex items-center justify-center p-6">
+                <div 
+                  className="relative cursor-pointer animate-slideInLeft"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  {/* Animated Background Elements */}
+                  <div className={`absolute -inset-2 transition-all duration-700 ease-out animate-rotate-slow ${
+                    isHovered ? 'scale-10 rotate-12' : 'scale-100 rotate-6'
+                  }`}>
+                    <div className="w-full h-full bg-[#d2a763] rounded-3xl opacity-80 animate-glow"></div>
+                  </div>
+                  
+                  {/* Secondary Background Layer */}
+                  <div className={`absolute -inset-2 transition-all duration-500 delay-100 ease-out animate-rotate-reverse ${
+                    isHovered ? 'scale-105 -rotate-3' : 'scale-100 rotate-0'
+                  }`}>
+                    <div className="w-full h-full bg-white/20 rounded-3xl backdrop-blur-sm animate-shimmer"></div>
+                  </div>
+
+                  {/* Floating Orbs with continuous movement */}
+                  <div className={`absolute -top-4 -right-4 w-6 h-6 bg-[#d2a763] rounded-full transition-all duration-1000 animate-orbit ${
+                    isHovered ? 'animate-bounce scale-150' : 'scale-100'
+                  }`}></div>
+                  <div className={`absolute -bottom-2 -left-2 w-4 h-4 bg-white rounded-full transition-all duration-700 delay-200 animate-float-reverse ${
+                    isHovered ? 'animate-pulse scale-125' : 'scale-100'
+                  }`}></div>
+                  <div className={`absolute top-1/2 -right-6 w-3 h-3 bg-[#d2a763] rounded-full transition-all duration-800 delay-300 animate-wiggle ${
+                    isHovered ? 'animate-ping scale-200' : 'scale-100'
+                  }`}></div>
+
+                  {/* Main Image with Hover Effects */}
+                  <div className={`relative transition-all duration-500 ease-out animate-gentle-sway ${
+                    isHovered ? 'scale-105 rotate-2' : 'scale-100 rotate-0'
+                  }`}>
+                    <img
+                      src="../src/assets/programs-pageHeroimg.jpg"
+                      alt="Students collaborating on projects"
+                      className={`rounded-3xl shadow-2xl object-cover w-full max-w-sm h-72 border-4 transition-all duration-500 animate-subtle-zoom ${
+                        isHovered ? 'border-[#d2a763] shadow-3xl brightness-110' : 'border-white shadow-2xl brightness-100'
+                      }`}
+                    />
+                    
+                    {/* Overlay on Hover */}
+                    <div className={`absolute inset-0 rounded-3xl bg-gradient-to-t from-[#223668]/60 via-transparent to-transparent transition-opacity duration-500 ${
+                      isHovered ? 'opacity-100' : 'opacity-0'
+                    }`}>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <div className={`transform transition-all duration-700 ${
+                          isHovered ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                        }`}>
+                          <h3 className="text-white font-bold text-lg mb-2 animate-typing">Transformative Learning</h3>
+                          <p className="text-gray-200 text-sm animate-slideInUp">Experience hands-on education that shapes your future</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Animated Ring Effect */}
+                  <div className={`absolute inset-0 rounded-3xl border-2 border-[#d2a763] transition-all duration-1000 animate-pulse-ring ${
+                    isHovered ? 'scale-110 opacity-60' : 'scale-100 opacity-30'
+                  }`}></div>
+                  
+                  {/* Ripple Effect */}
+                  <div className={`absolute inset-0 rounded-3xl border border-white/30 transition-all duration-1200 animate-ripple ${
+                    isHovered ? 'scale-125 opacity-0' : 'scale-100 opacity-100'
+                  }`}></div>
+
+                  {/* Floating Text Badge */}
+                  <div className={`absolute -top-8 left-1/2 transform -translate-x-1/2 transition-all duration-600 animate-bob ${
+                    isHovered ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-2 opacity-80 scale-95'
+                  }`}>
+                    <div className="bg-[#036e8d] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-glow-soft">
+                      Interactive Experience
+                    </div>
+                  </div>
+
+                  {/* Side Decorative Elements with continuous animation */}
+                  <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full transition-all duration-800 animate-slide-lines ${
+                    isHovered ? 'opacity-100 translate-x-0' : 'opacity-60 -translate-x-4'
+                  }`}>
+                    <div className="w-12 h-1 bg-[#036e8d] rounded animate-expand"></div>
+                    <div className="w-8 h-1 bg-white rounded mt-2 animate-expand" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-6 h-1 bg-[#036e8d] rounded mt-2 animate-expand" style={{animationDelay: '0.4s'}}></div>
+                  </div>
+
+                  <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-full transition-all duration-800 delay-100 animate-slide-lines-reverse ${
+                    isHovered ? 'opacity-100 translate-x-0' : 'opacity-60 translate-x-4'
+                  }`}>
+                    <div className="w-12 h-1 bg-white rounded animate-expand"></div>
+                    <div className="w-8 h-1 bg-[#036e8d] rounded mt-2 animate-expand" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-6 h-1 bg-white rounded mt-2 animate-expand" style={{animationDelay: '0.4s'}}></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Side - Content with animations - 7/12 width */}
+              <div className="lg:col-span-7 flex items-center justify-start p-8 pl-8 animate-slideInRight">
+                <div className="max-w-2xl w-full">
+                  <h4 className="text-[#ffffff] text-left mb-4 font-bold tracking-wider text-sm md:text-base uppercase animate-fadeInDown">
+                    OUR PROGRAM
+                  </h4>
+                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
+                    A Year of <span className="text-[#ffd278]">Humanistic Transformation</span> and <br /><span className="text-[#ffd278]">Empowered Learning</span>
+                  </h1>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20 animate-fadeInUp animate-subtle-float" style={{animationDelay: '0.3s'}}>
+                    <p className="sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 text-gray-200 leading-relaxed">
+                      At IIHH, education transcends traditional boundaries. Our one-year program integrates ten thoughtfully designed modules that foster empathy, resilience, and critical thinking—preparing learners to lead with compassion and creativity in a rapidly evolving world.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+          <style jsx>{`
+            @keyframes float {
+              0%, 100% { transform: translateY(0px); }
+              50% { transform: translateY(-15px); }
+            }
+            
+            @keyframes float-reverse {
+              0%, 100% { transform: translateY(0px); }
+              50% { transform: translateY(10px); }
+            }
+            
+            @keyframes gentle-sway {
+              0%, 100% { transform: translateX(0px) rotate(0deg); }
+              25% { transform: translateX(2px) rotate(0.5deg); }
+              75% { transform: translateX(-2px) rotate(-0.5deg); }
+            }
+            
+            @keyframes rotate-slow {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            
+            @keyframes rotate-reverse {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(-360deg); }
+            }
+            
+            @keyframes glow {
+              0%, 100% { box-shadow: 0 0 20px rgba(210, 167, 99, 0.3); }
+              50% { box-shadow: 0 0 40px rgba(210, 167, 99, 0.6); }
+            }
+            
+            @keyframes glow-soft {
+              0%, 100% { box-shadow: 0 0 10px rgba(3, 110, 141, 0.4); }
+              50% { box-shadow: 0 0 20px rgba(3, 110, 141, 0.7); }
+            }
+            
+            @keyframes shimmer {
+              0% { background-position: -200% 0; }
+              100% { background-position: 200% 0; }
+            }
+            
+            @keyframes orbit {
+              0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+              100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+            }
+            
+            @keyframes wiggle {
+              0%, 100% { transform: rotate(-3deg); }
+              50% { transform: rotate(3deg); }
+            }
+            
+            @keyframes bob {
+              0%, 100% { transform: translateY(0px); }
+              50% { transform: translateY(-8px); }
+            }
+            
+            @keyframes pulse-ring {
+              0% { transform: scale(1); opacity: 0.8; }
+              50% { transform: scale(1.05); opacity: 0.4; }
+              100% { transform: scale(1); opacity: 0.8; }
+            }
+            
+            @keyframes ripple {
+              0% { transform: scale(1); opacity: 1; }
+              100% { transform: scale(1.3); opacity: 0; }
+            }
+            
+            @keyframes expand {
+              0% { width: 0; }
+              100% { width: var(--target-width, 100%); }
+            }
+            
+            @keyframes text-glow {
+              0%, 100% { text-shadow: 0 0 10px rgba(210, 167, 99, 0.5); }
+              50% { text-shadow: 0 0 20px rgba(210, 167, 99, 0.8); }
+            }
+            
+            @keyframes subtle-zoom {
+              0%, 100% { transform: scale(1); }
+              50% { transform: scale(1.01); }
+            }
+            
+            @keyframes subtle-float {
+              0%, 100% { transform: translateY(0px); }
+              50% { transform: translateY(-3px); }
+            }
+            
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translateY(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes fadeInDown {
+              from {
+                opacity: 0;
+                transform: translateY(-30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes slideInLeft {
+              from {
+                opacity: 0;
+                transform: translateX(-50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes slideInRight {
+              from {
+                opacity: 0;
+                transform: translateX(50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes slideInUp {
+              from {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            .animate-float {
+              animation: float 4s ease-in-out infinite;
+            }
+            
+            .animate-float-reverse {
+              animation: float-reverse 3s ease-in-out infinite;
+            }
+            
+            .animate-gentle-sway {
+              animation: gentle-sway 6s ease-in-out infinite;
+            }
+            
+            .animate-rotate-slow {
+              animation: rotate-slow 20s linear infinite;
+            }
+            
+            .animate-rotate-reverse {
+              animation: rotate-reverse 25s linear infinite;
+            }
+            
+            .animate-glow {
+              animation: glow 3s ease-in-out infinite;
+            }
+            
+            .animate-glow-soft {
+              animation: glow-soft 2s ease-in-out infinite;
+            }
+            
+            .animate-shimmer {
+              background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+              background-size: 200% 100%;
+              animation: shimmer 3s ease-in-out infinite;
+            }
+            
+            .animate-orbit {
+              animation: orbit 8s linear infinite;
+            }
+            
+            .animate-wiggle {
+              animation: wiggle 2s ease-in-out infinite;
+            }
+            
+            .animate-bob {
+              animation: bob 2s ease-in-out infinite;
+            }
+            
+            .animate-pulse-ring {
+              animation: pulse-ring 2s ease-in-out infinite;
+            }
+            
+            .animate-ripple {
+              animation: ripple 3s ease-out infinite;
+            }
+            
+            .animate-expand {
+              animation: expand 1s ease-out forwards;
+            }
+            
+            .animate-text-glow {
+              animation: text-glow 3s ease-in-out infinite;
+            }
+            
+            .animate-subtle-zoom {
+              animation: subtle-zoom 8s ease-in-out infinite;
+            }
+            
+            .animate-subtle-float {
+              animation: subtle-float 4s ease-in-out infinite;
+            }
+            
+            .animate-fadeInUp {
+              animation: fadeInUp 1s ease-out forwards;
+            }
+            
+            .animate-fadeInDown {
+              animation: fadeInDown 1s ease-out forwards;
+            }
+            
+            .animate-slideInLeft {
+              animation: slideInLeft 1s ease-out forwards;
+            }
+            
+            .animate-slideInRight {
+              animation: slideInRight 1s ease-out forwards;
+            }
+            
+            .animate-slideInUp {
+              animation: slideInUp 0.6s ease-out forwards;
+            }
+            
+            .shadow-3xl {
+              box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.5);
+            }
+          `}</style>
         </section>
 
 
@@ -468,7 +860,7 @@ function Program() {
             <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto leading-relaxed mb-12">
               Explore our ten transformative modules, each designed to nurture essential skills, values, and holistic growth
             </p>
-            <div className={`p-10 border rounded-2xl shadow-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ${showAll ? 'auto-rows-fr' : ''}`}>
+            <div className={`grid grid-cols-1 px-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ${showAll ? 'auto-rows-fr' : ''}`}>
               {modules.slice(0, showAll ? 10 : 8).map((module, index) => (
                 <div
                   key={module.id}
@@ -500,12 +892,23 @@ function Program() {
               ))}
             </div>
             <div className="flex justify-center mt-8 relative z-10">
-              <button
-                onClick={() => setShowAll(prev => !prev)}
-                className="bg-[#036e8d] hover:bg-[#025a73] text-white px-6 py-2 rounded-full font-semibold transition-colors duration-200"
+            <button
+              onClick={() => setShowAll(prev => !prev)}
+              className="flex items-center gap-2 text-[#036e8d] hover:underline font-semibold transition-all duration-200"
+            >
+              {showAll ? 'Show Less' : 'View All Modules'}
+              <svg
+                className={`w-4 h-4 transform transition-transform duration-300 ${
+                  showAll ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                {showAll ? 'Show Less' : 'View All Modules'}
-              </button>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
             </div>
             {/* Modal */}
             {selectedModule && (
@@ -772,7 +1175,7 @@ function Program() {
             {/* Floating Card */}
             <div className="bg-[#036e8d]/80 rounded-3xl py-10 px-6 sm:px-12 shadow-2xl max-w-4xl w-full relative mb-8">
               <h2 className="text-black text-4xl md:text-5xl font-bold text-center mb-3">
-                Program <span className="text-[#d2a763]">Benefits</span>
+                Program <span className="text-[#ffd278]">Benefits</span>
               </h2>
               <p className="text-lg text-center text-white max-w-2xl mx-auto leading-relaxed mb-16">
                 IIHH’s program empowers you with more than knowledge—gain the resilience, well-being, and leadership skills to thrive in every aspect of life.
@@ -825,10 +1228,66 @@ function Program() {
             </div>
           </div>
         </section>
+        
+
+        <section id="learning-showcase" className="relative py-16 pt-40 bg-[#223668] overflow-hidden">
+          <img src={cloudClose} className="w-full absolute -top-12 left-0" alt="Cloud Decoration" />
+
+          <div className="container mx-auto px-6">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
+                <span className="text-white">Learning in </span>
+                <span className="text-[#ffd278]">Action</span>
+              </h2>
+              <p className="text-lg md:text-xl text-white/90">
+                See IIHH students collaborate, create, and lead through hands-on activities, building confidence and teamwork.
+              </p>
+            </div>
+
+            {/* Carousel */}
+            <div className="relative w-full overflow-hidden">
+              <div
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ width: `${slideGroups.length * 100}%`, transform: `translateX(-${currIndex * (100 / slideGroups.length)}%)` }}
+              >
+                {slideGroups.map((group, idx) => (
+                  <div key={idx} className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 w-full">
+                    {group.map((title, subIdx) => (
+                      <div key={subIdx} className="rounded-xl overflow-hidden shadow-lg group relative">
+                        <img
+                          className="w-full h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                          src={collabWorkImg}
+                          alt={title}
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#223668]/70 to-transparent p-4">
+                          <h3 className="text-white text-lg font-bold">{title}</h3>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center mt-6 space-x-3">
+              {slideGroups.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrIndex(idx)}
+                  className={`w-3 h-3 rounded-full ${
+                    idx === currIndex ? "bg-[#ffd278]" : "bg-white/40"
+                  } transition-all duration-300`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
 
 
         {/* Learning in Action Section */}
-        <section id="learning-showcase" className="relative py-16 pt-40 bg-[#223668]/90">
+        {/* <section id="learning-showcase" className="relative py-16 pt-40 bg-[#223668]">
           <img src={cloudClose} className="w-100 absolute -top-12 p-0 m-0" />
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center mb-12">
@@ -851,7 +1310,7 @@ function Program() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
 
         {/* Faculty Section */}
@@ -1060,7 +1519,7 @@ function Program() {
             </div>
 
             {/* Side-by-Side Cards */}
-            <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-6">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10">
               {/* Key Details Card (Enhanced) */}
               <div className="w-full md:w-3/5 bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
@@ -1080,11 +1539,11 @@ function Program() {
                           <i className={`fa-solid ${detail.icon} text-lg text-[#036e8d]`}></i>
                         </div>
                         <div className="flex-1">
-                          <div className="flex items-center gap-3">
-                            <span className={`inline-block px-2 py-1 rounded-full text-sm font-semibold border ${detail.color}`}>
+                          <div className="flex-col items-center gap-3">
+                            <p className="text-base font-bold text-gray-700">{detail.value}</p>
+                            <span className={`inline-block px-2 rounded-full text-sm font-semibold border ${detail.color}`}>
                               {detail.title}
                             </span>
-                            <p className="text-base font-bold text-gray-700">{detail.value}</p>
                           </div>
                         </div>
                       </div>
@@ -1230,8 +1689,3 @@ function Program() {
 }
 
 export default Program;
-
-
-
-
-
