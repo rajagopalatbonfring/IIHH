@@ -57,7 +57,7 @@ const [isHovered, setIsHovered] = useState(false);
               preserveAspectRatio="none"
               viewBox="0 0 1200 120"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+              style={{ fill: '#223668', width: '148%', height: 87, transform: 'rotate(180deg)' }}
             >
               <path
               d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -75,9 +75,9 @@ const [isHovered, setIsHovered] = useState(false);
 
 
         {/* Unveiling Our Identity, Vision and Values Section */}
-        <section id="who-we-are" className="py-12 sm:py-16 md:py-24 bg-[#d2a763] relative overflow-hidden">
+        <section id="who-we-are" className="py-12 sm:py-16 md:py-24 bg-[#223668] relative overflow-hidden">
           {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-30">
             <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
             <div className="absolute top-40 right-20 w-24 h-24 border-2 border-white rounded-full"></div>
             <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-white rounded-full"></div>
@@ -93,47 +93,46 @@ const [isHovered, setIsHovered] = useState(false);
                   <div className="relative group">
                     {/* Decorative Elements */}
                     <div className="absolute -inset-4 bg-gradient-to-r from-[#036e8d]/20 to-[#d2a763]/20 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute -top-6 -left-6 w-24 h-24 border-4 border-white/30 rounded-full animate-pulse"></div>
-                    <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-white/20 rounded-full backdrop-blur-sm"></div>
+                    <div className="absolute -top-6 -left-6 w-24 h-24 border-4 border-white/50 rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-white/50 rounded-full backdrop-blur-sm"></div>
                     
                     <img 
                       src="../src/assets/aboutusintroImg.jpg" 
                       alt="Students collaborating and learning together"
-                      className="relative w-80 h-60 lg:w-96 lg:h-72 object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-700 hover:shadow-3xl border-4 border-white/20"
+                      className="relative w-80 h-60 lg:w-96 lg:h-72 object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-700 hover:shadow-3xl border-4 border-white/80"
                     />
                     
                     {/* Floating Badge */}
-                    <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-[#036e8d] to-[#024a5c] rounded-full flex items-center justify-center shadow-2xl transform hover:rotate-12 transition-transform duration-300">
+                    <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-[#d2a763] to-[#d2a763] rounded-full flex items-center justify-center shadow-2xl transform hover:rotate-12 transition-transform duration-300">
                       <i className="fa-solid fa-graduation-cap text-3xl text-white"></i>
                     </div>
                     
                     {/* Accent Lines */}
-                    <div className="absolute top-4 left-4 w-8 h-1 bg-white/60 rounded-full"></div>
-                    <div className="absolute top-7 left-4 w-12 h-1 bg-white/40 rounded-full"></div>
+                    <div className="absolute top-4 left-4 w-8 h-1 bg-[#d2a763] rounded-full"></div>
+                    <div className="absolute top-7 left-4 w-12 h-1 bg-white rounded-full"></div>
                   </div>
                 </div>
                 
                 {/* Right side - Content */}
                 <div className="text-center lg:text-left flex-1 order-1 lg:order-2 relative">
                   {/* Decorative Background Elements */}
-                  <div className="absolute -top-8 -right-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                  <div className="absolute top-1/2 -left-12 w-2 h-24 bg-gradient-to-b from-[#036e8d] to-transparent rounded-full hidden lg:block"></div>              
+                  <div className="absolute top-1/2 -left-12 w-2 h-24 bg-gradient-to-b from-[#d2a763] to-transparent rounded-full hidden lg:block"></div>              
                   <div className="relative z-10">
-                    <h4 className="text-[#ffffff] font-bold tracking-wider text-sm md:text-base uppercase">
+                    <h4 className="text-[#d2a763] font-bold tracking-wider text-sm md:text-base uppercase">
                       About Us
                     </h4>
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 md:text-left mb-8 leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white md:text-left mb-8 leading-tight">
                       Unveiling Our{' '}
                       <br />
-                      <span className='text-[#036e8d] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                      <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
                         Identity
                       </span>
                       ,{' '}
-                      <span className='text-[#036e8d] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                      <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
                         Vision
                       </span>
                       {' '}and{' '}
-                      <span className='text-[#036e8d] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                      <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
                         Values
                       </span>
                       .
@@ -142,12 +141,12 @@ const [isHovered, setIsHovered] = useState(false);
                     <div className="relative">
                       <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#ffffff] to-transparent rounded-full hidden lg:block"></div>
                       <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
-                        <span className="text-[#036e8d] font-bold text-2xl">"</span>
+                        <span className="text-[#d2a763] font-bold text-2xl">"</span>
                         The International Institute of Horizon Humanism (IIHH) is a trailblazing institution dedicated to blending humanistic principles with modern education, shaping compassionate, ethical leaders for a global society.
-                        <span className="text-[#036e8d] font-bold text-2xl">"</span>
+                        <span className="text-[#d2a763] font-bold text-2xl">"</span>
                         
                         {/* Accent dots */}
-                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#036e8d] rounded-full"></div>
+                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#d2a763] rounded-full"></div>
                         <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-[#d2a763] rounded-full"></div>
                       </p>
                     </div>
@@ -161,8 +160,8 @@ const [isHovered, setIsHovered] = useState(false);
               
               {/* Enhanced Values Section - Floating Card */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full px-4 sm:px-0 md:px-24">
-                <div className="bg-gradient-to-r from-[#036e8d] to-[#024a5c] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-2xl">
-                  <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold text-center mb-6">Our Core Values</h3>
+                <div className="bg-[#ffd278] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
+                  <h3 className="text-gray-900 text-lg sm:text-xl md:text-2xl font-bold text-center mb-6">Our Core Values</h3>
                   <div className="grid grid-cols-4 md:grid-cols-4 gap-6 md:gap-8 items-center">
                     {[
                       { title: "Empathy", icon: "fa-heart", description: "Understanding others deeply" },
@@ -174,13 +173,13 @@ const [isHovered, setIsHovered] = useState(false);
                         key={index}
                         className="flex flex-col items-center text-center group hover:transform hover:scale-105 transition-all duration-300"
                       >
-                        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors duration-300">
-                          <i className={`fa-solid ${value.icon} text-2xl sm:text-3xl text-white`}></i>
+                        <div className="w-16 h-16 bg-white/40 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/50 transition-colors duration-300">
+                          <i className={`fa-solid ${value.icon} text-2xl sm:text-3xl text-[#036e8d]`}></i>
                         </div>
-                        <span className="text-white font-semibold text-sm md:text-base mb-1">
+                        <span className="text-gray-900 font-semibold text-sm md:text-base mb-1">
                           {value.title}
                         </span>
-                        <span className="text-white/80 text-xs hidden md:block">
+                        <span className="text-gray-900 text-xs hidden md:block">
                           {value.description}
                         </span>
                       </div>
@@ -415,7 +414,7 @@ const [isHovered, setIsHovered] = useState(false);
         </section>
 
         {/* Team Section */}
-        <section id="team" className="py-24 relative bg-[#223668]/90">
+        <section id="team" className="py-24 relative bg-[#223668]">
           <img src={cloudClose} className="w-100 absolute -top-12 p-0 m-0" />
           <div className="container mx-auto px-8 md:px-14">
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">Our Leadership <span className='text-[#ffd278]'>Team</span></h2>

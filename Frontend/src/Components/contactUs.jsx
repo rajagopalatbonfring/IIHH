@@ -1,164 +1,28 @@
-// import React from 'react';
-// import "../App.css";
-
-// function ContactUs() {
-//   return (
-//     <main className="pt-20">
-//       <section id="contact-hero" className="bg-gradient-to-r from-blue-50 to-purple-300 h-[400px] flex items-center">
-//         <div className="container mx-auto px-4 text-center">
-//           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Contact IIHH – Let’s Connect!</h1>
-//           <p className="text-gray-600 text-lg max-w-2xl mx-auto">Have questions about our humanistic education program? We’re here to support students, educators, and professionals on their journey.</p>
-//         </div>
-//       </section>
-
-//       <section id="contact-main" className="py-16">
-//         <div className="container mx-auto px-4">
-//           <div className="grid md:grid-cols-2 gap-12">
-//             <div id="contact-form" className="bg-white p-8 rounded-2xl shadow-lg">
-//               <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
-//               <form>
-//                 <div className="space-y-6">
-//                   <div>
-//                     <label className="block text-gray-700 mb-2" htmlFor="full-name">Full Name</label>
-//                     <input type="text" id="full-name" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Enter your name" />
-//                   </div>
-//                   <div>
-//                     <label className="block text-gray-700 mb-2" htmlFor="email">Email Address</label>
-//                     <input type="email" id="email" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Enter your email" />
-//                   </div>
-//                   <div>
-//                     <label className="block text-gray-700 mb-2" htmlFor="subject">Subject</label>
-//                     <input type="text" id="subject" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="What is this about?" />
-//                   </div>
-//                   <div>
-//                     <label className="block text-gray-700 mb-2" htmlFor="message">Message</label>
-//                     <textarea id="message" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32" placeholder="Your message here..."></textarea>
-//                   </div>
-//                   <button type="submit" className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors">Send Message</button>
-//                 </div>
-//               </form>
-//             </div>
-
-//             <div id="contact-info" className="space-y-8">
-//               <div className="bg-white p-8 rounded-2xl shadow-lg">
-//                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Reach Out to IIHH</h2>
-//                 <div className="bg-gray-100 rounded-xl h-64 mb-6">
-//                   <img className="w-full h-full object-cover rounded-xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ced713da7b-8d06baa7578bf161fe98.png" alt="Map showing IIHH location" />
-//                 </div>
-//                 <div className="space-y-4">
-//                   <div className="flex items-center space-x-4">
-//                     <i className="fa-solid fa-location-dot text-blue-500 text-xl"></i>
-//                     <p className="text-gray-600">456 Horizon Avenue, Humanism City, HC 67890</p>
-//                   </div>
-//                   <div className="flex items-center space-x-4">
-//                     <i className="fa-solid fa-phone text-blue-500 text-xl"></i>
-//                     <p className="text-gray-600">(555) 987-6543</p>
-//                   </div>
-//                   <div className="flex items-center space-x-4">
-//                     <i className="fa-solid fa-envelope text-blue-500 text-xl"></i>
-//                     <p className="text-gray-600">contact@iihh.org</p>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               <div className="bg-white p-8 rounded-2xl shadow-lg">
-//                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Follow IIHH</h2>
-//                 <div className="flex space-x-6">
-//                   <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-//                     <i className="fa-brands fa-facebook text-3xl"></i>
-//                   </a>
-//                   <a href="#" className="text-gray-600 hover:text-pink-500 transition-colors">
-//                     <i className="fa-brands fa-instagram text-3xl"></i>
-//                   </a>
-//                   <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors">
-//                     <i className="fa-brands fa-linkedin text-3xl"></i>
-//                   </a>
-//                   <a href="#" className="text-gray-600 hover:text-red-500 transition-colors">
-//                     <i className="fa-brands fa-youtube text-3xl"></i>
-//                   </a>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       <section id="faqs" className="bg-gray-50 py-16">
-//         <div className="container mx-auto px-4">
-//           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
-//           <div className="max-w-3xl mx-auto space-y-4">
-//           {[
-//                       {
-//                         question: "Who can enroll in IIHH programs?",
-//                         answer: "Our programs are designed for diverse audiences including students (K-12 and college), educators, professionals, and lifelong learners. We have specialized tracks for different age groups and experience levels."
-//                       },
-//                       {
-//                         question: "How are courses delivered?",
-//                         answer: "We offer flexible learning formats including in-person workshops, online courses, blended learning programs, and intensive retreats. All formats emphasize experiential learning and practical application."
-//                       },
-//                       {
-//                         question: "Are there scholarships available?",
-//                         answer: "Yes! We're committed to making humanistic education accessible. We offer need-based scholarships, community grants, and payment plans. Contact our admissions office to learn more."
-//                       },
-//                       {
-//                         question: "How do I measure progress in these programs?",
-//                         answer: "Our programs include comprehensive assessments including self-reflection tools, practical application projects, peer feedback, and mentorship opportunities. Progress is measured against personal growth goals."
-//                       }
-//                     ].map((item, index) => (
-//                       <div key={index} className="mb-6 bg-white rounded-xl shadow-md overflow-hidden">
-//                         <details className="group">
-//                           <summary className="flex justify-between items-center p-6 cursor-pointer">
-//                             <h3 className="text-xl font-semibold text-gray-800">{item.question}</h3>
-//                             <span className="transform group-open:rotate-180 transition-transform duration-200">
-//                               <i className="fa-solid fa-chevron-down text-purple-600"></i>
-//                             </span>
-//                           </summary>
-//                           <div className="px-6 pb-6 text-gray-600">
-//                             <p>{item.answer}</p>
-//                           </div>
-//                         </details>
-//                       </div>
-//                     ))}
-//           </div>
-//         </div>
-//       </section>
-
-
-//     </main>
-//   );
-// }
-
-// export default ContactUs;
-
-
-
-
-
-
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import { PhoneCall } from "lucide-react";
 import 'react-toastify/dist/ReactToastify.css';
-import "../App.css";
+import '../App.css';
+import heroImg from '../assets/contact-us-pg-hero.jpg';
 
 function ContactUs() {
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  
+
   const [loading, setLoading] = useState(false);
-  
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     try {
       const response = await fetch('http://localhost:5000/api/contact/submit', {
         method: 'POST',
@@ -168,9 +32,6 @@ function ContactUs() {
         body: JSON.stringify(formData)
       });
 
-      console.log(response);
-
-  
       if (response.ok) {
         toast.success('Message submitted successfully!');
         setFormData({ name: '', email: '', subject: '', message: '' });
@@ -183,223 +44,205 @@ function ContactUs() {
       setLoading(false);
     }
   };
-  
-
-
 
   return (
-    <main className="pt-20 bg-gray-50">
+    <main className="pt-20 min-h-screen font-comic text-base-content bg-[#f9fcfd]">
       {/* Hero Section */}
-      <section 
-      id="contact-hero" 
-      className="relative h-[500px] md:h-[600px] flex items-center overflow-hidden"
-    >
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/80 via-indigo-600/70 to-pink-500/60 z-0"></div>
-
-      {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl text-center mx-auto">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
-            Contact IIHH – <span className="block md:inline">Let’s Connect!</span>
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            Have questions about our humanistic education program? We’re here to support students, educators, and professionals on their journey.
-          </p>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
-        <a href="#intro" className="text-white">
-          <i className="fa-solid fa-chevron-down text-2xl drop-shadow-md"></i>
-        </a>
-      </div>
-
-      {/* Subtle Background Enhancement */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="w-48 h-48 bg-purple-400/20 rounded-full absolute top-10 left-10 animate-pulse"></div>
-        <div className="w-64 h-64 bg-indigo-400/20 rounded-full absolute bottom-0 right-0 animate-pulse" style={{ animationDelay: "1.5s" }}></div>
-      </div>
-    </section>
-
-      {/* New Intro Section */}
-      <section id="intro" className="py-24 relative z-10 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h4 className="text-purple-600 font-semibold tracking-wider mb-4 uppercase">Get in Touch</h4>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              We’re Here to <span className="relative">
-                <span className="relative z-10 text-purple-600">Support You</span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-100 -rotate-1 -z-10"></span>
-              </span>
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Whether you’re curious about our programs, need assistance, or want to collaborate, our team is ready to assist you every step of the way.
+      <section
+        id="hero"
+        className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-top overflow-hidden flex items-center bg-[#223668]"
+        style={{ backgroundImage: `url(${heroImg})` }}
+      >
+        <div className="absolute inset-0 bg-black/20 z-0" />
+        <div className="container mx-auto px-8 md:px-14 relative z-10 max-w-7xl">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#ffd278] mb-6 leading-tight tracking-tight drop-shadow-lg">
+              Connect with IIHH
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              Reach out to start your journey with the International Institute of Horizon Humanism. We’re here to answer your questions and guide you every step of the way.
             </p>
+            <a
+              href="#contact-form"
+              className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:shadow-xl transition-all duration-300 shadow-lg group text-base"
+            >
+              Get in Touch
+              <svg
+                className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 12H19M19 12L12 5M19 12L12 19"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
           </div>
         </div>
+        {/* Decorative Wave */}
+        <svg
+          className="absolute bottom-0"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 120"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ fill: '#f9fcfd', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+        >
+          <path
+            d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
+            opacity=".25"
+            style={{ fill: '#ffffff' }}
+          />
+          <path
+            d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z"
+            opacity=".5"
+            style={{ fill: '#ffffff' }}
+          />
+          <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
+        </svg>
       </section>
 
-      {/* Contact Main Section */}
-      <section id="contact-main" className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div id="contact-form" className="bg-white p-8 rounded-2xl shadow-lg group hover:shadow-xl transition-all duration-300">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              <form onSubmit={handleSubmit}>
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-gray-700 mb-2 font-medium" htmlFor="name">Full Name</label>
-                    <input 
-                      name="name" 
-                      type="text" 
-                      id="name" 
+      {/* Main Contact Section */}
+      <section id="contact-form" className="relative pb-24">
+        <div className="container mx-auto px-8 md:px-14 relative z-10 max-w-7xl">
+          {/* Header Section */}
+          <div className="text-center mb-24">
+            <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">GET IN TOUCH</h4>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 tracking-tight">
+              Contact Us
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+              We’re here to answer your questions and help you embark on your humanistic journey. Reach out to us for more information about our programs or to schedule a visit.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Left Side - Contact Form and Details */}
+            <div className="space-y-8">
+              {/* Contact Form */}
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <input
+                      name="name"
+                      type="text"
+                      id="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200" 
-                      placeholder="Enter your name" 
-                      required 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 transition-all duration-300"
+                      placeholder="Your Name*"
+                      required
                     />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 mb-2 font-medium" htmlFor="email">Email Address</label>
-                    <input 
-                      name="email" 
-                      type="email" 
-                      id="email" 
+                    <input
+                      name="email"
+                      type="email"
+                      id="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200" 
-                      placeholder="Enter your email" 
-                      required 
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 mb-2 font-medium" htmlFor="subject">Subject</label>
-                    <input 
-                      name="subject" 
-                      type="text" 
-                      id="subject" 
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200" 
-                      placeholder="What is this about?" 
-                      required 
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 mb-2 font-medium" htmlFor="message">Message</label>
-                    <textarea 
-                      name="message" 
-                      id="message" 
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 h-32 transition-all duration-200" 
-                      placeholder="Your message here..." 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 transition-all duration-300"
+                      placeholder="Your Email*"
                       required
-                    ></textarea>
+                    />
                   </div>
-                  <button 
-                    type="submit" 
-                    className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-all duration-300 font-semibold flex justify-center items-center"
+                  <input
+                    name="subject"
+                    type="text"
+                    id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 transition-all duration-300"
+                    placeholder="Subject*"
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    id="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] h-32 transition-all duration-300 resize-none text-gray-700"
+                    placeholder="Your Message*"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-[#036e8d] text-white px-8 py-3 rounded-full font-semibold tracking-wider hover:bg-[#025a75] hover:shadow-xl transition-all duration-300 flex items-center justify-center min-w-[120px]"
                     disabled={loading}
                   >
                     {loading ? (
                       <span className="loader border-2 border-white border-t-transparent rounded-full w-5 h-5 animate-spin"></span>
                     ) : (
-                      "Send Message"
+                      'SUBMIT'
                     )}
                   </button>
-                </div>
-              </form>
-            </div>
+                </form>
+              </div>
 
-            <div id="contact-info" className="space-y-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg group hover:shadow-xl transition-all duration-300">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Reach Out to IIHH</h2>
-                <div className="bg-gray-100 rounded-xl h-64 mb-6 overflow-hidden">
-                  <img 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ced713da7b-8d06baa7578bf161fe98.png" 
-                    alt="Map showing IIHH location" 
-                  />
-                </div>
+              {/* Contact Details */}
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <i className="fa-solid fa-location-dot text-purple-600 text-xl"></i>
-                    <p className="text-gray-600">456 Horizon Avenue, Humanism City, HC 67890</p>
+                    <div className="w-10 h-10 bg-[#036e8d] rounded-full flex items-center justify-center">
+                      <PhoneCall className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wider">CALL US NOW</h3>
+                      <p className="text-gray-600 text-sm">+108-885-0212</p>
+                    </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <i className="fa-solid fa-phone text-purple-600 text-xl"></i>
-                    <p className="text-gray-600">(555) 987-6543</p>
+                    <div className="w-10 h-10 bg-[#036e8d] rounded-full flex items-center justify-center">
+                      <i className="fa-solid fa-envelope text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wider">EMAIL</h3>
+                      <p className="text-gray-600 text-sm">contact@iihh.org</p>
+                    </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <i className="fa-solid fa-envelope text-purple-600 text-xl"></i>
-                    <p className="text-gray-600">contact@iihh.org</p>
+                    <div className="w-10 h-10 bg-[#036e8d] rounded-full flex items-center justify-center">
+                      <i className="fa-solid fa-fax text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wider">FAX</h3>
+                      <p className="text-gray-600 text-sm">(48) 12 3456 9870</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="bg-white p-8 rounded-2xl shadow-lg group hover:shadow-xl transition-all duration-300">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Follow IIHH</h2>
-                <div className="flex space-x-6 justify-start">
-                  <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                    <i className="fa-brands fa-facebook text-3xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                    <i className="fa-brands fa-instagram text-3xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                    <i className="fa-brands fa-linkedin text-3xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                    <i className="fa-brands fa-youtube text-3xl"></i>
-                  </a>
+                  <div className="pt-4 border-t border-gray-100">
+                    <h3 className="font-semibold text-gray-800 text-sm uppercase tracking-wider mb-2">ADDRESS</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      456 Horizon Avenue, Humanism City, HC 67890
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* FAQs Section */}
-      <section id="faqs" className="py-24 bg-white">
-        <div className="container mx-auto px-6 space-y-12">
-          <h2 className="text-4xl font-extrabold text-gray-900 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                question: "Who can enroll in IIHH programs?",
-                answer: "Our programs are designed for diverse audiences including students (K-12 and college), educators, professionals, and lifelong learners. We have specialized tracks for different age groups and experience levels."
-              },
-              {
-                question: "How are courses delivered?",
-                answer: "We offer flexible learning formats including in-person workshops, online courses, blended learning programs, and intensive retreats. All formats emphasize experiential learning and practical application."
-              },
-              {
-                question: "Are there scholarships available?",
-                answer: "Yes! We're committed to making humanistic education accessible. We offer need-based scholarships, community grants, and payment plans. Contact our admissions office to learn more."
-              },
-              {
-                question: "How do I measure progress in these programs?",
-                answer: "Our programs include comprehensive assessments including self-reflection tools, practical application projects, peer feedback, and mentorship opportunities. Progress is measured against personal growth goals."
-              }
-            ].map((item, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden group">
-                <details className="group">
-                  <summary className="flex justify-between items-center p-6 cursor-pointer group-hover:bg-gray-50 transition-colors duration-200">
-                    <h3 className="text-xl font-semibold text-gray-800">{item.question}</h3>
-                    <span className="transform group-open:rotate-180 transition-transform duration-200">
-                      <i className="fa-solid fa-chevron-down text-purple-600"></i>
-                    </span>
-                  </summary>
-                  <div className="px-6 pb-6 text-gray-600 bg-gray-50">
-                    <p className="leading-relaxed">{item.answer}</p>
-                  </div>
-                </details>
+            {/* Right Side - Google Maps Location */}
+            <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Location</h2>
+              <div className="rounded-lg overflow-hidden shadow-md">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.8188449153563!2d76.9914145735771!3d11.05220485404936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85856582a506f%3A0x93184a31dbc78579!2sBonfring%20Technology%20Solutions!5e0!3m2!1sen!2sin!4v1748927450366!5m2!1sen!2sin"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                ></iframe>
               </div>
-            ))}
+              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                <h3 className="font-bold text-gray-800 mb-2">Bonfring Technology Solutions</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Our office is conveniently located in Coimbatore. Feel free to visit us during business hours or schedule an appointment.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

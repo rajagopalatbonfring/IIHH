@@ -595,8 +595,8 @@ function Program() {
                   <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
                     A Year of <span className="text-[#ffd278]">Humanistic Transformation</span> and <br /><span className="text-[#ffd278]">Empowered Learning</span>
                   </h1>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20 animate-fadeInUp animate-subtle-float" style={{animationDelay: '0.3s'}}>
-                    <p className="sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 text-gray-200 leading-relaxed">
+                  <div className="bg-white backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20 animate-fadeInUp animate-subtle-float" style={{animationDelay: '0.3s'}}>
+                    <p className="sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 text-black leading-relaxed">
                       At IIHH, education transcends traditional boundaries. Our one-year program integrates ten thoughtfully designed modules that foster empathy, resilience, and critical thinking—preparing learners to lead with compassion and creativity in a rapidly evolving world.
                     </p>
                   </div>
@@ -846,7 +846,7 @@ function Program() {
 
 
         {/* Program Modules Section */}
-        <section id="program-modules" className="py-16 relative bg-[#ffffff]">
+        <section id="program-modules" className="py-16 relative bg-[#f9fcfd]">
           <img src={cloudOpen} className="w-full absolute -top-16 p-0 m-0" alt="Cloud decoration" />
           <div className="container mx-auto sm:px-6 relative">
             <div className="absolute inset-0 opacity-5 z-[-1]">
@@ -1495,7 +1495,7 @@ function Program() {
 
               {/* CTA Button */}
               <div className="text-center mt-12 lg:mt-16">
-                <button className="inline-flex items-center bg-gradient-to-r from-[#036e8d] to-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:from-[#025a75] hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <button className="inline-flex items-center bg-[#036e8d] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:from-[#025a75] hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                   <span className="text-base lg:text-lg font-semibold">Start Your Application</span>
                   <i className="fa-solid fa-arrow-right ml-2 lg:ml-3"></i>
                 </button>

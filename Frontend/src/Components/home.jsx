@@ -5,7 +5,7 @@ import rectangle from '../assets/home-storySectionImg.jpg'
 import cloudOpen from '../assets/Group 33.png'
 import cloudClose from '../assets/closeCloud.png'
 import { ChevronRight } from "lucide-react";
-import { PhoneCall, Star, Heart, Users, Brain } from "lucide-react";
+import { Star, Heart, Users, Brain } from "lucide-react";
 import { CheckCircle, BookOpen} from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
 
@@ -82,9 +82,9 @@ function Home() {
                   </Link>
                   <a
                     href="#testimonials"
-                    className="bg-transparent border-2 border-transparent text-white px-5 py-3 rounded-full text-lg font-semibold hover:bg-white/10 hover: transition-all duration-300 flex items-center justify-center relative rotate-dashed-border"
+                    className="bg-white/70 text-white px-5 py-3 rounded-full text-lg font-semibold hover:bg-white hover: transition-all duration-300 flex items-center justify-center relative"
                   >
-                    <i className="fa-solid fa-play text-[#d2a763]"></i>
+                    <i className="fa-solid fa-play text-[#036e8d]"></i>
                   </a>
                 </div>
               </div>
@@ -112,7 +112,7 @@ function Home() {
                 preserveAspectRatio="none"
                 viewBox="0 0 1200 120"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+                style={{ fill: '#223668', width: '148%', height: 87, transform: 'rotate(180deg)' }}
               >
               <path
                 d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -130,12 +130,12 @@ function Home() {
 
         
         {/* About Us section - New addition */}
-        <section id="about-us" className="py-24 pt-4 pb-36 px-8 bg-[#d2a763]">
+        <section id="about-us" className="py-24 pt-4 pb-36 px-8 bg-[#223668]">
           <div className="container py-10 px-6 mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12 px-6">
               <div className="md:w-1/2">
-                <h4 className="text-left text-[#ffffff] font-bold tracking-wider ">OUR STORY</h4>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Top Choice For <span className="text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span></h2>
+                <h4 className="text-left text-[#d2a763] font-bold tracking-wider ">OUR STORY</h4>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Top Choice For <span className="text-[#ffd278] text-4xl md:text-6xl uppercase">Children</span></h2>
                 <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
                   Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
                   We believe that learning should nurture not just the mind, but also the heart and spirit.
@@ -144,8 +144,8 @@ function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 mt-8">
                   {['Empathy', 'Leadership', 'Humanism', 'Board Mind'].map((item, index) => (
                     <div key={index} className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-[white]/80 flex items-center justify-center mr-3">
-                        <div className="w-3 h-3 rounded-full bg-[#036e8d]"></div>
+                      <div className="w-6 h-6 rounded-full bg-[white] flex items-center justify-center mr-3">
+                        <div className="w-3 h-3 rounded-full bg-[#d2a763]"></div>
                       </div>
                       <span className="text-white font-bold">{item}</span>
                     </div>
@@ -163,16 +163,6 @@ function Home() {
                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </Link>
-                  
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-[#036e8d] rounded-full flex items-center justify-center mr-3">
-                      <PhoneCall className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-black text-sm">Call Us Now</div>
-                      <div className="text-black font-bold">+108-885-0212</div>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -195,7 +185,7 @@ function Home() {
                     
                     {/* Geometric shapes */}
                     <div 
-                      className="absolute bottom-1/4 -left-12 w-12 h-12 bg-[#d2a763]/15 rounded-full"
+                      className="absolute bottom-1/4 -left-12 w-12 h-12 bg-[#d2a763]/30 rounded-full"
                       style={{ animation: 'pulse2 4s ease-in-out infinite 1s' }}
                     ></div>
                     
@@ -220,18 +210,18 @@ function Home() {
                   {/* Elegant border rings - replacing dotted rotation */}
                   <div className="absolute inset-0 -m-6">
                     <div 
-                      className="absolute inset-0 border-[2px] border-[#ffffff]/50 rounded-full"
+                      className="absolute inset-0 border-[2px] border-[#ffffff] rounded-full"
                       style={{ animation: 'breathe 4s ease-in-out infinite' }}
                     ></div>
                     <div 
-                      className="absolute inset-2 border border-[#d2a763]/15 rounded-full"
+                      className="absolute inset-2 border border-[#d2a763]/30 rounded-full"
                       style={{ animation: 'breathe 4s ease-in-out infinite 1s' }}
                     ></div>
                   </div>
 
                   {/* Main image container */}
                   <div 
-                    className="relative bg-[#036e8d] rounded-full p-6 backdrop-blur-sm border border-white/50 shadow-2xl"
+                    className="relative bg-[#d2a763] rounded-full p-6 backdrop-blur-sm border border-white/50 shadow-2xl"
                     style={{
                       transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
                       transition: 'transform 0.3s ease-out'
@@ -252,7 +242,7 @@ function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#036e8d]/20 via-transparent to-transparent"></div>
                       
                       {/* Smooth hover overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#036e8d]/0 to-[#d2a763]/0 group-hover:from-[#036e8d]/10 group-hover:to-[#d2a763]/10 transition-all duration-500"></div>
+                      <div className="absolute inset-0 group-hover:from-[#036e8d]/10 group-hover:to-[#d2a763]/10 transition-all duration-500"></div>
                     </div>
                     
                     {/* Secondary image - bottom left */}
@@ -314,7 +304,7 @@ function Home() {
 
                     {/* Achievement badge */}
                     <div 
-                      className={`absolute top-28 left-12 bg-gradient-to-br from-[#d2a763] to-[#b8954e] text-white p-2 rounded-full shadow-lg transition-transform duration-300 z-20 ${
+                      className={`absolute top-28 left-12 bg-[#036e8d] text-white p-2 rounded-full shadow-lg transition-transform duration-300 z-20 ${
                         pulseActive ? 'scale-110' : 'scale-100'
                       }`}
                       style={{
@@ -334,7 +324,7 @@ function Home() {
                         animation: 'gentleBob 3s ease-in-out infinite 1s'
                       }}
                     >
-                      <Star className="w-3 h-3 text-[#036e8d]" />
+                      <Star className="w-3 h-3 text-[#d2a763]" />
                     </div>
                     
                     <div 
@@ -637,6 +627,7 @@ function Home() {
             </div>
         </section>
 
+
         <section id="whychooseus" className="relative py-16 md:py-24 bg-[#223668] overflow-hidden">
 
           <img src={cloudClose} className='w-100 absolute -top-12 p-0 m-0' />
@@ -645,106 +636,62 @@ function Home() {
             {/* Top Section: Image and Text */}
             <div className="bg-white rounded-3xl border border-gray-100 shadow-xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-12 mb-20">
               
-              {/* Image */}
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex-shrink-0 rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
-                <img
-                  src="src/assets/thinkingImg.png"
-                  alt="IIHH Transformation"
-                  className="w-full h-full object-cover bg-[#223668]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full"></div>
-              </div>
-
-              {/* Text Content */}
-              <div className="w-full text-center lg:text-left">
-                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">
-                  Why Choose{" "}
-                  <span className="text-[#d2a763] relative inline-block">
-                    IIHH
-                    <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#d2a763] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-                  </span>
-                  ?
-                </h2>
-                <h3 className="text-2xl lg:text-3xl font-semibold text-[#036e8d] mb-6 animate-fade-in-delayed">
-                  Because Real Transformation Starts Here
-                </h3>
-                <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-delayed">
-                  We deliver more than education—we foster profound personal growth through our uniquely humanistic approach that nurtures resilience, empathy, and purpose.
-                </p>
-
-                {/* Bullet Points */}
-                <div className="space-y-4 text-left max-w-xl mx-auto lg:mx-0">
-                  {[
-                    "Holistic development for students, educators & professionals",
-                    "Evidence-based methodologies with measurable outcomes",
-                    "Community-centered learning that creates lasting change",
-                  ].map((text, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center group animate-fade-in"
-                      style={{ animationDelay: `${(index + 1) * 200}ms` }}
-                    >
-                      <ChevronRight
-                        className="text-blue-500 mr-3 group-hover:translate-x-1 transition-transform duration-300"
-                        size={20}
-                      />
-                      <span className="text-gray-700 text-base sm:text-lg">{text}</span>
-                    </div>
-                  ))}
+                {/* Image */}
+                <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex-shrink-0 rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
+                  <img
+                    src="src/assets/thinkingImg.png"
+                    alt="IIHH Transformation"
+                    className="w-full h-full object-cover bg-[#223668]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full"></div>
                 </div>
-              </div>
-            </div>
 
-            {/* Cards Section */}
-            <div className="w-full flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10">
-              {[
-                {
-                  icon: "fa-solid fa-heart",
-                  title: "Humanistic Focus",
-                  color: "bg-blue-500",
-                },
-                {
-                  icon: "fa-solid fa-brain",
-                  title: "Emotional Intelligence",
-                  color: "bg-purple-500",
-                },
-                {
-                  icon: "fa-solid fa-hands-helping",
-                  title: "Social Responsibility",
-                  color: "bg-green-500",
-                },
-                {
-                  icon: "fa-solid fa-globe",
-                  title: "Global Perspective",
-                  color: "bg-yellow-500",
-                },
-              ].map((item, index) => (
-                <Tilt
-                  key={index}
-                  tiltMaxAngleX={15}
-                  tiltMaxAngleY={15}
-                  transitionSpeed={400}
-                  scale={1.05}
-                  glareEnable={false}
-                  perspective={1000}
-                >
-                  <div
-                    className={`bg-white px-4 py-2 rounded-full shadow-md hover:shadow-xl transition-all duration-500 flex items-center w-fit max-w-full border border-gray-200 group animate-fade-in-up`}
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    {/* Icon */}
-                    <div
-                      className={`rounded-full w-12 h-12 flex items-center justify-center text-white text-xl ${item.color} shadow-md group-hover:shadow-xl transition-shadow duration-300 mr-3`}
-                    >
-                      <i className={item.icon}></i>
-                    </div>
-                    {/* Title */}
-                    <h3 className="text-sm lg:text-base font-semibold text-gray-800 pr-2">
-                      {item.title}
-                    </h3>
+                {/* Text Content */}
+                <div className="w-full text-center lg:text-left">
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">
+                    Why Choose{" "}
+                    <span className="text-[#d2a763] relative inline-block">
+                      IIHH
+                      <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#d2a763] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                    </span>
+                    ?
+                  </h2>
+                  <h3 className="text-2xl lg:text-3xl font-semibold text-[#036e8d] mb-6 animate-fade-in-delayed">
+                    Because Real Transformation Starts Here
+                  </h3>
+                  <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-delayed">
+                    We deliver more than education—we foster profound personal growth through our uniquely humanistic approach that nurtures resilience, empathy, and purpose.
+                  </p>
+
+                  {/* Bullet Points */}
+                  <div className="space-y-4 text-left max-w-xl mx-auto mb-14 lg:mx-0">
+                    {[
+                      "Holistic development for students, educators & professionals",
+                      "Evidence-based methodologies with measurable outcomes",
+                      "Community-centered learning that creates lasting change",
+                    ].map((text, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center group animate-fade-in"
+                        style={{ animationDelay: `${(index + 1) * 200}ms` }}
+                      >
+                        <ChevronRight
+                          className="text-blue-500 mr-3 group-hover:translate-x-1 transition-transform duration-300"
+                          size={20}
+                        />
+                        <span className="text-gray-700 text-base sm:text-lg">{text}</span>
+                      </div>
+                    ))}
                   </div>
-                </Tilt>
-              ))}
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {['Humanistic Focus','Emotional Intelligence', 'Social Responsibility', 'Global Perspective'].map((tag, index) => (
+                      <span key={index} className="bg-[#036e8d]/10 text-[#036e8d] px-3 py-1 rounded-full text-sm font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+              </div>
             </div>
           </div>
 
