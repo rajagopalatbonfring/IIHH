@@ -445,7 +445,7 @@ function Program() {
             preserveAspectRatio="none"
             viewBox="0 0 1200 120"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ fill: '#223668', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+            style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
           >
             <path
               d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -463,7 +463,7 @@ function Program() {
 
 
         {/* Our Programs Section */}
-        <section className="pb-20 bg-[#223668] relative overflow-hidden">
+        <section className="pb-20 bg-[#d2a763] relative overflow-hidden">
           
           {/* Animated Floating Elements */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -500,24 +500,24 @@ function Program() {
                   <div className={`absolute -inset-2 transition-all duration-700 ease-out animate-rotate-slow ${
                     isHovered ? 'scale-10 rotate-12' : 'scale-100 rotate-6'
                   }`}>
-                    <div className="w-full h-full bg-[#d2a763] rounded-3xl opacity-80 animate-glow"></div>
+                    <div className="w-full h-full bg-[#036e8d] rounded-3xl opacity-80 animate-glow"></div>
                   </div>
                   
                   {/* Secondary Background Layer */}
                   <div className={`absolute -inset-2 transition-all duration-500 delay-100 ease-out animate-rotate-reverse ${
                     isHovered ? 'scale-105 -rotate-3' : 'scale-100 rotate-0'
                   }`}>
-                    <div className="w-full h-full bg-white/20 rounded-3xl backdrop-blur-sm animate-shimmer"></div>
+                    <div className="w-full h-full bg-white/40 rounded-3xl backdrop-blur-sm animate-shimmer"></div>
                   </div>
 
                   {/* Floating Orbs with continuous movement */}
-                  <div className={`absolute -top-4 -right-4 w-6 h-6 bg-[#d2a763] rounded-full transition-all duration-1000 animate-orbit ${
+                  <div className={`absolute -top-4 -right-4 w-6 h-6 bg-[#036e8d] rounded-full transition-all duration-1000 animate-orbit ${
                     isHovered ? 'animate-bounce scale-150' : 'scale-100'
                   }`}></div>
                   <div className={`absolute -bottom-2 -left-2 w-4 h-4 bg-white rounded-full transition-all duration-700 delay-200 animate-float-reverse ${
                     isHovered ? 'animate-pulse scale-125' : 'scale-100'
                   }`}></div>
-                  <div className={`absolute top-1/2 -right-6 w-3 h-3 bg-[#d2a763] rounded-full transition-all duration-800 delay-300 animate-wiggle ${
+                  <div className={`absolute top-1/2 -right-6 w-3 h-3 bg-[#036e8d] rounded-full transition-all duration-800 delay-300 animate-wiggle ${
                     isHovered ? 'animate-ping scale-200' : 'scale-100'
                   }`}></div>
 
@@ -549,12 +549,12 @@ function Program() {
                   </div>
 
                   {/* Animated Ring Effect */}
-                  <div className={`absolute inset-0 rounded-3xl border-2 border-[#d2a763] transition-all duration-1000 animate-pulse-ring ${
+                  <div className={`absolute inset-0 rounded-3xl border-2 border-[#036e8d] transition-all duration-1000 animate-pulse-ring ${
                     isHovered ? 'scale-110 opacity-60' : 'scale-100 opacity-30'
                   }`}></div>
                   
                   {/* Ripple Effect */}
-                  <div className={`absolute inset-0 rounded-3xl border border-white/30 transition-all duration-1200 animate-ripple ${
+                  <div className={`absolute inset-0 rounded-3xl border border-white/50 transition-all duration-1200 animate-ripple ${
                     isHovered ? 'scale-125 opacity-0' : 'scale-100 opacity-100'
                   }`}></div>
 
@@ -589,14 +589,14 @@ function Program() {
               {/* Right Side - Content with animations - 7/12 width */}
               <div className="lg:col-span-7 flex items-center justify-start p-8 pl-8 animate-slideInRight">
                 <div className="max-w-2xl w-full">
-                  <h4 className="text-[#ffffff] text-left mb-4 font-bold tracking-wider text-sm md:text-base uppercase animate-fadeInDown">
+                  <h4 className="text-gray-900 text-left mb-4 font-bold tracking-wider text-sm md:text-base uppercase animate-fadeInDown">
                     OUR PROGRAM
                   </h4>
                   <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
-                    A Year of <span className="text-[#ffd278]">Humanistic Transformation</span> and <br /><span className="text-[#ffd278]">Empowered Learning</span>
+                    A Year of <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Humanistic</span> <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Transformation</span> and <br />Empowered <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300"> Learning</span>
                   </h1>
-                  <div className="bg-white backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20 animate-fadeInUp animate-subtle-float" style={{animationDelay: '0.3s'}}>
-                    <p className="sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 text-black leading-relaxed">
+                  <div className="animate-fadeInUp animate-subtle-float" style={{animationDelay: '0.3s'}}>
+                    <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
                       At IIHH, education transcends traditional boundaries. Our one-year program integrates ten thoughtfully designed modules that foster empathy, resilience, and critical thinking—preparing learners to lead with compassion and creativity in a rapidly evolving world.
                     </p>
                   </div>
@@ -855,7 +855,7 @@ function Program() {
               <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-[#036e8d] rounded-full"></div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-3">
-              Program <span className="text-[#036e8d]">Modules</span>
+              Program <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Modules</span>
             </h2>
             <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto leading-relaxed mb-12">
               Explore our ten transformative modules, each designed to nurture essential skills, values, and holistic growth
@@ -975,7 +975,7 @@ function Program() {
             {/* Header */}
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
-                Curriculum <span className="text-[#036e8d]">Pathway</span>
+                Curriculum <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Pathway</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Navigate through interconnected learning modules designed for holistic development
@@ -993,11 +993,11 @@ function Program() {
                   {/* Timeline Items */}
                   <div className="flex justify-between items-center">
                     {/* Term 1 */}
-                    <div className="flex-1 text-center relative">
+                    <div className="flex-1 text-center relative hover:scale-110 transition-all duration-300">
                       <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative hover:scale-110 transition-all duration-300">
                         <i className="fa-solid fa-seedling text-white text-xl"></i>
                       </div>
-                      <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] hover:shadow-xl transition-all duration-300">
+                      <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] group hover:scale-105 transition-transform duration-300">
                         <h3 className="text-lg font-bold text-gray-800">Term 1: Foundation</h3>
                         <p className="text-sm text-gray-600 mb-4">Building Your Core</p>
                         <div className="space-y-2 text-xs">
@@ -1018,7 +1018,7 @@ function Program() {
                     </div>
 
                     {/* Term 2 */}
-                    <div className="flex-1 text-center relative mx-8">
+                    <div className="flex-1 text-center relative mx-8 group hover:scale-105 transition-transform duration-300">
                       <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative hover:scale-110 transition-all duration-300">
                         <i className="fa-solid fa-rocket text-white text-xl"></i>
                       </div>
@@ -1043,7 +1043,7 @@ function Program() {
                     </div>
 
                     {/* Term 3 */}
-                    <div className="flex-1 text-center relative">
+                    <div className="flex-1 text-center relative group hover:scale-105 transition-transform duration-300">
                       <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative hover:scale-110 transition-all duration-300">
                         <i className="fa-solid fa-crown text-white text-xl"></i>
                       </div>
@@ -1173,9 +1173,9 @@ function Program() {
 
           <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10 flex flex-col items-center">
             {/* Floating Card */}
-            <div className="bg-[#036e8d]/80 rounded-3xl py-10 px-6 sm:px-12 shadow-2xl max-w-4xl w-full relative mb-8">
-              <h2 className="text-black text-4xl md:text-5xl font-bold text-center mb-3">
-                Program <span className="text-[#ffd278]">Benefits</span>
+            <div className="bg-[#036e8d] rounded-3xl py-10 px-6 sm:px-12 shadow-2xl max-w-4xl w-full relative mb-8">
+              <h2 className="text-white text-4xl md:text-5xl font-bold text-center mb-3">
+                Program <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Benefits</span>
               </h2>
               <p className="text-lg text-center text-white max-w-2xl mx-auto leading-relaxed mb-16">
                 IIHH’s program empowers you with more than knowledge—gain the resilience, well-being, and leadership skills to thrive in every aspect of life.
@@ -1228,16 +1228,17 @@ function Program() {
             </div>
           </div>
         </section>
-        
 
-        <section id="learning-showcase" className="relative py-16 pt-40 bg-[#223668] overflow-hidden">
+        
+        {/* Learning in Action Section */}
+        <section id="learning-showcase" className="relative py-16 pt-40 bg-[#036e8d] overflow-hidden">
           <img src={cloudClose} className="w-full absolute -top-12 left-0" alt="Cloud Decoration" />
 
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
                 <span className="text-white">Learning in </span>
-                <span className="text-[#ffd278]">Action</span>
+                <span className="text-[#ffd278] inline-block transform hover:scale-x-105 duration-300">Action</span>
               </h2>
               <p className="text-lg md:text-xl text-white/90">
                 See IIHH students collaborate, create, and lead through hands-on activities, building confidence and teamwork.
@@ -1286,38 +1287,11 @@ function Program() {
         </section>
 
 
-        {/* Learning in Action Section */}
-        {/* <section id="learning-showcase" className="relative py-16 pt-40 bg-[#223668]">
-          <img src={cloudClose} className="w-100 absolute -top-12 p-0 m-0" />
-          <div className="container mx-auto px-6">
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
-                <span className="text-white">Learning in</span>
-                <span className="text-[#ffd278]">Action</span>
-              </h2>
-              <p className="text-lg md:text-xl text-white/90">
-                  See IIHH students collaborate, create, and lead through hands-on activities, building confidence and teamwork.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {["Collaborative Learning", "Outdoor Team Building", "Project Presentations"].map((title, index) => (
-                <div key={index} className="rounded-xl overflow-hidden shadow-lg group relative">
-                  <img className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" src={collabWorkImg} alt={`${title.toLowerCase()}`} />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#223668]/70 to-transparent p-4">
-                    <h3 className="text-white font-bold">{title}</h3>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
-
         {/* Faculty Section */}
         <section id="faculty" className="py-12 bg-gradient-to-r from-blue-50 to-purple-50">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-3">
-              Meet Our <span className="text-[#036e8d]">Faculty</span>
+              Meet Our <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Faculty</span>
             </h2>
             <p className="text-gray-600 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
               Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
@@ -1391,7 +1365,7 @@ function Program() {
               <div className="text-center mb-12 lg:mb-16">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3">
                   Get amazing education in 4<br />
-                  <span className="text-[#036e8d]">simple steps</span>
+                  <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">simple steps</span>
                 </h2>
                 <p className="text-gray-600 text-base lg:text-lg max-w-2xl mx-auto px-4">
                   Join our transformative program through our streamlined application process.
@@ -1464,17 +1438,17 @@ function Program() {
                   
                   <div className="space-y-6 lg:space-y-8">
                     {steps.map((step, index) => (
-                      <div key={index} className="flex items-start gap-4 lg:gap-6 relative">
+                      <div key={index} className="flex items-start gap-4 lg:gap-6 relative group">
                         {/* Step Number Circle */}
                         <div className="group relative w-14 h-14 flex items-center justify-center">
-                          <div className="absolute inset-0 rounded-full border-4 border-gradient-to-r from-purple-400 to-blue-400 group-hover:scale-110 group-hover:shadow-xl transition-transform duration-300"></div>
+                          <div className="absolute shadow-xl inset-0 rounded-full border-4 border-gradient-to-r from-purple-400 to-blue-400 group-hover:scale-110 group-hover:shadow-lg transition-transform duration-300"></div>
                           <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm z-10 group-hover:scale-110 transition-transform duration-300">
                             {step.step}
                           </div>
                         </div>
 
                         {/* Step Content */}
-                        <div className="flex-1 bg-white rounded-xl p-4 lg:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                        <div className="flex-1 bg-white rounded-xl p-4 lg:p-6 shadow-xl border border-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300">
                           <div className="flex items-start gap-3 lg:gap-4">
                             <div className="bg-[#036e8d]/10 w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center flex-shrink-0">
                               <i className={`fa-solid ${step.icon} text-lg lg:text-xl text-[#036e8d]`}></i>
@@ -1511,7 +1485,7 @@ function Program() {
             {/* Centered Header */}
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl  font-bold text-gray-800">
-                Program <span className="text-[#036e8d]">Information</span>
+                Program <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Information</span>
               </h2>
               <p className="text-gray-600 mt-2 text-base lg:text-lg max-w-2xl mx-auto">
                 Essential details and schedules for IIHH's one-year program.
@@ -1594,7 +1568,7 @@ function Program() {
             <div className="max-w-7xl mx-auto">
               {/* Header Section */}
               <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-gray-800 mb-3">Frequently Asked Questions</h2>
+                                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">Frequently Asked <span className="text-[#036e8d] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Find answers to common questions about our humanistic education programs and how they can benefit you.
                 </p>

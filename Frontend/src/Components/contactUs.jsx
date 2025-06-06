@@ -111,9 +111,9 @@ function ContactUs() {
         <div className="container mx-auto px-8 md:px-14 relative z-10 max-w-7xl">
           {/* Header Section */}
           <div className="text-center mb-24">
-            <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">GET IN TOUCH</h4>
+            <h4 className="text-[#d2a763] font-semibold tracking-wider mb-3">GET IN TOUCH</h4>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 tracking-tight">
-              Contact Us
+              <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Contact</span> Us
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
               We’re here to answer your questions and help you embark on your humanistic journey. Reach out to us for more information about our programs or to schedule a visit.

@@ -112,7 +112,7 @@ function Home() {
                 preserveAspectRatio="none"
                 viewBox="0 0 1200 120"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ fill: '#223668', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+                style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
               >
               <path
                 d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -129,14 +129,14 @@ function Home() {
         </section>
 
         
-        {/* About Us section - New addition */}
-        <section id="about-us" className="py-24 pt-4 pb-36 px-8 bg-[#223668]">
+        {/* Our story */}
+        <section id="about-us" className="py-24 pt-4 pb-36 px-8 bg-[#d2a763]">
           <div className="container py-10 px-6 mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12 px-6">
               <div className="md:w-1/2">
-                <h4 className="text-left text-[#d2a763] font-bold tracking-wider ">OUR STORY</h4>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Top Choice For <span className="text-[#ffd278] text-4xl md:text-6xl uppercase">Children</span></h2>
-                <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
+                <h4 className="text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Top Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span></h2>
+                <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
                   Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
                   We believe that learning should nurture not just the mind, but also the heart and spirit.
                 </p>
@@ -145,7 +145,7 @@ function Home() {
                   {['Empathy', 'Leadership', 'Humanism', 'Board Mind'].map((item, index) => (
                     <div key={index} className="flex items-center">
                       <div className="w-6 h-6 rounded-full bg-[white] flex items-center justify-center mr-3">
-                        <div className="w-3 h-3 rounded-full bg-[#d2a763]"></div>
+                        <div className="w-3 h-3 rounded-full bg-[#036e8d]"></div>
                       </div>
                       <span className="text-white font-bold">{item}</span>
                     </div>
@@ -180,7 +180,7 @@ function Home() {
                     {/* Large decorative circles */}
                     <div 
                       className="absolute -top-10 -left-10 w-32 h-32 rounded-full blur-xl"
-                      style={{ animation: 'float1 8s ease-in-out infinite' }}
+                      style={{ animation: 'float 8s ease-in-out infinite' }}
                     ></div>
                     
                     {/* Geometric shapes */}
@@ -221,7 +221,7 @@ function Home() {
 
                   {/* Main image container */}
                   <div 
-                    className="relative bg-[#d2a763] rounded-full p-6 backdrop-blur-sm border border-white/50 shadow-2xl"
+                    className="relative bg-[#036e8d] rounded-full p-6 backdrop-blur-sm border border-white/50 shadow-2xl"
                     style={{
                       transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
                       transition: 'transform 0.3s ease-out'
@@ -260,7 +260,7 @@ function Home() {
                           className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                           style={{ animation: 'gentleFloat 4s ease-in-out infinite 1s' }}
                         />
-                        <div className="absolute inset-0 rounded-full ring-2 ring-[#d2a763]/0 group-hover:ring-[#d2a763]/50 transition-all duration-300"></div>
+                        <div className="absolute inset-0 rounded-full ring-2 ring-[#036e8d]/0 group-hover:ring-[#036e8d]/50 transition-all duration-300"></div>
                       </div>
                     </div>
 
@@ -304,7 +304,7 @@ function Home() {
 
                     {/* Achievement badge */}
                     <div 
-                      className={`absolute top-28 left-12 bg-[#036e8d] text-white p-2 rounded-full shadow-lg transition-transform duration-300 z-20 ${
+                      className={`absolute top-28 left-12 bg-[#ffffff] text-[#036e8d] p-2 rounded-full shadow-lg transition-transform duration-300 z-20 ${
                         pulseActive ? 'scale-110' : 'scale-100'
                       }`}
                       style={{
@@ -448,7 +448,7 @@ function Home() {
         </section>
         
 
-{/* //important this */}
+        {/* what we offer*/}
         <section id="what-we-offer" className="py-24 relative">
           <img src={cloudOpen} className='w-100 absolute -top-16 p-0 m-0' />
 
@@ -474,7 +474,7 @@ function Home() {
               <div className="max-w-3xl mx-auto text-center mb-24">
                 <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR PROGRAMS</h4>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-8">
-                  Explore Our Transformative Modules
+                  Explore Our <span className='text-[#d2a763] inline-block transform hover:scale-x-105 duration-300'>Transformative</span>{' '}<span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Modules</span>
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Discover IIHH’s unique afterschool program—unlock skills, broaden perspectives, and ignite a lifelong love of learning beyond the classroom.                
@@ -530,7 +530,7 @@ function Home() {
                       <div>
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                       Transform Your<br /> 
-                        <span className='text-3xl md:text-4xl'><span className='text-[#036e8d]'>Future</span> with our Programs</span>
+                        <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Future</span> with our <span className='text-[#d2a763] inline-block transform hover:scale-x-105 duration-300'>Programs</span> 
                       </h2>
                         <p className="text-gray-600 text-lg leading-relaxed">
                           Discover how our afterschool program can empower you with essential life skills! 
@@ -565,7 +565,7 @@ function Home() {
                     <div className="lg:w-1/2 flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                         What Makes <br /> 
-                        <span className='text-3xl md:text-4xl'>IIHH <span className='text-[#036e8d]'>Unique?</span></span>
+                        IIHH <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Unique?</span>
                       </h2>
                       <p className="text-gray-600 text-lg mb-6">
                         Our program includes three exclusive modules you won't find anywhere else—designed to spark personal growth and real-world leadership.
@@ -576,19 +576,19 @@ function Home() {
                     <div className='flex flex-col gap-6 align-center justify-center'>
                     <div className="lg:w-1/2 flex flex gap-4">
                       {/* Card 1 */}
-                      <div className="w-32 h-32 aspect-square flex flex-col justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-lg transition-all text-center">
+                      <div className="w-32 h-32 aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                         <i className="fa-solid fa-seedling text-2xl text-green-500 mb-2"></i>
                         <h3 className="text-sm font-bold text-[#223668] leading-tight">Foundations of Humanism</h3>
                       </div>
 
                       {/* Card 2 */}
-                      <div className="w-32 h-32 aspect-square flex flex-col justify-center items-center rounded-xl p-3 bg-orange-300 hover:shadow-lg transition-all text-center">
+                      <div className="w-32 h-32 aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-orange-300 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                         <i className="fa-solid fa-toolbox text-2xl text-blue-500 mb-2"></i>
                         <h3 className="text-sm font-bold text-[#223668] leading-tight">Life Skills</h3>
                       </div>
 
                       {/* Card 3 */}
-                      <div className="w-32 h-32 aspect-square flex flex-col justify-center items-center rounded-xl p-3 bg-blue-200 hover:shadow-lg transition-all text-center">
+                      <div className="w-32 h-32 aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-blue-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                         <i className="fa-solid fa-users text-2xl text-purple-500 mb-2"></i>
                         <h3 className="text-sm font-bold text-[#223668] leading-tight">Humanistic Leadership</h3>
                       </div>
@@ -628,7 +628,8 @@ function Home() {
         </section>
 
 
-        <section id="whychooseus" className="relative py-16 md:py-24 bg-[#223668] overflow-hidden">
+        {/* Why choose us */}
+        <section id="whychooseus" className="relative py-12 md:py-14 bg-[#036e8d] overflow-hidden">
 
           <img src={cloudClose} className='w-100 absolute -top-12 p-0 m-0' />
 
@@ -650,11 +651,10 @@ function Home() {
                 <div className="w-full text-center lg:text-left">
                   <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">
                     Why Choose{" "}
-                    <span className="text-[#d2a763] relative inline-block">
-                      IIHH
+                    <span className="text-[#d2a763] relative inline-block transform hover:scale-x-105 duration-300">
+                      IIHH?
                       <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#d2a763] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
                     </span>
-                    ?
                   </h2>
                   <h3 className="text-2xl lg:text-3xl font-semibold text-[#036e8d] mb-6 animate-fade-in-delayed">
                     Because Real Transformation Starts Here
@@ -704,7 +704,7 @@ function Home() {
             <div className="max-w-7xl mx-auto">
               {/* Header Section */}
               <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">Frequently Asked <span className="text-[#036e8d] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Find answers to common questions about our humanistic education programs and how they can benefit you.
                 </p>
@@ -914,6 +914,7 @@ function Home() {
           </div>
         </section>
 
+
         {/* Enhanced CTA Section */}
         <section className="w-full overflow-hidden">
         
@@ -936,21 +937,6 @@ function Home() {
           </div>
         </section>
 
-        {/* <div className="relative max-w-md">
-          <input
-            type="email"
-            placeholder="Your E-mail"
-            className="w-full px-4 py-3 rounded-full bg-white border-0 shadow-md focus:outline-none"
-          />
-          <button 
-            className="absolute right-1 top-1 bg-[#036e8d] text-white p-2 rounded-full w-10 h-10 flex items-center justify-center"
-            aria-label="Subscribe"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div> */}
       </main>
     </div>
   );

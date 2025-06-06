@@ -57,7 +57,7 @@ const [isHovered, setIsHovered] = useState(false);
               preserveAspectRatio="none"
               viewBox="0 0 1200 120"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ fill: '#223668', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+              style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
             >
               <path
               d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -75,7 +75,7 @@ const [isHovered, setIsHovered] = useState(false);
 
 
         {/* Unveiling Our Identity, Vision and Values Section */}
-        <section id="who-we-are" className="py-12 sm:py-16 md:py-24 bg-[#223668] relative overflow-hidden">
+        <section id="who-we-are" className="py-12 sm:py-16 md:py-24 bg-[#d2a763] relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-30">
             <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
@@ -87,7 +87,7 @@ const [isHovered, setIsHovered] = useState(false);
             {/* Enhanced Heading Section with Image */}
             <div className="text-center mb-32 sm:mb-16 md:mb-48">
 
-              <div className="flex flex-col mb-48 lg:flex-row items-center justify-center gap-8 lg:gap-16 mb-8 sm:mb-48">
+              <div className="flex flex-col mb-48 lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-8 sm:mb-48">
                 {/* Left side - Image */}
                 <div className="flex-shrink-0 order-2 lg:order-1">
                   <div className="relative group">
@@ -103,12 +103,12 @@ const [isHovered, setIsHovered] = useState(false);
                     />
                     
                     {/* Floating Badge */}
-                    <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-[#d2a763] to-[#d2a763] rounded-full flex items-center justify-center shadow-2xl transform hover:rotate-12 transition-transform duration-300">
+                    <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-[#036e8d] to-[#036e8d] rounded-full flex items-center justify-center shadow-2xl transform hover:rotate-12 transition-transform duration-300">
                       <i className="fa-solid fa-graduation-cap text-3xl text-white"></i>
                     </div>
                     
                     {/* Accent Lines */}
-                    <div className="absolute top-4 left-4 w-8 h-1 bg-[#d2a763] rounded-full"></div>
+                    <div className="absolute top-4 left-2 w-8 h-1 bg-[#d2a763] rounded-full"></div>
                     <div className="absolute top-7 left-4 w-12 h-1 bg-white rounded-full"></div>
                   </div>
                 </div>
@@ -118,36 +118,36 @@ const [isHovered, setIsHovered] = useState(false);
                   {/* Decorative Background Elements */}
                   <div className="absolute top-1/2 -left-12 w-2 h-24 bg-gradient-to-b from-[#d2a763] to-transparent rounded-full hidden lg:block"></div>              
                   <div className="relative z-10">
-                    <h4 className="text-[#d2a763] font-bold tracking-wider text-sm md:text-base uppercase">
+                    <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase">
                       About Us
                     </h4>
                     <h1 className="text-4xl md:text-5xl font-bold text-white md:text-left mb-8 leading-tight">
                       Unveiling Our{' '}
                       <br />
-                      <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                      <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                         Identity
                       </span>
                       ,{' '}
-                      <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                      <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                         Vision
                       </span>
                       {' '}and{' '}
-                      <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                      <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                         Values
                       </span>
                       .
                     </h1>
                     
                     <div className="relative">
-                      <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#ffffff] to-transparent rounded-full hidden lg:block"></div>
-                      <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
+                      <div className="absolute -left-8 top-0 w-1 h-full bg-gradient-to-b from-[#ffffff] to-transparent rounded-full hidden lg:block"></div>
+                      <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
                         <span className="text-[#d2a763] font-bold text-2xl">"</span>
                         The International Institute of Horizon Humanism (IIHH) is a trailblazing institution dedicated to blending humanistic principles with modern education, shaping compassionate, ethical leaders for a global society.
                         <span className="text-[#d2a763] font-bold text-2xl">"</span>
                         
                         {/* Accent dots */}
-                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#d2a763] rounded-full"></div>
-                        <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-[#d2a763] rounded-full"></div>
+                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#036e8d] rounded-full"></div>
+                        <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-[#036e8d] rounded-full"></div>
                       </p>
                     </div>
                   </div>
@@ -160,8 +160,8 @@ const [isHovered, setIsHovered] = useState(false);
               
               {/* Enhanced Values Section - Floating Card */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full px-4 sm:px-0 md:px-24">
-                <div className="bg-[#ffd278] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
-                  <h3 className="text-gray-900 text-lg sm:text-xl md:text-2xl font-bold text-center mb-6">Our Core Values</h3>
+                <div className="bg-[#036e8d] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
+                  <h3 className="text-gray-900 text-lg sm:text-2xl md:text-4xl font-bold text-center mb-6">Our Core Values</h3>
                   <div className="grid grid-cols-4 md:grid-cols-4 gap-6 md:gap-8 items-center">
                     {[
                       { title: "Empathy", icon: "fa-heart", description: "Understanding others deeply" },
@@ -173,13 +173,13 @@ const [isHovered, setIsHovered] = useState(false);
                         key={index}
                         className="flex flex-col items-center text-center group hover:transform hover:scale-105 transition-all duration-300"
                       >
-                        <div className="w-16 h-16 bg-white/40 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/50 transition-colors duration-300">
-                          <i className={`fa-solid ${value.icon} text-2xl sm:text-3xl text-[#036e8d]`}></i>
+                        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors duration-300">
+                          <i className={`fa-solid ${value.icon} text-2xl sm:text-3xl text-[#ffffff]`}></i>
                         </div>
-                        <span className="text-gray-900 font-semibold text-sm md:text-base mb-1">
+                        <span className="text-white font-semibold text-sm md:text-base mb-1">
                           {value.title}
                         </span>
-                        <span className="text-gray-900 text-xs hidden md:block">
+                        <span className="text-white/80 text-xs hidden md:block">
                           {value.description}
                         </span>
                       </div>
@@ -196,7 +196,7 @@ const [isHovered, setIsHovered] = useState(false);
                   </div>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Our Vision</h3>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl hover:shadow-sm hover:scale-105 transition-all duration-300">
                   <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
                     At IIHH, our vision is to redefine education by placing emotional intelligence, ethical reasoning, and social responsibility at the heart of learning—alongside academic excellence. We strive to create a transformative educational ecosystem that empowers school students, college students, educators, and professionals to become compassionate, responsible, and forward-thinking global citizens.
                   </p>
@@ -225,7 +225,7 @@ const [isHovered, setIsHovered] = useState(false);
                   </div>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Our Mission</h3>
                 </div>
-                <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl">
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl hover:shadow-sm hover:scale-105 transition-all duration-300">
                   <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
                     Our mission is to nurture the next generation with the values, skills, and perspectives needed to thrive in a rapidly changing world. Through our afterschool program, rooted in the principles of humanism, inclusivity, and holistic personal development, we equip learners to lead meaningful, impactful lives beyond the classroom.
                   </p>
@@ -260,7 +260,7 @@ const [isHovered, setIsHovered] = useState(false);
         <section id="programs" className="py-12 relative bg-[#f9fcfd]">
           <img src={cloudOpen} className="w-100 absolute -top-16 p-0 m-0" />
           <div className="container mx-auto px-8 md:px-14 relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-8">Our <span className='text-[#d2a763]'>Signature</span> <span className='text-[#036e8d]'>Afterschool </span>Program</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-8">Our <span className='text-[#d2a763] inline-block transform hover:scale-x-105 duration-300'>Signature</span> <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Afterschool</span> Program</h2>
             <p className="text-lg text-gray-700 text-center mb-8 max-w-4xl mx-auto">
               IIHH’s flagship one-year afterschool program is designed to empower students with essential life skills, values, and perspectives that go beyond the standard school curriculum.The program is structured into 10 transformative modules, each focusing on a crucial aspect of personal and humanistic development.
             </p>
@@ -309,8 +309,6 @@ const [isHovered, setIsHovered] = useState(false);
                     </svg>
                   </Link>
                 </div>
-
-
               </div>
 
               <div className='hidden sm:block absolute bottom-0 right-0 z-10 w-60'>
@@ -349,7 +347,7 @@ const [isHovered, setIsHovered] = useState(false);
                   {/* Left Section - Heading and Description */}
                   <div className="lg:w-1/3 flex flex-col justify-center">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                      Our Featured <br /> <span className='text-[#036e8d]'>Modules!</span>
+                      Our Featured <br /> <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Modules!</span>
                     </h2>
                     <p className="text-gray-600 text-lg">
                       Discover the tools and skills you need to excel, grow, and thrive.
@@ -361,7 +359,7 @@ const [isHovered, setIsHovered] = useState(false);
                     {/* Card 1 */}
                     <div
                       id="course-card-1"
-                      className="flex flex-col justify-center rounded-2xl p-6 bg-yellow-200 hover:shadow-lg transition-all"
+                      className="flex flex-col justify-center rounded-2xl p-6 bg-yellow-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                       <i className="fa-solid fa-seedling text-4xl text-green-500 mb-4"></i>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">Foundations of Humanism</h3>
@@ -373,7 +371,7 @@ const [isHovered, setIsHovered] = useState(false);
                     {/* Card 2 */}
                     <div
                       id="course-card-2"
-                      className="flex flex-col justify-center rounded-2xl p-6 bg-orange-300 hover:shadow-lg transition-all"
+                      className="flex flex-col justify-center rounded-2xl p-6 bg-orange-300 hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                       <i className="fa-solid fa-toolbox text-4xl text-blue-500 mb-4"></i>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">Life Skills</h3>
@@ -385,7 +383,7 @@ const [isHovered, setIsHovered] = useState(false);
                     {/* Card 3 */}
                     <div
                       id="course-card-3"
-                      className="flex flex-col justify-center rounded-2xl p-6 bg-blue-200 hover:shadow-lg transition-all"
+                      className="flex flex-col justify-center rounded-2xl p-6 bg-blue-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                       <i className="fa-solid fa-users text-4xl text-orange-500 mb-4"></i>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">Humanistic Leadership</h3>
@@ -414,10 +412,10 @@ const [isHovered, setIsHovered] = useState(false);
         </section>
 
         {/* Team Section */}
-        <section id="team" className="py-24 relative bg-[#223668]">
+        <section id="team" className="py-24 relative bg-[#036e8d]">
           <img src={cloudClose} className="w-100 absolute -top-12 p-0 m-0" />
           <div className="container mx-auto px-8 md:px-14">
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">Our Leadership <span className='text-[#ffd278]'>Team</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">Our Leadership <span className='text-[#ffd278] inline-block transform hover:scale-x-105 duration-300'>Team</span></h2>
             <p className="text-white/80 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mt-8 mb-16">
                 Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
             </p>

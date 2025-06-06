@@ -314,7 +314,7 @@ export default function HowItWorks() {
           preserveAspectRatio="none"
           viewBox="0 0 1200 120"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ fill: '#223668', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+          style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
         >
           <path
             d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -331,7 +331,7 @@ export default function HowItWorks() {
       </section>
 
       {/*Introduction Section */}
-      <section id="introduction" className="pt-4 py-16 sm:py-20 md:pt-4 md:py-28 bg-[#223668] relative overflow-hidden">
+      <section id="introduction" className="pt-4 py-16 sm:py-20 md:pt-4 md:py-28 bg-[#d2a763] relative overflow-hidden">
         {/* Background Pattern - Similar to who-we-are section */}
         <div className="absolute inset-0 opacity-8">
           <div className="absolute top-20 left-16 w-24 h-24 border-2 border-[#036e8d]/20 rounded-full"></div>
@@ -348,17 +348,17 @@ export default function HowItWorks() {
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 w-40 h-40 bg-gradient-to-r from-[#036e8d]/10 to-[#d2a763]/10 rounded-full blur-3xl"></div>
             
             <div className="relative z-10 max-w-4xl mx-auto">
-              <h4 className="text-white font-bold tracking-wider text-sm md:text-base uppercase mb-4">
+              <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase mb-4">
                 Our Philosophy
               </h4>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
                 Redefining{' '}
-                <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                   Education
                 </span>
                 {' '}Through{' '}
                 <br className="hidden sm:block" />
-                <span className='text-[#ffd278] relative inline-block transform hover:scale-105 transition-transform duration-300'>
+                <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                   Our Approach
                 </span>
               </h2>
@@ -366,7 +366,7 @@ export default function HowItWorks() {
               {/* Enhanced description with styling similar to the who-we-are section */}
               <div className="relative max-w-3xl mx-auto">
                 <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#036e8d] to-transparent rounded-full hidden lg:block"></div>
-                <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed font-medium relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-white/30">
+                <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-white hover:shadow-sm hover:scale-105 transition-all duration-700">
                   <span className="text-[#036e8d] font-bold text-2xl">"</span>
                   IIHH redefines afterschool education by blending humanistic values, hands-on learning, and mentorship. We empower students to become compassionate, confident, and creative leaders ready to make a meaningful impact in our interconnected world.
                   <span className="text-[#036e8d] font-bold text-2xl">"</span>
@@ -464,7 +464,7 @@ export default function HowItWorks() {
           {/* Header with Stagger Animation */}
           <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Your <span className='text-[#d2a763] relative inline-block transform hover:scale-105 transition-transform duration-300'>IIHH</span> <span className='text-[#036e8d]'> Journey</span>
+              Your <span className='text-[#d2a763] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>IIHH</span> <span className='text-[#036e8d] inline-block transform hover:scale-x-105 transition-transform duration-300'> Journey</span>
             </h2>
             <div className="inline-block mb-4">
               <span className="text-gray-600 text-lg max-w-3xl text-center leading-relaxed mb-10">
@@ -583,7 +583,7 @@ export default function HowItWorks() {
         <div className="container mx-auto px-6">
         <div className="container mx-auto px-6 text-center max-w-3xl">
           <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Learning by <span className="text-[#036e8d]">Doing</span>, <br />Not Just <span className="text-[#d2a763]">Reading</span>
+            Learning by <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Doing</span>, <br />Not Just <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Reading</span>
           </h2>
           <p className="text-gray-700 text-lg mb-6">
             At IIHH, learning is hands-on and practical. Students engage in real-world projects, group challenges, and creative experiments—learning by doing, not just reading.
@@ -607,16 +607,16 @@ export default function HowItWorks() {
       <section id="modules" className="py-16 bg-[#f9fcfd] font-comic">
         <div className="container mx-auto px-8 md:px-14 py-14 max-w-7xl flex flex-col items-center">
           <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Our Signature <span className="text-[#036e8d]">Modules!</span>
+            Our Signature <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Modules!</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl text-center leading-relaxed mb-10">
             Foundations of Humanism, Life Skills, and Humanistic Leadership are exclusive to IIHH—designed to ignite empathy, ethical reasoning, and a global mindset.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"> 
             {/* Card 1 */}
             <div
               id="course-card-1"
-              className="flex flex-col justify-center rounded-2xl p-10 bg-yellow-200 hover:shadow-lg transition-all duration-300"
+              className="flex flex-col shadow-xl justify-center rounded-2xl p-10 bg-yellow-200 transform hover:scale-105 duration-300 hover:shadow-none"
             >
               <i className="fa-solid fa-brain text-4xl text-[#ffffff] mb-4 self-center"></i>
               <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">Foundations of Humanism</h3>
@@ -628,7 +628,7 @@ export default function HowItWorks() {
             {/* Card 2 */}
             <div
               id="course-card-2"
-              className="flex flex-col justify-center rounded-2xl p-6 bg-orange-300 hover:shadow-lg transition-all duration-300"
+              className="flex flex-col shadow-xl justify-center rounded-2xl p-6 bg-orange-300 transform hover:scale-105 duration-300 hover:shadow-none"
             >
               <i className="fa-solid fa-toolbox text-4xl text-[#ffffff] mb-4 self-center"></i>
               <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">Life Skills</h3>
@@ -640,7 +640,7 @@ export default function HowItWorks() {
             {/* Card 3 */}
             <div
               id="course-card-3"
-              className="flex flex-col justify-center rounded-2xl p-6 bg-blue-200 hover:shadow-lg transition-all duration-300"
+              className="flex flex-col shadow-xl justify-center rounded-2xl p-6 bg-blue-200 transform hover:scale-105 duration-300 hover:shadow-none"
             >
               <i className="fa-solid fa-globe text-4xl text-[#ffffff] mb-4 self-center"></i>
               <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">Humanistic Leadership</h3>
@@ -658,7 +658,7 @@ export default function HowItWorks() {
       {/* Program Benefits */}
       <section id="program-benefits" className="pb-6 pt-4 bg-[#f9fcfd] relative overflow-hidden"> 
         <h2 className="text-black text-4xl md:text-5xl font-bold text-center mb-3">
-          Program <span className="text-[#d2a763]">Benefits</span>
+          Program <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Benefits</span>
         </h2>
         <p className="text-lg text-center text-gray-900 max-w-2xl mx-auto leading-relaxed mb-16">
           IIHH’s program empowers you with more than knowledge—gain the resilience, well-being, and leadership skills to thrive in every aspect of life.
@@ -702,14 +702,14 @@ export default function HowItWorks() {
       </section>
 
 
-      <section className="bg-[#223668] relative py-20 pb-0">
+      <section className="bg-[#036e8d] relative py-20 pb-0">
         <img src={cloudClose} className="w-full absolute -top-12 left-0" alt="Cloud Decoration" /> 
 
         <div className="container mx-auto px-6 py-0 relative z-10">
           {/* Header Section */}
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              What to <span className='text-[#d2a763]'>Expect</span>
+              What to <span className='text-[#ffd278] inline-block transform hover:scale-x-105 duration-300'>Expect</span>
             </h2>
             <p className="text-white text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
               Experience a week of interactive workshops, collaborative projects, reflection, and community engagement—making every day meaningful.
@@ -721,11 +721,9 @@ export default function HowItWorks() {
             {/* Mentorship Card */}
             <div className="group bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:border-[#036e8d]/20 transition-all duration-300">
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#d2a763] to-[#d2a763]/80 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
+                <svg className="w-12 h-12 text-[#d2a763] m-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
                 <h3 className="text-2xl font-bold text-[#036e8d] mb-4">
                   Mentorship & Support
                 </h3>
@@ -738,11 +736,9 @@ export default function HowItWorks() {
             {/* Target Audience Card */}
             <div className="group bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:border-[#d2a763]/20 transition-all duration-300">
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#d2a763] to-[#d2a763]/80 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
+                <svg className="w-12 h-12 text-[#d2a763] m-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
                 <h3 className="text-2xl font-bold text-[#036e8d] mb-4">
                   Who Is It For?
                 </h3>
@@ -755,11 +751,9 @@ export default function HowItWorks() {
             {/* Program Structure Card */}
             <div className="group bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:border-[#036e8d]/20 transition-all duration-300">
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#d2a763] to-[#d2a763]/80 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                  </svg>
-                </div>
+                <svg className="w-12 h-12 text-[#d2a763] m-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
                 <h3 className="text-2xl font-bold text-[#036e8d] mb-4">
                   Program Structure
                 </h3>
@@ -773,8 +767,8 @@ export default function HowItWorks() {
 
         {/* Main Impact Statement */}
         <div className="container bg-[white] flex-col text-center py-10 px-10">
-          <div className="inline-flex items-center justify-center w-20 h-20 mb-6 bg-gradient-to-br from-[#036e8d] to-[#036e8d]/80 rounded-xl mx-auto">
-            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="inline-flex items-center justify-center w-20 h-20 mb-6">
+            <svg className="w-12 h-12 text-[#d2a763] m-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
