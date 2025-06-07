@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import Lottie from 'lottie-react';
 import "../App.css";
 import { Link } from "react-router-dom";
 import Tilt from 'react-parallax-tilt';
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
+import vision from '../assets/lottie/vision.json'; 
+import mission from '../assets/lottie/mission.json';
 
 const modules = [
   { id: 1, title: "Holistic Personal Development", subtitle: "Mind, body, and soul", icon: "fa-spa", color: "purple" },
@@ -16,7 +19,27 @@ const modules = [
 ]; 
 
 function AboutUs() {
-const [isHovered, setIsHovered] = useState(false);
+  const [isVisionHovered, setIsVisionHovered] = useState(false);
+  const [isMissionHovered, setIsMissionHovered] = useState(false);
+
+  // Refs to control Lottie animations
+  const visionLottieRef = useRef(null);
+  const missionLottieRef = useRef(null);
+
+  // Functions to restart animations on hover
+  const playVisionAnimation = () => {
+    setIsVisionHovered(true);
+    if (visionLottieRef.current) {
+      visionLottieRef.current.goToAndPlay(0); // Start from first frame
+    }
+  };
+
+  const playMissionAnimation = () => {
+    setIsMissionHovered(true);
+    if (missionLottieRef.current) {
+      missionLottieRef.current.goToAndPlay(0); // Start from first frame
+    }
+  };
 
   return (
     <div className="h-full text-base-content font-comic">
@@ -191,12 +214,25 @@ const [isHovered, setIsHovered] = useState(false);
               {/* Enhanced Vision */}
               <div className="flex flex-col">
                 <div className="flex items-center mb-6 pb-4 border-b border-gray-200">
-                  <div className="w-12 h-12 bg-[#036e8d]/10 rounded-full flex items-center justify-center mr-4">
-                    <i className="fa-solid fa-eye text-2xl text-[#036e8d]"></i>
+                  <div className="w-12 h-12 bg-[black]/5 rounded-full flex items-center justify-center mr-4">
+                    {/* <i className="fa-solid fa-eye text-2xl text-[#036e8d]"></i> */}
+                    <Lottie
+                      lottieRef={visionLottieRef}
+                      animationData={vision}
+                      loop={false}
+                      isPaused={!isVisionHovered}
+                      autoplay={false}
+                      style={{ width: 48, height: 48 }}
+                    />
                   </div>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Our Vision</h3>
+
+
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl hover:shadow-sm hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl hover:shadow-sm hover:scale-105 transition-all duration-300"
+                  onMouseEnter={playVisionAnimation}
+                  onMouseLeave={() => setIsVisionHovered(false)}
+                >
                   <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
                     At IIHH, our vision is to redefine education by placing emotional intelligence, ethical reasoning, and social responsibility at the heart of learning—alongside academic excellence. We strive to create a transformative educational ecosystem that empowers school students, college students, educators, and professionals to become compassionate, responsible, and forward-thinking global citizens.
                   </p>
@@ -220,12 +256,23 @@ const [isHovered, setIsHovered] = useState(false);
               {/* Enhanced Mission */}
               <div className="flex flex-col">
                 <div className="flex items-center mb-6 pb-4 border-b border-gray-200">
-                  <div className="w-12 h-12 bg-[#036e8d]/10 rounded-full flex items-center justify-center mr-4">
-                    <i className="fa-solid fa-bullseye text-2xl text-[#036e8d]"></i>
+                    {/* <i className="fa-solid fa-bullseye text-2xl text-[#036e8d]"></i> */}
+                  <div className="w-12 h-12 bg-[black]/5 rounded-full flex items-center justify-center mr-4">
+                    <Lottie
+                      lottieRef={missionLottieRef}
+                      animationData={mission}
+                      loop={false}
+                      isPaused={!isMissionHovered}
+                      autoplay={false}
+                      style={{ width: 48, height: 48 }}
+                    />
                   </div>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Our Mission</h3>
                 </div>
-                <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl hover:shadow-sm hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl hover:shadow-sm hover:scale-105 transition-all duration-300"
+                  onMouseEnter={playMissionAnimation}
+                  onMouseLeave={() => setIsMissionHovered(false)}
+                >
                   <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
                     Our mission is to nurture the next generation with the values, skills, and perspectives needed to thrive in a rapidly changing world. Through our afterschool program, rooted in the principles of humanism, inclusivity, and holistic personal development, we equip learners to lead meaningful, impactful lives beyond the classroom.
                   </p>
