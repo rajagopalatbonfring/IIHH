@@ -8,6 +8,8 @@ import { ChevronRight } from "lucide-react";
 import { Star, Heart, Users, Brain } from "lucide-react";
 import { CheckCircle, BookOpen} from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
+import logoAlone from '../assets/IIHH_OnlyLogo.png'
+import TestimonialCarousel from '../Components/ui/TestimonialCarousel'
 
 function Home() {
 
@@ -22,7 +24,62 @@ function Home() {
   { id: 1, title: "Holistic Personal Development", subtitle: "Mind, body, and soul", icon: "fa-spa", color: "purple" },
   { id: 2, title: "Personal Development", subtitle: "Grow your character", icon: "fa-user", color: "yellow" },
   { id: 3, title: "Traditional Values", subtitle: "Roots of culture", icon: "fa-home", color: "red" },
-];
+  ];
+
+  const testimonials = [
+    {
+      img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
+      name: "PRIYA SHARMA",
+      title: "A New Perspective on Learning",
+      desc: "Joining IIHH was a turning point for me. The modules on self-awareness and emotional intelligence helped me understand myself and connect better with others. I feel more confident and ready for any challenge.",
+      role: "Student, Grade 10",
+      stars: 5,
+    },
+    {
+      img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
+      name: "AARAV PATEL",
+      title: "Skills for Real Life",
+      desc: "IIHH taught me practical skills I never learned in regular school—like managing my finances, solving problems, and leading with empathy. I now see the world differently and feel prepared for my future.",
+      role: "Student, Grade 11",
+      stars: 5,
+    },
+    {
+      img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg",
+      name: "NEHA GUPTA",
+      title: "Holistic Growth for My Child",
+      desc: "As a parent, I wanted my daughter to learn more than just academics. IIHH’s focus on values, culture, and inclusivity has made her more thoughtful and responsible. I highly recommend this program!",
+      role: "Parent",
+      stars: 5,
+    },
+    {
+      img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg",
+      name: "VIKRAM SINGH",
+      title: "Empowering Leadership",
+      desc: "The leadership workshops at IIHH helped me discover my potential to inspire others. The focus on empathy and ethical decision-making has shaped me into a better leader and person.",
+      role: "Student, Grade 12",
+      stars: 5,
+    },
+    {
+      img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+      name: "ANITA DESAI",
+      title: "A Supportive Community",
+      desc: "IIHH’s community-driven approach made my son feel valued and supported. The program’s emphasis on collaboration and cultural understanding has been transformative for his growth.",
+      role: "Parent",
+      stars: 5,
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [pulseActive, setPulseActive] = useState(false);
@@ -54,84 +111,88 @@ function Home() {
 
   return (
     <div className="h-full text-base-content font-comic">
-      <main className="pt-20 min-h-screen"
-      >
-        <section 
-          id="hero" 
+      <main className="pt-20 min-h-screen">
+        
+        <section
+          id="hero"
           className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
           style={{ backgroundImage: `url(${rectangle})` }}
         >
-            <div className="absolute inset-0 bg-black/20 z-0" />
-            {/* Content Wrapper */}
-            <div className="container mx-auto px-6 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-10">
+          <div className="absolute inset-0 bg-black/20 z-0" />
+
+          {/* Content Wrapper */}
+          <div className="py-4 w-full container px-6 relative z-10 flex flex-col items-center justify-start md:flex-row md:items-start md:justify-start gap-10">
+            <div className="w-full flex flex-col items-center md:items-start md:text-left">
               
-              {/* Content on the left */}
-              <div className="w-full lg:w-1/2 text-center lg:text-left">
-                <h1 className="text-4xl md:text-6xl font-extrabold text-[#ffd278] mb-6 leading-tight tracking-tight drop-shadow-lg">
-                  IIHH - <span className="block md:inline">International Institute of Horizon Humanism</span>
+              {/* Logo + Heading */}
+              <div className="w-full flex flex-col text-center items-center mt-4 gap-4 md:flex-row md:items-start md:text-left md:justify-start">
+                <img
+                  src={logoAlone}
+                  alt="Logo"
+                  className="align-center h-auto object-contain transform hover:scale-105 duration-300"
+                  width="200px"
+                />
+                <h1 className="block text-5xl md:text-6xl font-extrabold text-[#ffd278] mb-4 leading-tight tracking-tight drop-shadow-lg">
+                    International <br /> Institute 
+                    of <br />Horizon Humanism
                 </h1>
-                <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-md">
-                  A transformative educational experience fostering humanism, resilience, and purpose for all learners.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
-                  <Link 
-                    to="/programs" 
-                    className="relative bg-white text-purple-700 px-8 py-3 rounded-full text-lg font-semibold overflow-hidden group transition-all duration-300 hover:shadow-xl"
-                  >
-                    <span className="relative z-10 text-[#036e8d]">Explore Programs</span>
-                  </Link>
-                  <a
-                    href="#testimonials"
-                    className="bg-white/70 text-white px-5 py-3 rounded-full text-lg font-semibold hover:bg-white hover: transition-all duration-300 flex items-center justify-center relative"
-                  >
-                    <i className="fa-solid fa-play text-[#036e8d]"></i>
-                  </a>
-                </div>
               </div>
 
-              {/* Image on the right */}
-              {/* <div className="w-full lg:w-1/2 flex justify-center">
-                <img 
-                  src="src/assets/kids-gesturing-thumbs-up.png" 
-                  alt="IIHH Community" 
-                  className="w-full max-w-[500px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[700px]"
-                />
-              </div> */}
+              {/* Subtitle */}
+              <p className="text-center text-lg md:text-xl text-white/90 mb-10 max-w-lg md:mx-0 leading-relaxed drop-shadow-md md:text-left">
+                A transformative educational experience fostering humanism, resilience,
+                and purpose for all learners.
+              </p>
 
+              {/* Buttons */}
+              <div className="pb-20 flex flex-row justify-center md:justify-start gap-6 md:pb-0">
+                <Link
+                  to="/programs"
+                  className="bg-white text-purple-700 px-8 py-3 rounded-full text-lg font-semibold overflow-hidden group transition-all duration-300 hover:shadow-xl"
+                >
+                  <span className="text-[#036e8d]">Explore Programs</span>
+                </Link>
+                <a
+                  href="#testimonials"
+                  className="relative bg-white/70 text-white px-5 py-3 rounded-full text-lg font-semibold hover:bg-white transition-all duration-300 flex items-center justify-center"
+                >
+                  <i className="fa-solid fa-play text-[#036e8d]"></i>
+                </a>
+              </div>
             </div>
+          </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
-              <a href="#what-we-offer" className="text-white">
-                <i className="fa-solid fa-chevron-down text-2xl drop-shadow-md"></i>
-              </a>
-            </div>
-
-              <svg
-                className='absolute bottom-0'
-                preserveAspectRatio="none"
-                viewBox="0 0 1200 120"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
-              >
-              <path
-                d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
-                opacity=".25"
-                style={{ fill: '#ffffff' }}
-              />
-              <path
-                d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z"
-                opacity=".5"
-                style={{ fill: '#ffffff' }}
-              />
-                <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
-            </svg>
+          {/* SVG Wave */}
+          <svg
+            className="absolute bottom-0"
+            preserveAspectRatio="none"
+            viewBox="0 0 1200 120"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{
+              fill: "#d2a763",
+              width: "148%",
+              height: 87,
+              transform: "rotate(180deg)",
+            }}
+          >
+            <path
+              d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
+              opacity=".25"
+              style={{ fill: "#ffffff" }}
+            />
+            <path
+              d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z"
+              opacity=".5"
+              style={{ fill: "#ffffff" }}
+            />
+            <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
+          </svg>
         </section>
 
         
         {/* Our story */}
         <section id="about-us" className="py-24 pt-4 pb-36 px-8 bg-[#d2a763]">
-          <div className="container py-10 px-6 mx-auto">
+          <div className="container py-10 mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12 px-6">
               <div className="md:w-1/2">
                 <h4 className="text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
@@ -806,110 +867,19 @@ function Home() {
               Hear from our learners and families about how IIHH’s afterschool program has helped them grow beyond academics—building confidence, life skills, and a humanistic outlook for the real world.
             </p>
 
-            {/* Navigation and Cards Container */}
-            <div className="relative max-w-6xl mx-auto">
-              {/* Left Arrow */}
-              <button className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
-                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <TestimonialCarousel testimonials={testimonials} />
+            
+            {/* Read More Button */}
+            <div className="text-center">
+              <Link
+                to="/testimonials"
+                className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
+              >
+                Read More Success Stories
+                <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
-
-              {/* Right Arrow */}
-              <button className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
-                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              {/* Testimonials Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-12">
-                {[
-                  {
-                    img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg",
-                    name: "PRIYA SHARMA",
-                    title: "A New Perspective on Learning",
-                    desc: "Joining IIHH was a turning point for me. The modules on self-awareness and emotional intelligence helped me understand myself and connect better with others. I feel more confident and ready for any challenge.",
-                    role: "Student, Grade 10",
-                    stars: 5,
-                  },
-                  {
-                    img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
-                    name: "AARAV PATEL",
-                    title: "Skills for Real Life",
-                    desc: "IIHH taught me practical skills I never learned in regular school—like managing my finances, solving problems, and leading with empathy. I now see the world differently and feel prepared for my future.",
-                    role: "Student, Grade 11",
-                    stars: 5,
-                  },
-                  {
-                    img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg",
-                    name: "NEHA GUPTA",
-                    title: "Holistic Growth for My Child",
-                    desc: "As a parent, I wanted my daughter to learn more than just academics. IIHH’s focus on values, culture, and inclusivity has made her more thoughtful and responsible. I highly recommend this program!",
-                    role: "Parent",
-                    stars: 5,
-                  },
-                ].map((testimonial, index) => (
-                  <Tilt
-                    key={index}
-                    className="tilt-card"
-                    tiltMaxAngleX={15}
-                    tiltMaxAngleY={15}
-                    transitionSpeed={400}
-                    scale={1.05}
-                    glareEnable={false}
-                    perspective={1000}
-                  >
-                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center h-full flex flex-col">
-                      {/* Large Quote Mark */}
-                      <div className="text-6xl text-gray-300 font-serif mb-4">"</div>
-                      
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">{testimonial.title}</h3>
-                      
-                      {/* Description */}
-                      <p className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
-                        {testimonial.desc}
-                      </p>
-                      
-                      {/* Stars */}
-                      <div className="flex justify-center text-orange-400 mb-6">
-                        {[...Array(testimonial.stars)].map((_, i) => (
-                          <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                          </svg>
-                        ))}
-                      </div>
-                      
-                      {/* Author Info */}
-                      <div className="flex items-center justify-center">
-                        <img
-                          src={testimonial.img}
-                          alt={testimonial.name}
-                          className="w-12 h-12 rounded-full mr-3"
-                        />
-                        <div className="text-left">
-                          <h4 className="font-bold text-gray-900 text-sm">{testimonial.name}</h4>
-                          <p className="text-gray-500 text-sm">{testimonial.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </Tilt>
-                ))}
-              </div>
-            </div>
-
-            {/* Optional: Read More Button */}
-            <div className="text-center mt-12">
-                <Link
-                  to="/testimonials"
-                  className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
-                >
-                  Read More Success Stories
-                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Link>
+              </Link>
             </div>
           </div>
         </section>

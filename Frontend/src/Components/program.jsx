@@ -7,6 +7,61 @@ import collabWorkImg from "../assets/Groupworkintheclassroom.jpeg";
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { text } from "framer-motion/client";
+
+const colorClassMap = {
+  green: {
+    text: "text-green-600",
+    border: "border-green-200",
+    hoverText: "hover:text-green-800",
+  },
+  blue: {
+    text: "text-blue-600",
+    border: "border-blue-200",
+    hoverText: "hover:text-blue-800",
+  },
+  red: {
+    text: "text-red-600",
+    border: "border-red-200",
+    hoverText: "hover:text-red-800",
+  },
+  yellow: {
+    text: "text-yellow-600",
+    border: "border-yellow-200",
+    hoverText: "hover:text-yellow-800",
+  },
+  purple: {
+    text: "text-purple-600",
+    border: "border-purple-200",
+    hoverText: "hover:text-purple-800",
+  },
+  pink: {
+    text: "text-pink-600",
+    border: "border-pink-200",
+    hoverText: "hover:text-pink-800",
+  },
+  indigo: {
+    text: "text-indigo-600",
+    border: "border-indigo-200",
+    hoverText: "hover:text-indigo-800",
+  },
+  orange:{
+    text: "text-orange-600",
+    border: "border-orange-200",
+    hoverText:"hover:text-orange-800"
+  },
+  teal:{
+    text:"text-teal-600",
+    border:"border-teal-200",
+    hoverText:"hover:text-teal-800"
+  },
+  cyan:{
+    text:"text-cyan-600",
+    border:"border-cyan-200",
+    hoverText:"hover:text-cyan-800"
+  }
+};
+
 
 const modules = [
   {
@@ -323,59 +378,49 @@ function Program() {
     setAnimationTrigger(true);
   }, []);
 
-
-
-  //faculty sections datas and functionalities starts here
   // Duplicate faculty data to ensure enough cards for three-card view
-  const baseFacultyData = [
-      { name: "Dr. Elena Rodriguez", role: "Program Director", specialty: "Humanistic Philosophy", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" },
-      { name: "Prof. Michael Chen", role: "Lead Instructor", specialty: "Emotional Intelligence", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
-      { name: "Dr. Amara Okafor", role: "Curriculum Designer", specialty: "Critical Thinking", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" },
-      { name: "Prof. James Wilson", role: "Research Lead", specialty: "Social Ethics", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" }
-  ];
-
-  // Repeat data to create 8 entries
   const originalFacultyData = [
-    ...baseFacultyData.map((item, index) => ({ ...item, id: `faculty-${index}` })),
-    ...baseFacultyData.map((item, index) => ({ ...item, id: `faculty-${index + 4}` }))
+    { name: "Dr. Elena Rodriguez", role: "Program Director", specialty: "Humanistic Philosophy", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" },
+    { name: "Prof. Michael Chen", role: "Lead Instructor", specialty: "Emotional Intelligence", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
+    { name: "Dr. Amara Okafor", role: "Curriculum Designer", specialty: "Critical Thinking", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" },
+    { name: "Prof. James Wilson", role: "Research Lead", specialty: "Social Ethics", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
+    { name: "Prof. Sarah Johnson", role: "Innovation Head", specialty: "Holistic Learning", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" },
   ];
+  const facultyData = originalFacultyData;
 
-  // Clone data for infinite loop (3 sets: start, original, end)
-  const facultyData = [
-    ...originalFacultyData.map((item, index) => ({ ...item, id: `clone-start-${index}` })),
-    ...originalFacultyData.map((item, index) => ({ ...item, id: `original-${index}` })),
-    ...originalFacultyData.map((item, index) => ({ ...item, id: `clone-end-${index}` }))
-  ];
+const [cardsPerView, setCardsPerView] = useState(1);
 
-  const [currentIndex, setCurrentIndex] = useState(originalFacultyData.length); // Start at original set
-  const [isTransitioning, setIsTransitioning] = useState(true);
-
-  const cardsPerView = window.innerWidth >= 768 ? 4 : 1;
-  const maxIndex = facultyData.length - cardsPerView;
-  const originalStartIndex = originalFacultyData.length; // Index where original data starts
-  const originalEndIndex = originalStartIndex + originalFacultyData.length - 1; // Last index of original data
-
-  const prevSlide = () => {
-    console.log('Previous slide clicked, currentIndex:', currentIndex);
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => prev - 1);
+useEffect(() => {
+  const updateCardsPerView = () => {
+    const width = window.innerWidth;
+    if (width >= 1280) setCardsPerView(4);
+    else if (width >= 768) setCardsPerView(3);
+    else setCardsPerView(1);
   };
 
-  const nextSlide = () => {
-    console.log('Next slide clicked, currentIndex:', currentIndex);
-    setIsTransitioning(true);
+  updateCardsPerView();
+  window.addEventListener("resize", updateCardsPerView);
+  return () => window.removeEventListener("resize", updateCardsPerView);
+}, []);
+
+
+const [currentIndex, setCurrentIndex] = useState(0);
+
+const nextSlide = () => {
+  if (currentIndex + cardsPerView >= facultyData.length) {
+    setCurrentIndex(0); // loop to start
+  } else {
     setCurrentIndex((prev) => prev + 1);
-  };
+  }
+};
 
-  useEffect(() => {
-    if (currentIndex >= maxIndex) {
-      // Reached end clones, jump to start of original
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(originalStartIndex);
-      }, 300);
-    }
-  }, [currentIndex, maxIndex, originalEndIndex, originalStartIndex, cardsPerView]);
+const prevSlide = () => {
+  if (currentIndex <= 0) {
+    setCurrentIndex(facultyData.length - cardsPerView); // go to end
+  } else {
+    setCurrentIndex((prev) => prev - 1);
+  }
+};
 
 
   // In action variables, functions and other starts here!!
@@ -860,37 +905,45 @@ function Program() {
             <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto leading-relaxed mb-12">
               Explore our ten transformative modules, each designed to nurture essential skills, values, and holistic growth
             </p>
+            
             <div className={`grid grid-cols-1 px-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ${showAll ? 'auto-rows-fr' : ''}`}>
-              {modules.slice(0, showAll ? 10 : 8).map((module, index) => (
-                <div
-                  key={module.id}
-                  className={`relative bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-2 ${
-                    animationTrigger ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  } border-2 border-${module.color}-200
-                  ${showAll && index === 8 ? 'lg:col-start-2' : ''}
-                  ${showAll && index === 9 ? 'lg:col-start-3' : ''}`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                  onClick={() => setSelectedModule(module)}
-                >
-                  <div className="absolute top-4 right-4 text-gray-500 font-semibold text-lg">
-                    {module.id}
-                  </div>
-                  <i className={`fa-solid ${module.icon} text-4xl text-${module.color}-600 mb-4`}></i>
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">{module.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{module.subtitle}</p>
-                  <div className="relative overflow-hidden h-0 group-hover:h-16 transition-all duration-300">
-                    <p className="text-gray-500 text-xs absolute bottom-0">
-                      {module.description.slice(0, 80)}...
-                    </p>
-                  </div>
-                  <button
-                    className={`mt-4 text-${module.color}-600 font-semibold hover:text-${module.color}-800 transition-colors duration-200`}
+              {modules.slice(0, showAll ? 10 : 8).map((module, index) => {
+                const colorClasses = colorClassMap[module.color] || {
+                  text: "text-gray-600",
+                  border: "border-gray-200",
+                  hoverText: "hover:text-gray-800"
+                };
+
+                return (
+                  <div
+                    key={module.id}
+                    className={`relative bg-white border-2 rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-2 ${animationTrigger ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} ${colorClasses.border}
+                    ${showAll && index === 8 ? 'lg:col-start-2' : ''}
+                    ${showAll && index === 9 ? 'lg:col-start-3' : ''}`}
+                    style={{ animationDelay: `${index * 100}ms` }}
+                    onClick={() => setSelectedModule(module)}
                   >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <div className="absolute top-4 right-4 text-gray-500 font-semibold text-lg">
+                      {module.id}
+                    </div>
+                    <i className={`fa-solid ${module.icon} text-4xl mb-4 ${colorClasses.text}`}></i>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">{module.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4">{module.subtitle}</p>
+                    <div className="relative overflow-hidden h-0 group-hover:h-16 transition-all duration-300">
+                      <p className="text-gray-500 text-xs absolute bottom-0">
+                        {module.description.slice(0, 80)}...
+                      </p>
+                    </div>
+                    <button
+                      className={`mt-4 bg-none font-semibold transition-colors duration-200 ${colorClasses.text} ${colorClasses.hoverText}`}
+                    >
+                      View Details
+                    </button>
+                  </div>
+                );
+              })}
             </div>
+
             <div className="flex justify-center mt-8 relative z-10">
             <button
               onClick={() => setShowAll(prev => !prev)}
@@ -1302,11 +1355,11 @@ function Program() {
               <div className="relative max-w-8xl mx-auto">
                 <div className="overflow-hidden py-20">
                   <div
-                    className={`flex ${isTransitioning ? 'transition-transform duration-300 ease-in-out' : ''}`}
-                    style={{ transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)` }}
+                    className={`flex transition-transform duration-300 ease-in-out`}
+                    style={{ transform: `translateX(-${(100 / cardsPerView) * currentIndex}%)` }}
                   >
                     {facultyData.map((faculty, index) => (
-                      <div key={faculty.id} className={`w-full ${cardsPerView === 4 ? 'md:w-1/4' : ''} flex-shrink-0 px-4`}>
+                      <div key={index} className={`w-full ${cardsPerView > 1 ? 'md:w-1/' + cardsPerView : ''} flex-shrink-0 px-4`}>
                         <Tilt
                           maxTilt={15}
                           speed={400}
