@@ -111,11 +111,13 @@ function Home() {
 
   return (
     <div className="h-full text-base-content font-comic">
-      <main className="pt-20 min-h-screen">
+      <main className="pt-20 min-h-screen overflow-hidden">
         
+
+        {/* Hero section */}
         <section
           id="hero"
-          className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
+          className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center flex items-center justify-center bg-[#223668]"
           style={{ backgroundImage: `url(${rectangle})` }}
         >
           <div className="absolute inset-0 bg-black/20 z-0" />
@@ -148,7 +150,7 @@ function Home() {
               <div className="pb-20 flex flex-row justify-center md:justify-start gap-6 md:pb-0">
                 <Link
                   to="/programs"
-                  className="bg-white text-purple-700 px-8 py-3 rounded-full text-lg font-semibold overflow-hidden group transition-all duration-300 hover:shadow-xl"
+                  className="sm:text-lg bg-white text-purple-700 px-8 py-3 rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:shadow-xl"
                 >
                   <span className="text-[#036e8d]">Explore Programs</span>
                 </Link>
@@ -171,7 +173,7 @@ function Home() {
             style={{
               fill: "#d2a763",
               width: "148%",
-              height: 87,
+              height: 90,
               transform: "rotate(180deg)",
             }}
           >
@@ -191,12 +193,14 @@ function Home() {
 
         
         {/* Our story */}
-        <section id="about-us" className="py-24 pt-4 pb-36 px-8 bg-[#d2a763]">
-          <div className="container py-10 mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-12 px-6">
+        <section id="about-us" 
+          className="px-2 sm:px-8 py-24 pt-4 pb-24 bg-[#d2a763]"
+        >
+          <div className="container py-0 sm:py-10 mx-auto">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-12 px-6">
               <div className="md:w-1/2">
-                <h4 className="text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Top Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span></h2>
+                <h4 className="hidden md:block text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
+                <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-white mb-4"><span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl font-bold">Top</span> Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl font-bold">Children</span></h2>
                 <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
                   Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
                   We believe that learning should nurture not just the mind, but also the heart and spirit.
@@ -229,9 +233,13 @@ function Home() {
 
               {/* Right Image Section - Enhanced */}
 
-              <div className="lg:w-1/2 w-full">
+              {/* Non mobile */}
+              <div className="hidden sm:block lg:w-1/2 w-full">
+                <h4 className="block md:hidden text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
+                <h2 className="block md:hidden text-4xl md:text-5xl font-bold text-white mb-4">Top Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span></h2>
+
                 <div 
-                  className="relative max-w-lg mx-auto"
+                  className="mt-10 sm:mt-0 relative max-w-lg mx-auto"
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -282,7 +290,7 @@ function Home() {
 
                   {/* Main image container */}
                   <div 
-                    className="relative bg-[#036e8d] rounded-full p-6 backdrop-blur-sm border border-white/50 shadow-2xl"
+                    className="relative bg-[#036e8d] rounded-full p-6 backdrop-blur-sm border border-white/50"
                     style={{
                       transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
                       transition: 'transform 0.3s ease-out'
@@ -504,14 +512,300 @@ function Home() {
                 `}</style>
               </div>
 
+              {/* Mobile view */}
+              <div className="block lg:w-1/2 w-full sm:hidden">
+                <h4 className="block md:hidden text-left text-gray-900 font-bold tracking-wider">OUR STORY</h4>
+                <h2 className="block md:hidden text-4xl md:text-5xl font-bold text-white mb-4">
+                  Top Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span>
+                </h2>
+
+                <div
+                  className="mt-10 sm:mt-0 relative max-w-xs sm:max-w-sm lg:max-w-lg mx-auto"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {/* Background Shapes */}
+                  <div className="absolute inset-0 -m-10 sm:-m-16 lg:-m-20 overflow-hidden">
+                    <div
+                      className="absolute -top-6 sm:-top-8 lg:-top-10 -left-6 sm:-left-8 lg:-left-10 w-20 sm:w-24 lg:w-32 h-20 sm:h-24 lg:h-32 rounded-full blur-xl"
+                      style={{ animation: 'float 8s ease-in-out infinite' }}
+                    ></div>
+                    <div
+                      className="absolute bottom-1/4 -left-6 sm:-left-10 lg:-left-12 w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-[#d2a763]/30 rounded-full"
+                      style={{ animation: 'pulse2 4s ease-in-out infinite 1s' }}
+                    ></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 opacity-5">
+                      <svg viewBox="0 0 100 100" className="w-full h-full">
+                        <path
+                          d="M20,50 Q40,30 60,50 T100,50 L100,100 L0,100 Z"
+                          fill="url(#gradient)"
+                          style={{ animation: 'wave 6s ease-in-out infinite' }}
+                        />
+                        <defs>
+                          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#036e8d" />
+                            <stop offset="100%" stopColor="#d2a763" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Elegant border rings */}
+                  <div className="absolute inset-0 -m-4 sm:-m-5 lg:-m-6">
+                    <div
+                      className="absolute inset-0 border-[2px] border-[#ffffff] rounded-full"
+                      style={{ animation: 'breathe 4s ease-in-out infinite' }}
+                    ></div>
+                    <div
+                      className="absolute inset-2 border border-[#d2a763]/30 rounded-full"
+                      style={{ animation: 'breathe 4s ease-in-out infinite 1s' }}
+                    ></div>
+                  </div>
+
+                  {/* Main image container */}
+                  <div
+                    className="relative bg-[#036e8d] rounded-full p-4 sm:p-5 lg:p-6 backdrop-blur-sm border border-white/50"
+                    style={{
+                      transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+                      transition: 'transform 0.3s ease-out',
+                    }}
+                  >
+                    <div className="relative bg-[#cde1dc] rounded-full overflow-hidden shadow-xl group cursor-pointer">
+                      <img
+                        src="../src/assets/middle-strySecImg.jpg"
+                        alt="Teacher helping student"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onLoad={() => setImageLoaded(true)}
+                        style={{ animation: 'gentleFloat 6s ease-in-out infinite' }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#036e8d]/20 via-transparent to-transparent"></div>
+                      <div className="absolute inset-0 group-hover:from-[#036e8d]/10 group-hover:to-[#d2a763]/10 transition-all duration-500"></div>
+                    </div>
+
+                    {/* Secondary image - bottom left */}
+                    <div
+                      className="absolute -bottom-2 sm:-bottom-3 lg:-bottom-4 -left-2 sm:-left-3 lg:-left-4 w-20 sm:w-24 lg:w-32 h-20 sm:h-24 lg:h-32 group cursor-pointer z-10"
+                      style={{
+                        transform: `translate(${mousePosition.x * -0.5}px, ${mousePosition.y * -0.3}px)`,
+                        transition: 'transform 0.3s ease-out',
+                      }}
+                    >
+                      <div className="relative w-full h-full">
+                        <img
+                          src="../src/assets/one-SubImg.png"
+                          alt="Children learning together"
+                          className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
+                          style={{ animation: 'gentleFloat 4s ease-in-out infinite 1s' }}
+                        />
+                        <div className="absolute inset-0 rounded-full ring-2 ring-[#036e8d]/0 group-hover:ring-[#036e8d]/50 transition-all duration-300"></div>
+                      </div>
+                    </div>
+
+                    {/* Third overlay image - top right */}
+                    <div
+                      className="absolute -top-3 sm:-top-4 lg:-top-6 right-8 sm:right-10 lg:right-14 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 group cursor-pointer z-10"
+                      style={{
+                        transform: `translate(${mousePosition.x * 0.4}px, ${mousePosition.y * 0.6}px)`,
+                        transition: 'transform 0.3s ease-out',
+                      }}
+                    >
+                      <div className="relative w-full h-full">
+                        <img
+                          src="../src/assets/second-SubImg.png"
+                          alt="Students in classroom"
+                          className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
+                          style={{ animation: 'gentleFloat 5s ease-in-out infinite 2s' }}
+                        />
+                        <div className="absolute inset-0 rounded-full ring-2 ring-[#036e8d]/0 group-hover:ring-[#036e8d]/50 transition-all duration-300"></div>
+                      </div>
+                    </div>
+
+                    {/* Fourth overlay image - middle left */}
+                    <div
+                      className="absolute top-1/2 -left-4 sm:-left-6 lg:-left-8 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 group cursor-pointer z-10 transform -translate-y-1/2"
+                      style={{
+                        transform: `translate(${mousePosition.x * -0.7}px, ${mousePosition.y * -0.4}px) translateY(-50%)`,
+                        transition: 'transform 0.3s ease-out',
+                      }}
+                    >
+                      <div className="relative w-full h-full">
+                        <img
+                          src="../src/assets/third-SubImg.png"
+                          alt="Happy students"
+                          className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
+                          style={{ animation: 'gentleFloat 4.5s ease-in-out infinite 3s' }}
+                        />
+                        <div className="absolute inset-0 rounded-full ring-2 ring-[#d2a763]/0 group-hover:ring-[#d2a763]/40 transition-all duration-300"></div>
+                      </div>
+                    </div>
+
+                    {/* Achievement badge */}
+                    <div
+                      className={`absolute top-0 sm:top-20 lg:top-28 left-8 sm:left-10 lg:left-12 bg-[#ffffff] text-[#036e8d] backdrop-blur-sm rounded-full p-2 sm:p-2.5 lg:p-3 shadow-lg transition-transform duration-300 z-20 ${
+                        pulseActive ? 'scale-110' : 'scale-100'
+                      }`}
+                      style={{
+                        transform: `translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px) ${pulseActive ? 'scale(1.1)' : 'scale(1)'}`,
+                        transition: 'transform 0.3s ease-out',
+                      }}
+                    >
+                      <CheckCircle className="w-3 sm:w-3.5 lg:w-4 h-3 sm:h-3.5 lg:h-4" />
+                    </div>
+
+                    {/* Small decorative badges */}
+                    <div
+                      className="absolute -top-4 sm:top-6 lg:top-8 left-20 sm:left-20 lg:left-28 bg-[#ffffff] text-white backdrop-blur-sm rounded-full p-2 sm:p-2.5 lg:p-3 shadow-lg z-15"
+                      style={{
+                        transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.1}px)`,
+                        transition: 'transform 0.3s ease-out',
+                        animation: 'gentleBob 3s ease-in-out infinite 1s',
+                      }}
+                    >
+                      <Star className="w-3 sm:w-3.5 lg:w-4 h-3 sm:h-3.5 lg:h-4  text-[#d2a763]" />
+                    </div>
+                    <div
+                      className="absolute bottom-16 sm:top-20 lg:top-28 right-0 sm:left-24 lg:left-32 bg-gradient-to-br from-[#d2a763] to-[#b8954e] text-white backdrop-blur-sm rounded-full p-2 sm:p-2.5 lg:p-3 shadow-md z-15"
+                      style={{
+                        transform: `translate(${mousePosition.x * -0.2}px, ${mousePosition.y * 0.4}px)`,
+                        transition: 'transform 0.3s ease-out',
+                        animation: 'gentleBob 3.5s ease-in-out infinite 2s',
+                      }}
+                    >
+                      <Heart className="w-3 sm:w-3.5 lg:w-4 h-3 sm:h-3.5 lg:h-4" />
+                    </div>
+
+                    {/* Info card - bottom right */}
+                    <div
+                      className="absolute bottom-4 sm:bottom-6 lg:bottom-8 right-6 sm:right-8 lg:right-10 z-30"
+                      style={{
+                        transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.2}px)`,
+                        transition: 'transform 0.3s ease-out',
+                      }}
+                    >
+                      <div className="bg-white/95 backdrop-blur-sm rounded-full p-2 sm:p-2.5 lg:p-3 shadow-lg border border-white/50">
+                        <div className="flex items-center gap-1.5 sm:gap-2">
+                          <BookOpen className="w-3 sm:w-3.5 lg:w-4 h-3 sm:h-3.5 lg:h-4 text-[#036e8d]" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Subtle floating elements */}
+                    {imageLoaded && (
+                      <>
+                        <div
+                          className="absolute top-1/4 right-4 sm:right-6 lg:right-8 w-1.5 sm:w-2 lg:w-2 h-1.5 sm:h-2 lg:h-2 bg-[#ffffff] rounded-full opacity-60"
+                          style={{ animation: 'floatParticle 4s ease-in-out infinite' }}
+                        ></div>
+                        <div
+                          className="absolute bottom-1/3 -left-3 sm:-left-4 lg:-left-6 w-1 sm:w-1.5 lg:w-1.5 h-1 sm:h-1.5 lg:h-1.5 bg-[#036e8d] rounded-full opacity-40"
+                          style={{ animation: 'floatParticle 3s ease-in-out infinite 1s' }}
+                        ></div>
+                        <div
+                          className="absolute top-2/3 right-2 sm:right-3 lg:right-4 w-0.5 sm:w-1 lg:w-1 h-0.5 sm:h-1 lg:h-1 bg-[#ffffff] rounded-full opacity-50"
+                          style={{ animation: 'floatParticle 5s ease-in-out infinite 2s' }}
+                        ></div>
+                      </>
+                    )}
+                  </div>
+
+                  <style jsx>{`
+                    @keyframes gentleFloat {
+                      0%, 100% { transform: translateY(0px); }
+                      50% { transform: translateY(-8px); }
+                    }
+                    @keyframes gentleBob {
+                      0%, 100% { transform: translateY(0px) scale(1); }
+                      50% { transform: translateY(-4px) scale(1.05); }
+                    }
+                    @keyframes floatParticle {
+                      0%, 100% {
+                        transform: translateY(0px);
+                        opacity: 0.4;
+                      }
+                      50% {
+                        transform: translateY(-8px);
+                        opacity: 0.8;
+                      }
+                    }
+                    @keyframes breathe {
+                      0%, 100% {
+                        transform: scale(1);
+                        opacity: 0.3;
+                      }
+                      50% {
+                        transform: scale(1.02);
+                        opacity: 0.6;
+                      }
+                    }
+                    @keyframes float {
+                      0%, 100% { transform: translateY(0px) translateX(0px); }
+                      33% { transform: translateY(-10px) translateX(5px); }
+                      66% { transform: translateY(5px) translateX(-8px); }
+                    }
+                    @keyframes pulse2 {
+                      0%, 100% { transform: scale(1); opacity: 0.3; }
+                      50% { transform: scale(1.1); opacity: 0.6; }
+                    }
+                    @keyframes wave {
+                      0%, 100% { transform: translateX(-5px); }
+                      50% { transform: translateX(5px); }
+                    }
+
+                    @media (max-width: 640px) {
+                      .absolute.-bottom-4, .absolute.-bottom-3, .absolute.-bottom-2 {
+                        bottom: -1rem;
+                      }
+                      .absolute.-left-4, .absolute.-left-3, .absolute.-left-2 {
+                        left: -1rem;
+                      }
+                      .absolute.-top-6, .absolute.-top-4, .absolute.-top-3 {
+                        top: -1rem;
+                      }
+                      .absolute.right-14, .absolute.right-10, .absolute.right-8 {
+                        right: 2rem;
+                      }
+                      .absolute.-left-8, .absolute.-left-6, .absolute.-left-4 {
+                        left: -1.5rem;
+                      }
+                      .absolute.top-28, .absolute.top-20, .absolute.top-16 {
+                        top: 4rem;
+                      }
+                      .absolute.left-12, .absolute.left-10, .absolute.left-8 {
+                        left: 2rem;
+                      }
+                      .absolute.top-8, .absolute.top-6, .absolute.top-4 {
+                        top: 1rem;
+                      }
+                      .absolute.left-28, .absolute.left-20, .absolute.left-16 {
+                        left: 4rem;
+                      }
+                      .absolute.left-32, .absolute.left-24, .absolute.left-20 {
+                        left: 5rem;
+                      }
+                      .absolute.bottom-8, .absolute.bottom-6, .absolute.bottom-4 {
+                        bottom: 1rem;
+                      }
+                      .absolute.right-10, .absolute.right-8, .absolute.right-6 {
+                        right: 1.5rem;
+                      }
+                    }
+                  `}</style>
+                </div>
+              </div>
+
           </div>
           </div>
         </section>
-        
+
 
         {/* what we offer*/}
         <section id="what-we-offer" className="py-24 relative">
-          <img src={cloudOpen} className='w-100 absolute -top-16 p-0 m-0' />
+          <img 
+            src={cloudOpen} 
+            className="w-full absolute top-0 left-0 object-cover object-top" 
+            style={{ transform: 'translateY(-50%)'}}
+          />
 
           {/* Abstract background with animated elements */}
           <div className="absolute inset-0 bg-[#f9fcfd] overflow-hidden">
@@ -530,7 +824,7 @@ function Home() {
 
 
 
-          <div className="container mx-auto px-8 md:px-14 relative z-10 bg-transparent">
+          <div className="container mx-auto px-8 md:px-8 relative z-10 bg-transparent">
               {/* Section header with creative typography */}
               <div className="max-w-3xl mx-auto text-center mb-24">
                 <h4 className="text-[#036e8d] font-semibold tracking-wider mb-3">OUR PROGRAMS</h4>
@@ -549,7 +843,7 @@ function Home() {
                   <div className="p-4 flex-1 flex items-center justify-center">
                     <div className="w-full max-w-2xl">
                       {/* 4x4 Grid Structure */}
-                      <div className="grid grid-cols-2 gap-6 md:gap-8">
+                      <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
                         {/* First 3 cards */}
                         {modules.map((module, index) => (
                           <div
@@ -619,9 +913,9 @@ function Home() {
                 </div>
               </div>
 
-              <div className="container mx-auto py-14 px-4">
+              <div className="container mx-auto py-14">
                 <div className="bg-white backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
-                  <div className="flex flex-col lg:flex-row gap-8 p-10">
+                  <div className="flex flex-col justify-center align-center lg:flex-row gap-8 py-10 px-6">
                     {/* Left Section - Heading and Description */}
                     <div className="lg:w-1/2 flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -635,21 +929,21 @@ function Home() {
 
                     {/* Right Section - Small Square Cards */}
                     <div className='flex flex-col gap-6 align-center justify-center'>
-                    <div className="lg:w-1/2 flex flex gap-4">
+                    <div className="flex flex-col align-center justify-center gap-4 w-1/2 sm:flex-row ">
                       {/* Card 1 */}
-                      <div className="w-32 h-32 aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
+                      <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                         <i className="fa-solid fa-seedling text-2xl text-green-500 mb-2"></i>
                         <h3 className="text-sm font-bold text-[#223668] leading-tight">Foundations of Humanism</h3>
                       </div>
 
                       {/* Card 2 */}
-                      <div className="w-32 h-32 aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-orange-300 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
+                      <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-orange-300 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                         <i className="fa-solid fa-toolbox text-2xl text-blue-500 mb-2"></i>
                         <h3 className="text-sm font-bold text-[#223668] leading-tight">Life Skills</h3>
                       </div>
 
                       {/* Card 3 */}
-                      <div className="w-32 h-32 aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-blue-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
+                      <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-blue-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                         <i className="fa-solid fa-users text-2xl text-purple-500 mb-2"></i>
                         <h3 className="text-sm font-bold text-[#223668] leading-tight">Humanistic Leadership</h3>
                       </div>
@@ -690,16 +984,20 @@ function Home() {
 
 
         {/* Why choose us */}
-        <section id="whychooseus" className="relative py-12 md:py-14 bg-[#036e8d] overflow-hidden">
+        <section id="whychooseus" className="relative py-2 md:py-14 bg-[#036e8d]">
 
-          <img src={cloudClose} className='w-100 absolute -top-12 p-0 m-0' />
+          <img 
+            src={cloudClose} 
+            className="w-full absolute top-0 left-0 object-cover object-top" 
+            style={{ transform: 'translateY(-50%)'}}
+          />
 
-          <div className="container mx-auto mt-24 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto mt-24 px-8 sm:px-6 lg:px-8">
             {/* Top Section: Image and Text */}
             <div className="bg-white rounded-3xl border border-gray-100 shadow-xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-12 mb-20">
               
                 {/* Image */}
-                <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex-shrink-0 rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
+                <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex-shrink-0 rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
                   <img
                     src="src/assets/thinkingImg.png"
                     alt="IIHH Transformation"
@@ -709,18 +1007,18 @@ function Home() {
                 </div>
 
                 {/* Text Content */}
-                <div className="w-full text-center lg:text-left">
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">
+                <div className="w-full text-center text-left">
+                  <h2 className="text-left text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">
                     Why Choose{" "}
                     <span className="text-[#d2a763] relative inline-block transform hover:scale-x-105 duration-300">
                       IIHH?
                       <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#d2a763] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
                     </span>
                   </h2>
-                  <h3 className="text-2xl lg:text-3xl font-semibold text-[#036e8d] mb-6 animate-fade-in-delayed">
+                  <h3 className="text-left text-2xl lg:text-3xl font-semibold text-[#036e8d] mb-6 animate-fade-in-delayed">
                     Because Real Transformation Starts Here
                   </h3>
-                  <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-delayed">
+                  <p className="text-left text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-delayed">
                     We deliver more than education—we foster profound personal growth through our uniquely humanistic approach that nurtures resilience, empathy, and purpose.
                   </p>
 
@@ -761,7 +1059,7 @@ function Home() {
 
         {/* FAQ Section - New addition */}
         <section id="faq" className="py-20 bg-white">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-8">
             <div className="max-w-7xl mx-auto">
               {/* Header Section */}
               <div className="text-center mb-16">
@@ -861,8 +1159,8 @@ function Home() {
 
         {/* Testimonials Section - Redesigned to match image */}
         <section id="testimonials" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl text-center font-bold text-gray-900 mb-4">What Our Students Say</h2>
+          <div className="container mx-auto px-4">
+            <h2 className="text-center text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">What Our <span className="text-[#d2a763] transform inline-block hover:scale-x-105 duration-300">Students </span>{" "}Say</h2>
             <p className="text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto">
               Hear from our learners and families about how IIHH’s afterschool program has helped them grow beyond academics—building confidence, life skills, and a humanistic outlook for the real world.
             </p>
@@ -875,7 +1173,7 @@ function Home() {
                 to="/testimonials"
                 className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
               >
-                Read More Success Stories
+                Read More
                 <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -887,14 +1185,13 @@ function Home() {
 
         {/* Enhanced CTA Section */}
         <section className="w-full overflow-hidden">
-        
           <div className="flex flex-col md:flex-row">
             {/* Left side - Yellow background with text and form */}
             <div className="bg-yellow-300 md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Better Future for Your Kids</h2>
               <p className="text-gray-800 mb-6">Embark on a humanistic journey that empowers learners of all ages. Start your transformation today.</p>
               <div className="flex flex-col sm:flex-row align-center gap-6">
-                <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold hover:shadow-xl transition-all">
+                <button className="sm:text-xl bg-white text-[#036e8d] px-12 py-4 rounded-full font-semibold transform hover:scale-105 hover:shadow-lg transition-all">
                   Enroll Now
                 </button>
               </div>
@@ -902,7 +1199,7 @@ function Home() {
             
             {/* Right side - Green background with children image */}
             <div className="relative bg-emerald-400 md:w-full flex items-center justify-center">
-                <img  className="flex items-end" src="src/assets/freepik__adjust__81086.png" alt="" />
+                <img  className="flex items-end w-full h-full object-cover object-fit" src="src/assets/freepik__adjust__81086.png" alt="" />
             </div>
           </div>
         </section>
@@ -913,437 +1210,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
-
-
-
-
-// import '../App.css';
-// import heroImg from '../assets/kids-gesturing-thumbs-up.png'
-// import rocket from '../assets/airplane.png'
-// import bgImg from '../assets/portrait-smiley-little-kid2.jpg'
-// import stryImg from '../assets/smiley-childrens-book-day-event.jpg'
-// import React, { useEffect } from 'react';
-// import { motion } from "framer-motion";
-// import { Link } from "react-router-dom";
-
-
-// function Home() {
-//   useEffect(() => {
-//     const elements = document.querySelectorAll('.scroll-animate');
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             entry.target.classList.add('is-visible');
-//           }
-//         });
-//       },
-//       { threshold: 0.1 }
-//     );
-
-//     elements.forEach((el) => observer.observe(el));
-//     return () => elements.forEach((el) => observer.unobserve(el));
-//   }, []);
-
-//   return (
-//     <div className="h-full text-[#036e8d] ">
-//       <main className="pt-20 min-h-screen">
-//         <section
-//           id="hero"
-//           className="relative h-auto min-h-[600px] md:min-h-[700px] overflow-hidden flex items-center scroll-animate"
-//           style={{ backgroundImage:`url('../assets/Rectangle 7.png')`,
-//             backgroundSize: 'cover',          
-//             backgroundRepeat: 'no-repeat',
-//             backgroundPosition: 'right',
-//             width: '100%',
-//             height: '400px',
-//           }}
-//         >
-//           {/* Gradient Overlay */}
-//           <div className="absolute inset-0 bg-[#036e8d]/10 z-0"></div>
-//           {/* <motion.img
-//                 src={rocket}
-//                 alt="rocket"
-//                 className="absolute w-14 md:w-16 top-[25%] left-[100px] z-20"
-//                 animate={{
-//                   x: ["-100px","1200px"], // curve-like x steps
-//                   y: ["-50%", "30%", "60%", "30%", "0%"],               // mimics arc motion
-//                   rotate: [60,50,40,30,20,10],                         // synced with the arc
-//                 }}
-//                 transition={{
-//                   duration: 12,
-//                   repeat: Infinity,
-//                   ease: "linear",
-//                 }}
-//             /> */}
-//           {/* Content Wrapper */}
-//           <div className="container mx-auto px-6 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-12">
-//             {/* Content on the left */}
-//             <div className="w-full lg:w-1/2 text-center lg:text-left scroll-animate">
-//               <h1 className="text-5xl md:text-7xl font-bubblegum text-[#ffffff] mb-6 leading-tight tracking-tight drop-shadow-lg bg-[#ffcd80] bg-clip-text text-transparent">
-//                 IIHH - Internation Institute of Horizon Humanism
-//               </h1>
-//               <p className="text-xl md:text-2xl text-[#ffffff] mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-md font-comic">
-//                 Transformative education fostering resilience, empathy, and purpose for all learners.
-//               </p>
-//               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6 scroll-animate">
-//                 <Link
-//                   to="/programs"
-//                   className="relative bg-[#f39f5f] text-[#ffffff] px-8 py-4 rounded-full text-xl font-bubblegum overflow-hidden group transition-all duration-500 hover:bg-[#036e8d] hover:shadow-lg"
-//                 >
-//                   <span className="relative z-10">Explore Programs</span>
-//                 </Link>
-//                 <a
-//                   href="#testimonials"
-//                   className="bg-transparent border-2 border-[#ffffff] text-[#ffffff] px-8 py-4 rounded-full text-xl font-bubblegum hover:bg-[#d2a763]/20 hover:border-[#d2a763] transition-all duration-500"
-//                 >
-//                   See Success Stories
-//                 </a>
-//               </div>
-//             </div>
-
-//             <div className="w-full lg:w-1/2 flex justify-center">
-//                <img 
-//                  src={heroImg}
-//                  alt="IIHH Community" 
-//                  className="w-full max-w-[500px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[700px]"
-//                />
-//              </div> 
-
-
-//           </div>
-
-//           {/* Scroll Indicator */}
-//           <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-pulse z-10">
-//             <a href="#about-us" className="text-[#ffffff]">
-//               <i className="fa-solid fa-chevron-down text-3xl drop-shadow-md"></i>
-//             </a>
-//           </div>
-//         </section>
-//         {/* About Us Section with Parallax Background */}
-//         <section 
-//           id="about-us" 
-//           className="py-20 px-8 bg-cover bg-[#ffffff] bg-fixed bg-center scroll-animate"
-//         >
-//           {/* <div className="mx-auto px-6 py-12 bg-[#ffffff]/0 border border-black border-dotted"> */}
-//             <div className="container mx-auto px-6 bg-[#1f3e59]/90 rounded-lg py-12">
-//               <div className="flex flex-col md:flex-row items-center gap-12">
-//                 <div className="md:w-1/2 scroll-animate">
-//                   <h4 className="text-[#f8c575] font-bubblegum tracking-wider mb-3 text-lg">OUR STORY</h4>
-//                   <h2 className="text-4xl md:text-5xl font-bubblegum text-[#1f3e59] mb-6 leading-tight bg-[#ffffff] bg-clip-text text-transparent">
-//                     Pioneering Humanistic Education
-//                   </h2>
-//                   <p className="text-[#ffffff] mb-6 font-comic text-lg leading-relaxed">
-//                     Founded in 2018, IIHH leads in integrating humanistic principles into education, nurturing the mind, heart, and spirit.
-//                   </p>
-//                 </div>
-//                 <div className="md:w-1/2 relative scroll-animate">
-//                   <div className="w-full h-80 md:h-96 bg-[#d2a763]/20 rounded-lg relative z-10 overflow-hidden shadow-lg">
-//                     <img 
-//                       src={stryImg} 
-//                       alt="Students engaged in learning" 
-//                       className="w-full h-full object-cover rounded-lg transition-transform duration-500 hover:scale-105"
-//                     />
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           {/* </div> */}
-//         </section>
-
-//         {/* What We Offer Section */}
-//         <section id="what-we-offer" className="py-24 bg-[#ffffff] scroll-animate">
-//           <div className="container mx-auto px-6 md:px-12 relative z-10">
-//             <div className="max-w-3xl mx-auto text-center mb-24 scroll-animate">
-//               <h4 className="text-[#d2a763] font-bubblegum tracking-wider mb-3 text-lg">OUR EXPERTISE</h4>
-//               <h2 className="text-5xl md:text-6xl font-bubblegum text-[#1f3e59] mb-6 leading-tight bg-[#1f3e59] bg-clip-text text-transparent transition-transform duration-500">
-//                 Transform Your Potential
-//               </h2>
-//               <p className="text-xl text-[#036e8d] leading-relaxed font-comic">Comprehensive programs to develop essential skills for success in today's world.</p>
-//             </div>
-
-//             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//               {[
-//                 {
-//                   icon: "fa-solid fa-brain",
-//                   title: "Emotional Intelligence",
-//                   desc: "Cultivate self-awareness and empathy through reflective practices.",
-//                   color: "from-[#036e8d] to-[#d2a763]"
-//                 },
-//                 {
-//                   icon: "fa-solid fa-hands-helping",
-//                   title: "Social Responsibility",
-//                   desc: "Develop leadership and community engagement skills.",
-//                   color: "from-[#d2a763] to-[#036e8d]"
-//                 },
-//                 {
-//                   icon: "fa-solid fa-lightbulb",
-//                   title: "Critical Thinking",
-//                   desc: "Enhance problem-solving and ethical reasoning abilities.",
-//                   color: "from-[#036e8d] to-[#d2a763]"
-//                 },
-//               ].map((item, index) => (
-//                 <div key={index} className="group relative scroll-animate">
-//                   <div className={`absolute inset-0 bg-gradient-to-br ${item.color} rounded-xl transition-all duration-500 group-hover:shadow-lg`}></div>
-//                   <div className="relative bg-[#ffffff] rounded-xl p-8 transition-all duration-500 h-full flex flex-col group-hover:-translate-y-2 shadow-lg">
-//                     <div className="bg-[#d2a763]/20 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto transition-transform duration-500 group-hover:scale-105">
-//                       <i className={`${item.icon} text-4xl text-[#036e8d]`}></i>
-//                     </div>
-//                     <h3 className="text-2xl font-bubblegum text-[#036e8d] mb-4 transition-transform duration-500 group-hover:scale-105">{item.title}</h3>
-//                     <p className="text-[#036e8d] flex-grow font-comic text-lg">{item.desc}</p>
-//                     <div className="mt-6 transition-opacity duration-500 group-hover:opacity-100">
-//                       <Link to={`/programs/${item.title.toLowerCase().replace(' ', '-')}`} className="text-[#d2a763] font-comic flex items-center justify-center transition-transform duration-500 hover:scale-105">
-//                         Learn more <i className="fa-solid fa-arrow-right ml-2 text-sm"></i>
-//                       </Link>
-//                     </div>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-
-//             <div className="container mx-auto px-6 py-20 pb-0 scroll-animate">
-//               <h2 className="text-4xl font-bubblegum text-[#036e8d] mb-16 text-center bg-[#1f3e59] bg-clip-text text-transparent transition-transform duration-500">Our Featured Modules</h2>
-//               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//                 {[
-//                   {
-//                     icon: "fa-solid fa-seedling",
-//                     title: "Foundations of Humanism",
-//                     desc: "Discover values of empathy, autonomy, and purpose.",
-//                     color: "text-[#d2a763]"
-//                   },
-//                   {
-//                     icon: "fa-solid fa-toolbox",
-//                     title: "Life Skills",
-//                     desc: "Master practical skills for personal and social success.",
-//                     color: "text-[#036e8d]"
-//                   },
-//                   {
-//                     icon: "fa-solid fa-users",
-//                     title: "Humanistic Leadership",
-//                     desc: "Inspire with compassion and integrity.",
-//                     color: "text-[#d2a763]"
-//                   },
-//                 ].map((item, index) => (
-//                   <div key={index} className="flex flex-col justify-center bg-[#ffffff] rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-xl scroll-animate">
-//                     <i className={`${item.icon} text-4xl ${item.color} mb-6 transition-transform duration-500 hover:scale-110`}></i>
-//                     <h3 className="text-2xl font-bubblegum text-[#036e8d] mb-4 transition-transform duration-500 hover:scale-105">{item.title}</h3>
-//                     <p className="text-[#036e8d] mb-6 font-comic text-lg">{item.desc}</p>
-//                     <div>
-//                       <Link to="/programs" className={`text-${item.color} font-comic flex items-center transition-transform duration-500 hover:scale-105`}>
-//                         Explore module <i className="fa-solid fa-arrow-right ml-2 text-sm"></i>
-//                       </Link>
-//                     </div>
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-
-//             <div className="mt-20 text-center scroll-animate">
-//               <Link to="/programs" className="inline-flex items-center px-8 py-4 rounded-full bg-[#d2a763] text-[#ffffff] font-bubblegum text-xl transition-all duration-500 hover:bg-[#036e8d] hover:shadow-lg">
-//                 Explore Our Programs
-//                 <i className="fa-solid fa-arrow-right ml-2"></i>
-//               </Link>
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* Video Section */}
-//         <section id="video-showcase" className="py-20 bg-[#ffffff] scroll-animate">
-//           <div className="container mx-auto px-6">
-//             <div className="max-w-4xl mx-auto text-center mb-12 scroll-animate">
-//               <h2 className="text-5xl font-bubblegum text-[#036e8d] mb-6 bg-[#1f3e59] bg-clip-text text-transparent transition-transform duration-500">See IIHH in Action</h2>
-//               <p className="text-xl text-[#036e8d] font-comic">Discover how our humanistic approach transforms education and empowers learners.</p>
-//             </div>
-//             <div className="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-[#036e8d] flex items-center justify-center scroll-animate">
-//               <img 
-//                 src="/api/placeholder/1280/720" 
-//                 alt="Video thumbnail" 
-//                 className="w-full h-full object-cover opacity-75 rounded-lg transition-transform duration-500"
-//               />
-//               <div className="absolute inset-0 flex items-center justify-center">
-//                 <button className="w-20 h-20 bg-[#d2a763] bg-opacity-80 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all duration-500">
-//                   <i className="fa-solid fa-play text-[#ffffff] text-2xl ml-1"></i>
-//                 </button>
-//               </div>
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* Why Choose Section */}
-//         <section id="why-choose" className="relative h-auto md:h-[350px] bg-gradient-to-r from-[#036e8d]/20 to-[#ffffff] scroll-animate">
-//           <div className="container mx-auto px-6 py-16 md:py-20">
-//             <div className="flex flex-col items-center text-center scroll-animate">
-//               <h2 className="text-5xl md:text-6xl font-bubblegum text-[#1f3e59] mb-6 transition-transform duration-500">
-//                 Why Choose IIHH?
-//               </h2>
-//               <p className="text-xl md:text-2xl text-[#036e8d] max-w-2xl font-comic">
-//                 Unique humanistic education fostering resilience, empathy, and purpose for all.
-//               </p>
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* Benefits Section */}
-//         <section id="benefits" className="py-20 bg-[#ffffff] scroll-animate">
-//           <div className="container mx-auto px-6">
-//             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-//               {[
-//                 {
-//                   icon: "fa-solid fa-heart",
-//                   title: "Humanistic Focus",
-//                   desc: "Education rooted in empathy, autonomy, and purpose.",
-//                   color: "text-[#d2a763] bg-[#d2a763]/10"
-//                 },
-//                 {
-//                   icon: "fa-solid fa-brain",
-//                   title: "Emotional Intelligence",
-//                   desc: "Developing self-awareness and resilience.",
-//                   color: "text-[#036e8d] bg-[#036e8d]/10"
-//                 },
-//                 {
-//                   icon: "fa-solid fa-hands-helping",
-//                   title: "Social Responsibility",
-//                   desc: "Fostering ethical leadership and engagement.",
-//                   color: "text-[#d2a763] bg-[#d2a763]/10"
-//                 },
-//                 {
-//                   icon: "fa-solid fa-globe",
-//                   title: "Global Perspective",
-//                   desc: "Building cultural intelligence and inclusivity.",
-//                   color: "text-[#036e8d] bg-[#036e8d]/10"
-//                 },
-//               ].map((item, index) => (
-//                 <div key={index} className={`rounded-xl p-8 shadow-lg transition-all duration-500 hover:shadow-xl ${item.color} scroll-animate`}>
-//                   <div className={`text-4xl mb-4 ${item.color} transition-transform duration-500`}>
-//                     <i className={item.icon}></i>
-//                   </div>
-//                   <h3 className="text-xl font-bubblegum text-[#036e8d] mb-4 transition-transform duration-500">{item.title}</h3>
-//                   <p className="text-[#036e8d] font-comic text-lg">{item.desc}</p>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* Testimonials Section with Parallax Background */}
-//         <section 
-//           id="testimonials" 
-//           className="py-20 bg-[#ffffff] bg-cover bg-fixed bg-center scroll-animate"
-//           style={{ backgroundImage: "url('/api/placeholder/1920/1080?text=Community+Moments')" }}
-//         >
-//           <div className="container mx-auto px-6 bg-[#ffffff]/90 rounded-lg py-12">
-//             <h2 className="text-5xl font-bubblegum text-[#036e8d] mb-4 text-center bg-[#1f3e59] bg-clip-text text-transparent transition-transform duration-500 scroll-animate">What Our Community Says</h2>
-//             <p className="text-xl text-center text-[#036e8d] mb-12 max-w-2xl mx-auto font-comic scroll-animate">
-//               Real stories from students, educators, and parents who experienced the IIHH difference.
-//             </p>
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
-//               {[
-//                 {
-//                   img: "/api/placeholder/80/80",
-//                   name: "Priya Sharma",
-//                   desc: '"IIHH transformed how I teach, making me more empathetic."',
-//                   role: "Educator",
-//                   stars: 5
-//                 },
-//                 {
-//                   img: "/api/placeholder/80/80",
-//                   name: "Aarav Patel",
-//                   desc: '"The program helped me find my purpose—life-changing!"',
-//                   role: "College Student",
-//                   stars: 5
-//                 },
-//                 {
-//                   img: "/api/placeholder/80/80",
-//                   name: "Neha Gupta",
-//                   desc: '"My daughter’s confidence soared thanks to IIHH."',
-//                   role: "Parent of Riya, Age 12",
-//                   stars: 5
-//                 },
-//               ].map((testimonial, index) => (
-//                 <div key={index} className="bg-[#ffffff] p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-xl scroll-animate">
-//                   <div className="absolute -top-4 -left-4 text-[#d2a763] text-6xl opacity-40">
-//                     <i className="fa-solid fa-quote-left"></i>
-//                   </div>
-//                   <div className="flex items-center mb-4">
-//                     <img src={testimonial.img} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4" />
-//                     <div>
-//                       <h3 className="font-bubblegum text-[#036e8d] text-lg">{testimonial.name}</h3>
-//                       <p className="text-[#036e8d] font-comic">{testimonial.role}</p>
-//                     </div>
-//                   </div>
-//                   <div className="flex text-[#d2a763] mb-3">
-//                     {[...Array(testimonial.stars)].map((_, i) => (
-//                       <i key={i} className="fa-solid fa-star"></i>
-//                     ))}
-//                   </div>
-//                   <p className="text-[#036e8d] italic font-comic text-lg">{testimonial.desc}</p>
-//                 </div>
-//               ))}
-//             </div>
-//             <div className="text-center mt-12 scroll-animate">
-//               <Link to="/testimonials" className="inline-flex items-center px-6 py-3 rounded-full bg-[#d2a763] text-[#ffffff] font-bubblegum text-lg hover:bg-[#036e8d] transition-all duration-500">
-//                 Read More Success Stories
-//                 <i className="fa-solid fa-arrow-right ml-2"></i>
-//               </Link>
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* Newsletter Section */}
-//         <section id="newsletter" className="py-20 bg-[#036e8d]/90 scroll-animate">
-//           <div className="container mx-auto px-6">
-//             <div className="max-w-4xl mx-auto bg-[#ffffff]/10 rounded-2xl p-10 shadow-xl scroll-animate">
-//               <div className="flex flex-col md:flex-row items-center">
-//                 <div className="md:w-2/3 mb-8 md:mb-0 scroll-animate">
-//                   <h2 className="text-4xl font-bubblegum text-[#ffffff] mb-4 bg-[#1f3e59] bg-clip-text text-transparent transition-transform duration-500">Stay Updated with IIHH</h2>
-//                   <p className="text-[#ffffff] text-opacity-90 font-comic text-lg">
-//                     Get insights on humanistic education, event invitations, and exclusive resources.
-//                   </p>
-//                 </div>
-//                 <div className="md:w-1/3 w-full scroll-animate">
-//                   <form className="flex flex-col space-y-3">
-//                     <input 
-//                       type="email" 
-//                       placeholder="Your email address" 
-//                       className="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d2a763] font-comic text-[#036e8d]"
-//                     />
-//                     <button 
-//                       type="submit" 
-//                       className="bg-[#d2a763] text-[#ffffff] px-4 py-3 rounded-lg font-bubblegum text-lg hover:bg-[#ffffff] hover:text-[#036e8d] transition-all duration-500"
-//                     >
-//                       Subscribe Now
-//                     </button>
-//                   </form>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* CTA Section */}
-//         <section id="join-cta" className="py-20 bg-gradient-to-r from-[#036e8d] to-[#d2a763] scroll-animate">
-//           <div className="container mx-auto px-6 text-center">
-//             <h2 className="text-5xl font-bubblegum text-[#ffffff] mb-8 bg-[#1f3e59] bg-clip-text text-transparent transition-transform duration-500 hover: scroll-animate">Join IIHH – Shape the Future</h2>
-//             <p className="text-2xl text-[#ffffff] mb-12 max-w-2xl mx-auto font-comic scroll-animate">
-//               Embark on a humanistic journey that empowers learners of all ages.
-//             </p>
-//             <div className="flex flex-col sm:flex-row justify-center gap-6 scroll-animate">
-//               <button className="bg-[#ffffff] text-[#036e8d] px-12 py-4 rounded-full text-xl font-bubblegum hover:bg-[#d2a763] hover:text-[#ffffff] transition-all duration-500 hover:shadow-xl">
-//                 Enroll Now
-//               </button>
-//               <button className="bg-transparent border-2 border-[#ffffff] text-[#ffffff] px-12 py-4 rounded-full text-xl font-bubblegum hover:bg-[#d2a763] hover:border-[#d2a763] transition-all duration-500">
-//                 Request Information
-//               </button>
-//             </div>
-//           </div>
-//         </section>
-//       </main>
-//     </div>
-//   );
-// }
-
-// export default Home;

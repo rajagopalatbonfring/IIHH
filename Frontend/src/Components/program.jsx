@@ -490,7 +490,7 @@ const prevSlide = () => {
             preserveAspectRatio="none"
             viewBox="0 0 1200 120"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+            style={{ fill: '#d2a763', width: '148%', height: 90, transform: 'rotate(180deg)' }}
           >
             <path
               d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -892,7 +892,11 @@ const prevSlide = () => {
 
         {/* Program Modules Section */}
         <section id="program-modules" className="py-16 relative bg-[#f9fcfd]">
-          <img src={cloudOpen} className="w-full absolute -top-16 p-0 m-0" alt="Cloud decoration" />
+          <img src={cloudOpen} 
+            alt="Cloud decoration" 
+            className="w-full absolute top-0 left-0 object-cover object-top" 
+            style={{ transform: 'translateY(-50%)'}}
+          />
           <div className="container mx-auto sm:px-6 relative">
             <div className="absolute inset-0 opacity-5 z-[-1]">
               <div className="absolute top-10 left-20 w-24 h-24 border-2 border-[#036e8d] rounded-full"></div>
@@ -1284,8 +1288,13 @@ const prevSlide = () => {
 
         
         {/* Learning in Action Section */}
-        <section id="learning-showcase" className="relative py-16 pt-40 bg-[#036e8d] overflow-hidden">
-          <img src={cloudClose} className="w-full absolute -top-12 left-0" alt="Cloud Decoration" />
+        <section id="learning-showcase" className="relative py-16 pt-40 bg-[#036e8d]">
+          <img 
+            src={cloudClose} 
+            alt="Cloud decoration" 
+            className="w-full absolute top-0 left-0 object-cover object-top" 
+            style={{ transform: 'translateY(-50%)'}}
+          />
 
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center mb-12">

@@ -47,7 +47,7 @@ function AboutUs() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
+          className="relative h-auto min-h-[500px] pt-20 pb-24 sm:pb-0 sm:pt-0 md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
           style={{ backgroundImage: 'url(../src/assets/hero-sec-aboutus.jpg)' }}
         >
           {/* Overlay */}
@@ -80,7 +80,7 @@ function AboutUs() {
               preserveAspectRatio="none"
               viewBox="0 0 1200 120"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ fill: '#d2a763', width: '148%', height: 87, transform: 'rotate(180deg)' }}
+              style={{ fill: '#d2a763', width: '148%', height: 90, transform: 'rotate(180deg)' }}
             >
               <path
               d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -101,24 +101,41 @@ function AboutUs() {
         <section id="who-we-are" className="py-12 sm:py-16 md:py-24 bg-[#d2a763] relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
-            <div className="absolute top-40 right-20 w-24 h-24 border-2 border-white rounded-full"></div>
+            <div className="hidden sm:block absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
+            <div className="hidden sm:block absolute top-40 right-20 w-24 h-24 border-2 border-white rounded-full"></div>
             <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-white rounded-full"></div>
           </div>
           
-          <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10">
+          <div className="container mx-auto px-4 sm:px-8 md:px-8 relative z-10">
             {/* Enhanced Heading Section with Image */}
             <div className="text-center mb-32 sm:mb-16 md:mb-48">
-
-              <div className="flex flex-col mb-48 lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-8 sm:mb-48">
+              <h4 className="block lg:hidden text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase">
+                About Us
+              </h4>
+              <h1 className="block text-center lg:hidden text-4xl md:text-5xl font-bold text-white mb-20 leading-tight">
+                Unveiling Our{' '}
+                <br />
+                <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
+                  Identity
+                </span>
+                ,{' '}
+                <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
+                  Vision
+                </span>
+                {' '}and{' '}
+                <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
+                  Values
+                </span>
+                .
+              </h1>
+              <div className="flex flex-col-reverse mb-48 lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-8 sm:mb-48">
                 {/* Left side - Image */}
-                <div className="flex-shrink-0 order-2 lg:order-1">
+                <div className="p-6 sm:p-0 flex-shrink-0 order-2 lg:order-1 mb-10">   
                   <div className="relative group">
                     {/* Decorative Elements */}
                     <div className="absolute -inset-4 bg-gradient-to-r from-[#036e8d]/20 to-[#d2a763]/20 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute -top-6 -left-6 w-24 h-24 border-4 border-white/50 rounded-full animate-pulse"></div>
                     <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-white/50 rounded-full backdrop-blur-sm"></div>
-                    
                     <img 
                       src="../src/assets/aboutusintroImg.jpg" 
                       alt="Students collaborating and learning together"
@@ -141,10 +158,10 @@ function AboutUs() {
                   {/* Decorative Background Elements */}
                   <div className="absolute top-1/2 -left-12 w-2 h-24 bg-gradient-to-b from-[#d2a763] to-transparent rounded-full hidden lg:block"></div>              
                   <div className="relative z-10">
-                    <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase">
+                    <h4 className="hidden lg:block text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase">
                       About Us
                     </h4>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white md:text-left mb-8 leading-tight">
+                    <h1 className="hidden lg:block text-4xl md:text-5xl font-bold text-white md:text-left mb-8 leading-tight">
                       Unveiling Our{' '}
                       <br />
                       <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
@@ -178,11 +195,41 @@ function AboutUs() {
               </div>
             </div>
 
+            
+            <div className="flex-1 justify-center w-full px-4 mb-10 sm:hidden">
+              <div className="bg-[#036e8d] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
+                <h3 className="text-gray-900 text-lg sm:text-2xl md:text-4xl font-bold text-center mb-6">Our Core Values</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
+                  {[
+                    { title: "Empathy", icon: "fa-heart", description: "Understanding others deeply" },
+                    { title: "Purpose", icon: "fa-compass", description: "Driven by meaningful goals" },
+                    { title: "Resilience", icon: "fa-shield-alt", description: "Strength through challenges" },
+                    { title: "Inclusivity", icon: "fa-globe", description: "Embracing all perspectives" },
+                  ].map((value, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center text-center group hover:transform hover:scale-105 transition-all duration-300"
+                    >
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors duration-300">
+                        <i className={`fa-solid ${value.icon} text-2xl sm:text-3xl text-[#ffffff]`}></i>
+                      </div>
+                      <span className="text-white font-semibold text-sm md:text-base mb-1">
+                        {value.title}
+                      </span>
+                      <span className="text-white/80 text-xs hidden md:block">
+                        {value.description}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Enhanced Vision and Mission Section */}
-            <div className="relative grid grid-cols-1 px-6 pt-32 sm:px-8 md:px-16 py-16 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
+            <div className="relative grid grid-cols-1 px-6 pt-32 sm:px-8 md:px-8 py-16 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
               
               {/* Enhanced Values Section - Floating Card */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full px-4 sm:px-0 md:px-24">
+              <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full px-4 sm:px-0 md:px-24">
                 <div className="bg-[#036e8d] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
                   <h3 className="text-gray-900 text-lg sm:text-2xl md:text-4xl font-bold text-center mb-6">Our Core Values</h3>
                   <div className="grid grid-cols-4 md:grid-cols-4 gap-6 md:gap-8 items-center">
@@ -305,8 +352,12 @@ function AboutUs() {
 
         {/* Programs Section */}
         <section id="programs" className="py-12 relative bg-[#f9fcfd]">
-          <img src={cloudOpen} className="w-100 absolute -top-16 p-0 m-0" />
-          <div className="container mx-auto px-8 md:px-14 relative z-10">
+          <img 
+            src={cloudOpen}
+            className="w-full absolute top-0 left-0 object-cover object-top" 
+            style={{ transform: 'translateY(-50%)'}}
+          />
+          <div className="container mx-auto px-8 md:px-8 relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-8">Our <span className='text-[#d2a763] inline-block transform hover:scale-x-105 duration-300'>Signature</span> <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Afterschool</span> Program</h2>
             <p className="text-lg text-gray-700 text-center mb-8 max-w-4xl mx-auto">
               IIHH’s flagship one-year afterschool program is designed to empower students with essential life skills, values, and perspectives that go beyond the standard school curriculum.The program is structured into 10 transformative modules, each focusing on a crucial aspect of personal and humanistic development.
@@ -460,13 +511,17 @@ function AboutUs() {
 
         {/* Team Section */}
         <section id="team" className="py-24 relative bg-[#036e8d]">
-          <img src={cloudClose} className="w-100 absolute -top-12 p-0 m-0" />
+          <img 
+            src={cloudClose} 
+            className="w-full absolute top-0 left-0 object-cover object-top" 
+            style={{ transform: 'translateY(-50%)'}}
+          />
           <div className="container mx-auto px-8 md:px-14">
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">Our Leadership <span className='text-[#ffd278] inline-block transform hover:scale-x-105 duration-300'>Team</span></h2>
             <p className="text-white/80 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mt-8 mb-16">
                 Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 { name: "Dr. Anika Desai", role: "Founder & Director", image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" },
                 { name: "Meera Patel", role: "Community Engagement Head", image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" },
@@ -499,7 +554,7 @@ function AboutUs() {
         </section>
 
         <section id="trust-ventures" className="py-16 bg-[#f9fcfd]">
-          <div className="container mx-auto px-8 md:px-14">
+          <div className="container mx-auto px-8 md:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-8">
               Our Trust & Ventures
             </h2>

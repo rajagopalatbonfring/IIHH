@@ -9,10 +9,9 @@ const TestimonialCarousel = ({ testimonials }) => {
   useEffect(() => {
     const updateCardsPerView = () => {
       const width = window.innerWidth;
-      if (width < 640) setCardsPerView(1);
-      else if (width < 768) setCardsPerView(2);
-      else if (width < 1280) setCardsPerView(3);
-      else setCardsPerView(4);
+      if (width < 640) setCardsPerView(1); // Small screens (sm)
+      else if (width < 768) setCardsPerView(2); // Medium screens (md)
+      else setCardsPerView(3); // Large screens (lg and above)
     };
 
     updateCardsPerView();
