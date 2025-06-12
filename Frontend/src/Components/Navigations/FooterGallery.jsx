@@ -1,5 +1,5 @@
 import React from "react";
-import okayByChildrens from '../../assets/okayByChildrens.jpg';
+import okayByChildrens from '../../assets/okayBychildrens.jpg';
 
 const FooterGallery = () => {
   const galleryImages = Array(6).fill(okayByChildrens);
