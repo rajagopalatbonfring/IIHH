@@ -837,8 +837,8 @@ function Home() {
               </div>
 
 
-              <div className="overflow-hidden bg-white border border-white/50 rounded-lg shadow-2xl px-0 py-0 sm:px-8 md:px-14 sm:py-8 md:py-12">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+              <div className="overflow-hidden bg-white border border-white/50 rounded-lg shadow-2xl px-0 py-0 sm:px-8 md:px-0 sm:py-8 md:py-12">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-6">
                   {/* Left Side - 4x4 Grid with 3 Cards + Button */}
                   <div className="p-4 flex-1 flex items-center justify-center">
                     <div className="w-full max-w-2xl">
@@ -849,7 +849,7 @@ function Home() {
                           <div
                             key={module.id}
                             id={`course-card-${module.id}`}
-                            className="relative flex flex-col items-center justify-center gap-3 text-center bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 aspect-square"
+                            className="relative flex flex-col items-center justify-center gap-3 text-center bg-white px-6 py-6 md:px-4 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 aspect-square"
                           >
                             <span className="absolute top-4 right-4 text-gray-600 font-bold text-lg md:text-xl">
                               {module.id}
@@ -861,7 +861,7 @@ function Home() {
                         ))}
                         
                         <div 
-                          className="flex items-center justify-center aspect-square"
+                          className="w-full h-full flex items-center justify-center aspect-square"
                         >
                         <Link
                           to="/programs"
@@ -915,9 +915,9 @@ function Home() {
 
               <div className="container mx-auto py-14">
                 <div className="bg-white backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
-                  <div className="flex flex-col justify-center align-center lg:flex-row gap-8 py-10 px-6">
+                  <div className="flex flex-col justify-center align-center lg:flex-row gap-8 py-10 px-8">
                     {/* Left Section - Heading and Description */}
-                    <div className="lg:w-1/2 flex flex-col justify-center">
+                    <div className="p-0 sm:p-10 lg:w-1/2 flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                         What Makes <br /> 
                         IIHH <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Unique?</span>
@@ -929,7 +929,7 @@ function Home() {
 
                     {/* Right Section - Small Square Cards */}
                     <div className='flex flex-col gap-6 align-center justify-center'>
-                    <div className="flex flex-col align-center justify-center gap-4 w-1/2 sm:flex-row ">
+                    <div className="flex flex-col align-center justify-center gap-4 sm:flex-row ">
                       {/* Card 1 */}
                       <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                         <i className="fa-solid fa-seedling text-2xl text-green-500 mb-2"></i>

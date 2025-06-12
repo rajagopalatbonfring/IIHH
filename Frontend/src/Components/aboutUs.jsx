@@ -54,7 +54,7 @@ function AboutUs() {
           <div className="absolute inset-0 bg-[#223668]/20 z-0" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl text-center mx-auto">
-              <h1 className="text-4xl md:text-6xl font-extrabold text-[#ffd278] mb-6 leading-tight tracking-tight drop-shadow-lg">
+              <h1 className="text-5xl md:text-6xl font-extrabold text-[#ffd278] mb-6 leading-tight tracking-tight drop-shadow-lg">
                 About IIHH – <span className="block md:inline">Pioneering Humanistic Education</span>
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
@@ -195,38 +195,9 @@ function AboutUs() {
               </div>
             </div>
 
-            
-            <div className="flex-1 justify-center w-full px-4 mb-10 sm:hidden">
-              <div className="bg-[#036e8d] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
-                <h3 className="text-gray-900 text-lg sm:text-2xl md:text-4xl font-bold text-center mb-6">Our Core Values</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
-                  {[
-                    { title: "Empathy", icon: "fa-heart", description: "Understanding others deeply" },
-                    { title: "Purpose", icon: "fa-compass", description: "Driven by meaningful goals" },
-                    { title: "Resilience", icon: "fa-shield-alt", description: "Strength through challenges" },
-                    { title: "Inclusivity", icon: "fa-globe", description: "Embracing all perspectives" },
-                  ].map((value, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-center text-center group hover:transform hover:scale-105 transition-all duration-300"
-                    >
-                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors duration-300">
-                        <i className={`fa-solid ${value.icon} text-2xl sm:text-3xl text-[#ffffff]`}></i>
-                      </div>
-                      <span className="text-white font-semibold text-sm md:text-base mb-1">
-                        {value.title}
-                      </span>
-                      <span className="text-white/80 text-xs hidden md:block">
-                        {value.description}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
 
             {/* Enhanced Vision and Mission Section */}
-            <div className="relative grid grid-cols-1 px-6 pt-32 sm:px-8 md:px-8 py-16 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
+            <div className="relative grid grid-cols-1 px-6 pt-10 sm:px-8 md:px-8 py-16 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
               
               {/* Enhanced Values Section - Floating Card */}
               <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full px-4 sm:px-0 md:px-24">
@@ -329,6 +300,35 @@ function AboutUs() {
                       <span key={index} className="bg-[#d2a763]/20 text-[#036e8d] px-3 py-1 rounded-full text-sm font-medium">
                         {tag}
                       </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex-1 justify-center w-full mb-10 sm:hidden">
+                <div className="bg-[#036e8d] rounded-3xl py-2 sm:py-8 px-4 sm:px-6 shadow-lg">
+                  <h3 className="text-white text-lg sm:text-2xl md:text-4xl font-bold text-center">Our Core Values</h3>
+                  <div className="grid grid-cols-4 md:grid-cols-4 gap-2 md:gap-8 items-center">
+                    {[
+                      { title: "Empathy", icon: "fa-heart", description: "Understanding others deeply" },
+                      { title: "Purpose", icon: "fa-compass", description: "Driven by meaningful goals" },
+                      { title: "Resilience", icon: "fa-shield-alt", description: "Strength through challenges" },
+                      { title: "Inclusivity", icon: "fa-globe", description: "Embracing all perspectives" },
+                    ].map((value, index) => (
+                      <div
+                        key={index}
+                        className={`flex flex-col items-center text-center group hover:transform hover:scale-105 transition-all duration-300 ${index % 2 !== 0 ? 'mt-10' : ''}`}
+                      >
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors duration-300">
+                          <i className={`fa-solid ${value.icon} text-lg sm:text-xl text-[#ffffff]`}></i>
+                        </div>
+                        <span className="text-white font-semibold text-xs mb-1">
+                          {value.title}
+                        </span>
+                        <span className="text-white/80 text-xs hidden md:block">
+                          {value.description}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>
