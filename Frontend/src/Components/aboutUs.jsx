@@ -426,7 +426,7 @@ function AboutUs() {
               <div className='hidden sm:block absolute bottom-0 right-0 z-10 w-60'>
                   <div className="absolute bottom-0 right-0 z-20 w-60 h-100">
                     <img
-                      src="../src/assets/ctaboy.png"
+                      src={aboutProgramCtaImg}
                       alt="Cropped Example"
                       className="object-cover w-full h-full"
                     />
