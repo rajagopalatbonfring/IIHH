@@ -581,7 +581,7 @@ const prevSlide = () => {
                     isHovered ? 'scale-105 rotate-2' : 'scale-100 rotate-0'
                   }`}>
                     <img
-                      src={programBgImage}
+                      src={ourProgramImg}
                       alt="Students collaborating on projects"
                       className={`rounded-3xl shadow-2xl object-cover w-full max-w-sm h-72 border-4 transition-all duration-500 animate-subtle-zoom ${
                         isHovered ? 'border-[#d2a763] shadow-3xl brightness-110' : 'border-white shadow-2xl brightness-100'
