@@ -3,9 +3,19 @@ import React, { useState, useEffect } from "react";
 import Tilt from 'react-parallax-tilt';
 import { Link } from "react-router-dom";
 import "../App.css";
+
+import programBgImage from '../assets/programspage_Intro-img.jpg';
+
+import ourProgramImg from '../assets/programs-pageHeroimg.jpg';
+
+import programAppBoyImg from "../assets/programpageImg1.png";
+
+import programCta from '../assets/cta-aboutus.jpg';
+
 import collabWorkImg from "../assets/Groupworkintheclassroom.jpeg";
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
+
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { text } from "framer-motion/client";
 
@@ -459,7 +469,7 @@ const prevSlide = () => {
         <section
           id="hero"
           className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
-          style={{ backgroundImage: 'url("../src/assets/programspage_Intro-img.jpg")' }}
+          style={{ backgroundImage: `url(${programBgImage})` }}
         >
           <div className="absolute inset-0 bg-[#223668]/20 z-0"></div>
           <div className="container mx-auto px-6 relative z-10">
@@ -571,7 +581,7 @@ const prevSlide = () => {
                     isHovered ? 'scale-105 rotate-2' : 'scale-100 rotate-0'
                   }`}>
                     <img
-                      src="../src/assets/programs-pageHeroimg.jpg"
+                      src={programBgImage}
                       alt="Students collaborating on projects"
                       className={`rounded-3xl shadow-2xl object-cover w-full max-w-sm h-72 border-4 transition-all duration-500 animate-subtle-zoom ${
                         isHovered ? 'border-[#d2a763] shadow-3xl brightness-110' : 'border-white shadow-2xl brightness-100'
@@ -1454,7 +1464,7 @@ const prevSlide = () => {
                     {/* Large Main Image */}
                     <div className="w-full h-full rounded-full bg-white overflow-hidden border-[1.5px] bg-gradient-to-r from-[#036e8d] to-[#036e8d]">
                       <img
-                        src="../src/assets/programpageImg1.png"
+                        src={programAppBoyImg}
                         alt="Main Image"
                         className="w-full h-full object-cover mt-4"
                         style={{
@@ -1697,7 +1707,7 @@ const prevSlide = () => {
         <section
           id="cta"
           className="relative py-16 bg-[#d2a763] bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(../src/assets/cta-aboutus.jpg)" }}
+          style={{ backgroundImage: `url(${programCta})` }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/40 z-0" />

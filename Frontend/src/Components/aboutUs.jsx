@@ -1,8 +1,22 @@
 import React, { useState, useRef } from 'react';
 import Lottie from 'lottie-react';
-import "../App.css";
 import { Link } from "react-router-dom";
 import Tilt from 'react-parallax-tilt';
+
+import "../App.css";
+
+import aboutBgImage from '../assets/hero-sec-aboutus.jpg';
+
+import aboutIntroImg from '../assets/aboutusintroImg.jpg';
+
+import aboutProgramCtaImg from '../assets/ctaboy.png';
+
+import aboutcta from '../assets/programs-pg-cta-last.jpg';
+
+
+
+
+
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
 import vision from '../assets/lottie/vision.json'; 
@@ -48,7 +62,7 @@ function AboutUs() {
         <section
           id="hero"
           className="relative h-auto min-h-[500px] pt-20 pb-24 sm:pb-0 sm:pt-0 md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
-          style={{ backgroundImage: 'url(../src/assets/hero-sec-aboutus.jpg)' }}
+          style={{ backgroundImage: `url(${aboutBgImage})` }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-[#223668]/20 z-0" />
@@ -137,7 +151,7 @@ function AboutUs() {
                     <div className="absolute -top-6 -left-6 w-24 h-24 border-4 border-white/50 rounded-full animate-pulse"></div>
                     <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-white/50 rounded-full backdrop-blur-sm"></div>
                     <img 
-                      src="../src/assets/aboutusintroImg.jpg" 
+                      src={aboutIntroImg} 
                       alt="Students collaborating and learning together"
                       className="relative w-80 h-60 lg:w-96 lg:h-72 object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-700 hover:shadow-3xl border-4 border-white/80"
                     />
@@ -386,7 +400,7 @@ function AboutUs() {
                 style={{width:'100%', height:'19.5%'}}
               >
                 <img
-                  src="../src/assets/ctaboy.png"
+                  src={aboutProgramCtaImg}
                   alt="Cropped Example"
                   className="absolute -bottom-10 right-0 object-cover"
                   style={{height:'260px'}}
@@ -618,7 +632,7 @@ function AboutUs() {
         <section
           id="cta"
           className="relative py-16 bg-[#d2a763] bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(../src/assets/programs-pg-cta-last.jpg)" }}
+          style={{ backgroundImage:`url(${aboutcta})` }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/40 z-0" />

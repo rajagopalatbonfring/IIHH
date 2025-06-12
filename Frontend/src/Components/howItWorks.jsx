@@ -5,36 +5,43 @@
 import React, { useState, useEffect,} from 'react';
 import { Link } from "react-router-dom";
 import Tilt from 'react-parallax-tilt';
-import { ChevronRight } from 'lucide-react';
+
+import HowWorkBgImage from '../assets/Howitworks-heroimg.jpg';
+
+import howItWorksCta from '../assets/cta-howitworksPage.jpg';
+
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
 
-  const steps = [
-    {
-      title: "Discover",
-      desc: "Explore our innovative healthcare solutions tailored to your needs",
-      icon: "fa-magnifying-glass",
-      color: "from-[#036e8d] to-[#025a73]"
-    },
-    {
-      title: "Connect", 
-      desc: "Join our community of healthcare professionals and patients",
-      icon: "fa-handshake",
-      color: "from-[#d2a763] to-[#b8914d]"
-    },
-    {
-      title: "Transform",
-      desc: "Experience personalized care that adapts to your journey",
-      icon: "fa-rocket",
-      color: "from-[#036e8d] to-[#d2a763]"
-    },
-    {
-      title: "Thrive",
-      desc: "Achieve optimal health outcomes with our continued support",
-      icon: "fa-star",
-      color: "from-[#d2a763] to-[#036e8d]"
-    }
-  ];
+import { ChevronRight } from 'lucide-react';
+
+
+const steps = [
+  {
+    title: "Discover",
+    desc: "Explore our innovative healthcare solutions tailored to your needs",
+    icon: "fa-magnifying-glass",
+    color: "from-[#036e8d] to-[#025a73]"
+  },
+  {
+    title: "Connect", 
+    desc: "Join our community of healthcare professionals and patients",
+    icon: "fa-handshake",
+    color: "from-[#d2a763] to-[#b8914d]"
+  },
+  {
+    title: "Transform",
+    desc: "Experience personalized care that adapts to your journey",
+    icon: "fa-rocket",
+    color: "from-[#036e8d] to-[#d2a763]"
+  },
+  {
+    title: "Thrive",
+    desc: "Achieve optimal health outcomes with our continued support",
+    icon: "fa-star",
+    color: "from-[#d2a763] to-[#036e8d]"
+  }
+];
 
 const activities = [
   {
@@ -94,7 +101,7 @@ export default function HowItWorks() {
       <section
         id="hero"
         className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center justify-center"
-        style={{ backgroundImage: 'url(./src/assets/Howitworks-heroimg.jpg)' }}
+        style={{ backgroundImage: `url(${HowWorkBgImage})` }}
       >
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10 flex-col align-center justify-center ">
@@ -610,7 +617,7 @@ export default function HowItWorks() {
         id="faq" 
         className="py-20 bg-[#f9fcfd] relative bg-cover bg-center bg-no-repeat"
         style={
-          {backgroundImage : `url('../src/assets/cta-howitworksPage.jpg')`}
+          {backgroundImage :`url(${howItWorksCta})`}
         }
       >
         {/* Overlay */}

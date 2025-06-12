@@ -1,14 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import "../App.css";
 import { Link } from "react-router-dom";
-import rectangle from '../assets/home-storySectionImg.jpg'
+import "../App.css";
+
+import rectangle from '../assets/home-storySectionImg.jpg';
+
+import stryimg1 from '../assets/middlestrySecImg.jpg';
+import stryimg2 from '../assets/one-SubImg.png';
+import stryimg3 from '../assets/second-SubImg.png';
+import stryimg4 from '../assets/third-SubImg.png';
+
+import bgImage from '../assets/boyForModulesCta.png';
+
+import boyThink from '../assets/thinkingImg.png';
+
+import homeCta from '../assets/freepik__adjust__81086.png';
+
+
+
 import cloudOpen from '../assets/Group 33.png'
 import cloudClose from '../assets/closeCloud.png'
+import logoAlone from '../assets/IIHH_OnlyLogo.png'
+
 import { ChevronRight } from "lucide-react";
 import { Star, Heart, Users, Brain } from "lucide-react";
 import { CheckCircle, BookOpen} from 'lucide-react';
-import Tilt from 'react-parallax-tilt';
-import logoAlone from '../assets/IIHH_OnlyLogo.png'
+
 import TestimonialCarousel from '../Components/ui/TestimonialCarousel'
 
 function Home() {
@@ -300,7 +316,7 @@ function Home() {
                     {/* Main image with smooth hover effect */}
                     <div className="relative bg-[#cde1dc] rounded-full overflow-hidden shadow-xl group cursor-pointer">
                       <img 
-                        src="..\src/assets/middle-strySecImg.jpg"
+                        src={stryimg1}
                         alt="Teacher helping student" 
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onLoad={() => setImageLoaded(true)}
@@ -324,7 +340,7 @@ function Home() {
                     >
                       <div className="relative w-full h-full">
                         <img 
-                          src="../src/assets/one-SubImg.png"
+                          src={stryimg2}
                           alt="Children learning together" 
                           className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                           style={{ animation: 'gentleFloat 4s ease-in-out infinite 1s' }}
@@ -343,7 +359,7 @@ function Home() {
                     >
                       <div className="relative w-full h-full">
                         <img 
-                          src="../src/assets/second-SubImg.png"
+                          src={stryimg3}
                           alt="Students in classroom" 
                           className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                           style={{ animation: 'gentleFloat 5s ease-in-out infinite 2s' }}
@@ -362,7 +378,7 @@ function Home() {
                     >
                       <div className="relative w-full h-full">
                         <img 
-                          src="../src/assets/third-SubImg.png"
+                          src={stryimg4}
                           alt="Happy students" 
                           className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                           style={{ animation: 'gentleFloat 4.5s ease-in-out infinite 3s' }}
@@ -865,7 +881,7 @@ function Home() {
                         >
                         <Link
                           to="/programs"
-                          style={{ backgroundImage: 'url("../src/assets/boyForModulesCta.png")' }}
+                          style={{ backgroundImage:`url(${bgImage})` }}
                           className="bg-[#036e8d]/90 flex flex-col items-end justify-end gap-3 text-white font-medium p-6 md:p-8 rounded-2xl hover:from-[#025a75] hover:to-[#044c63] hover:scale-105 transition-all duration-300 shadow-lg w-full h-full group bg-center bg-no-repeat bg-cover"
                         >
                           <svg className="w-8 h-8 md:w-10 md:h-10 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -999,7 +1015,7 @@ function Home() {
                 {/* Image */}
                 <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex-shrink-0 rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
                   <img
-                    src="src/assets/thinkingImg.png"
+                    src={boyThink}
                     alt="IIHH Transformation"
                     className="w-full h-full object-cover bg-[#223668]"
                   />
@@ -1199,7 +1215,7 @@ function Home() {
             
             {/* Right side - Green background with children image */}
             <div className="relative bg-emerald-400 md:w-full flex items-center justify-center">
-                <img  className="flex items-end w-full h-full object-cover object-fit" src="src/assets/freepik__adjust__81086.png" alt="" />
+                <img  className="flex items-end w-full h-full object-cover object-fit" src={homeCta} alt="ctaimg" />
             </div>
           </div>
         </section>
