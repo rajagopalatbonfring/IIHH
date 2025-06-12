@@ -216,7 +216,7 @@ function Home() {
             <div className="flex flex-col-reverse md:flex-row items-center gap-12 px-6">
               <div className="md:w-1/2">
                 <h4 className="hidden md:block text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
-                <h2 className="hidden md:block text-5xl md:text-5xl font-bold text-white mb-4"><span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl font-bold">Top</span> Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl font-bold">Children</span></h2>
+                <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-white mb-4"><span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl font-bold">Top</span> Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl font-bold">Children</span></h2>
                 <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
                   Founded in 2018, IIHH has been at the forefront of integrating humanistic principles into education. 
                   We believe that learning should nurture not just the mind, but also the heart and spirit.
@@ -252,8 +252,7 @@ function Home() {
               {/* Non mobile */}
               <div className="hidden sm:block lg:w-1/2 w-full">
                 <h4 className="block md:hidden text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
-                <h2 className="block md:hidden text-4xl md:text-5xl font-bold text-white mb-4">Top Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span></h2>
-
+                <h2 className="block md:hidden text-4xl md:text-5xl font-bold text-white mb-4"><span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl font-bold">Top</span> Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl font-bold">Children</span></h2>
                 <div 
                   className="mt-10 sm:mt-0 relative max-w-lg mx-auto"
                   onMouseMove={handleMouseMove}
