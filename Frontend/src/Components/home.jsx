@@ -252,7 +252,10 @@ function Home() {
               {/* Non mobile */}
               <div className="hidden sm:block lg:w-1/2 w-full">
                 <h4 className="block md:hidden text-left text-gray-900 font-bold tracking-wider ">OUR STORY</h4>
-                <h2 className="block md:hidden text-4xl md:text-5xl font-bold text-white mb-4"><span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl font-bold">Top</span> Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl font-bold">Children</span></h2>
+                <h2 className="block md:hidden text-4xl md:text-5xl font-bold text-white mb-16">
+                  <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl">Top</span> Choice<br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl">Children</span>
+                </h2>
+
                 <div 
                   className="mt-10 sm:mt-0 relative max-w-lg mx-auto"
                   onMouseMove={handleMouseMove}
@@ -531,9 +534,8 @@ function Home() {
               <div className="block lg:w-1/2 w-full sm:hidden">
                 <h4 className="block md:hidden text-left text-gray-900 font-bold tracking-wider">OUR STORY</h4>
                 <h2 className="block md:hidden text-4xl md:text-5xl font-bold text-white mb-4">
-                  Top Choice <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-4xl md:text-6xl uppercase">Children</span>
+                  <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl">Top</span> Choicee <br />For <span className="inline-block transform hover:scale-x-105 duration-300 text-[#036e8d] text-5xl md:text-6xl">Children</span>
                 </h2>
-
                 <div
                   className="mt-10 sm:mt-0 relative max-w-xs sm:max-w-sm lg:max-w-lg mx-auto"
                   onMouseMove={handleMouseMove}
