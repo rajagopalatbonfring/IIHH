@@ -589,7 +589,7 @@ function Home() {
                   >
                     <div className="relative bg-[#cde1dc] rounded-full overflow-hidden shadow-xl group cursor-pointer">
                       <img
-                        src="../src/assets/middle-strySecImg.jpg"
+                        src={stryimg1}
                         alt="Teacher helping student"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onLoad={() => setImageLoaded(true)}
@@ -609,7 +609,7 @@ function Home() {
                     >
                       <div className="relative w-full h-full">
                         <img
-                          src="../src/assets/one-SubImg.png"
+                          src={stryimg2}
                           alt="Children learning together"
                           className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                           style={{ animation: 'gentleFloat 4s ease-in-out infinite 1s' }}
@@ -628,7 +628,7 @@ function Home() {
                     >
                       <div className="relative w-full h-full">
                         <img
-                          src="../src/assets/second-SubImg.png"
+                          src={stryimg3}
                           alt="Students in classroom"
                           className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                           style={{ animation: 'gentleFloat 5s ease-in-out infinite 2s' }}
@@ -647,7 +647,7 @@ function Home() {
                     >
                       <div className="relative w-full h-full">
                         <img
-                          src="../src/assets/third-SubImg.png"
+                          src={stryimg4}
                           alt="Happy students"
                           className="w-full h-full object-cover rounded-full border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300"
                           style={{ animation: 'gentleFloat 4.5s ease-in-out infinite 3s' }}
