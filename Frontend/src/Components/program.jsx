@@ -16,6 +16,8 @@ import collabWorkImg from "../assets/Groupworkintheclassroom.jpeg";
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
 
+import graduateCap from '../assets/academicLogoProgrampg.png';
+
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { text } from "framer-motion/client";
 
@@ -1478,7 +1480,7 @@ const prevSlide = () => {
                   {/* Overlay Small Image */}
                   <div className="absolute top-12 -right-8 z-10 w-20 h-20 rounded-full overflow-hidden shadow-lg border-2 border-white group">
                     <img
-                      src="../src/assets/academicLogoProgrampg.png"
+                      src={graduateCap}
                       alt="Overlay Image"
                       className="w-full h-full mt-1 p-2 object-cover transition-transform duration-500 group-hover:scale-105"
                       style={{
