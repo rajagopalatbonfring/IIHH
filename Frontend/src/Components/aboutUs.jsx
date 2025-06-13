@@ -312,7 +312,7 @@ function AboutUs() {
                 </div>
               </div>
 
-              <div className="w-full px-10 mb-8 sm:hidden">
+              <div className="w-full px-0 mb-8 sm:hidden">
                 <div className="bg-[#036e8d] rounded-3xl py-2 sm:py-8 px-4 sm:px-6 shadow-lg">
                   <h3 className="text-white text-lg sm:text-2xl md:text-4xl font-bold text-center">Our Core Values</h3>
                   <div className="grid grid-cols-4 md:grid-cols-4 gap-2 md:gap-8 items-center">
