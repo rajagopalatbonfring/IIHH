@@ -628,9 +628,9 @@ const prevSlide = () => {
                   <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full transition-all duration-800 animate-slide-lines ${
                     isHovered ? 'opacity-100 translate-x-0' : 'opacity-60 -translate-x-4'
                   }`}>
-                    <div className="w-12 h-1 bg-[#036e8d] rounded animate-expand"></div>
+                    <div className="w-12 h-1 bg-[#ffffff] rounded animate-expand"></div>
                     <div className="w-8 h-1 bg-white rounded mt-2 animate-expand" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-6 h-1 bg-[#036e8d] rounded mt-2 animate-expand" style={{animationDelay: '0.4s'}}></div>
+                    <div className="w-6 h-1 bg-[#ffffff] rounded mt-2 animate-expand" style={{animationDelay: '0.4s'}}></div>
                   </div>
 
                   <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-full transition-all duration-800 delay-100 animate-slide-lines-reverse ${
