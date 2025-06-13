@@ -115,7 +115,7 @@ function AboutUs() {
             <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-white rounded-full"></div>
           </div>
           
-          <div className="container mx-auto px-4 sm:px-8 md:px-8 relative z-10">
+          <div className="container mx-auto px-2 sm:px-8 md:px-8 relative z-10">
             {/* Enhanced Heading Section with Image */}
             <div className="text-left sm:text-center mb-16 sm:mb-16 md:mb-48">
               <h4 className="block lg:hidden text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase">
@@ -204,7 +204,7 @@ function AboutUs() {
 
 
             {/* Enhanced Vision and Mission Section */}
-            <div className="relative grid grid-cols-1 px-6 pt-10 sm:px-8 md:px-8 py-16 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
+            <div className="relative grid grid-cols-1 px-4 pt-10 sm:px-8 md:px-8 py-8 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
               
               {/* Enhanced Values Section - Floating Card */}
               <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-2/3 sm:w-full px-4 sm:px-0 md:px-24">
@@ -527,7 +527,7 @@ function AboutUs() {
           />
           <div className="container mx-auto px-8 md:px-14">
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">Our Leadership <span className='text-[#ffd278] inline-block transform hover:scale-x-105 duration-300'>Team</span></h2>
-            <p className="text-white/80 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mt-8 mb-16">
+            <p className="text-white/80 text-center text-lg sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mt-8 mb-16">
                 Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -642,7 +642,7 @@ function AboutUs() {
               <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold hover:shadow-xl transition-all">
                 Enroll now
               </button>
-              <button className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-12 rounded-full transition-all duration-300 text-base sm:text-lg">
+              <button className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-12 rounded-full transition-all duration-300 text-base sm:text-lg">
                 Newsletter Signup
               </button>
             </div>
