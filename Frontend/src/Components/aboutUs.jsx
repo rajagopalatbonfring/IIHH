@@ -112,7 +112,7 @@ function AboutUs() {
 
 
         {/* Unveiling Our Identity, Vision and Values Section */}
-        <section id="who-we-are" className="py-12 sm:py-16 md:py-24 bg-[#d2a763] relative overflow-hidden">
+        <section id="who-we-are" className="py-12 sm:py-16 md:py-24 px-4 sm:px-0 bg-[#d2a763] relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-30">
             <div className="hidden sm:block absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
@@ -122,11 +122,11 @@ function AboutUs() {
           
           <div className="container mx-auto px-4 sm:px-8 md:px-8 relative z-10">
             {/* Enhanced Heading Section with Image */}
-            <div className="text-center mb-32 sm:mb-16 md:mb-48">
+            <div className="text-left sm:text-center mb-16 sm:mb-16 md:mb-48">
               <h4 className="block lg:hidden text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase">
                 About Us
               </h4>
-              <h1 className="block text-center lg:hidden text-4xl md:text-5xl font-bold text-white mb-20 leading-tight">
+              <h1 className="block lg:hidden text-left sm:text-center text-4xl md:text-5xl font-bold text-white mb-14 sm:mb-20 leading-tight">
                 Unveiling Our{' '}
                 <br />
                 <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
@@ -136,15 +136,14 @@ function AboutUs() {
                 <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                   Vision
                 </span>
-                {' '}and{' '}
+                {' '}&{' '}
                 <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                   Values
                 </span>
-                .
               </h1>
-              <div className="flex flex-col-reverse mb-48 lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-8 sm:mb-48">
+              <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-10 sm:mb-48">
                 {/* Left side - Image */}
-                <div className="p-6 sm:p-0 flex-shrink-0 order-2 lg:order-1 mb-10">   
+                <div className="p-0 flex-shrink-0 order-2 lg:order-1 mb-3">   
                   <div className="relative group">
                     {/* Decorative Elements */}
                     <div className="absolute -inset-4 bg-gradient-to-r from-[#036e8d]/20 to-[#d2a763]/20 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -189,12 +188,11 @@ function AboutUs() {
                       <span className='text-[#036e8d]/90 relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
                         Values
                       </span>
-                      .
                     </h1>
                     
                     <div className="relative">
                       <div className="absolute -left-8 top-0 w-1 h-full bg-gradient-to-b from-[#ffffff] to-transparent rounded-full hidden lg:block"></div>
-                      <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
+                      <p className="text-left sm:text-center lg:text-left text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl px-4 py-2 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
                         <span className="text-[#d2a763] font-bold text-2xl">"</span>
                         The International Institute of Horizon Humanism (IIHH) is a trailblazing institution dedicated to blending humanistic principles with modern education, shaping compassionate, ethical leaders for a global society.
                         <span className="text-[#d2a763] font-bold text-2xl">"</span>
@@ -214,7 +212,7 @@ function AboutUs() {
             <div className="relative grid grid-cols-1 px-6 pt-10 sm:px-8 md:px-8 py-16 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
               
               {/* Enhanced Values Section - Floating Card */}
-              <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full px-4 sm:px-0 md:px-24">
+              <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-2/3 sm:w-full px-4 sm:px-0 md:px-24">
                 <div className="bg-[#036e8d] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
                   <h3 className="text-gray-900 text-lg sm:text-2xl md:text-4xl font-bold text-center mb-6">Our Core Values</h3>
                   <div className="grid grid-cols-4 md:grid-cols-4 gap-6 md:gap-8 items-center">
