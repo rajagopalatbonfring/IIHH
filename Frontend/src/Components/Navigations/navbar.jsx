@@ -205,7 +205,7 @@ const Nav = () => {
             { path: "/about", label: "About" },
             { path: "/programs", label: "Programs" },
             { path: "/how-it-works", label: "How It Works" },
-            { path: "/testimonials", label: "Testimonials" },
+            // { path: "/testimonials", label: "Testimonials" },
             { path: "/contact", label: "Contact" },
           ].map((item, index) => (
             <Link
