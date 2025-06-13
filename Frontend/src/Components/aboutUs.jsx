@@ -107,7 +107,7 @@ function AboutUs() {
 
 
         {/* Unveiling Our Identity, Vision and Values Section */}
-        <section id="who-we-are" className="py-12 sm:py-16 md:py-24 px-4 sm:px-0 bg-[#d2a763] relative overflow-hidden">
+        <section id="who-we-are" className="flex align-center justify-center py-12 sm:py-16 md:py-24 px-4 sm:px-0 bg-[#d2a763] relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-30">
             <div className="hidden sm:block absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
@@ -115,7 +115,7 @@ function AboutUs() {
             <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-white rounded-full"></div>
           </div>
           
-          <div className="container mx-auto px-2 sm:px-8 md:px-8 relative z-10">
+          <div className="w-full flex-col mx-auto justify-center align-center container px-2 sm:px-8 md:px-4 relative z-10">
             {/* Enhanced Heading Section with Image */}
             <div className="text-left sm:text-center mb-16 sm:mb-16 md:mb-48">
               <h4 className="block lg:hidden text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase">
@@ -162,7 +162,7 @@ function AboutUs() {
                 </div>
                 
                 {/* Right side - Content */}
-                <div className="text-center lg:text-left flex-1 order-1 lg:order-2 relative">
+                <div className="text-center lg:text-left flex-2 order-1 lg:order-2 relative">
                   {/* Decorative Background Elements */}
                   <div className="absolute top-1/2 -left-12 w-2 h-24 bg-gradient-to-b from-[#d2a763] to-transparent rounded-full hidden lg:block"></div>              
                   <div className="relative z-10">
@@ -207,7 +207,7 @@ function AboutUs() {
             <div className="relative grid grid-cols-1 px-4 pt-10 sm:px-8 md:px-8 py-8 sm:py-24 sm:pt-36 md:pt-40 border rounded-3xl md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-8 sm:mb-8 md:mb-10 bg-white shadow-2xl backdrop-blur-sm">
               
               {/* Enhanced Values Section - Floating Card */}
-              <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-2/3 sm:w-full px-4 sm:px-0 md:px-24">
+              <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-2/3 sm:w-3/2 md:w-3/4 lg:w-1/2 px-4 sm:px-0 md:px-0">
                 <div className="bg-[#036e8d] rounded-3xl py-6 sm:py-8 px-4 sm:px-6 shadow-lg">
                   <h3 className="text-gray-900 text-lg sm:text-2xl md:text-4xl font-bold text-center mb-6">Our Core Values</h3>
                   <div className="grid grid-cols-4 md:grid-cols-4 gap-6 md:gap-8 items-center">
@@ -312,7 +312,7 @@ function AboutUs() {
                 </div>
               </div>
 
-              <div className="flex-1 justify-center w-full mb-10 sm:hidden">
+              <div className="w-full px-10 mb-8 sm:hidden">
                 <div className="bg-[#036e8d] rounded-3xl py-2 sm:py-8 px-4 sm:px-6 shadow-lg">
                   <h3 className="text-white text-lg sm:text-2xl md:text-4xl font-bold text-center">Our Core Values</h3>
                   <div className="grid grid-cols-4 md:grid-cols-4 gap-2 md:gap-8 items-center">
@@ -525,7 +525,7 @@ function AboutUs() {
             className="w-full absolute top-0 left-0 object-cover object-top" 
             style={{ transform: 'translateY(-50%)'}}
           />
-          <div className="container mx-auto px-8 md:px-14">
+          <div className="container mx-auto px-8 md:px-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">Our Leadership <span className='text-[#ffd278] inline-block transform hover:scale-x-105 duration-300'>Team</span></h2>
             <p className="text-white/80 text-center text-lg sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mt-8 mb-16">
                 Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
