@@ -1499,7 +1499,7 @@ const prevSlide = () => {
                         alt="Main Image"
                         className="w-full h-full object-cover mt-4"
                         style={{
-                          animation: "gentleFloat 6s ease-in-out infinite",
+                          animation: "gentleFloat 3s ease-in-out infinite",
                         }}
                       />
                     </div>
