@@ -568,13 +568,13 @@ const prevSlide = () => {
                   </div>
 
                   {/* Floating Orbs with continuous movement */}
-                  <div className={`absolute -top-4 -right-4 w-6 h-6 bg-[#036e8d] rounded-full transition-all duration-1000 animate-orbit ${
+                  <div className={`absolute -top-4 -right-4 w-6 h-6 bg-white rounded-full transition-all duration-1000 animate-orbit ${
                     isHovered ? 'animate-bounce scale-150' : 'scale-100'
                   }`}></div>
                   <div className={`absolute -bottom-2 -left-2 w-4 h-4 bg-white rounded-full transition-all duration-700 delay-200 animate-float-reverse ${
                     isHovered ? 'animate-pulse scale-125' : 'scale-100'
                   }`}></div>
-                  <div className={`absolute top-1/2 -right-6 w-3 h-3 bg-[#036e8d] rounded-full transition-all duration-800 delay-300 animate-wiggle ${
+                  <div className={`absolute top-1/2 -right-6 w-3 h-3 bg-white rounded-full transition-all duration-800 delay-300 animate-wiggle ${
                     isHovered ? 'animate-ping scale-200' : 'scale-100'
                   }`}></div>
 
@@ -628,9 +628,9 @@ const prevSlide = () => {
                   <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full transition-all duration-800 animate-slide-lines ${
                     isHovered ? 'opacity-100 translate-x-0' : 'opacity-60 -translate-x-4'
                   }`}>
-                    <div className="w-12 h-1 bg-[#ffffff] rounded animate-expand"></div>
+                    <div className="w-12 h-1 bg-[#036e8d] rounded animate-expand"></div>
                     <div className="w-8 h-1 bg-white rounded mt-2 animate-expand" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-6 h-1 bg-[#ffffff] rounded mt-2 animate-expand" style={{animationDelay: '0.4s'}}></div>
+                    <div className="w-6 h-1 bg-[#036e8d] rounded mt-2 animate-expand" style={{animationDelay: '0.4s'}}></div>
                   </div>
 
                   <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-full transition-all duration-800 delay-100 animate-slide-lines-reverse ${
