@@ -619,7 +619,7 @@ const prevSlide = () => {
                   <div className={`absolute -top-8 left-1/2 transform -translate-x-1/2 transition-all duration-600 animate-bob ${
                     isHovered ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-2 opacity-80 scale-95'
                   }`}>
-                    <div className="bg-[#036e8d] text-white px-10 py-2 rounded-full text-xs font-semibold shadow-lg animate-glow-soft">
+                    <div className="bg-[#036e8d] text-center text-white px-10 py-2 rounded-full text-xs font-semibold shadow-lg animate-glow-soft">
                       Interactive Experience
                     </div>
                   </div>
