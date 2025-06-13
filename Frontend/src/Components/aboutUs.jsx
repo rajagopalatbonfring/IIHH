@@ -84,11 +84,6 @@ function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
-            <a href="#who-we-are" className="text-white">
-              <i className="fa-solid fa-chevron-down text-2xl drop-shadow-md"></i>
-            </a>
-          </div>
           <svg
               className='absolute bottom-0'
               preserveAspectRatio="none"
@@ -507,17 +502,19 @@ function AboutUs() {
             </div>
 
             {/* Learn More Button */}
-            <div className="text-center mt-8">
+            <div className="text-center mt-2">
               <Link
                 to="/programs"
-                className="group inline-flex items-center bg-[#036e8d] hover:bg-[#d2a763] text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group inline-flex items-center bg-[#036e8d] hover:bg-[#d2a763] text-white font-semibold py-4 px-6 sm:px-8 rounded-full transition-all duration-300 text-sm sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
               >
-                Learn More About the Program
-                <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span className="block sm:hidden">Learn More</span>
+                <span className="hidden sm:block">Learn More About the Program</span>
+                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
             </div>
+
           </div>
         </section>
 
