@@ -138,7 +138,7 @@ function AboutUs() {
               </h1>
               <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-10 sm:mb-48">
                 {/* Left side - Image */}
-                <div className="p-0 flex-shrink-0 order-2 lg:order-1 mb-3">   
+                <div className="flex-shrink-0 order-2 px-4 sm:p-0 lg:order-1 mb-3">   
                   <div className="relative group">
                     {/* Decorative Elements */}
                     <div className="absolute -inset-4 bg-gradient-to-r from-[#036e8d]/20 to-[#d2a763]/20 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
