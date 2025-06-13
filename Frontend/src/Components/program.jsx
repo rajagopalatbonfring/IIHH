@@ -1478,9 +1478,9 @@ const prevSlide = () => {
               {/* Main Content */}
               <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 {/* Left Side - Image */}
-                <div className="w-full lg:w-1/2 order-2 lg:order-1">
+                <div className="w-full lg:w-1/2 order-1 p-6">
                 <div
-                  className="relative w-2/3 max-w-lg mx-auto"
+                  className="relative w-full max-w-lg mx-auto"
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
