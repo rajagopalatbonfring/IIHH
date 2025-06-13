@@ -520,7 +520,7 @@ const prevSlide = () => {
 
 
         {/* Our Programs Section */}
-        <section className="pb-20 bg-[#d2a763] relative overflow-hidden">
+        <section className="pb-4 lg:pb-20 bg-[#d2a763] relative overflow-hidden">
           
           {/* Animated Floating Elements */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -546,8 +546,21 @@ const prevSlide = () => {
             
             {/* Split Layout - Adjusted grid to 5/12 and 7/12 */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 min-h-[500px]">
+
+              {/* mobile heading */}
+              <div className="block lg:hidden lg:col-span-7 flex items-center justify-start p-8 pl-8 animate-slideInRight">
+                <div className="max-w-2xl w-full">
+                  <h4 className="text-gray-900 text-left mb-4 font-bold tracking-wider text-sm md:text-base uppercase animate-fadeInDown">
+                    OUR PROGRAM
+                  </h4>
+                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
+                    A Year of <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Humanistic</span> <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Transformation</span> and <br />Empowered <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300"> Learning</span>
+                  </h1>
+                </div>
+              </div>
+
               {/* Left Side - Interactive Image - 5/12 width */}
-              <div className="lg:col-span-5 relative flex items-center justify-center p-6">
+              <div className="pb-20 pt-10 lg:col-span-5 relative flex items-center justify-center p-6">
                 <div 
                   className="relative cursor-pointer animate-slideInLeft"
                   onMouseEnter={() => setIsHovered(true)}
@@ -642,9 +655,20 @@ const prevSlide = () => {
                   </div>
                 </div>
               </div>
+
+              {/* sub para mobile view */}
+              <div className="block lg:hidden lg:col-span-7 flex items-center justify-start p-8 pl-8 animate-slideInRight">
+                <div className="max-w-2xl w-full">
+                  <div className="animate-fadeInUp animate-subtle-float" style={{animationDelay: '0.3s'}}>
+                    <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
+                      At IIHH, education transcends traditional boundaries. Our one-year program integrates ten thoughtfully designed modules that foster empathy, resilience, and critical thinking—preparing learners to lead with compassion and creativity in a rapidly evolving world.
+                    </p>
+                  </div>
+                </div>
+              </div>
               
               {/* Right Side - Content with animations - 7/12 width */}
-              <div className="lg:col-span-7 flex items-center justify-start p-8 pl-8 animate-slideInRight">
+              <div className="hidden lg:block lg:col-span-7 flex items-center justify-start p-8 pl-8 animate-slideInRight">
                 <div className="max-w-2xl w-full">
                   <h4 className="text-gray-900 text-left mb-4 font-bold tracking-wider text-sm md:text-base uppercase animate-fadeInDown">
                     OUR PROGRAM
