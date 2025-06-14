@@ -930,7 +930,7 @@ function Home() {
 
               <div className="container mx-auto py-14">
                 <div className="bg-white backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
-                  <div className="px-10 sm:px-0 flex flex-col align-center justify-center gap-4 sm:flex-row">
+                  <div className="px-10 sm:px-0 py-10 flex flex-col align-center justify-center gap-4 sm:flex-row">
                     {/* Left Section - Heading and Description */}
                     <div className="p-0 sm:p-10 lg:w-1/2 flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

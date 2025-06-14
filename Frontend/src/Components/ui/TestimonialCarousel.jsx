@@ -10,7 +10,7 @@ const TestimonialCarousel = ({ testimonials }) => {
     const updateCardsPerView = () => {
       const width = window.innerWidth;
       if (width < 640) setCardsPerView(1); // Small screens (sm)
-      else if (width < 768) setCardsPerView(2); // Medium screens (md)
+      else if (width < 1024) setCardsPerView(2); // Medium screens (md)
       else setCardsPerView(3); // Large screens (lg and above)
     };
 
@@ -34,7 +34,7 @@ const TestimonialCarousel = ({ testimonials }) => {
       {/* Left Arrow */}
       <button
         onClick={handlePrev}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-200/80 rounded-full p-3 transition-shadow"
       >
         <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -44,7 +44,7 @@ const TestimonialCarousel = ({ testimonials }) => {
       {/* Right Arrow */}
       <button
         onClick={handleNext}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-200/80 rounded-full p-3 shadow-sm transition-shadow"
       >
         <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -52,7 +52,7 @@ const TestimonialCarousel = ({ testimonials }) => {
       </button>
 
       {/* Carousel */}
-      <div className="overflow-hidden py-10">
+      <div className="overflow-hidden py-10 px-2">
         <div
           ref={containerRef}
           className="flex transition-transform duration-500 ease-in-out"
@@ -74,7 +74,7 @@ const TestimonialCarousel = ({ testimonials }) => {
                 scale={1.05}
                 glareEnable={false}
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center h-full flex flex-col">
+                <div className="bg-white rounded-2xl p-8 transition-shadow text-center h-full flex flex-col">
                   <div className="text-6xl text-gray-300 font-serif mb-4">"</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{testimonial.title}</h3>
                   <p className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
