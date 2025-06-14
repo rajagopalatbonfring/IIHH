@@ -29,10 +29,12 @@ import Loader from "./Components/Loader"; // Adjust path if different
 function App() {
 
   const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false);
+      setFadeOut(true);
+      setTimeout(() => setLoading(false), 600);
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -46,7 +48,16 @@ function App() {
     return token ? children : <Navigate to="/adminLogin" />;
   };
 
-  if (loading) return <Loader />;
+  if (loading) {
+    return (
+      <div
+        className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-all duration-700 ease-in-out
+          ${fadeOut ? "opacity-0 scale-90 pointer-events-none" : "opacity-100 scale-100"}`}
+      >
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <>
