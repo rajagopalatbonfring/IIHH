@@ -46,7 +46,7 @@ const FooterGallery = () => {
       id="footer-social" 
       className="bg-[#036e8d]/5 p-6 sm:p-6 md:p-8 lg:p-4 rounded-xl mt-2 sm:mt-0 w-fit shadow-sm transition-shadow duration-300 shadow-xl hover:shadow-sm"
     >
-      <h3 className="text-lg sm:text-xl md:text-2xl font-bubblegum text-[#036e8d] mb-4 sm:mb-6 md:mb-8 text-left sm:text-center tracking-wide">
+      <h3 className="text-lg sm:text-xl md:text-2xl font-bubblegum text-[#036e8d] mb-4 sm:mb-6 md:mb-8 text-left tracking-wide">
         Explore IIHH Gallery
       </h3>
       <div className="flex justify-center">
