@@ -83,7 +83,7 @@ const FacultyCarousel = () => {
           {/* Left Arrow */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/70 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-200/80 rounded-full p-3 transition-shadow"
           >
             <i className="fa-solid fa-chevron-left text-[#036e8d] text-xl p-2"></i>
           </button>
@@ -91,7 +91,7 @@ const FacultyCarousel = () => {
           {/* Right Arrow */}
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/70 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-200/80 rounded-full p-3 transition-shadow"
           >
             <i className="fa-solid fa-chevron-right text-[#036e8d] text-xl p-2"></i>
           </button>
@@ -117,7 +117,7 @@ const FacultyCarousel = () => {
                   scale={1.05}
                   glareEnable={false}
                 >
-                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center h-full flex flex-col">
+                  <div className="bg-white rounded-2xl p-6 transition-shadow text-center h-full flex flex-col">
                     <img
                       src={faculty.img}
                       alt={faculty.name}
