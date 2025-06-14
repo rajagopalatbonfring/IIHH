@@ -839,8 +839,6 @@ function Home() {
             </div>
           </div>
 
-
-
           <div className="container mx-auto px-8 md:px-8 relative z-10 bg-transparent">
               {/* Section header with creative typography */}
               <div className="max-w-3xl mx-auto text-center mb-24">
@@ -857,7 +855,7 @@ function Home() {
               <div className="overflow-hidden bg-white border border-white/50 rounded-lg shadow-2xl px-0 py-0 sm:px-8 md:px-0 sm:py-8 md:py-12">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-6">
                   {/* Left Side - 4x4 Grid with 3 Cards + Button */}
-                  <div className="p-4 flex-1 flex items-center justify-center">
+                  <div className="py-6 px-10 flex-1 flex items-center justify-center m:px-0">
                     <div className="w-full max-w-2xl">
                       {/* 4x4 Grid Structure */}
                       <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
@@ -932,7 +930,7 @@ function Home() {
 
               <div className="container mx-auto py-14">
                 <div className="bg-white backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
-                  <div className="flex flex-col justify-center align-center lg:flex-row gap-8 py-10 px-8">
+                  <div className="px-10 sm:px-0 flex flex-col align-center justify-center gap-4 sm:flex-row">
                     {/* Left Section - Heading and Description */}
                     <div className="p-0 sm:p-10 lg:w-1/2 flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
