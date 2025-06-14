@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Tilt from 'react-parallax-tilt';
 import { Link } from "react-router-dom";
 import "../App.css";
+import FacultyCarousel from "./facultyCarousel";
 
 import programBgImage from '../assets/programspage_Intro-img.jpg';
 
@@ -18,8 +19,6 @@ import cloudClose from '../assets/closeCloud.png';
 
 import graduateCap from '../assets/academicLogoProgrampg.png';
 
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { text } from "framer-motion/client";
 
 const colorClassMap = {
   green: {
@@ -389,51 +388,6 @@ function Program() {
   useEffect(() => {
     setAnimationTrigger(true);
   }, []);
-
-  // Duplicate faculty data to ensure enough cards for three-card view
-  const originalFacultyData = [
-    { name: "Dr. Elena Rodriguez", role: "Program Director", specialty: "Humanistic Philosophy", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" },
-    { name: "Prof. Michael Chen", role: "Lead Instructor", specialty: "Emotional Intelligence", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
-    { name: "Dr. Amara Okafor", role: "Curriculum Designer", specialty: "Critical Thinking", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" },
-    { name: "Prof. James Wilson", role: "Research Lead", specialty: "Social Ethics", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" },
-    { name: "Prof. Sarah Johnson", role: "Innovation Head", specialty: "Holistic Learning", img: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" },
-  ];
-  const facultyData = originalFacultyData;
-
-const [cardsPerView, setCardsPerView] = useState(1);
-
-useEffect(() => {
-  const updateCardsPerView = () => {
-    const width = window.innerWidth;
-    if (width >= 1280) setCardsPerView(4);
-    else if (width >= 768) setCardsPerView(3);
-    else setCardsPerView(1);
-  };
-
-  updateCardsPerView();
-  window.addEventListener("resize", updateCardsPerView);
-  return () => window.removeEventListener("resize", updateCardsPerView);
-}, []);
-
-
-const [currentIndex, setCurrentIndex] = useState(0);
-
-const nextSlide = () => {
-  if (currentIndex + cardsPerView >= facultyData.length) {
-    setCurrentIndex(0); // loop to start
-  } else {
-    setCurrentIndex((prev) => prev + 1);
-  }
-};
-
-const prevSlide = () => {
-  if (currentIndex <= 0) {
-    setCurrentIndex(facultyData.length - cardsPerView); // go to end
-  } else {
-    setCurrentIndex((prev) => prev - 1);
-  }
-};
-
 
   // In action variables, functions and other starts here!!
    
@@ -1391,73 +1345,7 @@ const prevSlide = () => {
 
 
         {/* Faculty Section */}
-        <section id="faculty" className="py-12 bg-gradient-to-r from-blue-50 to-purple-50">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-3">
-              Meet Our <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Faculty</span>
-            </h2>
-            <p className="text-gray-600 text-center text-xs sm:text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
-              Meet the passionate educators and visionaries who guide IIHH’s mission. Our leadership team brings together diverse expertise and a shared commitment to nurturing holistic, humanistic education for every learner.
-            </p>
-            {facultyData.length === 0 ? (
-              <div className="text-center py-16 text-red-600">Error: No faculty data available</div>
-            ) : (
-              <div className="relative max-w-8xl mx-auto">
-                <div className="overflow-hidden py-20">
-                  <div
-                    className={`flex transition-transform duration-300 ease-in-out`}
-                    style={{ transform: `translateX(-${(100 / cardsPerView) * currentIndex}%)` }}
-                  >
-                    {facultyData.map((faculty, index) => (
-                      <div key={index} className={`w-full ${cardsPerView > 1 ? 'md:w-1/' + cardsPerView : ''} flex-shrink-0 px-4`}>
-                        <Tilt
-                          maxTilt={15}
-                          speed={400}
-                          scale={1.05}
-                          glareEnable={false}
-                        >
-                          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                            <img
-                              src={faculty.img}
-                              alt={faculty.name}
-                              className="w-full h-64 object-cover"
-                              onError={(e) => {
-                                e.target.src = '/assets/fallback.jpg';
-                                console.error(`Failed to load image: ${faculty.img}`);
-                              }}
-                            />
-                            <div className="p-4">
-                              <h3 className="font-bold text-xl mb-1 text-gray-800">{faculty.name}</h3>
-                              <p className="text-[#036e8d] font-medium mb-2">{faculty.role}</p>
-                              <p className="text-gray-600 text-sm mb-4">Specializes in {faculty.specialty}</p>
-                              <Link to={`/faculty/${index % originalFacultyData.length}`} className="text-[#036e8d] hover:text-[#d2a763] font-medium text-sm">
-                                View Profile <i className="fa-solid fa-arrow-right ml-1"></i>
-                              </Link>
-                            </div>
-                          </div>
-                        </Tilt>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 p-4 py-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
-                  aria-label="Previous slide"
-                >
-                  <i className="fa-solid fa-chevron-left"></i>
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-4 py-2 rounded-full shadow-md text-[#036e8d] hover:bg-[#d2a763] hover:text-white transition-colors duration-200"
-                  aria-label="Next slide"
-                >
-                  <i className="fa-solid fa-chevron-right"></i>
-                </button>
-              </div>
-            )}
-          </div>
-        </section>
+        <FacultyCarousel/>
 
 
         {/* Application Process Section */}
