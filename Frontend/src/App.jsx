@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import "./App.css"
 import Navbar from "./Components/Navigations/navbar"
 import Footer from "./Components/Navigations/footer"
@@ -22,7 +23,20 @@ import ClickSpark from "./Components/cursor"
 
 import {Routes, Route, useLocation,Navigate } from "react-router-dom";
 
+import Loader from "./Components/Loader"; // Adjust path if different
+
+
 function App() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const location = useLocation();
 
   const isAdmin = location.pathname === "/adminDashboard" || location.pathname === "/adminLogin";
@@ -31,6 +45,8 @@ function App() {
     const token = localStorage.getItem("token");
     return token ? children : <Navigate to="/adminLogin" />;
   };
+
+  if (loading) return <Loader />;
 
   return (
     <>
