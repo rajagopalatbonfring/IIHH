@@ -1031,6 +1031,7 @@ function Program() {
 
             {/* Horizontal Timeline */}
             <div className="max-w-6xl mx-auto">
+
               {/* Desktop Timeline */}
               <div className="hidden md:block">
                 <div className="relative">
@@ -1041,7 +1042,7 @@ function Program() {
                   <div className="flex justify-between items-center">
                     {/* Term 1 */}
                     <div className="flex-1 text-center relative hover:scale-110 transition-all duration-300">
-                      <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative hover:scale-110 transition-all duration-300">
+                      <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative">
                         <i className="fa-solid fa-seedling text-white text-xl"></i>
                       </div>
                       <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] group hover:scale-105 transition-transform duration-300">
@@ -1066,23 +1067,23 @@ function Program() {
 
                     {/* Term 2 */}
                     <div className="flex-1 text-center relative mx-8 group hover:scale-105 transition-transform duration-300">
-                      <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative hover:scale-110 transition-all duration-300">
+                      <div className="w-20 h-20 bg-[#d2a763] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative">
                         <i className="fa-solid fa-rocket text-white text-xl"></i>
                       </div>
-                      <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] hover:shadow-xl transition-all duration-300">
+                      <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#d2a763] hover:shadow-xl transition-all duration-300">
                         <h3 className="text-lg font-bold text-gray-800">Term 2: Development</h3>
                         <p className="text-sm text-gray-600 mb-4">Expanding Skills</p>
                         <div className="space-y-2 text-xs">
                           <div className="flex items-center">
-                            <i className="fa-solid fa-circle-check  text-[#036e8d] mr-2"></i>
+                            <i className="fa-solid fa-circle-check  text-[#d2a763] mr-2"></i>
                             <span>Advanced Communication</span>
                           </div>
                           <div className="flex items-center">
-                            <i className="fa-solid fa-circle-check  text-[#036e8d] mr-2"></i>
+                            <i className="fa-solid fa-circle-check  text-[#d2a763] mr-2"></i>
                             <span>Problem Solving</span>
                           </div>
                           <div className="flex items-center">
-                            <i className="fa-solid fa-circle-check  text-[#036e8d] mr-2"></i>
+                            <i className="fa-solid fa-circle-check  text-[#d2a763] mr-2"></i>
                             <span>Financial Literacy</span>
                           </div>
                         </div>
@@ -1091,7 +1092,7 @@ function Program() {
 
                     {/* Term 3 */}
                     <div className="flex-1 text-center relative group hover:scale-105 transition-transform duration-300">
-                      <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative hover:scale-110 transition-all duration-300">
+                      <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative">
                         <i className="fa-solid fa-crown text-white text-xl"></i>
                       </div>
                       <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] hover:shadow-xl transition-all duration-300">
@@ -1118,10 +1119,13 @@ function Program() {
               </div>
 
               {/* Mobile Timeline */}
-              <div className="md:hidden space-y-6">
+              <div className="md:hidden space-y-6 relative">
+                {/* Vertical Connecting Line */}
+                <div className="absolute left-[25px] top-[100px] h-[calc(98%-12rem)] w-1 bg-[#036e8d] rounded-full z-0"></div>
+
                 {/* Term 1 */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-[#036e8d] rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+                <div className="flex items-center relative ">
+                  <div className="w-14 h-14 bg-[#036e8d] rounded-full flex items-center justify-center mr-2 shadow-lg border-4 border-white flex-shrink-0 z-10 hover:scale-110 transition-all duration-300">
                     <i className="fa-solid fa-seedling text-white text-sm"></i>
                   </div>
                   <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] flex-1">
@@ -1144,14 +1148,9 @@ function Program() {
                   </div>
                 </div>
 
-                {/* Connection Line */}
-                <div className="flex justify-center">
-                  <div className="w-1 h-8 bg-[#036e8d] rounded-full"></div>
-                </div>
-
                 {/* Term 2 */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-[#d2a763] rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+                <div className="flex items-center relative">
+                  <div className="w-14 h-14 bg-[#d2a763] rounded-full flex items-center justify-center mr-2 shadow-lg border-4 border-white flex-shrink-0 z-10 hover:scale-110 transition-all duration-300">
                     <i className="fa-solid fa-rocket text-white text-sm"></i>
                   </div>
                   <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#d2a763] flex-1">
@@ -1174,14 +1173,9 @@ function Program() {
                   </div>
                 </div>
 
-                {/* Connection Line */}
-                <div className="flex justify-center">
-                  <div className="w-1 h-8 bg-[#d2a763] rounded-full"></div>
-                </div>
-
                 {/* Term 3 */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-[#036e8d] rounded-full flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+                <div className="flex items-center relative">
+                  <div className="w-14 h-14 bg-[#036e8d] rounded-full flex items-center justify-center mr-2 shadow-lg border-4 border-white flex-shrink-0 z-10 hover:scale-110 transition-all duration-300">
                     <i className="fa-solid fa-crown text-white text-sm"></i>
                   </div>
                   <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] flex-1">
@@ -1204,7 +1198,9 @@ function Program() {
                   </div>
                 </div>
               </div>
+
             </div>
+            
           </div>
         </section>
 
@@ -1253,6 +1249,7 @@ function Program() {
             </div>
           </div>
         </section>
+
 
         {/* Call to Action */}
         <section id="program-cta" className="min-w-1/2 px-4 pb-20 bg-[#f9fcfd] relative overflow-hidden">
