@@ -83,7 +83,7 @@ const FacultyCarousel = () => {
           {/* Left Arrow */}
           <button
             onClick={handlePrev}
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10 bg-white/70 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/70 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
           >
             <i className="fa-solid fa-chevron-left text-[#036e8d] text-xl p-2"></i>
           </button>
@@ -91,7 +91,7 @@ const FacultyCarousel = () => {
           {/* Right Arrow */}
           <button
             onClick={handleNext}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10 bg-white/70 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/70 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow"
           >
             <i className="fa-solid fa-chevron-right text-[#036e8d] text-xl p-2"></i>
           </button>
