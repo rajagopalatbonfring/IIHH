@@ -943,7 +943,7 @@ function Home() {
                     </div>
 
                     {/* Right Section - Small Square Cards */}
-                    <div className='py-2 sm:py-0 sm:pb-4 md:pb-0 flex flex-col gap-6 align-center justify-center px-10'>
+                    <div className='py-2 pb-8 sm:pb-4 sm:py-0 px-8 md:px-10 md:pb-0 flex flex-col gap-6 align-center justify-center'>
                       <div className="flex flex-col align-center justify-center gap-4 sm:flex-row ">
                         {/* Card 1 */}
                         <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
