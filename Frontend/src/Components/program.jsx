@@ -1041,11 +1041,11 @@ function Program() {
                   {/* Timeline Items */}
                   <div className="flex justify-between items-center">
                     {/* Term 1 */}
-                    <div className="flex-1 text-center relative hover:scale-110 transition-all duration-300">
+                    <div className="flex-1 text-center relative group hover:scale-105 transition-transform duration-300">
                       <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative">
-                        <i className="fa-solid fa-seedling text-white text-xl"></i>
+                        <i className="fa-solid fa-book-open text-white text-xl"></i>
                       </div>
-                      <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] group hover:scale-105 transition-transform duration-300">
+                      <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] hover:shadow-xl transition-all duration-300">
                         <h3 className="text-lg font-bold text-gray-800">Term 1: Foundation</h3>
                         <p className="text-sm text-gray-600 mb-4">Building Your Core</p>
                         <div className="space-y-2 text-xs">
@@ -1093,7 +1093,7 @@ function Program() {
                     {/* Term 3 */}
                     <div className="flex-1 text-center relative group hover:scale-105 transition-transform duration-300">
                       <div className="w-20 h-20 bg-[#036e8d] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-white z-10 relative">
-                        <i className="fa-solid fa-crown text-white text-xl"></i>
+                        <i className="fa-solid fa-trophy text-white text-xl"></i>
                       </div>
                       <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] hover:shadow-xl transition-all duration-300">
                         <h3 className="text-lg font-bold text-gray-800">Term 3: Mastery</h3>
@@ -1126,7 +1126,7 @@ function Program() {
                 {/* Term 1 */}
                 <div className="flex items-center relative ">
                   <div className="w-14 h-14 bg-[#036e8d] rounded-full flex items-center justify-center mr-2 shadow-lg border-4 border-white flex-shrink-0 z-10 hover:scale-110 transition-all duration-300">
-                    <i className="fa-solid fa-seedling text-white text-sm"></i>
+                    <i className="fa-solid fa-book-open text-white text-sm"></i>
                   </div>
                   <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] flex-1">
                     <h3 className="text-base font-bold text-gray-800 mb-2">Term 1: Foundation</h3>
@@ -1176,7 +1176,7 @@ function Program() {
                 {/* Term 3 */}
                 <div className="flex items-center relative">
                   <div className="w-14 h-14 bg-[#036e8d] rounded-full flex items-center justify-center mr-2 shadow-lg border-4 border-white flex-shrink-0 z-10 hover:scale-110 transition-all duration-300">
-                    <i className="fa-solid fa-crown text-white text-sm"></i>
+                    <i className="fa-solid fa-trophy text-white text-sm"></i>
                   </div>
                   <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-[#036e8d] flex-1">
                     <h3 className="text-base font-bold text-gray-800 mb-2">Term 3: Mastery</h3>
@@ -1200,7 +1200,7 @@ function Program() {
               </div>
 
             </div>
-            
+
           </div>
         </section>
 
@@ -1252,7 +1252,7 @@ function Program() {
 
 
         {/* Call to Action */}
-        <section id="program-cta" className="min-w-1/2 px-4 pb-20 bg-[#f9fcfd] relative overflow-hidden">
+        <section id="program-cta" className="min-w-1/2 px-4 pb-28 bg-[#f9fcfd] relative overflow-hidden">
           <div className="w-full text-center mt-12 py-16 bg-[#036e8d] rounded-full p-8 text-white shadow-xl">
             <h3 className="text-xl md:text-2xl font-bold mb-3">Ready to Begin Your Transformation?</h3>
             <p className="text-sm md:text-base mb-6 text-white/90">
@@ -1277,6 +1277,7 @@ function Program() {
             </div>
           </div>
         </section>
+        
 
         
         {/* Learning in Action Section */}
@@ -1638,7 +1639,7 @@ function Program() {
               <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold hover:shadow-xl transition-all">
                 Join Our Programs
               </button>
-              <button className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-12 rounded-full transition-all duration-300 text-base sm:text-lg">
+              <button className="text-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-12 rounded-full transition-all duration-300 text-base sm:text-lg">
                 Newsletter Signup
               </button>
             </div>
