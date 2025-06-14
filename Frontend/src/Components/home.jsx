@@ -928,41 +928,41 @@ function Home() {
                 </div>
               </div>
 
-              <div className="container mx-auto py-14">
+              <div className="container mx-auto py-10">
                 <div className="bg-white backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
-                  <div className="px-10 sm:px-0 py-10 flex flex-col align-center justify-center gap-4 sm:flex-row">
+                  <div className="px-10 sm:px-0 py-4 flex flex-col lg:flex-row align-center justify-center gap-4 md:gap-1">
                     {/* Left Section - Heading and Description */}
-                    <div className="p-0 sm:p-10 lg:w-1/2 flex flex-col justify-center">
+                    <div className="py-4 px-0 sm:py-4 sm:px-10 lg:w-1/2 flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                         What Makes <br /> 
                         IIHH <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Unique?</span>
                       </h2>
-                      <p className="text-gray-600 text-lg mb-6">
+                      <p className="text-gray-600 text-lg">
                         Our program includes three exclusive modules you won't find anywhere else—designed to spark personal growth and real-world leadership.
                       </p>
                     </div>
 
                     {/* Right Section - Small Square Cards */}
-                    <div className='flex flex-col gap-6 align-center justify-center'>
-                    <div className="flex flex-col align-center justify-center gap-4 sm:flex-row ">
-                      {/* Card 1 */}
-                      <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
-                        <i className="fa-solid fa-seedling text-2xl text-green-500 mb-2"></i>
-                        <h3 className="text-sm font-bold text-[#223668] leading-tight">Foundations of Humanism</h3>
-                      </div>
+                    <div className='py-2 sm:py-0 sm:pb-4 md:pb-0 flex flex-col gap-6 align-center justify-center px-10'>
+                      <div className="flex flex-col align-center justify-center gap-4 sm:flex-row ">
+                        {/* Card 1 */}
+                        <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
+                          <i className="fa-solid fa-seedling text-2xl text-green-500 mb-2"></i>
+                          <h3 className="text-sm font-bold text-[#223668] leading-tight">Foundations of Humanism</h3>
+                        </div>
 
-                      {/* Card 2 */}
-                      <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-orange-300 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
-                        <i className="fa-solid fa-toolbox text-2xl text-blue-500 mb-2"></i>
-                        <h3 className="text-sm font-bold text-[#223668] leading-tight">Life Skills</h3>
-                      </div>
+                        {/* Card 2 */}
+                        <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-orange-300 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
+                          <i className="fa-solid fa-toolbox text-2xl text-blue-500 mb-2"></i>
+                          <h3 className="text-sm font-bold text-[#223668] leading-tight">Life Skills</h3>
+                        </div>
 
-                      {/* Card 3 */}
-                      <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-blue-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
-                        <i className="fa-solid fa-users text-2xl text-purple-500 mb-2"></i>
-                        <h3 className="text-sm font-bold text-[#223668] leading-tight">Humanistic Leadership</h3>
+                        {/* Card 3 */}
+                        <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-blue-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
+                          <i className="fa-solid fa-users text-2xl text-purple-500 mb-2"></i>
+                          <h3 className="text-sm font-bold text-[#223668] leading-tight">Humanistic Leadership</h3>
+                        </div>
                       </div>
-                    </div>
                     <div className='flex w-full align-center justify-center'>
                       <Link
                         to="/programs"
