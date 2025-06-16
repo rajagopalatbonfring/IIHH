@@ -71,7 +71,7 @@ const Faqform = ({ formData, setFormData, handleChange, handleSubmit, loading })
 const StyledWrapper = styled.div`
   .container {
     max-width: 100%;
-    min-width:320px;
+    min-width: 250px;
     height: auto;
     min-height: 400px;
     display: flex;

@@ -114,7 +114,7 @@ function ContactUs() {
     <main className="pt-20 min-h-screen font-comic text-base-content bg-[#f9fcfd]">
       <section
         id="hero"
-        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] bg-cover bg-top overflow-hidden flex items-center bg-[#223668]"
+        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] py-20 bg-cover bg-top overflow-hidden flex items-center bg-[#223668]"
         style={{ backgroundImage: `url(${heroImg})` }}
       >
         <div className="absolute inset-0 bg-black/20 z-0" />
@@ -181,7 +181,7 @@ function ContactUs() {
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                   Get In Touch
                 </h1>
-                <p className="text-gray-600 leading-relaxed text-lg mb-16">
+                <p className="text-gray-600 leading-relaxed text-lg mb-6">
                   At IIHH, we believe every question is the start of a new horizon. Whether you want to know more about our signature modules, our hands-on activities, or how your child can benefit from our humanistic approach, our team is ready to help. Fill out the form, call, or email us—we look forward to connecting with you!
                 </p>
               </div>
@@ -191,24 +191,24 @@ function ContactUs() {
                 <div
                   className="relative flex-col items-center"
                 >
-                  <div className="absolute -top-12 left-0 flex-shrink-0">
-                    <div className="w-12 h-12 flex items-center justify-center">
-                      <Lottie
-                        lottieRef={emailLottieRef}
-                        animationData={email}
-                        loop={false}
-                        isPaused={!isEmailHovered}
-                        autoplay={false}
-                        style={{ width: 48, height: 48 }}
-                      />
-                    </div>
-                  </div>
                   <div 
                     className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
                     onMouseEnter={playEmailAnimation}
                     onMouseLeave={() => setIsEmailHovered(false)}
                   >
-                    <h3 className="font-bold text-gray-800 text-base mb-1">Email</h3>
+                    <div>
+                      <div className="w-12 h-12 flex items-center justify-center transform -translate-x-1">
+                        <Lottie
+                          lottieRef={emailLottieRef}
+                          animationData={email}
+                          loop={false}
+                          isPaused={!isEmailHovered}
+                          autoplay={false}
+                          style={{ width: 48, height: 48 }}
+                        />
+                      </div>
+                      <h3 className="font-bold text-gray-800 text-base mb-1">Email</h3>
+                    </div>
                     <p className="text-[#036e8d] text-sm font-medium">contact@iihh.org</p>
                   </div>
                 </div>
@@ -217,8 +217,12 @@ function ContactUs() {
                 <div
                   className="relative flex-col items-center"
                 >
-                  <div className="absolute -top-12 left-0 flex-shrink-0">
-                    <div className="w-12 h-12 flex items-center justify-center">
+                  <div 
+                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
+                    onMouseEnter={playPhoneAnimation}
+                    onMouseLeave={() => setIsPhoneHovered(false)}
+                  >
+                    <div className="w-12 h-12 flex items-center justify-center transform">
                       <Lottie
                         lottieRef={phoneLottieRef}
                         animationData={phone}
@@ -228,12 +232,6 @@ function ContactUs() {
                         style={{ width: 48, height: 48 }}
                       />
                     </div>
-                  </div>
-                  <div 
-                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
-                    onMouseEnter={playPhoneAnimation}
-                    onMouseLeave={() => setIsPhoneHovered(false)}
-                  >
                     <h3 className="font-bold text-gray-800 text-base mb-1">Phone</h3>
                     <p className="text-[#036e8d] text-sm font-medium">(855) 100-4444</p>
                   </div>
@@ -243,8 +241,12 @@ function ContactUs() {
                 <div
                   className="relative flex-col items-center"
                 >
-                  <div className="absolute -top-12 left-0 flex-shrink-0">
-                    <div className="w-12 h-12 flex items-center justify-center">
+                  <div 
+                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
+                    onMouseEnter={playAddressAnimation}
+                    onMouseLeave={() => setIsAddressHovered(false)}
+                  >
+                    <div className="w-12 h-12 flex items-center justify-center transform translate-x-0.5">
                       <Lottie
                         lottieRef={addressLottieRef}
                         animationData={location}
@@ -254,15 +256,9 @@ function ContactUs() {
                         style={{ width: 48, height: 48 }}
                       />
                     </div>
-                  </div>
-                  <div 
-                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
-                    onMouseEnter={playAddressAnimation}
-                    onMouseLeave={() => setIsAddressHovered(false)}
-                  >
                     <h3 className="font-bold text-gray-800 text-base mb-1">Address</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      456 HAINES STREET<br />San Francisco, CA 94102
+                      456 Hainesh Street<br />San Francisco, CA 94102
                     </p>
                   </div>
                 </div>
@@ -376,7 +372,7 @@ function ContactUs() {
 
       <section className="py-16 bg-[#f9fcfd]">
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
-          <div className="p-8">
+          <div className="py-8 px-1">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Location</h2>
             <div className="rounded-lg overflow-hidden shadow-md">
               <iframe
@@ -458,26 +454,31 @@ function ContactUs() {
       <section className="py-16 bg-[#223668] text-white text-center">
         <div className="container mx-auto px-8 md:px-14 max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Join our mission. Volunteer, Donate, Advocate. Get Started Today.
+            Be Part of the IIHH Journey.<br />
+            Empower. Inspire. Transform.
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+          <p className="text-white/90 text-lg max-w-2xl mx-auto mt-4 mb-8">
+            Whether you’re a parent, student, educator, or advocate for humanistic education, your involvement helps shape the future. Connect with us to join IIHH, support our mission, or learn how you can make a difference.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <p className="text-white/80">
-              <span className="font-semibold">Email:</span> hello@change.com
+              <span className="font-semibold">Email:</span> contact@iihh.org
             </p>
             <p className="text-white/80">
-              <span className="font-semibold">Call Anytime:</span> (212) 555-6213
+              <span className="font-semibold">Call:</span> (855) 100-4444
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <button className="bg-[#d2a763] text-white px-8 py-3 rounded-full font-semibold tracking-wider hover:bg-[#c19653] hover:shadow-xl transition-all duration-300">
-              START CAMPAIGN
+              Join IIHH
             </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold tracking-wider hover:bg-white hover:text-[#223668] transition-all duration-300">
-              GET INVOLVED
+              Download Program Guide
             </button>
           </div>
         </div>
       </section>
+
 
       <ToastContainer position="top-right" autoClose={3000} />
     </main>
