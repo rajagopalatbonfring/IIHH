@@ -852,11 +852,11 @@ function Home() {
               </div>
 
 
-              <div className="overflow-hidden bg-white border border-white/50 rounded-lg shadow-2xl px-0 py-0 sm:px-8 md:px-0 sm:py-8 md:py-12">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-6">
+              <div className="overflow-hidden bg-white border border-white/50 rounded-lg shadow-2xl px-0 py-0 sm:px-8 md:px-0 sm:py-8 md:py-8">
+                <div className="flex flex-col lg:flex-row gap-0`">
                   {/* Left Side - 4x4 Grid with 3 Cards + Button */}
-                  <div className="py-6 px-10 flex-1 flex items-center justify-center m:px-0">
-                    <div className="w-full max-w-2xl">
+                  <div className="py-6 px-6 sm:px-10 flex-1 flex items-center justify-center">
+                    <div className="w-full max-w-3xl">
                       {/* 4x4 Grid Structure */}
                       <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
                         {/* First 3 cards */}
@@ -894,14 +894,14 @@ function Home() {
                   </div>
                   
                   {/* Right Side - Integrated Section (No Card Design) */}
-                  <div className="px-6 pb-10 flex-1 lg:max-w-md flex flex-col justify-center">
+                  <div className="px-10 pb-10 flex-1 lg:max-w-xl flex flex-col justify-center">
                     {/* Content Section */}
                     <div className="space-y-6">
                       <div>
-                      <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                      Transform Your<br /> 
-                        <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Future</span> with our <span className='text-[#d2a763] inline-block transform hover:scale-x-105 duration-300'>Programs</span> 
-                      </h2>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                        Transform Your<br /> 
+                          <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Future</span> with our <span className='text-[#d2a763] inline-block transform hover:scale-x-105 duration-300'>Programs</span> 
+                        </h2>
                         <p className="text-gray-600 text-lg leading-relaxed">
                           Discover how our afterschool program can empower you with essential life skills! 
                           Join thousands of students who have transformed their futures through our comprehensive modules.
@@ -928,11 +928,11 @@ function Home() {
                 </div>
               </div>
 
-              <div className="container mx-auto py-10">
+              <div className="container mx-auto py-10 max-w-7xl">
                 <div className="bg-white backdrop-blur-lg border border-white/50 rounded-lg shadow-2xl">
-                  <div className="px-10 sm:px-0 py-4 flex flex-col lg:flex-row align-center justify-center gap-4 md:gap-1">
+                  <div className="px-8 sm:px-0 py-4 flex flex-col lg:flex-row align-center justify-center gap-4 md:gap-1">
                     {/* Left Section - Heading and Description */}
-                    <div className="py-4 px-0 sm:py-4 sm:px-10 lg:w-1/2 flex flex-col justify-center">
+                    <div className="py-4 px-0 sm:py-4 sm:px-10 lg:w-1/2 lg:max-w-4xl flex flex-col justify-center">
                       <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                         What Makes <br /> 
                         IIHH <span className='text-[#036e8d] inline-block transform hover:scale-x-105 duration-300'>Unique?</span>
@@ -943,8 +943,8 @@ function Home() {
                     </div>
 
                     {/* Right Section - Small Square Cards */}
-                    <div className='py-2 pb-8 sm:pb-4 sm:py-0 px-2 md:px-10 md:pb-0 flex flex-col gap-6 align-center justify-center'>
-                      <div className="flex flex-col align-center justify-center gap-4 sm:flex-row ">
+                    <div className='py-2 pb-8 sm:pb-4 sm:py-0 px-2 sm:px-8 md:px-10 md:pb-0 flex flex-col gap-6 align-center justify-center'>
+                      <div className="flex flex-col sm:flex-row align-center justify-center gap-4 2xl:gap-6">
                         {/* Card 1 */}
                         <div className="w-full aspect-square flex flex-col shadow-lg justify-center items-center rounded-xl p-3 bg-yellow-200 hover:shadow-sm hover:scale-105 transition-all duration-300 text-center">
                           <i className="fa-solid fa-seedling text-2xl text-green-500 mb-2"></i>
@@ -1033,7 +1033,7 @@ function Home() {
                   <h3 className="text-left text-2xl lg:text-3xl font-semibold text-[#036e8d] mb-6 animate-fade-in-delayed">
                     Because Real Transformation Starts Here
                   </h3>
-                  <p className="text-left text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-delayed">
+                  <p className="text-left text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-delayed lg:max-w-4xl">
                     We deliver more than education—we foster profound personal growth through our uniquely humanistic approach that nurtures resilience, empathy, and purpose.
                   </p>
 
@@ -1203,8 +1203,8 @@ function Home() {
           <div className="flex flex-col md:flex-row">
             {/* Left side - Yellow background with text and form */}
             <div className="bg-yellow-300 md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Better Future for Your Kids</h2>
-              <p className="text-gray-800 mb-6">Embark on a humanistic journey that empowers learners of all ages. Start your transformation today.</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Better Future for Your Kids</h2>
+              <p className="text-gray-800 lg:text-xl mb-6">Embark on a humanistic journey that empowers learners of all ages. Start your transformation today.</p>
               <div className="flex flex-col sm:flex-row align-center gap-6">
                 <button className="sm:text-xl bg-white text-[#036e8d] px-12 py-4 rounded-full font-semibold transform hover:scale-105 hover:shadow-lg transition-all">
                   Enroll Now
@@ -1213,7 +1213,7 @@ function Home() {
             </div>
             
             {/* Right side - Green background with children image */}
-            <div className="relative bg-emerald-400 md:w-full flex items-center justify-center">
+            <div className="relative bg-yellow-300 md:w-full flex items-center justify-center">
                 <img  className="flex items-end w-full h-full object-cover object-fit" src={homeCta} alt="ctaimg" />
             </div>
           </div>
