@@ -100,7 +100,7 @@ export default function HowItWorks() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center justify-center"
+        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px]  bg-cover bg-center overflow-hidden flex items-center justify-center"
         style={{ backgroundImage: `url(${HowWorkBgImage})` }}
       >
         <div className="absolute inset-0 bg-black/20" />

@@ -424,7 +424,7 @@ function Program() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative h-auto min-h-[500px] md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668] pt-20 pb-24"
+          className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668] pt-20 pb-24"
           style={{ backgroundImage: `url(${programBgImage})` }}
         >
           <div className="absolute inset-0 bg-[#223668]/20 z-0"></div>

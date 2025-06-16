@@ -61,7 +61,7 @@ function AboutUs() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative h-auto min-h-[500px] pt-20 pb-24 sm:pb-0 sm:pt-0 md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
+          className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] pt-20 pb-24 sm:pb-0 sm:pt-0 md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
           style={{ backgroundImage: `url(${aboutBgImage})` }}
         >
           {/* Overlay */}
