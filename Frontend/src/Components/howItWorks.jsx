@@ -270,16 +270,16 @@ export default function HowItWorks() {
       </section>
 
       {/* 4-Step Journey */}
-      <section id="steps" className="py-24 relative min-h-screen flex items-center">
+      <section id="steps" className="relative h-auto flex items-center">
         <img 
           src={cloudOpen}
           alt="Cloud decoration" 
           className="w-full absolute top-0 left-0 object-cover object-top" 
           style={{ transform: 'translateY(-50%)'}}
         />
-        <div className="container mx-auto px-8 md:px-14 relative z-10 max-w-7xl">
+        <div className="container mx-auto px-10 md:px-14 relative z-10 max-w-7xl">
           {/* Header with Stagger Animation */}
-          <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`text-center mt-20 mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Your <span className='text-[#d2a763] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>IIHH</span> <span className='text-[#036e8d] inline-block transform hover:scale-x-105 transition-transform duration-300'> Journey</span>
             </h2>
@@ -291,7 +291,7 @@ export default function HowItWorks() {
           </div>
 
           {/* Modern Grid Layout */}
-          <div className="px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <div className="px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {/* Connecting Lines */}
             <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#036e8d]/30 to-transparent hidden lg:block"></div>
             
@@ -395,31 +395,6 @@ export default function HowItWorks() {
         `}</style>
       </section>
 
-      {/* Signature Activities */}
-      <section id="activities" className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-        <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Learning by <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Doing</span>, <br />Not Just <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Reading</span>
-          </h2>
-          <p className="text-gray-700 text-lg mb-6">
-            At IIHH, learning is hands-on and practical. Students engage in real-world projects, group challenges, and creative experiments—learning by doing, not just reading.
-          </p>
-        </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {activities.map((activity, idx) => (
-              <Tilt key={idx} tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={400} scale={1.05}>
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 animate-fadeInUp" style={{ animationDelay: `${idx * 100}ms` }}>
-                  <img src={activity.image} alt={activity.title} className="w-full h-40 object-cover rounded-lg mb-4" />
-                  <h3 className="font-bold text-lg text-[#036e8d] mb-2">{activity.title}</h3>
-                  <p className="text-gray-700 text-sm text-left">{activity.desc}</p>
-                </div>
-              </Tilt>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Signature Modules */}
       <section id="modules" className="py-16 bg-[#f9fcfd] font-comic">
         <div className="container mx-auto px-8 md:px-14 py-14 max-w-7xl flex flex-col items-center">
@@ -469,6 +444,32 @@ export default function HowItWorks() {
           <p className="text-center text-[#036e8d] font-medium text-base mt-10">
             These modules are exclusive to IIHH and cannot be learned anywhere else.
           </p>
+        </div>
+      </section>
+
+
+      {/* Signature Activities */}
+      <section id="activities" className="py-16 bg-[#f9fcfd]">
+        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 text-center max-w-3xl">
+          <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Learning by <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Doing</span>, <br />Not Just <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Reading</span>
+          </h2>
+          <p className="text-gray-700 text-lg mb-6">
+            At IIHH, learning is hands-on and practical. Students engage in real-world projects, group challenges, and creative experiments—learning by doing, not just reading.
+          </p>
+        </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {activities.map((activity, idx) => (
+              <Tilt key={idx} tiltMaxAngleX={10} tiltMaxAngleY={10} transitionSpeed={400} scale={1.05}>
+                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 animate-fadeInUp" style={{ animationDelay: `${idx * 100}ms` }}>
+                  <img src={activity.image} alt={activity.title} className="w-full h-40 object-cover rounded-lg mb-4" />
+                  <h3 className="font-bold text-lg text-[#036e8d] mb-2">{activity.title}</h3>
+                  <p className="text-gray-700 text-sm text-left">{activity.desc}</p>
+                </div>
+              </Tilt>
+            ))}
+          </div>
         </div>
       </section>
 
