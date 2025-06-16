@@ -396,8 +396,8 @@ export default function HowItWorks() {
       </section>
 
       {/* Signature Modules */}
-      <section id="modules" className="py-16 bg-[#f9fcfd] font-comic">
-        <div className="container mx-auto px-8 md:px-14 py-14 max-w-7xl flex flex-col items-center">
+      <section id="modules" className="pt-16 pb-0 bg-[#f9fcfd] font-comic">
+        <div className="container mx-auto px-8 md:px-14 pt-14 pb-8 max-w-7xl flex flex-col items-center">
           <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our Signature <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Modules!</span>
           </h2>
