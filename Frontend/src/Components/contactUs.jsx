@@ -7,6 +7,9 @@ import '../App.css';
 import heroImg from '../assets/contact-us-pg-hero.jpg';
 import Faqform from '../Components/ui/Faqform';
 
+import cloudOpen from '../assets/Group 33.png';
+import cloudClose from '../assets/closeCloud.png';
+
 import email from '../assets/lottie/Mail.json'; 
 import phone from '../assets/lottie/phone.json'; 
 import location from '../assets/lottie/Location.json';
@@ -154,7 +157,7 @@ function ContactUs() {
           preserveAspectRatio="none"
           viewBox="0 0 1200 120"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ fill: '#f9fcfd', width: '148%', height: 90, transform: 'rotate(180deg)' }}
+          style={{ fill: '#d2a763', width: '148%', height: 90, transform: 'rotate(180deg)' }}
         >
           <path
             d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -171,17 +174,17 @@ function ContactUs() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-[#f9fcfd]" id="contact-form">
+      <section className="py-16 bg-[#d2a763]" id="contact-form">
         <div className="container relative mx-auto px-8 md:px-14 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Side - Content */}
             <div className="space-y-8">
               <div>
-                <h4 className="text-[#d2a763] font-semibold tracking-wider mb-3 text-sm uppercase">CONTACT</h4>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-                  Get In Touch
+                <h4 className="text-gray-800 font-semibold tracking-wider mb-3 text-sm uppercase">CONTACT</h4>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#ffffff] mb-6 leading-tight">
+                  Get In <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>Touch</span>
                 </h1>
-                <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                <p className="text-gray-800 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
                   At IIHH, we believe every question is the start of a new horizon. Whether you want to know more about our signature modules, our hands-on activities, or how your child can benefit from our humanistic approach, our team is ready to help. Fill out the form, call, or email us—we look forward to connecting with you!
                 </p>
               </div>
@@ -204,7 +207,7 @@ function ContactUs() {
                           loop={false}
                           isPaused={!isEmailHovered}
                           autoplay={false}
-                          style={{ width: 48, height: 48 }}
+                          style={{ width: 48, height: 48,}}
                         />
                       </div>
                       <h3 className="font-bold text-gray-800 text-base mb-1">Email</h3>
@@ -327,14 +330,20 @@ function ContactUs() {
       </section>
 
       {/* Visit Our Office Section */}
-      <section className="py-16 bg-white">
+      <section className="relative pt-16 bg-[#f9fcfd]">
+        <img 
+          src={cloudOpen}
+          alt="Cloud decoration" 
+          className="w-full absolute top-0 left-0 object-cover object-top" 
+          style={{ transform: 'translateY(-50%)'}}
+        />
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold text-gray-800 mb-6 leading-tight">
-                  Visit Our Office!
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                  Visit Our <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>Office!</span>
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-lg mb-8">
                   Experience the IIHH community in person. Our doors are open for you to visit, ask questions, and see how we’re shaping the next generation with compassion and creativity. Schedule an appointment or drop by during business hours.
@@ -368,12 +377,15 @@ function ContactUs() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="py-16 bg-[#f9fcfd]">
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
           <div className="py-8 px-1">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Location</h2>
+            <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+              <h2 className="text-2xl font-bold text-gray-800 mb-1">Our Location</h2>
+              <h3 className="font-bold text-gray-800 mb-2">International Institute of Horizon Humanism</h3>
+              <p className="text-gray-600 text-sm leading solving-relaxed">
+                Our office is conveniently located in Coimbatore. Feel free to visit us during business hours or schedule an appointment.
+              </p>
+            </div>
             <div className="rounded-lg overflow-hidden shadow-md">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.8188449153563!2d76.9914145735771!3d11.05220485404936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85856582a506f%3A0x93184a31dbc78579!2sBonfring%20Technology%20Solutions!5e0!3m2!1sen!2sin!4v1748927450366!5m2!1sen!2sin"
@@ -386,32 +398,23 @@ function ContactUs() {
                 className="w-full"
               ></iframe>
             </div>
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <h3 className="font-bold text-gray-800 mb-2">International Institute of Horizon Humanism</h3>
-              <p className="text-gray-600 text-sm leading solving-relaxed">
-                Our office is conveniently located in Coimbatore. Feel free to visit us during business hours or schedule an appointment.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
+
       {/* FAQ Section */}
       <section className="py-16 bg-[#f9fcfd]">
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">Frequently Asked <span className="text-[#036e8d] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore answers to common questions about IIHH’s programs, learning structure, and unique approach. If you don’t find what you’re looking for, don’t hesitate to contact us directly.
+            </p>
+          </div>
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left Side - FAQ */}
             <div>
-              <div className="mb-8">
-                <h4 className="text-[#d2a763] font-semibold tracking-wider mb-3 text-sm uppercase">FAQ</h4>
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-gray-600 leading-relaxed text-lg">
-                  Explore answers to common questions about IIHH’s programs, learning structure, and unique approach. If you don’t find what you’re looking for, don’t hesitate to contact us directly.
-                </p>
-              </div>
-
               <div className="space-y-4">
                 {faqData.map((faq, index) => (
                   <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-100">
@@ -451,7 +454,13 @@ function ContactUs() {
       </section>
 
       {/* Bottom CTA Section */}
-      <section className="py-16 bg-[#223668] text-white text-center">
+      <section className="relative pt-32 pb-12 bg-[#036e8d] text-white text-center">
+        <img 
+          src={cloudClose}           
+          alt="Cloud decoration" 
+          className="w-full absolute top-0 left-0 object-cover object-top" 
+          style={{ transform: 'translateY(-50%)'}} 
+        /> 
         <div className="container mx-auto px-8 md:px-14 max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Be Part of the IIHH Journey.<br />

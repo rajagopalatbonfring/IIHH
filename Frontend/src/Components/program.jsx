@@ -1557,7 +1557,7 @@ function Program() {
             <div className="max-w-7xl mx-auto">
               {/* Header Section */}
               <div className="text-center mb-16">
-                                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">Frequently Asked <span className="text-[#036e8d] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">Frequently Asked <span className="text-[#036e8d] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Find answers to common questions about our humanistic education programs and how they can benefit you.
                 </p>
