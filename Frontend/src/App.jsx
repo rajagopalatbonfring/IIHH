@@ -23,13 +23,13 @@ import ClickSpark from "./Components/cursor"
 
 import {Routes, Route, useLocation,Navigate } from "react-router-dom";
 
-import Loader from "./Components/Loader"; // Adjust path if different
+// import Loader from "./Components/Loader";
 
 
 function App() {
 
-  const [loading, setLoading] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,16 +48,16 @@ function App() {
     return token ? children : <Navigate to="/adminLogin" />;
   };
 
-  if (loading) {
-    return (
-      <div
-        className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-all duration-700 ease-in-out
-          ${fadeOut ? "opacity-0 scale-90 pointer-events-none" : "opacity-100 scale-100"}`}
-      >
-        <Loader />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div
+  //       className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-all duration-700 ease-in-out
+  //         ${fadeOut ? "opacity-0 scale-90 pointer-events-none" : "opacity-100 scale-100"}`}
+  //     >
+  //       <Loader />
+  //     </div>
+  //   );
+  // }
 
   return (
     <>
