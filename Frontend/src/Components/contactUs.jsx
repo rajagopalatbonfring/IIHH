@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 import heroImg from '../assets/contact-us-pg-hero.jpg';
-import Faqform from '../Components/ui/Faqform';
+import ctaImgContact from '../assets/contactCtaImg.jpg';
 
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
@@ -331,7 +331,7 @@ function ContactUs() {
       </section>
 
       {/* Visit Our Office Section */}
-      <section className="relative pt-16 bg-[#f9fcfd]">
+      <section className="relative pt-20 bg-[#f9fcfd]">
         <img 
           src={cloudOpen}
           alt="Cloud decoration" 
@@ -403,7 +403,6 @@ function ContactUs() {
         </div>
       </section>
 
-
       {/* FAQ Section */}
       <section className="py-16 bg-[#f9fcfd]">
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
@@ -413,7 +412,6 @@ function ContactUs() {
               Explore answers to common questions about IIHH’s programs, learning structure, and unique approach. If you don’t find what you’re looking for, don’t hesitate to contact us directly.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12">
             {/* Left Side - FAQ */}
             <div>
               <div className="space-y-4">
@@ -439,33 +437,31 @@ function ContactUs() {
                 ))}
               </div>
             </div>
-
-            {/* Right Side - Ask a Question Form */}
-            <div>
-              <Faqform
-                formData={formData}
-                setFormData={setFormData}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                loading={loading}
-              />
-            </div>
           </div>
-        </div>
       </section>
 
       {/* Bottom CTA Section */}
-      <section className="relative pt-32 pb-12 bg-[#036e8d] text-white text-center">
+      <section
+        id="cta"
+        className='relative h-80 bg-[#036e8d]' 
+      >
         <img 
           src={cloudClose}           
           alt="Cloud decoration" 
           className="w-full absolute top-0 left-0 object-cover object-top" 
           style={{ transform: 'translateY(-50%)'}} 
         /> 
+      </section>
+
+      {/* CTA Section Img*/}
+      <section 
+        className="relative py-16 bg-[#d2a763] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage:`url(${ctaImgContact})` }}
+      >
         <div className="container mx-auto px-8 md:px-14 max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Be Part of the IIHH Journey.<br />
-            Empower. Inspire. Transform.
+            <span className='text-[#d2a763]'>Empower. Inspire. Transform.</span>
           </h2>
           <p className="text-white/90 text-lg max-w-2xl mx-auto mt-4 mb-8">
             Whether you’re a parent, student, educator, or advocate for humanistic education, your involvement helps shape the future. Connect with us to join IIHH, support our mission, or learn how you can make a difference.
@@ -488,7 +484,6 @@ function ContactUs() {
           </div>
         </div>
       </section>
-
 
       <ToastContainer position="top-right" autoClose={3000} />
     </main>

@@ -18,12 +18,6 @@ const FooterContact = () => {
     },
   ];
 
-  const socials = [
-    { icon: "fa-facebook", href: "#" },
-    { icon: "fa-instagram", href: "#" },
-    { icon: "fa-linkedin", href: "#" },
-    { icon: "fa-youtube", href: "#" },
-  ];
 
   return (
     <div id="footer-contact">
@@ -42,21 +36,6 @@ const FooterContact = () => {
           </li>
         ))}
       </ul>
-      <h3 className="text-lg sm:text-xl font-bubblegum text-[#036e8d] mb-4 sm:mb-6 mt-6">Connect With Us</h3>
-      <div className="flex space-x-4">
-        {socials.map((item, index) => (
-          <a
-            key={index}
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Follow us on ${item.icon.split("fa-")[1]}`}
-            className="text-[#036e8d] hover:text-[#d2a763] transition-all duration-300 hover:scale-110"
-          >
-            <i className={`fa-brands ${item.icon} text-xl sm:text-2xl`}></i>
-          </a>
-        ))}
-      </div>
     </div>
   );
 };
