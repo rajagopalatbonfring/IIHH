@@ -95,12 +95,12 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <main className="min-h-screen pt-20 bg-[#f9fcfd] font-comic text-base-content">
+    <main className="min-h-screen pt-20 bg-[#f9fcfd] font-comic text-base-content overflow-hidden">
 
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px]  bg-cover bg-center overflow-hidden flex items-center justify-center"
+        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px]  bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${HowWorkBgImage})` }}
       >
         <div className="absolute inset-0 bg-black/20" />
@@ -140,6 +140,7 @@ export default function HowItWorks() {
           />
           <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
         </svg>
+                  <div className='absolute -bottom-0.5 bg-[#d2a763] w-full h-1'></div>
       </section>
 
       {/*Introduction Section */}

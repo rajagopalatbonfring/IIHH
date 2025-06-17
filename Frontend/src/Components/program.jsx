@@ -418,13 +418,13 @@ function Program() {
 
 
   return (
-    <div className="h-full text-base-content font-comic">
+    <div className="h-full text-base-content font-comic overflow-hidden">
       <main className="pt-20 min-h-screen">
 
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668] pt-20 pb-24"
+          className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] bg-cover bg-center flex items-center bg-[#223668] pt-20 pb-24"
           style={{ backgroundImage: `url(${programBgImage})` }}
         >
           <div className="absolute inset-0 bg-[#223668]/20 z-0"></div>
@@ -470,6 +470,7 @@ function Program() {
             />
             <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
           </svg>
+          <div className='absolute -bottom-0.5 bg-[#d2a763] w-full h-1'></div>
         </section>
 
 

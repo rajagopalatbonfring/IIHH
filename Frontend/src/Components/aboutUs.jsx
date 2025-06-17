@@ -57,11 +57,11 @@ function AboutUs() {
 
   return (
     <div className="h-full text-base-content font-comic">
-      <main className="pt-20 min-h-screen">
+      <main className="pt-20 min-h-screen overflow-hidden ">
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] pt-20 pb-24 sm:pb-0 sm:pt-0 md:min-h-[600px] bg-cover bg-center overflow-hidden flex items-center bg-[#223668]"
+          className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] pt-20 pb-24 sm:pb-0 sm:pt-0 md:min-h-[600px] bg-cover bg-center flex items-center bg-[#223668]"
           style={{ backgroundImage: `url(${aboutBgImage})` }}
         >
           {/* Overlay */}
@@ -103,11 +103,12 @@ function AboutUs() {
               />
               <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
           </svg>
+          <div className='absolute -bottom-0.5 bg-[#d2a763] w-full h-1'></div>
         </section>
 
 
         {/* Unveiling Our Identity, Vision and Values Section */}
-        <section id="who-we-are" className="flex align-center justify-center py-12 sm:py-16 md:py-24 px-4 sm:px-0 bg-[#d2a763] relative overflow-hidden">
+        <section id="who-we-are" className="flex align-center justify-center py-12 sm:py-16 md:py-24 px-4 sm:px-0 bg-[#d2a763] relative">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-30">
             <div className="hidden sm:block absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
