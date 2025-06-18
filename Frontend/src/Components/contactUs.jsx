@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 import heroImg from '../assets/contact-us-pg-hero.jpg';
-import ctaImgContact from '../assets/contactCtaImg.jpg';
+import ctaImgContact from '../assets/contactCtaImgNew.jpg';
 
 import WorkingHours from '../Components/workingHours'
 import FAQGrid from "../Components/faqGrid"    
@@ -33,7 +33,7 @@ function ContactUs() {
   const playEmailAnimation = () => {
     setIsEmailHovered(true);
     if (emailLottieRef.current) {
-      emailLottieRef.current.goToAndPlay(0); // Start from first frame
+      emailLottieRef.current.goToAndPlay(0); 
     }
   };
 
@@ -395,7 +395,7 @@ function ContactUs() {
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white animate-fade-in">Frequently Asked <span className="text-[#ffd278] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
-            <p className="text-lg text-gray-900 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Explore answers to common questions about IIHH’s programs, learning structure, and unique approach. If you don’t find what you’re looking for, don’t hesitate to contact us directly.
             </p>
           </div>
@@ -405,27 +405,21 @@ function ContactUs() {
       </section>
 
       {/* CTA Section Img*/}
-      <section 
-        className="relative py-16 bg-[#d2a763] bg-cover bg-center bg-no-repeat"
+      <section
+        className="relative py-16 bg-[#d2a763] bg-cover bg-start bg-no-repeat"
         style={{ backgroundImage:`url(${ctaImgContact})` }}
       >
         <div className="absolute inset-0 bg-black/20 z-1" />
-        <div className="relative z-10 container mx-auto px-8 md:px-14 max-w-4xl z-2">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="relative z-2 container mx-auto px-8 md:px-14 max-w-4xl">
+          <h2 className="relative  z-10 text-white text-center text-4xl md:text-5xl font-bold mb-4">
             Be Part of the IIHH Journey.<br />
-            <span className='text-[#d2a763]'>Empower. Inspire. Transform.</span>
+            <span className='text-[#ffd278] text-3xl md:text-4xl transform hover:scale-x-105 duration-300'>Empower. </span>
+            <span className='text-[#ffd278] text-3xl md:text-4xl transform hover:scale-x-105 duration-300'>Inspire. </span>
+            <span className='text-[#ffd278] text-3xl md:text-4xl transform hover:scale-x-105 duration-300'>Transform.</span>
           </h2>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto mt-4 mb-8">
+          <p className="text-center text-white/90 text-lg max-w-2xl mx-auto mt-4 mb-8">
             Whether you’re a parent, student, educator, or advocate for humanistic education, your involvement helps shape the future. Connect with us to join IIHH, support our mission, or learn how you can make a difference.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <p className="text-white/80">
-              <span className="font-semibold">Email:</span> contact@iihh.org
-            </p>
-            <p className="text-white/80">
-              <span className="font-semibold">Call:</span> (855) 100-4444
-            </p>
-          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <button className="bg-[#d2a763] text-white px-8 py-3 rounded-full font-semibold tracking-wider hover:bg-[#c19653] hover:shadow-xl transition-all duration-300">
               Join IIHH
