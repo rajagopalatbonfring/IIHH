@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import FacultyCarousel from "./facultyCarousel";
 
+import FAQGrid from "../Components/faqGrid"
+
 import programBgImage from '../assets/programspage_Intro-img.jpg';
 
 import ourProgramImg from '../assets/programs-pageHeroimg.jpg';
@@ -346,7 +348,7 @@ const faqs = [
   { question: "Who is this program designed for?", answer: "Our program is designed for educators, professionals, students, and anyone interested in personal growth, humanistic education, and holistic development.",category: "Enrollment" },
   { question: "What is the time commitment?", answer: "The program requires approximately 10 hours per week, including coursework, practical assignments, and collaborative projects.",category: "Enrollment" },
   { question: "Are there any prerequisites?", answer: "No formal prerequisites are required. We welcome individuals from diverse backgrounds with a passion for personal and professional growth.",category: "Enrollment" },
-  { question: "Is financial aid available?", answer: "Yes, we offer scholarships and payment plans. Please contact our admissions office for more information.",category: "Enrollment" }
+  { question: "Is financial aid available?", answer: "Yes, we offer scholarships and payment plans. Please contact our admissions office for more information.",category: "Enrollment" },
 ];
 
 function Program() {
@@ -1565,40 +1567,8 @@ function Program() {
               </div>
               
               {/* Two Column FAQ Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                {faqs.map((faq, index) => (
-                  <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group h-fit">
-                    <details className="group/details">
-                      <summary className="flex justify-between items-start p-6 cursor-pointer hover:bg-gray-50 rounded-t-2xl transition-colors duration-200">
-                        <div className="flex-1 pr-4">
-                          <h3 className="text-lg font-semibold text-gray-800 leading-tight mb-2">
-                            {faq.question}
-                          </h3>
-                          <div className="flex items-center">
-                            <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-600 rounded-full">
-                              {faq.category}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex-shrink-0 ml-4">
-                          <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-200">
-                            <span className="transform group-open/details:rotate-180 transition-transform duration-300">
-                              <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </summary>
-                      <div className="px-6 pb-6">
-                        <div className="pt-4 border-t border-gray-100">
-                          <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                        </div>
-                      </div>
-                    </details>
-                  </div>
-                ))}
-              </div>
+
+              <FAQGrid faqs={faqs} />
               
               {/* Call to Action */}
               <div className="text-center mt-16">

@@ -26,8 +26,42 @@ import { Star, Heart, Users, Brain } from "lucide-react";
 import { CheckCircle, BookOpen} from 'lucide-react';
 
 import TestimonialCarousel from '../Components/ui/TestimonialCarousel'
+import FAQGrid from "../Components/faqGrid"    
 
 function Home() {
+
+  const faqs = [
+    {
+      question: "Who can enroll in IIHH programs?",
+      answer: "Our programs are designed for diverse audiences including students (K-12 and college), educators, professionals, and lifelong learners. We have specialized tracks for different age groups and experience levels.",
+      category: "Enrollment"
+    },
+    {
+      question: "How are courses delivered?",
+      answer: "We offer flexible learning formats including in-person workshops, online courses, blended learning programs, and intensive retreats. All formats emphasize experiential learning and practical application.",
+      category: "Learning Format"
+    },
+    {
+      question: "What is the duration of IIHH programs?",
+      answer: "Program duration varies based on the course type. Short workshops range from 2-5 days, certificate programs span 3-6 months, and comprehensive diploma courses take 12-18 months to complete.",
+      category: "Duration"
+    },
+    {
+      question: "Do you offer corporate training programs?",
+      answer: "Yes, we provide customized corporate training programs focusing on emotional intelligence, leadership development, team building, and workplace wellness. Programs can be tailored to your organization's specific needs.",
+      category: "Corporate"
+    },
+    {
+      question: "What qualifications do instructors have?",
+      answer: "Our instructors are certified professionals with advanced degrees in psychology, education, or related fields. They have extensive experience in humanistic approaches and undergo continuous professional development.",
+      category: "Faculty"
+    },
+    {
+      question: "Can I get continuing education credits?",
+      answer: "Many of our programs offer continuing education units (CEUs) for professionals in education, healthcare, and counseling. Check with your professional board for specific accreditation requirements.",
+      category: "Certification"
+    }
+  ];
 
   const features = [
     { name: 'Empathy', icon: Heart },
@@ -1086,71 +1120,8 @@ function Home() {
               </div>
               
               {/* Two Column FAQ Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                {[
-                  {
-                    question: "Who can enroll in IIHH programs?",
-                    answer: "Our programs are designed for diverse audiences including students (K-12 and college), educators, professionals, and lifelong learners. We have specialized tracks for different age groups and experience levels.",
-                    category: "Enrollment"
-                  },
-                  {
-                    question: "How are courses delivered?",
-                    answer: "We offer flexible learning formats including in-person workshops, online courses, blended learning programs, and intensive retreats. All formats emphasize experiential learning and practical application.",
-                    category: "Learning Format"
-                  },
-                  {
-                    question: "What is the duration of IIHH programs?",
-                    answer: "Program duration varies based on the course type. Short workshops range from 2-5 days, certificate programs span 3-6 months, and comprehensive diploma courses take 12-18 months to complete.",
-                    category: "Duration"
-                  },
-                  {
-                    question: "Do you offer corporate training programs?",
-                    answer: "Yes, we provide customized corporate training programs focusing on emotional intelligence, leadership development, team building, and workplace wellness. Programs can be tailored to your organization's specific needs.",
-                    category: "Corporate"
-                  },
-                  {
-                    question: "What qualifications do instructors have?",
-                    answer: "Our instructors are certified professionals with advanced degrees in psychology, education, or related fields. They have extensive experience in humanistic approaches and undergo continuous professional development.",
-                    category: "Faculty"
-                  },
-                  {
-                    question: "Can I get continuing education credits?",
-                    answer: "Many of our programs offer continuing education units (CEUs) for professionals in education, healthcare, and counseling. Check with your professional board for specific accreditation requirements.",
-                    category: "Certification"
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group h-fit">
-                    <details className="group/details">
-                      <summary className="flex justify-between items-start p-6 cursor-pointer hover:bg-gray-50 rounded-t-2xl transition-colors duration-200">
-                        <div className="flex-1 pr-4">
-                          <h3 className="text-lg font-semibold text-gray-800 leading-tight mb-2">
-                            {item.question}
-                          </h3>
-                          <div className="flex items-center">
-                            <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-600 rounded-full">
-                              {item.category}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex-shrink-0 ml-4">
-                          <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-200">
-                            <span className="transform group-open/details:rotate-180 transition-transform duration-300">
-                              <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </summary>
-                      <div className="px-6 pb-6">
-                        <div className="pt-4 border-t border-gray-100">
-                          <p className="text-gray-600 leading-relaxed">{item.answer}</p>
-                        </div>
-                      </div>
-                    </details>
-                  </div>
-                ))}
-              </div>
+                        
+              <FAQGrid faqs={faqs} />
               
               {/* Call to Action */}
               <div className="text-center mt-16">

@@ -7,6 +7,9 @@ import '../App.css';
 import heroImg from '../assets/contact-us-pg-hero.jpg';
 import ctaImgContact from '../assets/contactCtaImg.jpg';
 
+import WorkingHours from '../Components/workingHours'
+import FAQGrid from "../Components/faqGrid"    
+
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
 
@@ -82,34 +85,36 @@ function ContactUs() {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
 
-  const faqData = [
+  const faqs = [
     {
-      question: "WHAT IS PERFORMANCE UNDER GROUP",
-      answer: "Our institute follows the highest standards as a recognized institution with comprehensive programs designed to foster human development."
+      question: "Who can enroll in IIHH programs?",
+      answer: "Our programs are designed for diverse audiences including students (K-12 and college), educators, professionals, and lifelong learners. We have specialized tracks for different age groups and experience levels.",
+      category: "Enrollment"
     },
     {
-      question: "UNIQUE LEARNING EXPERIENCE STRUCTURE",
-      answer: "We offer innovative learning methodologies that combine traditional wisdom with modern educational approaches."
+      question: "How are courses delivered?",
+      answer: "We offer flexible learning formats including in-person workshops, online courses, blended learning programs, and intensive retreats. All formats emphasize experiential learning and practical application.",
+      category: "Learning Format"
     },
     {
-      question: "IS THERE AN ONLINE VERSION",
-      answer: "Yes, we provide online courses and virtual learning opportunities for remote students worldwide."
+      question: "What is the duration of IIHH programs?",
+      answer: "Program duration varies based on the course type. Short workshops range from 2-5 days, certificate programs span 3-6 months, and comprehensive diploma courses take 12-18 months to complete.",
+      category: "Duration"
     },
     {
-      question: "IS THERE ANY KIT AVAILABLE IN PARTS",
-      answer: "We offer comprehensive learning kits that can be accessed in modular parts based on your learning pace."
+      question: "Do you offer corporate training programs?",
+      answer: "Yes, we provide customized corporate training programs focusing on emotional intelligence, leadership development, team building, and workplace wellness. Programs can be tailored to your organization's specific needs.",
+      category: "Corporate"
     },
     {
-      question: "WHICH SPECIFIC TRAINING ARE AVAILABLE",
-      answer: "We provide specialized training programs in various areas of humanistic studies and personal development."
+      question: "What qualifications do instructors have?",
+      answer: "Our instructors are certified professionals with advanced degrees in psychology, education, or related fields. They have extensive experience in humanistic approaches and undergo continuous professional development.",
+      category: "Faculty"
     },
     {
-      question: "IS THERE ANY KIT AVAILABLE IN PARTS",
-      answer: "Yes, our educational materials are available in segmented modules for flexible learning experiences."
-    },
-    {
-      question: "WHAT IS PERFORMANCE UNDER GROUP",
-      answer: "Group performance metrics are evaluated through comprehensive assessment methods and peer collaboration."
+      question: "Can I get continuing education credits?",
+      answer: "Many of our programs offer continuing education units (CEUs) for professionals in education, healthcare, and counseling. Check with your professional board for specific accreditation requirements.",
+      category: "Certification"
     }
   ];
 
@@ -175,7 +180,7 @@ function ContactUs() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-[#d2a763]" id="contact-form">
+      <section className="py-16 pb-24 bg-[#d2a763]" id="contact-form">
         <div className="container relative mx-auto px-8 md:px-14 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Side - Content */}
@@ -185,88 +190,58 @@ function ContactUs() {
                 <h1 className="text-4xl md:text-5xl font-bold text-[#ffffff] mb-6 leading-tight">
                   Get In <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>Touch</span>
                 </h1>
-                <p className="text-gray-800 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
-                  At IIHH, we believe every question is the start of a new horizon. Whether you want to know more about our signature modules, our hands-on activities, or how your child can benefit from our humanistic approach, our team is ready to help. Fill out the form, call, or email us—we look forward to connecting with you!
+                <p className="text-gray-800 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
+                    At IIHH, every question opens new possibilities.
+                    Want to learn more about our modules or activities?
+                    Contact us—our team is here to help!
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6">
-                {/* Email Card */}
-                <div
-                  className="relative flex-col items-center"
-                >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mb-8 mt-8">
                   <div 
-                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
+                    className="flex items-center"
                     onMouseEnter={playEmailAnimation}
                     onMouseLeave={() => setIsEmailHovered(false)}
                   >
-                    <div>
-                      <div className="w-12 h-12 flex items-center justify-center transform -translate-x-1">
-                        <Lottie
-                          lottieRef={emailLottieRef}
-                          animationData={email}
-                          loop={false}
-                          isPaused={!isEmailHovered}
-                          autoplay={false}
-                          style={{ width: 48, height: 48,}}
-                        />
-                      </div>
-                      <h3 className="font-bold text-gray-800 text-base mb-1">Email</h3>
+                    <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mr-3">
+                      <Lottie
+                        lottieRef={emailLottieRef}
+                        animationData={email}
+                        loop={false}
+                        isPaused={!isEmailHovered}
+                        autoplay={false}
+                        style={{ width: 40, height: 40,}}
+                      />
                     </div>
-                    <p className="text-[#036e8d] text-sm font-medium">contact@iihh.org</p>
+                    <div>
+                      <span className="text-white font-bold">Email</span>
+                      <p className="text-gray-800 font-bold text-sm">contact@iihh.org</p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Phone Card */}
-                <div
-                  className="relative flex-col items-center"
-                >
                   <div 
-                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
+                    className="flex items-center"
                     onMouseEnter={playPhoneAnimation}
                     onMouseLeave={() => setIsPhoneHovered(false)}
                   >
-                    <div className="w-12 h-12 flex items-center justify-center transform">
+                    <div 
+                      className="w-14 h-14 rounded-full bg-white flex items-center justify-center mr-3">
                       <Lottie
                         lottieRef={phoneLottieRef}
                         animationData={phone}
                         loop={false}
                         isPaused={!isPhoneHovered}
                         autoplay={false}
-                        style={{ width: 48, height: 48 }}
+                        style={{ width: 40, height: 40,}}
                       />
                     </div>
-                    <h3 className="font-bold text-gray-800 text-base mb-1">Phone</h3>
-                    <p className="text-[#036e8d] text-sm font-medium">(855) 100-4444</p>
-                  </div>
-                </div>
-
-                {/* Address Card */}
-                <div
-                  className="relative flex-col items-center"
-                >
-                  <div 
-                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 py-4 hover:shadow-xl transition-shadow duration-300"
-                    onMouseEnter={playAddressAnimation}
-                    onMouseLeave={() => setIsAddressHovered(false)}
-                  >
-                    <div className="w-12 h-12 flex items-center justify-center transform translate-x-0.5">
-                      <Lottie
-                        lottieRef={addressLottieRef}
-                        animationData={location}
-                        loop={false}
-                        isPaused={!isAddressHovered}
-                        autoplay={false}
-                        style={{ width: 48, height: 48 }}
-                      />
+                    <div>
+                      <span className="text-white font-bold">Phone</span>
+                      <p className="text-gray-800 font-bold text-sm">(855) 100-4444</p>
                     </div>
-                    <h3 className="font-bold text-gray-800 text-base mb-1">Address</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      456 Hainesh Street<br />San Francisco, CA 94102
-                    </p>
                   </div>
-                </div>
               </div>
+
 
             </div>
 
@@ -276,31 +251,33 @@ function ContactUs() {
               <p className="text-gray-600 leading-relaxed text-base mb-4">
                 Fill out the form below and our team will get back to you as soon as possible.
               </p>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 transition-all duration-300 bg-[#f8f9fa] text-sm"
-                  placeholder="Your Name"
-                  required
-                />
-                <input
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 transition-all duration-300 bg-[#f8f9fa] text-sm"
-                  placeholder="Your Email"
-                  required
-                />
+              <form onSubmit={handleSubmit} className="space-y-4 flex flex-col">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 bg-gray-50 text-sm transition-all duration-300"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <input
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 bg-gray-50 text-sm transition-all duration-300"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
                 <input
                   name="subject"
                   type="text"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 transition-all duration-300 bg-[#f8f9fa] text-sm"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] text-gray-700 bg-gray-50 text-sm transition-all duration-300"
                   placeholder="Subject"
                   required
                 />
@@ -308,19 +285,24 @@ function ContactUs() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] h-24 transition-all duration-300 resize-none text-gray-700 bg-[#f8f9fa] text-sm"
-                  placeholder="Message"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#036e8d] h-24 text-gray-700 bg-gray-50 text-sm transition-all duration-300 resize-none"
+                  placeholder="Your Message"
                   required
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[#d2a763] text-white px-6 py-2 rounded-full font-semibold tracking-wider hover:bg-[#c19653] hover:shadow-xl transition-all duration-300 flex items-center justify-center text-sm"
+                  className="max-w-[200px] bg-[#d2a763]/90 text-white px-6 py-2 rounded-full font-semibold tracking-wider  hover:bg-[#d2a763] hover:shadow-md transition-all duration-300 flex items-center self-end justify-center text-sm"
                   disabled={loading}
                 >
                   {loading ? (
-                    <span className="loader border-2 border-white border-t-transparent rounded-full w-4 h-4 animate-spin"></span>
+                    <span className="loader border-2 border-[#036e8d] border-t-transparent rounded-full w-4 h-4 animate-spin"></span>
                   ) : (
-                    'SUBMIT'
+                    <>
+                      SUBMIT
+                      <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </>
                   )}
                 </button>
               </form>
@@ -331,7 +313,7 @@ function ContactUs() {
       </section>
 
       {/* Visit Our Office Section */}
-      <section className="relative pt-20 bg-[#f9fcfd]">
+      <section className="relative pt-20 pb-20 bg-[#f9fcfd]">
         <img 
           src={cloudOpen}
           alt="Cloud decoration" 
@@ -341,7 +323,11 @@ function ContactUs() {
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
-            <div className="space-y-8">
+            <div 
+              className="space-y-8"  
+              onMouseEnter={playAddressAnimation}
+              onMouseLeave={() => setIsAddressHovered(false)}
+            >
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                   Visit Our <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>Office!</span>
@@ -349,33 +335,28 @@ function ContactUs() {
                 <p className="text-gray-600 leading-relaxed text-lg mb-8">
                   Experience the IIHH community in person. Our doors are open for you to visit, ask questions, and see how we’re shaping the next generation with compassion and creativity. Schedule an appointment or drop by during business hours.
                 </p>
-                <button className="bg-[#d2a763] text-white px-8 py-3 rounded-full font-semibold tracking-wider hover:bg-[#c19653] hover:shadow-xl transition-all duration-300">
-                  Get Directions
-                </button>
+                <div className="flex items-center">
+                  <div 
+                    className="w-16 h-16 rounded-full bg-[#d2a763] flex items-center justify-center mr-3">
+                    <Lottie
+                      lottieRef={addressLottieRef}
+                      animationData={location}
+                      loop={false}
+                      isPaused={!isAddressHovered}
+                      autoplay={false}
+                      style={{ width: 48, height: 48, text: "green"}}
+                    />
+                  </div>
+                  <div>
+                    <span className="text-[#d2a763] font-bold">Address</span>
+                    <p className="text-gray-800 font-bold text-sm">456 Hainesh Street San Francisco, CA 94102</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Right Side - Hours Card */}
-            <div className="bg-[#223668] rounded-2xl p-8 text-white">
-              <div className="space-y-6">
-                <div className="text-center mb-8">
-                  <h3 className="text-xl font-bold mb-2">Monday - Friday</h3>
-                  <p className="text-white/80">9am - 8pm</p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="bg-white/10 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2">Saturdays</h4>
-                    <p className="text-white/80 text-sm">9am - 6pm</p>
-                  </div>
-                  
-                  <div className="bg-white/10 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2">Sundays</h4>
-                    <p className="text-white/80 text-sm">9am - 5pm</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <WorkingHours/>
           </div>
         </div>
         <div className="container mx-auto px-8 md:px-14 max-w-7xl">
@@ -404,53 +385,23 @@ function ContactUs() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-[#f9fcfd]">
-        <div className="container mx-auto px-8 md:px-14 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 animate-fade-in">Frequently Asked <span className="text-[#036e8d] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore answers to common questions about IIHH’s programs, learning structure, and unique approach. If you don’t find what you’re looking for, don’t hesitate to contact us directly.
-            </p>
-          </div>
-            {/* Left Side - FAQ */}
-            <div>
-              <div className="space-y-4">
-                {faqData.map((faq, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-100">
-                    <button
-                      onClick={() => toggleFaq(index)}
-                      className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors duration-200"
-                    >
-                      <span className="font-semibold text-gray-800 text-sm">{faq.question}</span>
-                      <ChevronDown 
-                        className={`w-5 h-5 text-[#d2a763] transition-transform duration-200 ${
-                          expandedFaq === index ? 'rotate-180' : ''
-                        }`} 
-                      />
-                    </button>
-                    {expandedFaq === index && (
-                      <div className="px-4 pb-4">
-                        <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-      </section>
-
-      {/* Bottom CTA Section */}
-      <section
-        id="cta"
-        className='relative h-80 bg-[#036e8d]' 
-      >
+      <section className="relative py-16 pt-24 bg-[#036e8d]">
         <img 
           src={cloudClose}           
           alt="Cloud decoration" 
           className="w-full absolute top-0 left-0 object-cover object-top" 
           style={{ transform: 'translateY(-50%)'}} 
         /> 
+        <div className="container mx-auto px-8 md:px-14 max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white animate-fade-in">Frequently Asked <span className="text-[#ffd278] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
+            <p className="text-lg text-gray-900 max-w-2xl mx-auto">
+              Explore answers to common questions about IIHH’s programs, learning structure, and unique approach. If you don’t find what you’re looking for, don’t hesitate to contact us directly.
+            </p>
+          </div>
+            {/* Left Side - FAQ */}
+            <FAQGrid faqs={faqs} />
+          </div>
       </section>
 
       {/* CTA Section Img*/}
@@ -458,7 +409,8 @@ function ContactUs() {
         className="relative py-16 bg-[#d2a763] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage:`url(${ctaImgContact})` }}
       >
-        <div className="container mx-auto px-8 md:px-14 max-w-4xl">
+        <div className="absolute inset-0 bg-black/20 z-1" />
+        <div className="relative z-10 container mx-auto px-8 md:px-14 max-w-4xl z-2">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Be Part of the IIHH Journey.<br />
             <span className='text-[#d2a763]'>Empower. Inspire. Transform.</span>
