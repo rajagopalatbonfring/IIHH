@@ -125,7 +125,7 @@ const FAQGrid = ({ faqs }) => {
                 </div>
               </div>
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   isOpen ? 'max-h-[1000px]' : 'max-h-0'
                 }`}
               >
