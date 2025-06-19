@@ -14,6 +14,7 @@ const Footer = () => {
     { icon: "fa-linkedin", href: "#" },
     { icon: "fa-youtube", href: "#" },
   ];
+
   const location = useLocation();
 
   return (
@@ -28,7 +29,6 @@ const Footer = () => {
             <p className="text-sm sm:text-base font-comic text-[#036e8d] leading-relaxed">
               Transforming lives through humanistic education that fosters resilience, empathy, and purpose for learners of all ages.
             </p>
-            
           </div>
 
           {/* Quick Links */}

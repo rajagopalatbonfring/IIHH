@@ -82,7 +82,7 @@ export default function ImprovedHoursCard() {
 
   return (
     <div  
-      className="bg-white border-2 border-[#d2a763] rounded-lg p-4 sm:p-6 shadow-lg"
+      className="bg-white rounded-lg p-4 sm:p-6 shadow-2xl"
       onMouseEnter={playClockAnimation}
       onMouseLeave={() => setIsClockHovered(false)}
     >

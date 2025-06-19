@@ -81,10 +81,6 @@ function ContactUs() {
     }
   };
 
-  const toggleFaq = (index) => {
-    setExpandedFaq(expandedFaq === index ? null : index);
-  };
-
   const faqs = [
     {
       question: "Who can enroll in IIHH programs?",
@@ -190,58 +186,61 @@ function ContactUs() {
                 <h1 className="text-4xl md:text-5xl font-bold text-[#ffffff] mb-6 leading-tight">
                   Get In <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>Touch</span>
                 </h1>
-                <p className="text-gray-800 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
-                    At IIHH, every question opens new possibilities.
-                    Want to learn more about our modules or activities?
-                    Contact us—our team is here to help!
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mb-8 mt-8">
-                  <div 
-                    className="flex items-center"
-                    onMouseEnter={playEmailAnimation}
-                    onMouseLeave={() => setIsEmailHovered(false)}
-                  >
-                    <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mr-3">
-                      <Lottie
-                        lottieRef={emailLottieRef}
-                        animationData={email}
-                        loop={false}
-                        isPaused={!isEmailHovered}
-                        autoplay={false}
-                        style={{ width: 40, height: 40,}}
-                      />
-                    </div>
-                    <div>
-                      <span className="text-white font-bold">Email</span>
-                      <p className="text-gray-800 font-bold text-sm">contact@iihh.org</p>
-                    </div>
-                  </div>
-
-                  <div 
-                    className="flex items-center"
-                    onMouseEnter={playPhoneAnimation}
-                    onMouseLeave={() => setIsPhoneHovered(false)}
-                  >
+                <div className='bg-white backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700'>
+                  <p className="text-gray-800 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl hover:shadow-sm transition-all duration-300">
+                      At IIHH, every question opens new possibilities.
+                      Want to learn more about our modules or activities?
+                      Contact us—our team is here to help!
+                  </p>
+                  <div className="grid grid-cols-1 min-[450px]:grid-cols-2 gap-4 mb-4 mt-4">
+                    
                     <div 
-                      className="w-14 h-14 rounded-full bg-white flex items-center justify-center mr-3">
-                      <Lottie
-                        lottieRef={phoneLottieRef}
-                        animationData={phone}
-                        loop={false}
-                        isPaused={!isPhoneHovered}
-                        autoplay={false}
-                        style={{ width: 40, height: 40,}}
-                      />
+                      className="flex items-center"
+                      onMouseEnter={playEmailAnimation}
+                      onMouseLeave={() => setIsEmailHovered(false)}
+                    >
+                      <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mr-3">
+                        <Lottie
+                          lottieRef={emailLottieRef}
+                          animationData={email}
+                          loop={false}
+                          isPaused={!isEmailHovered}
+                          autoplay={false}
+                          style={{ width: 40, height: 40,}}
+                        />
+                      </div>
+                      <div>
+                        <span className="text-[#d2a763] font-bold">Email</span>
+                        <p className="text-gray-800 font-bold text-sm">contact@iihh.org</p>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-white font-bold">Phone</span>
-                      <p className="text-gray-800 font-bold text-sm">(855) 100-4444</p>
-                    </div>
-                  </div>
-              </div>
 
+                    <div 
+                      className="flex items-center"
+                      onMouseEnter={playPhoneAnimation}
+                      onMouseLeave={() => setIsPhoneHovered(false)}
+                    >
+                      <div 
+                        className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mr-3">
+                        <Lottie
+                          lottieRef={phoneLottieRef}
+                          animationData={phone}
+                          loop={false}
+                          isPaused={!isPhoneHovered}
+                          autoplay={false}
+                          style={{ width: 40, height: 40,}}
+                        />
+                      </div>
+                      <div>
+                        <span className="text-[#d2a763] font-bold">Phone</span>
+                        <p className="text-gray-800 font-bold text-sm">(855) 100-4444</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
 
             </div>
 
