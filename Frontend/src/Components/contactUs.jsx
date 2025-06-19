@@ -336,14 +336,14 @@ function ContactUs() {
                 </p>
                 <div className="flex items-center">
                   <div 
-                    className="w-16 h-16 rounded-full bg-[#d2a763] flex items-center justify-center mr-3">
+                    className="w-14 h-14 rounded-full bg-[#d2a763] flex items-center justify-center mr-3">
                     <Lottie
                       lottieRef={addressLottieRef}
                       animationData={location}
                       loop={false}
                       isPaused={!isAddressHovered}
                       autoplay={false}
-                      style={{ width: 48, height: 48, text: "green"}}
+                      style={{ width: 40, height: 40, text: "green"}}
                     />
                   </div>
                   <div>
