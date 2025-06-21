@@ -337,16 +337,15 @@ function ContactUs() {
                 <p className="text-gray-600 leading-relaxed text-lg mb-8">
                   Experience the IIHH community in person. Our doors are open for you to visit, ask questions, and see how we’re shaping the next generation with compassion and creativity. Schedule an appointment or drop by during business hours.
                 </p>
-                <div className="flex items-center">
-                  <div 
-                    className="w-14 h-14 rounded-full bg-[#d2a763] flex items-center justify-center mr-3">
+                <div className="flex items-center gap-2">
+                  <div className="max-w-16 max-h-16 p-2 rounded-full bg-[#d2a763] flex items-center justify-center">
                     <Lottie
                       lottieRef={addressLottieRef}
                       animationData={location}
                       loop={false}
                       isPaused={!isAddressHovered}
                       autoplay={false}
-                      style={{ width: 40, height: 40, text: "green"}}
+                      style={{ width: 40, height: 40}}
                     />
                   </div>
                   <div>
