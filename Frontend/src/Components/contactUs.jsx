@@ -105,23 +105,13 @@ function ContactUs() {
       answer: "Yes, we provide customized corporate training programs focusing on emotional intelligence, leadership development, team building, and workplace wellness. Programs can be tailored to your organization's specific needs.",
       category: "Corporate"
     },
-    {
-      question: "What qualifications do instructors have?",
-      answer: "Our instructors are certified professionals with advanced degrees in psychology, education, or related fields. They have extensive experience in humanistic approaches and undergo continuous professional development.",
-      category: "Faculty"
-    },
-    {
-      question: "Can I get continuing education credits?",
-      answer: "Many of our programs offer continuing education units (CEUs) for professionals in education, healthcare, and counseling. Check with your professional board for specific accreditation requirements.",
-      category: "Certification"
-    }
   ];
 
   return (
     <main className="pt-20 min-h-screen font-comic text-base-content bg-[#f9fcfd] overflow-hidden">
       <section
         id="hero"
-        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] py-20 bg-cover bg-top flex items-center bg-[#223668]"
+        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px] py-20 pb-24 bg-cover bg-top flex items-center bg-[#223668]"
         style={{ backgroundImage: `url(${heroImg})` }}
       >
         <div className="absolute inset-0 bg-black/20 z-0" />
@@ -179,8 +169,8 @@ function ContactUs() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 pb-24 bg-[#d2a763]" id="contact-form">
-        <div className="container relative mx-auto px-8 md:px-14 max-w-7xl">
+      <section className="py-16 lg:pb-40 bg-[#d2a763]" id="contact-form">
+        <div className="container relative mx-auto px-8 md:px-14 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Side - Content */}
             <div className="space-y-8">
@@ -322,7 +312,7 @@ function ContactUs() {
           className="w-full absolute top-0 left-0 object-cover object-top" 
           style={{ transform: 'translateY(-50%)'}}
         />
-        <div className="container mx-auto px-8 md:px-14 max-w-7xl">
+        <div className="container mx-auto px-8 md:px-14 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
             <div 
@@ -360,7 +350,7 @@ function ContactUs() {
             <WorkingHours/>
           </div>
         </div>
-        <div className="container mx-auto px-8 md:px-14 max-w-7xl">
+        <div className="container mx-auto px-8 md:px-14 max-w-8xl">
           <div className="py-8 px-1">
             <div className="mb-6 p-4 bg-gray-50 rounded-lg">
               <h2 className="text-2xl font-bold text-gray-800 mb-1">Our Location</h2>
@@ -393,7 +383,7 @@ function ContactUs() {
           className="w-full absolute top-0 left-0 object-cover object-top" 
           style={{ transform: 'translateY(-50%)'}} 
         /> 
-        <div className="container mx-auto px-8 md:px-14 max-w-7xl">
+        <div className="container mx-auto px-8 md:px-14 max-w-8xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white animate-fade-in">Frequently Asked <span className="text-[#ffd278] transform inline-block hover:scale-x-105 duration-300">Questions</span></h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
@@ -433,10 +423,10 @@ function ContactUs() {
                 
                 {/* Optional overlay text */}
                 <div className="mb-8">
-                  <h3 className="text-white text-2xl md:text-3xl font-bold mb-2 drop-shadow-lg">
+                  <h3 className="text-white text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">
                     Ready to Transform Education?
                   </h3>
-                  <p className="text-white/90 text-lg drop-shadow-md">
+                  <p className="text-white/90 text-xl drop-shadow-md">
                     Join our community today
                   </p>
                 </div>
@@ -444,7 +434,7 @@ function ContactUs() {
                 {/* Call-to-Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button 
-                    className="group bg-white text-[#d2a763] px-10 py-4 rounded-full font-semibold text-lg tracking-wide hover:bg-[#ffd278] hover:text-[#223668] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm"
+                    className="group bg-[#036e8d] text-white px-10 py-4 rounded-full font-bold text-lg tracking-wide hover:bg-[#ffd278] hover:text-[#223668] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm"
                     aria-label="Join IIHH community"
                   >
                     <span className="flex items-center justify-center gap-2">
