@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FAQGrid = ({ faqs }) => {
+const FAQGrid = ({ faqs,shadow,drop }) => {
   const [openIndex, setOpenIndex] = useState(null); // Track the index of the open FAQ
   const leftFaqs = faqs.slice(0, Math.ceil(faqs.length / 2));
   const rightFaqs = faqs.slice(Math.ceil(faqs.length / 2));
@@ -20,7 +20,7 @@ const FAQGrid = ({ faqs }) => {
           return (
             <div
               key={`left-${index}`}
-              className="bg-white hover:bg-gray-50 rounded-2xl shadow-lg transition-all duration-300 border border-gray-100 group h-fit"
+              className={`bg-white hover:bg-gray-50 rounded-2xl ${drop ?'drop-shadow-2xl' : 'shadow-lg'}  shadow-${shadow} transition-all duration-300 border border-gray-100 group h-fit`}
             >
               <div
                 className="flex justify-between items-start p-6 cursor-pointer rounded-t-2xl transition-colors duration-200"
@@ -84,7 +84,7 @@ const FAQGrid = ({ faqs }) => {
           return (
             <div
               key={`right-${index}`}
-              className="bg-white hover:bg-gray-50 rounded-2xl shadow-lg transition-all duration-300 border border-gray-100 group h-fit"
+              className={`bg-white hover:bg-gray-50 rounded-2xl ${drop ?'drop-shadow-2xl' : 'shadow-lg'}  shadow-${shadow} transition-all duration-300 border border-gray-100 group h-fit`}
             >
               <div
                 className="flex justify-between items-start p-6 cursor-pointer rounded-t-2xl transition-colors duration-200"

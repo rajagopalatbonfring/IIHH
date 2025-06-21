@@ -1121,7 +1121,7 @@ function Home() {
               
               {/* Two Column FAQ Grid */}
                         
-              <FAQGrid faqs={faqs} />
+              <FAQGrid faqs={faqs} shadow={"white"} drop={false} />
               
               {/* Call to Action */}
               <div className="text-center mt-16">

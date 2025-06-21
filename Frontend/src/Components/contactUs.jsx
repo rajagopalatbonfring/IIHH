@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 import heroImg from '../assets/contact-us-pg-hero.jpg';
 import ctaImgContact from '../assets/contactCtaImgNew.jpg';
+import ctaImgContact2 from '../assets/contactUsCta2.jpg'
+
 
 import WorkingHours from '../Components/workingHours'
 import FAQGrid from "../Components/faqGrid"    
@@ -399,34 +401,79 @@ function ContactUs() {
             </p>
           </div>
             {/* Left Side - FAQ */}
-            <FAQGrid faqs={faqs} />
+            <FAQGrid faqs={faqs} shadow={"black"} drop={true} />
           </div>
       </section>
 
       {/* CTA Section Img*/}
-      <section
-        className="relative py-16 bg-[#d2a763] bg-cover bg-start bg-no-repeat"
-        style={{ backgroundImage:`url(${ctaImgContact})` }}
-      >
-        <div className="absolute inset-0 bg-black/20 z-1" />
-        <div className="relative z-2 container mx-auto px-8 md:px-14 max-w-4xl">
-          <h2 className="relative  z-10 text-white text-center text-4xl md:text-5xl font-bold mb-4">
-            Be Part of the IIHH Journey.<br />
-            <span className='text-[#ffd278] text-3xl md:text-4xl transform hover:scale-x-105 duration-300'>Empower. </span>
-            <span className='text-[#ffd278] text-3xl md:text-4xl transform hover:scale-x-105 duration-300'>Inspire. </span>
-            <span className='text-[#ffd278] text-3xl md:text-4xl transform hover:scale-x-105 duration-300'>Transform.</span>
-          </h2>
-          <p className="text-center text-white/90 text-lg max-w-2xl mx-auto mt-4 mb-8">
-            Whether you’re a parent, student, educator, or advocate for humanistic education, your involvement helps shape the future. Connect with us to join IIHH, support our mission, or learn how you can make a difference.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <button className="bg-[#d2a763] text-white px-8 py-3 rounded-full font-semibold tracking-wider hover:bg-[#c19653] hover:shadow-xl transition-all duration-300">
-              Join IIHH
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold tracking-wider hover:bg-white hover:text-[#223668] transition-all duration-300">
-              Download Program Guide
-            </button>
+      <section className="relative overflow-hidden">
+        <div className="flex min-h-[480px] md:min-h-[500px]">
+
+          {/* Right Image Section with Centered Buttons */}
+          <div className="w-full relative overflow-hidden">
+            
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <div className="h-full">
+                <img
+                  src={ctaImgContact}
+                  alt="IIHH Journey - Inspiring transformation"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Overlay for button visibility */}
+            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[black]/40 via-transparent to-black/50"></div>
+            
+            {/* Centered Buttons */}
+            <div className="absolute inset-0 flex items-center justify-center z-20">
+              <div className="text-center space-y-6 px-6">
+                
+                {/* Optional overlay text */}
+                <div className="mb-8">
+                  <h3 className="text-white text-2xl md:text-3xl font-bold mb-2 drop-shadow-lg">
+                    Ready to Transform Education?
+                  </h3>
+                  <p className="text-white/90 text-lg drop-shadow-md">
+                    Join our community today
+                  </p>
+                </div>
+                
+                {/* Call-to-Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button 
+                    className="group bg-white text-[#d2a763] px-10 py-4 rounded-full font-semibold text-lg tracking-wide hover:bg-[#ffd278] hover:text-[#223668] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm"
+                    aria-label="Join IIHH community"
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      Join IIHH
+                      <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
+                  </button>
+                  
+                  <button 
+                    className="group border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg tracking-wide hover:bg-white hover:text-[#d2a763] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm"
+                    aria-label="Download IIHH program guide"
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download Program Guide
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Edge gradient for seamless blending */}
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#d2a763]/20"></div>
           </div>
+
         </div>
       </section>
 
