@@ -162,55 +162,89 @@ export default function HowItWorks() {
     <div className="relative max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Left: Morphing Visual */}
-        <div className="relative h-96 lg:h-[600px]">
-          {/* Main Blob Shape */}
-          <div className="absolute inset-0">
-            <img src={bolbImg} alt="Blob image" className='w-full h-full' />
-          </div>
+        <div className="relative w-full max-w-[480px] mx-auto aspect-square">
+          {/* Image Container */}
+          <div className="relative w-full h-full">
+            <img
+              src={bolbImg}
+              alt="Blob image"
+              className="w-full h-full object-contain animate-imageFloat"
+            />
 
-          {/* Floating Knowledge Cards */}
-          <div className="absolute inset-0">
-            {[
-              { icon: "fa-brain", label: "Critical Thinking", pos: "top-8 left-8", delay: "0s" },
-              { icon: "fa-palette", label: "Creative Arts", pos: "top-12 right-12", delay: "1s" },
-              { icon: "fa-flask", label: "STEM Labs", pos: "bottom-16 left-16", delay: "2s" },
-              { icon: "fa-book", label: "Literature", pos: "bottom-8 right-8", delay: "3s" },
-              { icon: "fa-globe", label: "Global Awareness", pos: "top-1/2 left-4", delay: "4s" },
-              { icon: "fa-lightbulb", label: "Innovation", pos: "top-1/3 right-4", delay: "5s" }
-            ].map((card, i) => (
-              <div
-                key={i}
-                className={`absolute ${card.pos} transform hover:scale-125 transition-all duration-500 cursor-pointer group`}
-                style={{ animation: `float 3s ease-in-out infinite`, animationDelay: card.delay }}
-              >
-                <div className="bg-white rounded-2xl p-4 shadow-md border border-[#036e8d]/20 min-w-24 text-center group-hover:bg-[#036e8d] group-hover:text-white transition-all duration-300">
-                  <i className={`fa-solid ${card.icon} text-2xl mb-2 text-[#036e8d] group-hover:text-white`}></i>
-                  <div className="text-xs font-semibold whitespace-nowrap text-[#036e8d] group-hover:text-white">{card.label}</div>
+            {/* Floating Knowledge Cards positioned relative to image */}
+            <div className="absolute inset-0">
+              {[
+                { icon: "fa-brain", label: "Critical Thinking", pos: "top-[2%] left-[5%]", delay: "0s" },
+                { icon: "fa-palette", label: "Creative Arts", pos: "top-[-4%] right-[16%]", delay: "0.5s" },
+                { icon: "fa-flask", label: "STEM Labs", pos: "bottom-[-4%] left-[25%]", delay: "1s" },
+                { icon: "fa-book", label: "Literature", pos: "bottom-[8%] right-[5%]", delay: "1.5s" },
+                { icon: "fa-globe", label: "Global Awareness", pos: "top-[48%] -left-[6%]", delay: "2s" },
+                { icon: "fa-lightbulb", label: "Innovation", pos: "top-[40%] -right-[5%]", delay: "2.5s" },
+              ].map((card, i) => (
+                <div
+                  key={i}
+                  className={`absolute ${card.pos} transform hover:scale-110 transition-all duration-300 cursor-pointer group`}
+                  style={{
+                    animation: `float 4s ease-in-out infinite`,
+                    animationDelay: card.delay,
+                  }}
+                >
+                  <div className="bg-white rounded-xl p-3 shadow-lg border border-[#036e8d]/10 min-w-20 text-center group-hover:bg-[#036e8d] group-hover:text-white transition-all duration-300">
+                    <i className={`fa-solid ${card.icon} text-xl mb-1 text-[#036e8d] group-hover:text-white`}></i>
+                    <div className="text-[10px] font-semibold whitespace-nowrap text-[#036e8d] group-hover:text-white">{card.label}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* DNA Helix Animation */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <path
+                  d="M20,10 Q50,30 80,10 M20,30 Q50,10 80,30 M20,50 Q50,70 80,50 M20,70 Q50,50 80,70 M20,90 Q50,110 80,90"
+                  stroke="#ffffff"
+                  strokeWidth="1.5"
+                  fill="none"
+                  opacity="0.6"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    values="0 50 50;360 50 50"
+                    dur="10s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+              </svg>
+            </div>
           </div>
 
-          {/* DNA Helix Animation */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
-              <path
-                d="M20,10 Q50,30 80,10 M20,30 Q50,10 80,30 M20,50 Q50,70 80,50 M20,70 Q50,50 80,70 M20,90 Q50,110 80,90"
-                stroke="#ffffff"
-                strokeWidth="2"
-                fill="none"
-                opacity="0.6"
-              >
-                <animateTransform
-                  attributeName="transform"
-                  type="rotate"
-                  values="0 50 50;360 50 50"
-                  dur="10s"
-                  repeatCount="indefinite"
-                />
-              </path>
-            </svg>
-          </div>
+          {/* Floating Animation Keyframes */}
+          <style jsx>{`
+            @keyframes float {
+              0%, 100% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+              }
+              50% {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+              }
+            }
+
+            @keyframes imageFloat {
+              0%, 100% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(-10px);
+              }
+            }
+
+            .animate-imageFloat {
+              animation: imageFloat 3s ease-in-out infinite;
+            }
+          `}</style>
         </div>
 
         {/* Right: Content with White Background */}
