@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect,} from 'react';
 import { Link } from "react-router-dom";
 import Tilt from 'react-parallax-tilt';
@@ -142,6 +138,181 @@ export default function HowItWorks() {
         </svg>
                   <div className='absolute -bottom-0.5 bg-[#d2a763] w-full h-1'></div>
       </section>
+      
+<section className="min-h-screen bg-[#d2a763] relative overflow-hidden">
+  <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 py-20">
+    {/* Morphing Header */}
+    <div className="text-center mb-20">
+      <div className="relative inline-block">
+        <h1 className="text-6xl md:text-8xl font-black relative">
+          <span className="absolute inset-0 bg-[#036e8d] bg-clip-text text-transparent animate-pulse">
+            IIHH
+          </span>
+          <span className="text-white/30">IIHH</span>
+        </h1>
+      </div>
+      <h2 className="text-2xl md:text-4xl font-light text-white mt-8 tracking-wide">
+        Where <span className="font-bold text-[#036e8d]">Humanity</span> Inspires <span className="font-bold text-[#036e8d]">Learning</span>
+      </h2>
+    </div>
+
+    {/* Liquid Shape Container */}
+    <div className="relative max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        {/* Left: Morphing Visual */}
+        <div className="relative h-96 lg:h-[600px]">
+          {/* Main Blob Shape */}
+          <div className="absolute inset-0">
+            <svg viewBox="0 0 400 400" className="w-full h-full">
+              <defs>
+                <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#036e8d" />
+                  <stop offset="100%" stopColor="#d2a763" />
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path
+                d="M200,50 C300,50 350,150 350,200 C350,300 250,350 200,350 C150,350 50,300 50,200 C50,100 100,50 200,50 Z"
+                fill="url(#blobGradient)"
+                filter="url(#glow)"
+                opacity="0.9"
+                className="animate-pulse"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  values="0 200 200;360 200 200"
+                  dur="10s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </svg>
+          </div>
+
+          {/* Floating Knowledge Cards */}
+          <div className="absolute inset-0">
+            {[
+              { icon: "fa-brain", label: "Critical Thinking", pos: "top-8 left-8", delay: "0s" },
+              { icon: "fa-palette", label: "Creative Arts", pos: "top-12 right-12", delay: "1s" },
+              { icon: "fa-flask", label: "STEM Labs", pos: "bottom-16 left-16", delay: "2s" },
+              { icon: "fa-book", label: "Literature", pos: "bottom-8 right-8", delay: "3s" },
+              { icon: "fa-globe", label: "Global Awareness", pos: "top-1/2 left-4", delay: "4s" },
+              { icon: "fa-lightbulb", label: "Innovation", pos: "top-1/3 right-4", delay: "5s" }
+            ].map((card, i) => (
+              <div
+                key={i}
+                className={`absolute ${card.pos} transform hover:scale-125 transition-all duration-500 cursor-pointer group`}
+                style={{ animation: `float 3s ease-in-out infinite`, animationDelay: card.delay }}
+              >
+                <div className="bg-white rounded-2xl p-4 shadow-md border border-[#036e8d]/20 min-w-24 text-center group-hover:bg-[#036e8d] group-hover:text-white transition-all duration-300">
+                  <i className={`fa-solid ${card.icon} text-2xl mb-2 text-[#036e8d] group-hover:text-white`}></i>
+                  <div className="text-xs font-semibold whitespace-nowrap text-[#036e8d] group-hover:text-white">{card.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* DNA Helix Animation */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32">
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              <path
+                d="M20,10 Q50,30 80,10 M20,30 Q50,10 80,30 M20,50 Q50,70 80,50 M20,70 Q50,50 80,70 M20,90 Q50,110 80,90"
+                stroke="#ffffff"
+                strokeWidth="2"
+                fill="none"
+                opacity="0.6"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  values="0 50 50;360 50 50"
+                  dur="10s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </svg>
+          </div>
+        </div>
+
+        {/* Right: Content with White Background */}
+        <div className="space-y-8">
+          {/* Philosophy Card */}
+          <div className="bg-white rounded-3xl p-8 border border-[#036e8d]/20 shadow-2xl">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-[#d2a763] rounded-full flex items-center justify-center mr-4">
+                <i className="fa-solid fa-eye text-white text-xl"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-[#036e8d]">Our Vision</h3>
+            </div>
+            <p className="text-[#036e8d]/90 text-lg leading-relaxed">
+              At IIHH, we believe education should spark curiosity and character. Our program blends real-world modules, hands-on activities, and mentorship—empowering students to grow as thinkers, collaborators, and ethical leaders.
+            </p>
+          </div>
+
+          {/* Interactive Features Grid - Redesigned with Smaller Cards */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { icon: "fa-users", title: "Peer Learning", desc: "Grow together, learn together" },
+              { icon: "fa-chalkboard-teacher", title: "Mentorship", desc: "Personal guidance" },
+              { icon: "fa-vials", title: "Experimentation", desc: "Hands-on discovery" },
+              { icon: "fa-seedling", title: "Values in Action", desc: "Live humanism daily" }
+            ].map((feature, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-lg w-32 h-32 flex flex-col items-center justify-center text-center p-3 border border-[#036e8d]/20 shadow-md hover:bg-[#d2a763] hover:shadow-[#036e8d]/20 transition-all duration-300 cursor-pointer group animate-pop-in"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              >
+                <div className="relative -top-5 w-8 h-8 bg-[#d2a763] rounded-full flex items-center justify-center group-hover:shadow-[0_0_8px_#036e8d] group-hover:-top-6 transition-all duration-300">
+                  <i className={`fa-solid ${feature.icon} text-white text-base`}></i>
+                </div>
+                <h4 className="text-[#036e8d] font-bold text-sm group-hover:text-white mt-1">{feature.title}</h4>
+                <p className="text-[#036e8d]/70 text-[10px] group-hover:text-white/90">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="relative">
+            <button className="w-full bg-white text-[#036e8d] font-bold py-6 px-8 rounded-full text-xl shadow-2xl transform hover:scale-105 hover:bg-[#036e8d] hover:text-white transition-all duration-300 relative overflow-hidden group">
+              <span className="relative z-10 flex items-center justify-center">
+                <i className="fa-solid fa-rocket mr-3 group-hover:animate-bounce"></i>
+                Start Your IIHH Journey
+              </span>
+              {/* Holographic Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#d2a763]/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </button>
+            {/* Floating Action Indicators */}
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#d2a763] rounded-full animate-ping"></div>
+            <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-[#036e8d] rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/* Advanced Animations */}
+  <style jsx>{`
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-10px) rotate(2deg); }
+      66% { transform: translateY(5px) rotate(-1deg); }
+    }
+    @keyframes pop-in {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .animate-pop-in {
+      animation: pop-in 0.5s ease-out forwards;
+    }
+  `}</style>
+</section>
+
+
 
       {/*Introduction Section */}
       <section id="introduction" className="pt-4 py-16 sm:py-20 md:pt-4 md:py-28 bg-[#d2a763] relative overflow-hidden">

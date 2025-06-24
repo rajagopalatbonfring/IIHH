@@ -109,5 +109,3 @@ const TestimonialCarousel = ({ testimonials }) => {
 };
 
 export default TestimonialCarousel;
-
-
