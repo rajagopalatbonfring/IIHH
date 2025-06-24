@@ -9,6 +9,8 @@ import howItWorksCta from '../assets/cta-howitworksPage.jpg';
 import cloudOpen from '../assets/Group 33.png';
 import cloudClose from '../assets/closeCloud.png';
 
+import bolbImg from '../assets/Vector.png'
+
 import { ChevronRight } from 'lucide-react';
 
 
@@ -163,36 +165,7 @@ export default function HowItWorks() {
         <div className="relative h-96 lg:h-[600px]">
           {/* Main Blob Shape */}
           <div className="absolute inset-0">
-            <svg viewBox="0 0 400 400" className="w-full h-full">
-              <defs>
-                <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#036e8d" />
-                  <stop offset="100%" stopColor="#d2a763" />
-                </linearGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                  <feMerge> 
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-              <path
-                d="M200,50 C300,50 350,150 350,200 C350,300 250,350 200,350 C150,350 50,300 50,200 C50,100 100,50 200,50 Z"
-                fill="url(#blobGradient)"
-                filter="url(#glow)"
-                opacity="0.9"
-                className="animate-pulse"
-              >
-                <animateTransform
-                  attributeName="transform"
-                  type="rotate"
-                  values="0 200 200;360 200 200"
-                  dur="10s"
-                  repeatCount="indefinite"
-                />
-              </path>
-            </svg>
+            <img src={bolbImg} alt="Blob image" className='w-full h-full' />
           </div>
 
           {/* Floating Knowledge Cards */}
