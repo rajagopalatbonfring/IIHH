@@ -141,297 +141,124 @@ export default function HowItWorks() {
                   <div className='absolute -bottom-0.5 bg-[#d2a763] w-full h-1'></div>
       </section>
       
-<section className="min-h-screen bg-[#d2a763] relative overflow-hidden">
-  <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 py-20">
-    {/* Morphing Header */}
-    <div className="text-center mb-20">
-      <div className="relative inline-block">
-        <h1 className="text-6xl md:text-8xl font-black relative">
-          <span className="absolute inset-0 bg-[#036e8d] bg-clip-text text-transparent animate-pulse">
-            IIHH
-          </span>
-          <span className="text-white/30">IIHH</span>
-        </h1>
-      </div>
-      <h2 className="text-2xl md:text-4xl font-light text-white mt-8 tracking-wide">
-        Where <span className="font-bold text-[#036e8d]">Humanity</span> Inspires <span className="font-bold text-[#036e8d]">Learning</span>
-      </h2>
-    </div>
 
-    {/* Liquid Shape Container */}
-    <div className="relative max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        {/* Left: Morphing Visual */}
-        <div className="relative w-full max-w-[480px] mx-auto aspect-square">
-          {/* Image Container */}
-          <div className="relative w-full h-full">
-            <img
-              src={bolbImg}
-              alt="Blob image"
-              className="w-full h-full object-contain animate-imageFloat"
-            />
-
-            {/* Floating Knowledge Cards positioned relative to image */}
-            <div className="absolute inset-0">
-              {[
-                { icon: "fa-brain", label: "Critical Thinking", pos: "top-[2%] left-[5%]", delay: "0s" },
-                { icon: "fa-palette", label: "Creative Arts", pos: "top-[-4%] right-[16%]", delay: "0.5s" },
-                { icon: "fa-flask", label: "STEM Labs", pos: "bottom-[-4%] left-[25%]", delay: "1s" },
-                { icon: "fa-book", label: "Literature", pos: "bottom-[8%] right-[5%]", delay: "1.5s" },
-                { icon: "fa-globe", label: "Global Awareness", pos: "top-[48%] -left-[6%]", delay: "2s" },
-                { icon: "fa-lightbulb", label: "Innovation", pos: "top-[40%] -right-[5%]", delay: "2.5s" },
-              ].map((card, i) => (
-                <div
-                  key={i}
-                  className={`absolute ${card.pos} transform hover:scale-110 transition-all duration-300 cursor-pointer group`}
-                  style={{
-                    animation: `float 4s ease-in-out infinite`,
-                    animationDelay: card.delay,
-                  }}
-                >
-                  <div className="bg-white rounded-xl p-3 shadow-lg border border-[#036e8d]/10 min-w-20 text-center group-hover:bg-[#036e8d] group-hover:text-white transition-all duration-300">
-                    <i className={`fa-solid ${card.icon} text-xl mb-1 text-[#036e8d] group-hover:text-white`}></i>
-                    <div className="text-[10px] font-semibold whitespace-nowrap text-[#036e8d] group-hover:text-white">{card.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* DNA Helix Animation */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <path
-                  d="M20,10 Q50,30 80,10 M20,30 Q50,10 80,30 M20,50 Q50,70 80,50 M20,70 Q50,50 80,70 M20,90 Q50,110 80,90"
-                  stroke="#ffffff"
-                  strokeWidth="1.5"
-                  fill="none"
-                  opacity="0.6"
-                >
-                  <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    values="0 50 50;360 50 50"
-                    dur="10s"
-                    repeatCount="indefinite"
+      {/* Intro section */}
+      <section className="min-h-screen bg-[#d2a763] pb-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 py-20">
+          {/* Liquid Shape Container */}
+          <div className="relative max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              {/* Left: Morphing Visual */}
+              <div className="relative w-full max-w-[480px] mx-auto aspect-square">
+                {/* Image Container */}
+                <div className="relative w-full h-full">
+                  <img
+                    src={bolbImg}
+                    alt="Blob image"
+                    className="w-full h-full object-contain animate-imageFloat"
                   />
-                </path>
-              </svg>
-            </div>
-          </div>
 
-          {/* Floating Animation Keyframes */}
-          <style jsx>{`
-            @keyframes float {
-              0%, 100% {
-                transform: translateY(0) scale(1);
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-              }
-              50% {
-                transform: translateY(-8px) scale(1.02);
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-              }
-            }
-
-            @keyframes imageFloat {
-              0%, 100% {
-                transform: translateY(0);
-              }
-              50% {
-                transform: translateY(-10px);
-              }
-            }
-
-            .animate-imageFloat {
-              animation: imageFloat 3s ease-in-out infinite;
-            }
-          `}</style>
-        </div>
-
-        {/* Right: Content with White Background */}
-        <div className="space-y-8">
-          {/* Philosophy Card */}
-          <div className="bg-white rounded-3xl p-8 border border-[#036e8d]/20 shadow-2xl">
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-[#d2a763] rounded-full flex items-center justify-center mr-4">
-                <i className="fa-solid fa-eye text-white text-xl"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-[#036e8d]">Our Vision</h3>
-            </div>
-            <p className="text-[#036e8d]/90 text-lg leading-relaxed">
-              At IIHH, we believe education should spark curiosity and character. Our program blends real-world modules, hands-on activities, and mentorship—empowering students to grow as thinkers, collaborators, and ethical leaders.
-            </p>
-          </div>
-
-          {/* Interactive Features Grid - Redesigned with Smaller Cards */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { icon: "fa-users", title: "Peer Learning", desc: "Grow together, learn together" },
-              { icon: "fa-chalkboard-teacher", title: "Mentorship", desc: "Personal guidance" },
-              { icon: "fa-vials", title: "Experimentation", desc: "Hands-on discovery" },
-              { icon: "fa-seedling", title: "Values in Action", desc: "Live humanism daily" }
-            ].map((feature, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-lg w-32 h-32 flex flex-col items-center justify-center text-center p-3 border border-[#036e8d]/20 shadow-md hover:bg-[#d2a763] hover:shadow-[#036e8d]/20 transition-all duration-300 cursor-pointer group animate-pop-in"
-                style={{ animationDelay: `${i * 0.2}s` }}
-              >
-                <div className="relative -top-5 w-8 h-8 bg-[#d2a763] rounded-full flex items-center justify-center group-hover:shadow-[0_0_8px_#036e8d] group-hover:-top-6 transition-all duration-300">
-                  <i className={`fa-solid ${feature.icon} text-white text-base`}></i>
-                </div>
-                <h4 className="text-[#036e8d] font-bold text-sm group-hover:text-white mt-1">{feature.title}</h4>
-                <p className="text-[#036e8d]/70 text-[10px] group-hover:text-white/90">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="relative">
-            <button className="w-full bg-white text-[#036e8d] font-bold py-6 px-8 rounded-full text-xl shadow-2xl transform hover:scale-105 hover:bg-[#036e8d] hover:text-white transition-all duration-300 relative overflow-hidden group">
-              <span className="relative z-10 flex items-center justify-center">
-                <i className="fa-solid fa-rocket mr-3 group-hover:animate-bounce"></i>
-                Start Your IIHH Journey
-              </span>
-              {/* Holographic Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#d2a763]/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </button>
-            {/* Floating Action Indicators */}
-            <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#d2a763] rounded-full animate-ping"></div>
-            <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-[#036e8d] rounded-full animate-pulse"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* Advanced Animations */}
-  <style jsx>{`
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      33% { transform: translateY(-10px) rotate(2deg); }
-      66% { transform: translateY(5px) rotate(-1deg); }
-    }
-    @keyframes pop-in {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-    .animate-pop-in {
-      animation: pop-in 0.5s ease-out forwards;
-    }
-  `}</style>
-</section>
-
-
-
-      {/*Introduction Section */}
-      <section id="introduction" className="pt-4 py-16 sm:py-20 md:pt-4 md:py-28 bg-[#d2a763] relative overflow-hidden">
-        {/* Background Pattern - Similar to who-we-are section */}
-        <div className="absolute inset-0 opacity-8">
-          <div className="absolute top-20 left-16 w-24 h-24 border-2 border-[#036e8d]/20 rounded-full"></div>
-          <div className="absolute top-60 right-24 w-32 h-32 border-2 border-[#d2a763]/30 rounded-full"></div>
-          <div className="absolute bottom-32 left-1/3 w-20 h-20 border-2 border-[#036e8d]/15 rounded-full"></div>
-          <div className="absolute bottom-20 right-1/4 w-16 h-16 bg-[#d2a763]/10 rounded-full blur-xl"></div>
-        </div>
-
-        
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-          {/* Enhanced Heading with decorative elements */}
-          <div className="text-center mb-12 sm:mb-16 md:mb-20 relative">
-            {/* Decorative background elements */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 w-40 h-40 bg-gradient-to-r from-[#036e8d]/10 to-[#d2a763]/10 rounded-full blur-3xl"></div>
-            
-            <div className="relative z-10 max-w-4xl mx-auto">
-              <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase mb-4">
-                Our Philosophy
-              </h4>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                Redefining{' '}
-                <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
-                  Education
-                </span>
-                {' '}Through{' '}
-                <br className="hidden sm:block" />
-                <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
-                  Our Approach
-                </span>
-              </h2>
-              
-              {/* Enhanced description with styling similar to the who-we-are section */}
-              <div className="relative max-w-3xl mx-auto">
-                <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#036e8d] to-transparent rounded-full hidden lg:block"></div>
-                <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-white hover:shadow-sm hover:scale-105 transition-all duration-700">
-                  <span className="text-[#036e8d] font-bold text-2xl">"</span>
-                  IIHH redefines afterschool education by blending humanistic values, hands-on learning, and mentorship. We empower students to become compassionate, confident, and creative leaders ready to make a meaningful impact in our interconnected world.
-                  <span className="text-[#036e8d] font-bold text-2xl">"</span>
-                  
-                  {/* Accent dots */}
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#036e8d] rounded-full"></div>
-                  <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-[#d2a763] rounded-full"></div>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Enhanced Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 mb-12 sm:mb-16">
-            {[
-              {
-                icon: "fa-heart",
-                title: "Humanistic Values",
-                description: "Fostering empathy, compassion, and understanding as the foundation of all learning",
-                gradient: "from-rose-50 to-pink-50",
-                iconBg: "bg-rose-100",
-                iconColor: "text-rose-600"
-              },
-              {
-                icon: "fa-hands",
-                title: "Hands-On Learning",
-                description: "Interactive experiences that make education tangible, memorable, and personally meaningful",
-                gradient: "from-blue-50 to-cyan-50",
-                iconBg: "bg-blue-100",
-                iconColor: "text-[#036e8d]"
-              },
-              {
-                icon: "fa-user-graduate",
-                title: "Personal Mentorship",
-                description: "One-on-one guidance that nurtures individual potential and builds confident leaders",
-                gradient: "from-amber-50 to-orange-50",
-                iconBg: "bg-amber-100",
-                iconColor: "text-amber-600"
-              }
-            ].map((feature, index) => (
-              <div key={index} className="group relative">
-                {/* Decorative background */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-[#036e8d]/10 to-[#d2a763]/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className={`relative bg-gradient-to-br ${feature.gradient} p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50`}>
-                  <div className={`w-14 h-14 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <i className={`fa-solid ${feature.icon} text-2xl ${feature.iconColor}`}></i>
+                  {/* Floating Knowledge Cards positioned relative to image */}
+                  <div className="absolute inset-0">
+                    {[
+                      { icon: "fa-brain", label: "Critical Thinking", pos: "top-[2%] left-[5%]", delay: "0s" },
+                      { icon: "fa-palette", label: "Creative Arts", pos: "top-[-4%] right-[16%]", delay: "0.5s" },
+                      { icon: "fa-flask", label: "STEM Labs", pos: "bottom-[-4%] left-[25%]", delay: "1s" },
+                      { icon: "fa-book", label: "Literature", pos: "bottom-[8%] right-[5%]", delay: "1.5s" },
+                      { icon: "fa-lightbulb", label: "Innovation", pos: "top-[40%] -right-[5%]", delay: "2.5s" },
+                      { icon: "fa-globe", label: "Global Awareness", pos: "top-[48%] -left-[6%]", delay: "2s" },
+                    ].map((card, i) => (
+                      <div
+                        key={i}
+                        className={`absolute ${card.pos} transform hover:scale-110 transition-all duration-300 cursor-pointer group`}
+                        style={{
+                          animation: `float 4s ease-in-out infinite`,
+                          animationDelay: card.delay,
+                        }}
+                      >
+                        <div className="bg-white rounded-xl p-3 shadow-lg border border-[#036e8d]/10 min-w-20 text-center group-hover:bg-[#036e8d] group-hover:text-white transition-all duration-300">
+                          <i className={`fa-solid ${card.icon} text-xl mb-1 text-[#036e8d] group-hover:text-white`}></i>
+                          <div className="text-[10px] font-semibold whitespace-nowrap text-[#036e8d] group-hover:text-white">{card.label}</div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    {feature.description}
-                  </p>
-                  
-                  {/* Decorative corner accent */}
-                  <div className="absolute top-4 right-4 w-2 h-8 bg-gradient-to-b from-[#036e8d] to-transparent rounded-full opacity-30"></div>
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* Enhanced Call to Action */}
-          <div className="text-center relative">
-            {/* Background decoration */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-32 bg-gradient-to-r from-[#036e8d]/5 to-[#d2a763]/5 rounded-full blur-2xl"></div>
-            
-            <div className="relative z-10">
-              <p className="text-white text-base sm:text-lg mb-6 max-w-2xl mx-auto">
-                Discover how our innovative approach transforms traditional afterschool programs into life-changing experiences.
-              </p>
-              
+                  {/* DNA Helix Animation */}
+                  {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24">
+                    <svg viewBox="0 0 100 100" className="w-full h-full">
+                      <path
+                        d="M20,10 Q50,30 80,10 M20,30 Q50,10 80,30 M20,50 Q50,70 80,50 M20,70 Q50,50 80,70 M20,90 Q50,110 80,90"
+                        stroke="#ffffff"
+                        strokeWidth="1.5"
+                        fill="none"
+                        opacity="0.6"
+                      >
+                        <animateTransform
+                          attributeName="transform"
+                          type="rotate"
+                          values="0 50 50;360 50 50"
+                          dur="10s"
+                          repeatCount="indefinite"
+                        />
+                      </path>
+                    </svg>
+                  </div> */}
+                </div>
+
+                {/* Floating Animation Keyframes */}
+                <style jsx>{`
+                  @keyframes float {
+                    0%, 100% {
+                      transform: translateY(0) scale(1);
+                      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    }
+                    50% {
+                      transform: translateY(-8px) scale(1.02);
+                      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                    }
+                  }
+
+                  @keyframes imageFloat {
+                    0%, 100% {
+                      transform: translateY(0);
+                    }
+                    50% {
+                      transform: translateY(-10px);
+                    }
+                  }
+
+                  .animate-imageFloat {
+                    animation: imageFloat 3s ease-in-out infinite;
+                  }
+                `}</style>
+              </div>
+
+              {/* Right: Content with White Background */}
+              <div className="space-y-8">
+                <div className="relative z-10 max-w-4xl mx-auto">
+                  <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase mb-4">
+                    Our Philosophy
+                  </h4>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                    Redefining{' '}
+                    <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
+                      Education
+                    </span>
+                    {' '}Through{' '}
+                    <br className="hidden sm:block" />
+                    <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
+                      Our Approach
+                    </span>
+                  </h2>
+                </div>
+                <div className="bg-white rounded-3xl p-8 border border-[#036e8d]/20 shadow-2xl">
+                  <p className="text-[#036e8d]/90 text-lg leading-relaxed">
+                    At IIHH, we believe education should spark curiosity and character. Our program blends real-world modules, hands-on activities, and mentorship—empowering students to grow as thinkers, collaborators, and ethical leaders.
+                  </p>
+                </div>
+
+                {/* CTA Button */}
               <div className="inline-flex flex-col sm:flex-row items-center gap-4">
                 <button className="inline-flex items-center bg-[#036e8d] hover:bg-[#024a5c] text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                   <i className="fa-solid fa-rocket mr-3"></i>
@@ -443,10 +270,65 @@ export default function HowItWorks() {
                   Watch Our Story
                 </button>
               </div>
+              </div>
             </div>
           </div>
         </div>
+ 
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
+            {[
+              { icon: "fa-users", title: "Peer Learning", desc: "Grow together, learn together" },
+              { icon: "fa-chalkboard-teacher", title: "Mentorship", desc: "Personal guidance" },
+              { icon: "fa-vials", title: "Experimentation", desc: "Hands-on discovery" },
+              { icon: "fa-seedling", title: "Values in Action", desc: "Live humanism daily" },
+            ].map((feature, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-lg p-4 flex items-center space-x-4 border border-[#036e8d]/20 shadow-md hover:bg-[#036e8d]/5 hover:shadow-[#d2a763]/20 transition-all duration-300 cursor-pointer group w-full sm:w-64 animate-slide-in"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              >
+                <div className="w-10 h-10 bg-[#d2a763] rounded-full flex items-center justify-center group-hover:shadow-[0_0_8px_#036e8d] transition-all duration-300">
+                  <i className={`fa-solid ${feature.icon} text-white text-lg`}></i>
+                </div>
+                <div>
+                  <h4 className="text-[#036e8d] font-bold text-base group-hover:text-[#d2a763]">{feature.title}</h4>
+                  <p className="text-[#036e8d]/70 text-sm group-hover:text-[#036e8d]">{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Advanced Animations */}
+        <style jsx>{`
+          @keyframes slide-in {
+            from {
+              opacity: 0;
+              transform: translateX(-20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+          .animate-slide-in {
+            animation: slide-in 0.5s ease-out forwards;
+          }
+          @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(2deg); }
+            66% { transform: translateY(5px) rotate(-1deg); }
+          }
+          @keyframes pop-in {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+          }
+          .animate-pop-in {
+            animation: pop-in 0.5s ease-out forwards;
+          }
+        `}</style>
       </section>
+
 
       {/* 4-Step Journey */}
       <section id="steps" className="relative h-auto flex items-center">
