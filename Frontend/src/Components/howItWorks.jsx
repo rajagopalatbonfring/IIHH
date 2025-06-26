@@ -806,20 +806,13 @@ export default function HowItWorks() {
       </section>
 
       {/* Program Benefits */}
-      <section id="program-benefits" className="pb-6 pt-4 bg-[#f9fcfd] relative overflow-hidden"> 
+      <section id="program-benefits" className="pb-6 pt-12 bg-[#f9fcfd] relative overflow-hidden"> 
         <h2 className="text-black text-4xl md:text-5xl font-bold text-center mb-3">
           Program <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Benefits</span>
         </h2>
         <p className="text-lg text-center text-gray-900 max-w-2xl mx-auto leading-relaxed mb-16">
           IIHH’s program empowers you with more than knowledge—gain the resilience, well-being, and leadership skills to thrive in every aspect of life.
         </p>
-
-        {/* Decorative Background Circles */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-12 left-12 w-32 h-32 border-2 border-[#036e8d] rounded-full"></div>
-          <div className="absolute bottom-16 right-24 w-24 h-24 border-2 border-[#d2a763] rounded-full"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-[#d2a763] rounded-full"></div>
-        </div>
 
         <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10 flex flex-col items-center">
           {/* Floating Card */}
