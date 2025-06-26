@@ -141,13 +141,65 @@ export default function HowItWorks() {
                   <div className='absolute -bottom-0.5 bg-[#d2a763] w-full h-1'></div>
       </section>
       
-
       {/* Intro section */}
-      <section className="min-h-screen bg-[#d2a763] pb-24 relative overflow-hidden">
+      <section className="bg-[#d2a763] pb-8 relative">
+        {/* Background Circle Rings and White Dots */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Circle Rings matching background color */}
+          <div className="absolute top-[-5%] left-[-5%] w-48 h-48 border-2 border-[#ffffff] rounded-full opacity-30"></div>
+          <div className="absolute bottom-[-10%] right-[-2%] w-60 h-60 border-2 border-[#ffffff] rounded-full opacity-25"></div>
+          <div className="absolute top-[15%] right-[5%] w-40 h-40 border-2 border-[#ffffff] rounded-full opacity-35"></div>
+          {/* White Floating Dots */}
+          <div className="absolute top-[10%] left-[10%] w-2 h-2 bg-white rounded-full opacity-80 animate-float-dot" style={{ animationDelay: "0s" }}></div>
+          <div className="absolute bottom-[15%] right-[15%] w-1.5 h-1.5 bg-white rounded-full opacity-80 animate-float-dot" style={{ animationDelay: "1s" }}></div>
+          <div className="absolute top-[50%] left-[5%] w-2.5 h-2.5 bg-white rounded-full opacity-80 animate-float-dot" style={{ animationDelay: "2s" }}></div>
+          <div className="absolute top-[20%] left-[30%] w-1.8 h-1.8 bg-white rounded-full opacity-80 animate-float-dot" style={{ animationDelay: "0.5s" }}></div>
+          <div className="absolute bottom-[25%] left-[20%] w-2 h-2 bg-white rounded-full opacity-80 animate-float-dot" style={{ animationDelay: "1.5s" }}></div>
+          <div className="absolute top-[35%] right-[25%] w-1.5 h-1.5 bg-white rounded-full opacity-80 animate-float-dot" style={{ animationDelay: "2.5s" }}></div>
+        </div>
+
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 py-20">
           {/* Liquid Shape Container */}
-          <div className="relative max-w-7xl mx-auto">
+          <div className="relative max-w-8xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+                            {/* Right: Content with White Background */}
+              <div className="space-y-8">
+                <div className="relative z-10 max-w-4xl mx-auto">
+                  <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase mb-4">
+                    Our Philosophy
+                  </h4>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                    Redefining{' '}
+                    <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
+                      Education
+                    </span>
+                    {' '}Through{' '}
+                    <br className="hidden sm:block" />
+                    <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
+                      Our Approach
+                    </span>
+                  </h2>
+                </div>
+                <div className="bg-white rounded-3xl p-8 border border-[#036e8d]/20 shadow-2xl">
+                  <p className="text-gray-900 text-lg leading-relaxed">
+                    At IIHH, we believe education should spark curiosity and character. Our program blends real-world modules, hands-on activities, and mentorship—empowering students to grow as thinkers, collaborators, and ethical leaders.
+                  </p>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="inline-flex flex-col sm:flex-row items-center gap-4">
+                  <button className="inline-flex items-center bg-[#036e8d] hover:bg-[#024a5c] text-white font-semibold py-3 px-6 sm:py-3.5 sm:px-8 rounded-full transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto justify-center">
+                    <i className="fa-solid fa-rocket mr-2 sm:mr-3"></i>
+                    Explore Our Programs
+                  </button>
+                  
+                  <button className="inline-flex items-center border-2 border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#036e8d] font-semibold py-3 px-6 sm:py-3.5 sm:px-8 rounded-full transition-all duration-300 text-sm sm:text-base w-full sm:w-auto justify-center">
+                    <i className="fa-solid fa-play mr-2 sm:mr-3"></i>
+                    Watch Our Story
+                  </button>
+                </div>
+              </div>
               {/* Left: Morphing Visual */}
               <div className="relative w-full max-w-[480px] mx-auto aspect-square">
                 {/* Image Container */}
@@ -183,27 +235,6 @@ export default function HowItWorks() {
                       </div>
                     ))}
                   </div>
-
-                  {/* DNA Helix Animation */}
-                  {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24">
-                    <svg viewBox="0 0 100 100" className="w-full h-full">
-                      <path
-                        d="M20,10 Q50,30 80,10 M20,30 Q50,10 80,30 M20,50 Q50,70 80,50 M20,70 Q50,50 80,70 M20,90 Q50,110 80,90"
-                        stroke="#ffffff"
-                        strokeWidth="1.5"
-                        fill="none"
-                        opacity="0.6"
-                      >
-                        <animateTransform
-                          attributeName="transform"
-                          type="rotate"
-                          values="0 50 50;360 50 50"
-                          dur="10s"
-                          repeatCount="indefinite"
-                        />
-                      </path>
-                    </svg>
-                  </div> */}
                 </div>
 
                 {/* Floating Animation Keyframes */}
@@ -228,92 +259,33 @@ export default function HowItWorks() {
                     }
                   }
 
+                  @keyframes float-dot {
+                    0%, 100% {
+                      transform: translateY(0) translateX(0);
+                      opacity: 0.8;
+                    }
+                    50% {
+                      transform: translateY(-15px) translateX(5px);
+                      opacity: 0.9;
+                    }
+                  }
+
                   .animate-imageFloat {
                     animation: imageFloat 3s ease-in-out infinite;
+                  }
+
+                  .animate-float-dot {
+                    animation: float-dot 5s ease-in-out infinite;
                   }
                 `}</style>
               </div>
 
-              {/* Right: Content with White Background */}
-              <div className="space-y-8">
-                <div className="relative z-10 max-w-4xl mx-auto">
-                  <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase mb-4">
-                    Our Philosophy
-                  </h4>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                    Redefining{' '}
-                    <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
-                      Education
-                    </span>
-                    {' '}Through{' '}
-                    <br className="hidden sm:block" />
-                    <span className='text-[#036e8d] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>
-                      Our Approach
-                    </span>
-                  </h2>
-                </div>
-                <div className="bg-white rounded-3xl p-8 border border-[#036e8d]/20 shadow-2xl">
-                  <p className="text-[#036e8d]/90 text-lg leading-relaxed">
-                    At IIHH, we believe education should spark curiosity and character. Our program blends real-world modules, hands-on activities, and mentorship—empowering students to grow as thinkers, collaborators, and ethical leaders.
-                  </p>
-                </div>
-
-                {/* CTA Button */}
-              <div className="inline-flex flex-col sm:flex-row items-center gap-4">
-                <button className="inline-flex items-center bg-[#036e8d] hover:bg-[#024a5c] text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  <i className="fa-solid fa-rocket mr-3"></i>
-                  Explore Our Programs
-                </button>
-                
-                <button className="inline-flex items-center border-2 border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#036e8d] font-semibold py-4 px-8 rounded-full transition-all duration-300 text-base sm:text-lg">
-                  <i className="fa-solid fa-play mr-3"></i>
-                  Watch Our Story
-                </button>
-              </div>
-              </div>
             </div>
           </div>
         </div>
- 
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
-            {[
-              { icon: "fa-users", title: "Peer Learning", desc: "Grow together, learn together" },
-              { icon: "fa-chalkboard-teacher", title: "Mentorship", desc: "Personal guidance" },
-              { icon: "fa-vials", title: "Experimentation", desc: "Hands-on discovery" },
-              { icon: "fa-seedling", title: "Values in Action", desc: "Live humanism daily" },
-            ].map((feature, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-lg p-4 flex items-center space-x-4 border border-[#036e8d]/20 shadow-md hover:bg-[#036e8d]/5 hover:shadow-[#d2a763]/20 transition-all duration-300 cursor-pointer group w-full sm:w-64 animate-slide-in"
-                style={{ animationDelay: `${i * 0.2}s` }}
-              >
-                <div className="w-10 h-10 bg-[#d2a763] rounded-full flex items-center justify-center group-hover:shadow-[0_0_8px_#036e8d] transition-all duration-300">
-                  <i className={`fa-solid ${feature.icon} text-white text-lg`}></i>
-                </div>
-                <div>
-                  <h4 className="text-[#036e8d] font-bold text-base group-hover:text-[#d2a763]">{feature.title}</h4>
-                  <p className="text-[#036e8d]/70 text-sm group-hover:text-[#036e8d]">{feature.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+
         {/* Advanced Animations */}
         <style jsx>{`
-          @keyframes slide-in {
-            from {
-              opacity: 0;
-              transform: translateX(-20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
-          .animate-slide-in {
-            animation: slide-in 0.5s ease-out forwards;
-          }
           @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             33% { transform: translateY(-10px) rotate(2deg); }
@@ -329,18 +301,94 @@ export default function HowItWorks() {
         `}</style>
       </section>
 
-
-      {/* 4-Step Journey */}
-      <section id="steps" className="relative h-auto flex items-center">
+      {/* Foundation */}
+      <section className="py-20 bg-[#ffffff] font-comic relative">
         <img 
           src={cloudOpen}
           alt="Cloud decoration" 
           className="w-full absolute top-0 left-0 object-cover object-top" 
           style={{ transform: 'translateY(-50%)'}}
         />
-        <div className="container mx-auto px-10 md:px-14 relative z-10 max-w-7xl">
+        {/* Subtle Background Decor */}
+        <div className="absolute inset-0 pointer-events-none opacity-10">
+          <div className="absolute top-16 left-20 w-24 h-24 bg-[#036e8d]/10 rounded-full animate-pulse-slow"></div>
+          <div className="absolute bottom-20 right-16 w-20 h-20 bg-[#d2a763]/10 rounded-full animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+
+        <div className="container mx-auto px-8 md:px-14 max-w-8xl flex flex-col items-center">
+          {/* Heading and Subheading */}
+          <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+            Foundations for <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Success</span>
+          </h2>
+          <p className="text-gray-600 text-lg max-w-3xl text-center leading-relaxed mb-12 font-medium">
+            Skills to Shape Your Future
+          </p>
+
+          {/* Professional Grid Structure */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+            {[
+              { icon: "fa-users", title: "Peer Learning", desc: "Collaborate in dynamic group settings to foster growth.", gradient: "from-[#036e8d]/60 to-[#036e8d]/30", iconColor: "text-[#036e8d]" },
+              { icon: "fa-chalkboard-teacher", title: "Mentorship", desc: "Receive tailored guidance from expert mentors.", gradient: "from-[#d2a763]/60 to-[#d2a763]/30", iconColor: "text-[#d2a763]" },
+              { icon: "fa-vials", title: "Experimentation", desc: "Innovate through hands-on, real-world projects.", gradient: "from-[#036e8d]/60 to-[#036e8d]/30", iconColor: "text-[#036e8d]" },
+              { icon: "fa-seedling", title: "Values in Action", desc: "Embody ethical principles in daily practice.", gradient: "from-[#d2a763]/60 to-[#d2a763]/30", iconColor: "text-[#d2a763]" },
+            ].map((feature, i) => (
+              <div
+                key={i}
+                className={`group relative bg-white rounded-lg p-6 flex flex-col items-start bg-gradient-to-br ${feature.gradient} border border-gray-100/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fadeInUp`}
+                style={{ animationDelay: `${i * 0.2}s` }}
+              >
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 bg-white/90 group-hover:scale-105 transition-transform duration-300">
+                  <i className={`fa-solid ${feature.icon} text-2xl ${feature.iconColor}`}></i>
+                </div>
+                {/* Content */}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 tracking-tight">{feature.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed font-medium">{feature.desc}</p>
+                {/* Hover Gradient Overlay */}
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-transparent to-${feature.iconColor.replace('text-', '')}/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          @keyframes pulse-slow {
+            0%, 100% {
+              transform: scale(1);
+              opacity: 0.1;
+            }
+            50% {
+              transform: scale(1.15);
+              opacity: 0.15;
+            }
+          }
+          .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+          }
+          .animate-pulse-slow {
+            animation: pulse-slow 5s ease-in-out infinite;
+          }
+        `}</style>
+      </section>
+
+ {/* <JourneySteps steps={steps} /> */}
+
+      {/* 4-Step Journey */}
+      <section id="steps" className="relative h-auto flex items-center">
+        <div className="container mx-auto px-8 md:px-12 relative z-10 max-w-8xl">
           {/* Header with Stagger Animation */}
-          <div className={`text-center mt-20 mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`text-center mt-16 mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Your <span className='text-[#d2a763] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>IIHH</span> <span className='text-[#036e8d] inline-block transform hover:scale-x-105 transition-transform duration-300'> Journey</span>
             </h2>
@@ -352,8 +400,123 @@ export default function HowItWorks() {
           </div>
 
           {/* Modern Grid Layout */}
-          <div className="px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <div className="px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
             {/* Connecting Lines */}
+            <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#036e8d]/30 to-transparent hidden lg:block"></div>
+            
+            {steps.map((step, idx) => (
+              <div
+                key={idx}
+                className={`group relative transition-all duration-700 ease-out ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                }`}
+                style={{ 
+                  transitionDelay: `${idx * 200}ms`,
+                  transform: activeStep === idx ? 'scale(1.03)' : 'scale(1)'
+                }}
+                onMouseEnter={() => setActiveStep(idx)}
+              >
+                {/* Step Number Badge */}
+                <div className="absolute -top-3 -left-3 z-20">
+                  <div className={`w-10 h-10 rounded-full bg-[#d2a763] flex items-center justify-center text-white font-bold text-base shadow-lg transition-all duration-700 ease-out ${
+                    activeStep === idx ? 'scale-110 shadow-2xl' : ''
+                  }`}>
+                    {idx + 1}
+                  </div>
+                </div>
+
+                {/* Main Card */}
+                <div className={`relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-700 ease-out group-hover:shadow-2xl group-hover:-translate-y-1.5 ${
+                  activeStep === idx 
+                    ? 'border-[#036e8d]/30 shadow-xl bg-white/90' 
+                    : 'border-white/50 shadow-lg'
+                }`}>
+                  {/* Icon Container */}
+                  <div className="relative mb-4">
+                    <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center transition-all duration-700 ease-out ${
+                      activeStep === idx ? 'rotate-12 scale-110' : 'group-hover:rotate-6 group-hover:scale-105'
+                    }`}>
+                      <i className={`fa-solid ${step.icon} text-3xl text-black transition-all duration-700 ease-out`}></i>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative">
+                    <h3 className={`font-bold text-lg mb-3 transition-all duration-700 ease-out ${
+                      activeStep === idx ? 'text-[#036e8d]' : 'text-gray-800'
+                    }`}>
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed transition-all duration-700 ease-out">
+                      {step.desc}
+                    </p>
+                  </div>
+
+                  {/* Progress Bar */}
+                  <div className="mt-4 h-0.5 bg-gray-200 rounded-full overflow-hidden">
+                    <div 
+                      className={`h-full bg-[#036e8d] transition-all duration-700 ease-out rounded-full ${
+                        activeStep === idx ? 'w-full' : 'w-0'
+                      }`}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Connecting Arrow */}
+                {idx < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 z-10">
+                    <div className={`w-6 h-6 text-[#036e8d] transition-all duration-700 ease-out ${
+                      activeStep >= idx ? 'opacity-100 translate-x-0' : 'opacity-50 -translate-x-2'
+                    }`}>
+                      <i className="fa-solid fa-arrow-right text-lg"></i>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Interactive Timeline */}
+          <div className="mt-12 flex justify-center space-x-3">
+            {steps.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveStep(idx)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-700 ease-out ${
+                  activeStep === idx 
+                    ? 'bg-[#036e8d] scale-125' 
+                    : 'bg-gray-300 hover:bg-[#d2a763]'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Custom Styles */}
+        <style jsx>{`
+          @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+          }
+        `}</style>
+      </section>
+
+      {/* <section id="steps" className="relative h-auto flex items-center">
+
+        <div className="container mx-auto px-10 md:px-14 relative z-10 max-w-7xl">
+          <div className={`text-center mt-20 mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Your <span className='text-[#d2a763] relative inline-block transform hover:scale-x-105 transition-transform duration-300'>IIHH</span> <span className='text-[#036e8d] inline-block transform hover:scale-x-105 transition-transform duration-300'> Journey</span>
+            </h2>
+            <div className="inline-block mb-4">
+              <span className="text-gray-600 text-lg max-w-3xl text-center leading-relaxed mb-10">
+                Your Journey Starts Here
+              </span>
+            </div>
+          </div>
+
+          <div className="px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+
             <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#036e8d]/30 to-transparent hidden lg:block"></div>
             
             {steps.map((step, idx) => (
@@ -368,7 +531,7 @@ export default function HowItWorks() {
                 }}
                 onMouseEnter={() => setActiveStep(idx)}
               >
-                {/* Step Number Badge */}
+
                 <div className="absolute -top-4 -left-4 z-20">
                   <div className={`w-12 h-12 rounded-full bg-[#d2a763] flex items-center justify-center text-white font-bold text-lg shadow-lg transition-all duration-700 ease-out ${
                     activeStep === idx ? 'scale-110 shadow-2xl' : ''
@@ -377,7 +540,7 @@ export default function HowItWorks() {
                   </div>
                 </div>
 
-                {/* Main Card */}
+
                 <div className={`relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border transition-all duration-700 ease-out group-hover:shadow-2xl group-hover:-translate-y-2 ${
                   activeStep === idx 
                     ? 'border-[#036e8d]/30 shadow-xl bg-white/90' 
@@ -385,7 +548,7 @@ export default function HowItWorks() {
                 }`}>
                   
                   
-                  {/* Icon Container */}
+
                   <div className="relative mb-6">
                     <div className={`w-20 h-20 mx-auto rounded-full flex items-center justify-center transition-all duration-700 ease-out ${
                       activeStep === idx ? 'rotate-12 scale-110' : 'group-hover:rotate-6 group-hover:scale-105'
@@ -395,7 +558,7 @@ export default function HowItWorks() {
    
                   </div>
 
-                  {/* Content */}
+
                   <div className="relative">
                     <h3 className={`font-bold text-xl mb-4 transition-all duration-700 ease-out ${
                       activeStep === idx ? 'text-[#036e8d]' : 'text-gray-800'
@@ -407,7 +570,7 @@ export default function HowItWorks() {
                     </p>
                   </div>
 
-                  {/* Progress Bar */}
+
                   <div className="mt-6 h-1 bg-gray-200 rounded-full overflow-hidden">
                     <div 
                       className={`h-full bg-[#036e8d] transition-all duration-700 ease-out rounded-full ${
@@ -417,7 +580,6 @@ export default function HowItWorks() {
                   </div>
                 </div>
 
-                {/* Connecting Arrow */}
                 {idx < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 z-10">
                     <div className={`w-8 h-8 text-[#036e8d] transition-all duration-700 ease-out ${
@@ -431,7 +593,6 @@ export default function HowItWorks() {
             ))}
           </div>
 
-          {/* Interactive Timeline */}
           <div className="mt-16 flex justify-center space-x-4">
             {steps.map((_, idx) => (
               <button
@@ -447,18 +608,17 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Custom Styles */}
         <style jsx>{`
           @keyframes grid-move {
             0% { transform: translate(0, 0); }
             100% { transform: translate(60px, 60px); }
           }
         `}</style>
-      </section>
+      </section> */}
 
       {/* Signature Modules */}
       <section id="modules" className="pt-16 pb-0 bg-[#f9fcfd] font-comic">
-        <div className="container mx-auto px-8 md:px-14 pt-14 pb-8 max-w-7xl flex flex-col items-center">
+        <div className="container mx-auto px-8 md:px-14 pt-14 pb-8 max-w-8xl flex flex-col items-center">
           <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our Signature <span className="text-[#036e8d] inline-block transform hover:scale-x-105 duration-300">Modules!</span>
           </h2>
@@ -510,7 +670,7 @@ export default function HowItWorks() {
 
 
       {/* Signature Activities */}
-      <section id="activities" className="py-16 bg-[#f9fcfd]">
+      <section id="activities" className="py-16 pb-32 bg-[#f9fcfd]">
         <div className="container mx-auto px-6">
         <div className="container mx-auto px-6 text-center max-w-3xl">
           <h2 className="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -534,53 +694,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* Program Benefits */}
-      <section id="program-benefits" className="pb-6 pt-4 bg-[#f9fcfd] relative overflow-hidden"> 
-        <h2 className="text-black text-4xl md:text-5xl font-bold text-center mb-3">
-          Program <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Benefits</span>
-        </h2>
-        <p className="text-lg text-center text-gray-900 max-w-2xl mx-auto leading-relaxed mb-16">
-          IIHH’s program empowers you with more than knowledge—gain the resilience, well-being, and leadership skills to thrive in every aspect of life.
-        </p>
-
-        {/* Decorative Background Circles */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-12 left-12 w-32 h-32 border-2 border-[#036e8d] rounded-full"></div>
-          <div className="absolute bottom-16 right-24 w-24 h-24 border-2 border-[#d2a763] rounded-full"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-[#d2a763] rounded-full"></div>
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10 flex flex-col items-center">
-          {/* Floating Card */}
-          <div className="bg-[#036e8d]/80 rounded-3xl py-10 px-6 sm:px-12 shadow-lg max-w-4xl w-full relative mb-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-center">
-              {[
-                { title: "Resilience", icon: "fa-shield-alt", description: "Navigate challenges with confidence" },
-                { title: "Well-Being", icon: "fa-heart-pulse", description: "Balance mind, body, and emotions" },
-                { title: "Ethical Leadership", icon: "fa-lightbulb", description: "Lead with compassion and integrity" },
-                { title: "Global Citizenship", icon: "fa-globe", description: "Embrace diversity and make an impact" },
-              ].map((benefit, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center text-center group hover:scale-105 transition-transform duration-300"
-                >
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors duration-300 shadow-lg">
-                    <i className={`fa-solid ${benefit.icon} text-2xl sm:text-3xl text-white`}></i>
-                  </div>
-                  <span className="text-white font-semibold text-base mb-1">
-                    {benefit.title}
-                  </span>
-                  <span className="text-white/80 text-xs md:text-sm">
-                    {benefit.description}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-
+      
       <section className="bg-[#036e8d] relative py-20 pb-0">
         <img 
           src={cloudClose}           
@@ -650,28 +764,91 @@ export default function HowItWorks() {
         </div>
 
         {/* Main Impact Statement */}
-        <div className="container bg-[white] flex-col text-center py-10 px-10">
-          <div className="inline-flex items-center justify-center w-20 h-20 mb-6">
-            <svg className="w-12 h-12 text-[#d2a763] m-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          
-          <h3 className="text-3xl md:text-4xl font-bold text-[#036e8d] mb-6">
-            Shaping the Future Generation
-          </h3>
-          
-          <p className="text-gray-700 text-xl leading-relaxed mb-8 max-w-4xl mx-auto">
-            Our approach transforms not just academics, but the thought process of young learners—preparing them to shape the future as empathetic, ethical leaders.
-          </p>
-          
-          <div className="bg-gradient-to-r from-[#036e8d]/10 to-[#d2a763]/10 rounded-lg p-6 border-l-4 border-[#036e8d]">
-            <p className="text-[#036e8d] text-xl font-semibold leading-relaxed">
-              The impact of IIHH creates a ripple effect, nurturing minds that will shape communities and the world.
-            </p>
-          </div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 max-w-5xl mx-auto text-center transform hover:scale-[1.01] transition-transform duration-300">
+        {/* Icon Container */}
+        <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#036e8d]/10 rounded-full mb-6 sm:mb-8 animate-pulse-slow">
+          <svg
+            className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#d2a763]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
         </div>
 
+        {/* Header -->
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#036e8d] mb-4 sm:mb-6 tracking-tight">
+          Shaping the Future Generation
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto">
+          Our approach transforms not just academics but the mindset of young learners, fostering empathetic and ethical leaders for tomorrow.
+        </p>
+
+        {/* Quote Card */}
+        <div className="bg-gradient-to-r from-[#036e8d]/5 to-[#d2a763]/5 rounded-xl p-4 sm:p-6 lg:p-8 border-l-4 border-[#036e8d] max-w-2xl mx-auto relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(3,110,141,0.1),transparent_70%)]"></div>
+          <p className="text-[#036e8d] text-base sm:text-lg lg:text-xl font-semibold leading-relaxed relative z-10">
+            IIHH's impact creates a ripple effect, empowering minds to transform communities and the world.
+          </p>
+        </div>
+      </div>
+    </div>
+
+      </section>
+
+      {/* Program Benefits */}
+      <section id="program-benefits" className="pb-6 pt-4 bg-[#f9fcfd] relative overflow-hidden"> 
+        <h2 className="text-black text-4xl md:text-5xl font-bold text-center mb-3">
+          Program <span className="text-[#d2a763] inline-block transform hover:scale-x-105 duration-300">Benefits</span>
+        </h2>
+        <p className="text-lg text-center text-gray-900 max-w-2xl mx-auto leading-relaxed mb-16">
+          IIHH’s program empowers you with more than knowledge—gain the resilience, well-being, and leadership skills to thrive in every aspect of life.
+        </p>
+
+        {/* Decorative Background Circles */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-12 left-12 w-32 h-32 border-2 border-[#036e8d] rounded-full"></div>
+          <div className="absolute bottom-16 right-24 w-24 h-24 border-2 border-[#d2a763] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-[#d2a763] rounded-full"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-8 md:px-14 relative z-10 flex flex-col items-center">
+          {/* Floating Card */}
+          <div className="bg-[#036e8d]/80 rounded-3xl py-10 px-6 sm:px-12 shadow-lg max-w-4xl w-full relative mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-center">
+              {[
+                { title: "Resilience", icon: "fa-shield-alt", description: "Navigate challenges with confidence" },
+                { title: "Well-Being", icon: "fa-heart-pulse", description: "Balance mind, body, and emotions" },
+                { title: "Ethical Leadership", icon: "fa-lightbulb", description: "Lead with compassion and integrity" },
+                { title: "Global Citizenship", icon: "fa-globe", description: "Embrace diversity and make an impact" },
+              ].map((benefit, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center text-center group hover:scale-105 transition-transform duration-300"
+                >
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors duration-300 shadow-lg">
+                    <i className={`fa-solid ${benefit.icon} text-2xl sm:text-3xl text-white`}></i>
+                  </div>
+                  <span className="text-white font-semibold text-base mb-1">
+                    {benefit.title}
+                  </span>
+                  <span className="text-white/80 text-xs md:text-sm">
+                    {benefit.description}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ / Still Curious? */}
@@ -688,6 +865,9 @@ export default function HowItWorks() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Still Curious?
           </h2>
+          <p className="text-white/80 mb-4">
+            We’re here to help you every step of the way.
+          </p>
           <p className="text-white text-lg leading-relaxed mb-8">
             Have questions? Visit our <Link to="/faq" className="underline">FAQ</Link> or <Link to="/contact" className="underline">contact us</Link> for more information.
           </p>
