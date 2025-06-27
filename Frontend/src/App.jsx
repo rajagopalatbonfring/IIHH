@@ -1,35 +1,34 @@
 import React, { useEffect, useState } from "react";
-import "./App.css"
-import Navbar from "./Components/Navigations/navbar"
-import Footer from "./Components/Navigations/footer"
-import Home from "./Components/home"
-import AboutUs from "./Components/aboutUs"
-import Program from "./Components/program"
-import HowItWorks from "./Components/howItWorks"
-import WhyChooseUs from "./Components/whyChooseUs"
-import Testimonial from "./Components/testimonials"
-import ContactUs from "./Components/contactUs"
-import ModuleDetail from "./Components/moduleDetail"
-
-import ModuleAccordionCard from "./accordion"
-
-import Dashboard from "./Components/CMSDashboard"
-import AdminLogin from "./Components/adminLogin"
-
-import ScrollTop from "./Components/scrollTop"
-
-import Playground from "./Components/playground"
-import ClickSpark from "./Components/cursor"
-
 import {Routes, Route, useLocation,Navigate } from "react-router-dom";
+
+import "./App.css"
+
+import Playground from "./Components/global/playground"
+import ClickSpark from "./Components/global/cursor"
+
+import Navbar from "./Components/Navigations/navbar"
+import Footer from "./Components/Navigations/footer/footer"
+
+import Home from "./pages/home"
+import AboutUs from "./pages/aboutUs"
+import Program from "./pages/program"
+import HowItWorks from "./pages/howItWorks"
+import ContactUs from "./pages/contactUs"
+
+
+import Dashboard from "./Components/dashboard/CMSDashboard"
+import AdminLogin from "./Components/dashboard/adminLogin"
+import ScrollTop from "./Components/dashboard/scrollTop"
+
+import Testing from "./testing"
 
 // import Loader from "./Components/Loader";
 
 
 function App() {
 
-  // const [loading, setLoading] = useState(true);
-  // const [fadeOut, setFadeOut] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -73,14 +72,11 @@ function App() {
           >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/acc" element={<ModuleAccordionCard />} />
+            <Route path="/testing" element={<Testing />} />
 
             <Route path="/about" element={<AboutUs />} />
             <Route path="/programs" element={<Program />} />
-            <Route path="/module/:id" element={<ModuleDetail />} />
             <Route path="/how-it-works" element={<HowItWorks/>} />
-            <Route path="/why-choose-us" element={<WhyChooseUs/>} />
-            <Route path="/testimonials" element={<Testimonial/>} />
             <Route path="/contact" element={<ContactUs/>} />
             <Route path="/play" element={<Playground/>}/>
             <Route path="/adminLogin" element={<AdminLogin />} />
