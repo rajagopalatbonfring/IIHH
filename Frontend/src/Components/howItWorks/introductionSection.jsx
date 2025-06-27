@@ -52,14 +52,9 @@ const introductionSection = () => {
 
                 {/* CTA Buttons */}
                 <div className="inline-flex flex-col sm:flex-row items-center gap-4">
-                  <button className="inline-flex items-center bg-[#036e8d] hover:bg-[#024a5c] text-white font-semibold py-3 px-6 sm:py-3.5 sm:px-8 rounded-full transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto justify-center">
+                  <button className="inline-flex items-center bg-[#036e8d] hover:bg-[#024a5c] text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto justify-center">
                     <i className="fa-solid fa-rocket mr-2 sm:mr-3"></i>
                     Explore Our Programs
-                  </button>
-                  
-                  <button className="inline-flex items-center border-2 border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#036e8d] font-semibold py-3 px-6 sm:py-3.5 sm:px-8 rounded-full transition-all duration-300 text-sm sm:text-base w-full sm:w-auto justify-center">
-                    <i className="fa-solid fa-play mr-2 sm:mr-3"></i>
-                    Watch Our Story
                   </button>
                 </div>
               </div>
