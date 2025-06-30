@@ -22,7 +22,7 @@ const heroSection = () => {
                 </p>
                 <a
                   href="#contact-form"
-                  className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:shadow-xl transition-all duration-300 shadow-lg group text-base"
+                  className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:shadow-xl transform hover:scale-105 transition-all duration-300 shadow-lg group text-base"
                 >
                   Get in Touch
                   <svg

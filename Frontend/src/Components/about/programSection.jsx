@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import cloudOpen from '../../assets/Group 33.png';
 import aboutProgramCtaImg from '../../assets/ctaboy.png';
 
+import AnimatedButton from '../reUsables/reUseBtn';
+
 
 const modules = [
   { id: 1, title: "Holistic Personal Development", subtitle: "Mind, body, and soul", icon: "fa-spa", color: "purple" },
@@ -87,16 +89,6 @@ const programSection = () => {
                   />
                 </div>
 
-                <Link
-                  to="/programs"
-                  className="absolute bottom-5 right-10 z-20 group inline-flex items-center bg-[#ffffff] hover:bg-[#ffffff]/90 text-[#036e8d] font-semibold py-2 px-6 rounded-full transition-all duration-300 text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-2"
-                >
-                  More details
-                <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                </Link>
-
                 <div
                   className="w-0 h-0 z-10 absolute bottom-0 right-0"
                   style={{
@@ -165,16 +157,8 @@ const programSection = () => {
 
           {/* Learn More Button */}
           <div className="text-center mt-2">
-            <Link
-              to="/programs"
-              className="group inline-flex items-center bg-[#036e8d] hover:bg-[#d2a763] text-white font-semibold py-4 px-6 sm:px-8 rounded-full transition-all duration-300 text-sm sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
-            >
-              <span className="block sm:hidden">Learn More</span>
-              <span className="hidden sm:block">Learn More About the Program</span>
-              <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
+            <AnimatedButton className="block sm:hidden" to="/programs" text="Learn More" bg="bg-[#036e8d]" color="text-white" hoverBg="hover:bg-[#d2a763]" hoverAnimation="hover:-translate-y-1" />
+            <AnimatedButton className="hidden sm:inline-flex" to="/programs" text="Learn More About the Program" bg="bg-[#036e8d]" color="text-white" hoverBg="hover:bg-[#d2a763]" hoverAnimation="hover:-translate-y-1" />
           </div>
 
         </div>

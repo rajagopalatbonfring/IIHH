@@ -272,7 +272,7 @@ const whoWeAre = () => {
                 {/* <p className="text-white/80 text-sm mt-4 max-w-md mx-auto">
                   Join thousands of students and educators who are already part of our transformative community.
                 </p> */}
-                <button className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-8 rounded-full transition-all duration-300 text-base sm:text-lg">
+                <button className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-8 rounded-full transition-all duration-300 text-base sm:text-lg  backdrop-blur-xl">
                   <i className="fa-solid fa-play mr-3"></i>
                   Watch Our Story
                 </button>

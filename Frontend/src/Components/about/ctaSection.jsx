@@ -20,10 +20,12 @@ const ctaSection = () => {
               Become part of our growing network of educators, students, and professionals dedicated to humanistic principles.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold hover:shadow-xl transition-all">
+              <button className="bg-white text-[#036e8d] px-12 py-4 rounded-full text-xl font-semibold transform hover:scale-105 hover:shadow-xl transition-all duration-300">
                 Enroll now
               </button>
-              <button className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#036e8d] font-semibold py-4 px-12 rounded-full transition-all duration-300 text-base sm:text-lg">
+              <button 
+                className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg tracking-wide hover:bg-white hover:text-[#d2a763] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm"
+              >
                 Newsletter Signup
               </button>
             </div>

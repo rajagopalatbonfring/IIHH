@@ -43,7 +43,7 @@ const heroSection = () => {
               <div className="pb-20 flex flex-row justify-center md:justify-start gap-6 md:pb-0">
                 <Link
                   to="/programs"
-                  className="sm:text-lg bg-white text-purple-700 px-8 py-3 rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:shadow-xl"
+                  className="sm:text-lg bg-white text-purple-700 px-8 py-3 rounded-full font-semibold overflow-hidden transform hover:scale-105 group transition-all duration-300 hover:shadow-xl"
                 >
                   <span className="text-[#036e8d]">Explore Programs</span>
                 </Link>

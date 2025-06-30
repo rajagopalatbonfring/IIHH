@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-import FAQGrid from "../../Components/reUsables/faqGrid"   
+import FAQGrid from "../../Components/reUsables/faqGrid"  
+
+import AnimatedButton from '../reUsables/reUseBtn';
 
 const faqs = [
   { question: "Who is this program designed for?", answer: "Our program is designed for educators, professionals, students, and anyone interested in personal growth, humanistic education, and holistic development.",category: "Enrollment" },
@@ -36,15 +38,7 @@ const faqSection = () => {
                 <p className="text-gray-600 mb-6">
                   Can't find what you're looking for? Our support team is here to help.
                 </p>
-                <Link
-                  to="/programs"
-                  className="inline-flex items-center justify-center bg-[#036e8d] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#025a75] hover:translate-x-1 transition-all duration-300 shadow-lg group text-base"
-                >
-                  View all FAQ
-                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Link>
+                <AnimatedButton to="/contact" text="Ask Questions" bg="bg-[#036e8d]" color="text-white" hoverBg="hover:bg-[#025a75]" hoverAnimation="hover:translate-x-1" />
               </div>
               
             </div>

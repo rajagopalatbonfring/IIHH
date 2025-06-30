@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import programAppBoyImg from "../../assets/programpageImg1.png";
 import graduateCap from '../../assets/academicLogoProgrampg.png';
 
+import AnimatedButton from "../reUsables/reUseBtn";
+
 const steps = [
   {
     step: "01",
@@ -164,10 +166,7 @@ const applicationProcess = () => {
     
                   {/* CTA Button */}
                   <div className="text-center mt-12 lg:mt-16">
-                    <button className="inline-flex items-center bg-[#036e8d] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:from-[#025a75] hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                      <span className="text-base lg:text-lg font-semibold">Start Your Application</span>
-                      <i className="fa-solid fa-arrow-right ml-2 lg:ml-3"></i>
-                    </button>
+                    <AnimatedButton to="/contact" text="Start Your Application" bg="bg-[#036e8d]" color="text-white" hoverBg="hover:bg-[#d2a763]" hoverAnimation="hover:translate-x-1" />
                   </div>
                 </div>
               </div>

@@ -11,21 +11,23 @@ const programCta = () => {
               Start your journey with IIHH and unlock your full potential through our transformative curriculum.
             </p>
             <div className="px-2 flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="hidden sm:block bg-white text-[#036e8d] px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-100 transition-all duration-300 shadow-lg">
-                Download Curriculum Guide
-                <i className="fa-solid fa-download ml-2"></i>
-              </button>
-              
-              <button className="block sm:hidden bg-white text-[#036e8d] px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-100 transition-all duration-300 shadow-lg">
-                Curriculum Guide
-                <i className="fa-solid fa-download ml-2"></i>
-              </button>
+              {/* Download Curriculum Guide - Desktop */}
+<button className="hidden sm:block bg-white text-[#036e8d] px-6 py-3 rounded-full font-semibold text-sm hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg group">
+  Download Curriculum Guide
+  <i className="fa-solid fa-download ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+</button>
 
-              <button className="bg-white text-[#036e8d] px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-100 transition-all duration-300 shadow-lg">
-                Join IIHH
-                <i className="fa-solid fa-arrow-right ml-2"></i>
-              </button>
+{/* Download Curriculum Guide - Mobile */}
+<button className="block sm:hidden bg-white text-[#036e8d] px-6 py-3 rounded-full font-semibold text-sm hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg group">
+  Curriculum Guide
+  <i className="fa-solid fa-download ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+</button>
 
+{/* Join IIHH Button */}
+<button className="bg-white text-[#036e8d] px-6 py-3 rounded-full font-semibold text-sm hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg group">
+  Join IIHH
+  <i className="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+</button>
             </div>
           </div>
         </section>

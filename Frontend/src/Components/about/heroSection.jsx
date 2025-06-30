@@ -24,7 +24,7 @@ const heroSection = () => {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <Link
                   to="/programs"
-                  className="relative bg-white text-[#036e8d] px-8 py-3 rounded-full text-lg font-semibold overflow-hidden group transition-all duration-300 hover:shadow-xl"
+                  className="relative bg-white text-[#036e8d] px-8 py-3 rounded-full text-lg font-semibold overflow-hidden transform hover:scale-105 group transition-all duration-300 hover:shadow-xl"
                 >
                   <span className="relative z-10">Explore Our Programs</span>
                 </Link>
