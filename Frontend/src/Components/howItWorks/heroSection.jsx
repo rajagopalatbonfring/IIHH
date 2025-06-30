@@ -11,7 +11,7 @@ const heroSection = () => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px]  bg-cover bg-center flex items-center justify-center"
+        className="relative h-auto min-h-[500px] md:min-h-[600px] 2xl:h-[800px]  bg-cover bg-center flex items-center justify-center bg-[#223668]"
         style={{ backgroundImage: `url(${HowWorkBgImage})` }}
       >
         <div className="absolute inset-0 bg-black/20" />

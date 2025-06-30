@@ -293,18 +293,11 @@ const Nav = () => {
               onClick={toggleMenu}
               className={`block py-4 px-6 text-lg font-comic font-semibold transition-all duration-300 relative group ${
                 isActive(item.path)
-                  ? "text-[#036e8d] bg-[#d2a763]/10"
+                  ? "text-[#d2a763] bg-[#d2a763]/10"
                   : "text-[#036e8d] hover:text-[#d2a763] hover:bg-[#d2a763]/10"
               }`}
             >
               {item.label}
-              <span
-                className={`absolute left-0 bottom-0 h-[2px] bg-[#d2a763] transition-transform duration-300 ease-out origin-left ${
-                  isActive(item.path)
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                } w-full`}
-              ></span>
             </Link>
           ))}
           

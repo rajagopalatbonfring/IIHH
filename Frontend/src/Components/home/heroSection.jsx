@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import rectangle from '../../assets/home-storySectionImg.jpg';
 import logoAlone from '../../assets/IIHH_OnlyLogo.png'
 
+import RippleButton from './rippleVideoBtn'
+
 const heroSection = () => {
   return (
     <>
@@ -45,12 +47,7 @@ const heroSection = () => {
                 >
                   <span className="text-[#036e8d]">Explore Programs</span>
                 </Link>
-                <a
-                  href="#testimonials"
-                  className="relative bg-white/70 text-white px-5 py-3 rounded-full text-lg font-semibold hover:bg-white transition-all duration-300 flex items-center justify-center"
-                >
-                  <i className="fa-solid fa-play text-[#036e8d]"></i>
-                </a>
+                <RippleButton/>
               </div>
             </div>
           </div>
