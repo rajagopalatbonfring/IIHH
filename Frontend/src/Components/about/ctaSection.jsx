@@ -24,7 +24,7 @@ const ctaSection = () => {
                 Enroll now
               </button>
               <button 
-                className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg tracking-wide hover:bg-white hover:text-[#d2a763] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm"
+                className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg tracking-wide hover:bg-white hover:text-[#d2a763] transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl "
               >
                 Newsletter Signup
               </button>

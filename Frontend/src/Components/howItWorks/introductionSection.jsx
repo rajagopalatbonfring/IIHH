@@ -9,7 +9,7 @@ const introductionSection = () => {
         {/* Background Circle Rings and White Dots */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Circle Rings matching background color */}
-          <div className="absolute top-[-5%] left-[-5%] w-48 h-48 border-2 border-[#ffffff] rounded-full opacity-30"></div>
+          <div className="absolute top-[8%] left-[-8%] w-48 h-48 border-2 border-[#ffffff] rounded-full opacity-30"></div>
           <div className="absolute bottom-[-10%] right-[-2%] w-60 h-60 border-2 border-[#ffffff] rounded-full opacity-25"></div>
           <div className="absolute top-[15%] right-[5%] w-40 h-40 border-2 border-[#ffffff] rounded-full opacity-35"></div>
           {/* White Floating Dots */}
@@ -26,7 +26,7 @@ const introductionSection = () => {
           <div className="relative max-w-8xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-                            {/* Right: Content with White Background */}
+              {/* Right: Content with White Background */}
               <div className="space-y-8">
                 <div className="relative z-10 max-w-4xl mx-auto">
                   <h4 className="text-gray-900 font-bold tracking-wider text-sm md:text-base uppercase mb-4">
@@ -44,11 +44,89 @@ const introductionSection = () => {
                     </span>
                   </h2>
                 </div>
-                <div className="bg-white rounded-3xl p-8 border border-[#036e8d]/20 shadow-2xl">
-                  <p className="text-gray-900 text-lg leading-relaxed">
-                    At IIHH, we believe education should spark curiosity and character. Our program blends real-world modules, hands-on activities, and mentorship—empowering students to grow as thinkers, collaborators, and ethical leaders.
-                  </p>
+
+                <div className="block lg:hidden relative w-full max-w-[480px] mx-auto px-4 py-2 aspect-square">
+                  {/* Image Container */}
+                  <div className="relative w-full h-full">
+                    <img
+                      src={bolbImg}
+                      alt="Blob image"
+                      className="w-full h-full object-contain animate-imageFloat"
+                    />
+
+                    {/* Floating Knowledge Cards positioned relative to image */}
+                    <div className="absolute inset-0">
+                      {[
+                        { icon: "fa-brain", label: "Critical Thinking", pos: "top-[2%] left-[5%]", delay: "0s" },
+                        { icon: "fa-palette", label: "Creative Arts", pos: "top-[-4%] right-[16%]", delay: "0.5s" },
+                        { icon: "fa-flask", label: "STEM Labs", pos: "bottom-[-4%] left-[25%]", delay: "1s" },
+                        { icon: "fa-book", label: "Literature", pos: "bottom-[8%] right-[5%]", delay: "1.5s" },
+                        { icon: "fa-lightbulb", label: "Innovation", pos: "top-[40%] -right-[5%]", delay: "2.5s" },
+                        { icon: "fa-globe", label: "Global Awareness", pos: "top-[48%] -left-[6%]", delay: "2s" },
+                      ].map((card, i) => (
+                        <div
+                          key={i}
+                          className={`absolute ${card.pos} transform hover:scale-110 transition-all duration-300 cursor-pointer group`}
+                          style={{
+                            animation: `float 4s ease-in-out infinite`,
+                            animationDelay: card.delay,
+                          }}
+                        >
+                          <div className="bg-white rounded-xl p-3 shadow-lg border border-[#036e8d]/10 min-w-20 text-center group-hover:bg-[#036e8d] group-hover:text-white transition-all duration-300">
+                            <i className={`fa-solid ${card.icon} text-xl mb-1 text-[#036e8d] group-hover:text-white`}></i>
+                            <div className="text-[10px] font-semibold whitespace-nowrap text-[#036e8d] group-hover:text-white">{card.label}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Floating Animation Keyframes */}
+                  <style>{`
+                    @keyframes float {
+                      0%, 100% {
+                        transform: translateY(0) scale(1);
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                      }
+                      50% {
+                        transform: translateY(-8px) scale(1.02);
+                        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                      }
+                    }
+
+                    @keyframes imageFloat {
+                      0%, 100% {
+                        transform: translateY(0);
+                      }
+                      50% {
+                        transform: translateY(-10px);
+                      }
+                    }
+
+                    @keyframes float-dot {
+                      0%, 100% {
+                        transform: translateY(0) translateX(0);
+                        opacity: 0.8;
+                      }
+                      50% {
+                        transform: translateY(-15px) translateX(5px);
+                        opacity: 0.9;
+                      }
+                    }
+
+                    .animate-imageFloat {
+                      animation: imageFloat 3s ease-in-out infinite;
+                    }
+
+                    .animate-float-dot {
+                      animation: float-dot 5s ease-in-out infinite;
+                    }
+                  `}</style>
                 </div>
+
+                <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium relative bg-white backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-sm hover:scale-105 transition-all duration-700">
+                  At IIHH, we believe education should spark curiosity and character. Our program blends real-world modules, hands-on activities, and mentorship—empowering students to grow as thinkers, collaborators, and ethical leaders.
+                </p>
 
                 {/* CTA Buttons */}
                 <div className="inline-flex flex-col sm:flex-row items-center gap-4">
@@ -59,7 +137,7 @@ const introductionSection = () => {
                 </div>
               </div>
               {/* Left: Morphing Visual */}
-              <div className="relative w-full max-w-[480px] mx-auto aspect-square">
+              <div className="hidden lg:block relative w-full max-w-[480px] mx-auto aspect-square">
                 {/* Image Container */}
                 <div className="relative w-full h-full">
                   <img

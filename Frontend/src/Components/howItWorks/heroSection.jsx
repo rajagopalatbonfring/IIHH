@@ -16,20 +16,22 @@ const heroSection = () => {
       >
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10 flex-col align-center justify-center ">
-          <h1 className="text-4xl text-center md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
-            How <span className="text-[#ffd278]">IIHH</span> Works
+          <h1 className="text-4xl text-[#ffd278] text-center md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+            How IIHH Works
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
             Discover our unique, practical approach to humanistic learning—empowering the next generation through real-world experiences.
           </p>
           <p className='text-center'>
+          <div className="flex justify-center">
             <Link
               to="/apply"
-              className="inline-flex items-center justify-center bg-[#ffd278] text-[#036e8d] font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-[#d2a763] transition-all duration-300 group"
+              className="relative inline-flex items-center justify-center bg-white text-[#036e8d] px-8 py-3 rounded-full text-lg font-semibold overflow-hidden transform hover:scale-105 group transition-all duration-300 hover:shadow-xl"
             >
               Start Your Journey
               <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
+          </div>
           </p>
         </div>
         <svg
